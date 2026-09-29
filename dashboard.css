@@ -474,7 +474,7 @@ a:active{
     display: flex;
     align-items: center;
 
-    gap: 12px;
+    gap: 5px;
 
     padding: 12px 0;
 
@@ -527,7 +527,7 @@ a:active{
 .notice-text h4 {
     color: #12355B;
     font-size: 13px;
-    margin-bottom: 3px;
+    margin-bottom: 0px;
 }
 
 .notice-text p {
@@ -546,7 +546,7 @@ a:active{
 
     font-size: 10px;
 
-    margin-top: 5px;
+    margin-top: 0px;
 }
 
 .notice-text span i {
