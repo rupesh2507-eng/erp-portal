@@ -1,0 +1,1681 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: border-box;
+}
+body{
+    background-color: #E8EEF6;
+}
+.panel{
+    display:flex;
+    flex-direction: column;
+    height: 98vh;
+    width: 40vh;
+    padding: 10px;
+    background-color: #12355B;
+    color: white;
+    position:absolute;
+}
+.heading{
+    display: flex;
+    height: 100px;
+    width: 90%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.heading i{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.panel a{
+    font-size: 1.2rem;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.5rem;
+    display: block;
+    transition: all 0.25s ease;
+    border-radius: 8px;
+}
+a:hover{
+    background-color: #1E4A78;
+    color: #ffffff;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+a:active{
+    background-color: #FFE8A3;
+    color: #12355B;
+}
+.panel i{
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.dashboard{
+    margin-left: 43vh;
+    background-color: #E8EEF6;
+    color: #334155;
+    padding: 10px;
+}
+
+
+/* TOP */
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 2px solid #D9E2EC;
+    border-radius: 1rem;
+    padding: 0 15px 0 15px;
+}
+
+.title h1 {
+    font-size: 30px;
+    color: #12355B;
+}
+
+.title p {
+    margin-top: 6px;
+    color: #777;
+}
+
+
+/* DATE */
+
+.date-box {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.date-box label {
+    display: block;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 6px;
+}
+
+.date-box input {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    border-radius: 7px;
+    font-size: 14px;
+    outline: none;
+}
+
+
+/* SUMMARY */
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.summary-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+}
+
+.summary-card p {
+    color: #777;
+    font-size: 14px;
+}
+
+.summary-card h2 {
+    margin-top: 5px;
+    color: #12355B;
+}
+
+
+/* ICONS */
+
+.summary-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 19px;
+}
+
+.present {
+    background: #e1f7ec;
+    color: #12A866;
+}
+
+.absent {
+    background: #ffe5e5;
+    color: #e53935;
+}
+
+.total {
+    background: #e4efff;
+    color: #1976E8;
+}
+
+.percentage {
+    background: #eee7ff;
+    color: #6C4CE8;
+}
+
+
+/* HOLIDAY */
+
+.holiday {
+    display: none;
+
+    background: #fff4df;
+
+    border-left: 5px solid #F28C00;
+
+    padding: 18px 20px;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.holiday i {
+    font-size: 25px;
+    color: #F28C00;
+}
+
+.holiday h3 {
+    color: #b56800;
+}
+
+.holiday p {
+    margin-top: 4px;
+    color: #777;
+}
+
+
+/* PUNCH CONTAINER */
+
+.punch-container {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+}
+
+
+/* HEADING */
+
+.punch-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.punch-heading h2 {
+    color: #12355B;
+}
+
+.punch-heading p {
+    color: #888;
+
+    margin-top: 5px;
+}
+
+#dayStatus {
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    background: #e1f7ec;
+
+    color: #12A866;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* TABLE */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+thead {
+    background: #12355B;
+
+    color: white;
+}
+
+th,
+td {
+    padding: 15px;
+
+    text-align: left;
+}
+
+th {
+    font-size: 14px;
+}
+
+td {
+    border-bottom: 1px solid #eee;
+
+    color: #444;
+}
+
+tbody tr:hover {
+    background: #f7f9fc;
+}
+
+
+/* STATUS */
+
+.status {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.status.present {
+    background: #e1f7ec;
+
+    color: #12A866;
+}
+
+.status.absent {
+    background: #ffe5e5;
+
+    color: #e53935;
+}
+
+.panel{
+    width: 40vh;
+}
+.dashboard{
+    margin-left: 43vh;
+}
+.panel.collapsed{
+    width: 50px;
+    transition: all 2s ease;
+    .heading h2{
+        display: none;
+    }
+    .link{
+        display: none;
+    }
+}
+.dashboard.reverse{
+    margin-left: 75px;
+    transition: all 2s ease;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .dashboard {
+        padding: 20px;
+    }
+
+    .top {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .date-box {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+    .date-box input {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+    .summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .punch-container {
+        padding: 15px;
+    }
+
+    th,
+    td {
+        padding: 12px 10px;
+
+        white-space: nowrap;
+    }
+
+}
+
+.panel{
+    width: 40vh;
+}
+.dashboard{
+    margin-left: 43vh;
+}
+.panel.collapsed{
+    width: 50px;
+    transition: all 2s ease;
+    .heading h2{
+        display: none;
+    }
+    .link{
+        display: none;
+    }
+}
+.dashboard.reverse{
+    margin-left: 75px;
+    transition: all 2s ease;
+}
+
+/* ============================= */
+/* MOBILE PUNCH RECORD */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+    }
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 58px;
+        height: 100vh;
+        padding: 4px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+    .heading {
+        width: 100%;
+        height: 58px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .heading h2 {
+        display: none;
+    }
+
+    .heading i {
+        font-size: 0.95rem;
+        padding: 6px;
+        margin: 0;
+    }
+
+    .panel a {
+        width: 100%;
+        height: 42px;
+        box-sizing: border-box;
+        padding: 9px 3px;
+        margin-bottom: 3px;
+        font-size: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 7px;
+    }
+
+    .panel a i {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 64px;
+        width: calc(100% - 64px);
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+        width: 100%;
+        height: 55px;
+        padding: 6px 8px;
+        box-sizing: border-box;
+        border-radius: 9px;
+    }
+
+    .navbar h2 {
+        font-size: 1rem;
+    }
+
+    /* STUDENT DETAILS */
+
+    .detail {
+        width: 100%;
+        height: auto;
+        min-height: 125px;
+        margin: 8px 0 0 0;
+        padding: 8px;
+        box-sizing: border-box;
+        border-radius: 9px;
+    }
+
+    .detail p {
+        font-size: 0.7rem;
+        padding: 6px 5px;
+        margin: 0;
+        border-bottom: 1px solid #D9E2EC;
+    }
+
+    .detail p:last-child {
+        border-bottom: none;
+    }
+
+    /* PUNCH BOX */
+
+    .show-punch {
+        width: 100%;
+        height: auto;
+        min-height: 150px;
+        margin: 8px 0 0 0;
+        padding: 15px 8px;
+        box-sizing: border-box;
+        border-radius: 9px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .show-punch b {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .show-punch input {
+        width: 85%;
+        height: 35px;
+        box-sizing: border-box;
+        font-size: 0.7rem;
+        padding: 5px 8px;
+        background-color: #F8FAFC;
+    }
+
+    .show-punch p {
+        width: 100%;
+        margin: 12px 0 0 0;
+        padding: 8px 5px;
+        box-sizing: border-box;
+        font-size: 0.68rem;
+        line-height: 1.4;
+        border-top: 1px solid #D9E2EC;
+    }
+}
+
+
+/* ============================= */
+/* VERY SMALL PHONES */
+/* ============================= */
+
+@media (max-width: 380px) {
+
+    .panel {
+        width: 52px;
+    }
+
+    .dashboard {
+        margin-left: 57px;
+        width: calc(100% - 57px);
+    }
+
+    .panel a {
+        height: 39px;
+    }
+
+    .panel a i {
+        font-size: 0.9rem;
+    }
+
+    .navbar {
+        height: 52px;
+    }
+
+    .navbar h2 {
+        font-size: 0.85rem;
+    }
+
+    .detail {
+        min-height: 115px;
+        padding: 6px;
+    }
+
+    .detail p {
+        font-size: 0.62rem;
+        padding: 5px 4px;
+    }
+
+    .show-punch {
+        min-height: 140px;
+        padding: 12px 6px;
+    }
+
+    .show-punch b {
+        font-size: 0.65rem;
+    }
+
+    .show-punch input {
+        width: 90%;
+        height: 32px;
+        font-size: 0.65rem;
+    }
+
+    .show-punch p {
+        font-size: 0.6rem;
+    }
+}
+
+
+/* ============================= */
+/* CHROME ANDROID - DESKTOP SITE */
+/* ============================= */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 190px;
+        height: 98vh;
+        padding: 10px;
+        box-sizing: border-box;
+        z-index: 1000;
+    }
+
+    .heading {
+        width: 100%;
+        height: 70px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .heading h2 {
+        display: block;
+        font-size: 1.1rem;
+    }
+
+    .heading i {
+        font-size: 0.95rem;
+        padding: 6px;
+        margin: 0;
+    }
+
+    .panel a {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 9px 7px;
+        margin-bottom: 3px;
+        font-size: 0.78rem;
+        display: block;
+    }
+
+    .panel a i {
+        font-size: 0.85rem;
+        margin-right: 7px;
+    }
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 210px;
+        width: calc(100% - 210px);
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+        width: 100%;
+        height: 70px;
+        padding: 8px 12px;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    .navbar h2 {
+        font-size: 1.25rem;
+    }
+
+    /* STUDENT DETAILS */
+
+    .detail {
+        width: 100%;
+        height: auto;
+        min-height: 120px;
+        margin: 12px 0 0 0;
+        padding: 12px 15px;
+        box-sizing: border-box;
+        border-radius: 10px;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .detail p {
+        margin: 0;
+        padding: 9px;
+        font-size: 0.78rem;
+        border-left: 2px solid #D9E2EC;
+    }
+
+    /* PUNCH RECORD */
+
+    .show-punch {
+        width: 100%;
+        height: auto;
+        min-height: 150px;
+        margin: 12px 0 0 0;
+        padding: 22px 15px;
+        box-sizing: border-box;
+        border-radius: 10px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .show-punch b {
+        font-size: 0.9rem;
+        padding: 0;
+        margin-bottom: 15px;
+        color: #12355B;
+    }
+
+    .show-punch input {
+        width: 220px;
+        height: 38px;
+        padding: 6px 9px;
+        box-sizing: border-box;
+        font-size: 0.75rem;
+        background-color: #F8FAFC;
+    }
+
+    .show-punch p {
+        width: 100%;
+        margin: 15px 0 0 0;
+        padding-top: 10px;
+        font-size: 0.78rem;
+        border-top: 1px solid #D9E2EC;
+    }
+
+    /* COLLAPSED SIDEBAR */
+
+    .panel.collapsed {
+        width: 58px;
+    }
+
+    .panel.collapsed .heading h2,
+    .panel.collapsed .link {
+        display: none;
+    }
+
+    .panel.collapsed .heading {
+        justify-content: center;
+    }
+
+    .panel.collapsed .heading i {
+        margin: 0;
+    }
+
+    .dashboard.reverse {
+        margin-left: 78px;
+        width: calc(100% - 78px);
+    }
+}
+
+
+
+
+
+/* =========================================================
+   EXTRA DAILY PUNCH RECORD CSS
+   Add this at the very bottom of punch.css
+   Do not remove existing CSS
+   ========================================================= */
+
+
+/* ---------- GENERAL VISUAL IMPROVEMENT ---------- */
+
+.top,
+.summary-card,
+.holiday,
+.punch-container {
+    transition: all 0.25s ease;
+}
+
+.top,
+.punch-container {
+    box-shadow: 0 5px 18px rgba(18, 53, 91, 0.07);
+}
+
+.summary-card {
+    box-shadow: 0 5px 15px rgba(18, 53, 91, 0.07);
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 20px rgba(18, 53, 91, 0.12);
+}
+
+.date-box input:focus {
+    border-color: #1976E8;
+    box-shadow: 0 0 0 2px rgba(25, 118, 232, 0.10);
+}
+
+#dayStatus {
+    white-space: nowrap;
+}
+
+
+/* ---------- TOP SECTION ---------- */
+
+.title {
+    min-width: 0;
+}
+
+.title h1 {
+    letter-spacing: 0.3px;
+}
+
+.date-box {
+    flex-shrink: 0;
+}
+
+
+/* ---------- SUMMARY ---------- */
+
+.summary-card {
+    min-width: 0;
+}
+
+.summary-card > div:last-child {
+    min-width: 0;
+}
+
+.summary-card p,
+.summary-card h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.summary-icon {
+    flex-shrink: 0;
+}
+
+
+/* ---------- HOLIDAY ---------- */
+
+.holiday {
+    box-shadow: 0 4px 12px rgba(242, 140, 0, 0.08);
+}
+
+.holiday > div {
+    min-width: 0;
+}
+
+
+/* ---------- PUNCH TABLE ---------- */
+
+.punch-container {
+    overflow: hidden;
+}
+
+.table-container {
+    scrollbar-width: thin;
+}
+
+table {
+    min-width: 700px;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+th {
+    white-space: nowrap;
+}
+
+td {
+    vertical-align: middle;
+}
+
+
+/* ---------- DESKTOP ---------- */
+
+@media (min-width: 1101px) {
+
+    .dashboard {
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .top,
+    .summary,
+    .holiday,
+    .punch-container {
+        max-width: 1250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .summary {
+        gap: 18px;
+    }
+
+    .summary-card {
+        min-width: 0;
+    }
+
+    .punch-container {
+        box-sizing: border-box;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    .dashboard {
+        margin-left: 200px;
+        width: calc(100% - 210px);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .top {
+        height: 85px;
+        padding: 0 18px;
+        margin-bottom: 15px;
+    }
+
+    .title h1 {
+        font-size: 25px;
+    }
+
+    .title p {
+        font-size: 11px;
+    }
+
+    .date-box {
+        padding: 10px 14px;
+    }
+
+    .date-box label {
+        font-size: 11px;
+    }
+
+    .date-box input {
+        padding: 7px 8px;
+        font-size: 12px;
+    }
+
+
+    /* SUMMARY */
+
+    .summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+
+    .summary-card {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .summary-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+
+    .summary-card p {
+        font-size: 12px;
+    }
+
+    .summary-card h2 {
+        font-size: 20px;
+    }
+
+
+    /* PUNCH */
+
+    .punch-container {
+        padding: 20px;
+    }
+
+    .punch-heading h2 {
+        font-size: 20px;
+    }
+
+    .punch-heading p {
+        font-size: 11px;
+    }
+
+    #dayStatus {
+        font-size: 11px;
+        padding: 7px 11px;
+    }
+
+    th,
+    td {
+        padding: 12px 10px;
+    }
+
+    th {
+        font-size: 12px;
+    }
+
+    td {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   NORMAL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 58px;
+        height: 100vh;
+        padding: 4px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+    .heading {
+        width: 100%;
+        height: 58px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .heading h2 {
+        display: none;
+    }
+
+    .heading i {
+        margin: 0;
+        font-size: 0.95rem;
+        padding: 6px;
+    }
+
+    .panel a {
+        width: 100%;
+        height: 42px;
+        padding: 9px 3px;
+        margin-bottom: 3px;
+        box-sizing: border-box;
+        font-size: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .panel a i {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 58px;
+        width: calc(100% - 58px);
+        padding: 7px;
+        box-sizing: border-box;
+    }
+
+
+    /* TOP */
+
+    .top {
+        width: 100%;
+        height: auto;
+        min-height: 120px;
+        padding: 13px;
+        margin-bottom: 10px;
+        border-radius: 12px;
+        box-sizing: border-box;
+
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .title h1 {
+        font-size: 19px;
+        line-height: 1.2;
+    }
+
+    .title p {
+        font-size: 9px;
+        margin-top: 4px;
+        line-height: 1.3;
+    }
+
+
+    /* DATE */
+
+    .date-box {
+        width: 100%;
+        padding: 9px 10px;
+        box-sizing: border-box;
+        border-radius: 9px;
+    }
+
+    .date-box label {
+        font-size: 9px;
+        margin-bottom: 4px;
+    }
+
+    .date-box input {
+        width: 100%;
+        height: 34px;
+        padding: 5px 7px;
+        box-sizing: border-box;
+        font-size: 10px;
+    }
+
+
+    /* SUMMARY */
+
+    .summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+        margin-bottom: 10px;
+    }
+
+    .summary-card {
+        min-height: 68px;
+        padding: 9px;
+        gap: 8px;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+    .summary-icon {
+        width: 31px;
+        height: 31px;
+        border-radius: 7px;
+        font-size: 13px;
+    }
+
+    .summary-card p {
+        font-size: 8px;
+    }
+
+    .summary-card h2 {
+        font-size: 17px;
+        margin-top: 3px;
+    }
+
+
+    /* HOLIDAY */
+
+    .holiday {
+        padding: 11px;
+        margin-bottom: 10px;
+        gap: 9px;
+        border-radius: 9px;
+    }
+
+    .holiday i {
+        font-size: 19px;
+        flex-shrink: 0;
+    }
+
+    .holiday h3 {
+        font-size: 13px;
+    }
+
+    .holiday p {
+        font-size: 9px;
+        line-height: 1.35;
+    }
+
+
+    /* PUNCH CONTAINER */
+
+    .punch-container {
+        width: 100%;
+        padding: 12px;
+        border-radius: 11px;
+        box-sizing: border-box;
+    }
+
+    .punch-heading {
+        margin-bottom: 13px;
+        gap: 8px;
+    }
+
+    .punch-heading > div {
+        min-width: 0;
+    }
+
+    .punch-heading h2 {
+        font-size: 15px;
+    }
+
+    .punch-heading p {
+        font-size: 9px;
+        line-height: 1.3;
+    }
+
+    #dayStatus {
+        padding: 5px 8px;
+        font-size: 8px;
+        flex-shrink: 0;
+    }
+
+
+    /* TABLE */
+
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 650px;
+    }
+
+    th,
+    td {
+        padding: 9px 8px;
+        white-space: nowrap;
+    }
+
+    th {
+        font-size: 10px;
+    }
+
+    td {
+        font-size: 9px;
+    }
+
+    .status {
+        padding: 4px 8px;
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .panel {
+        width: 52px;
+    }
+
+    .dashboard {
+        margin-left: 52px;
+        width: calc(100% - 52px);
+        padding: 5px;
+    }
+
+    .panel a {
+        height: 39px;
+    }
+
+    .panel a i {
+        font-size: 0.9rem;
+    }
+
+
+    /* TOP */
+
+    .top {
+        min-height: 112px;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .title h1 {
+        font-size: 16px;
+    }
+
+    .title p {
+        font-size: 8px;
+    }
+
+    .date-box {
+        padding: 8px;
+    }
+
+    .date-box label {
+        font-size: 8px;
+    }
+
+    .date-box input {
+        height: 31px;
+        font-size: 9px;
+    }
+
+
+    /* SUMMARY */
+
+    .summary {
+        gap: 5px;
+    }
+
+    .summary-card {
+        min-height: 63px;
+        padding: 7px;
+        gap: 6px;
+    }
+
+    .summary-icon {
+        width: 27px;
+        height: 27px;
+        font-size: 11px;
+    }
+
+    .summary-card p {
+        font-size: 7px;
+    }
+
+    .summary-card h2 {
+        font-size: 15px;
+    }
+
+
+    /* HOLIDAY */
+
+    .holiday {
+        padding: 9px;
+        gap: 7px;
+    }
+
+    .holiday i {
+        font-size: 16px;
+    }
+
+    .holiday h3 {
+        font-size: 11px;
+    }
+
+    .holiday p {
+        font-size: 8px;
+    }
+
+
+    /* PUNCH */
+
+    .punch-container {
+        padding: 9px;
+    }
+
+    .punch-heading {
+        margin-bottom: 10px;
+    }
+
+    .punch-heading h2 {
+        font-size: 13px;
+    }
+
+    .punch-heading p {
+        font-size: 8px;
+    }
+
+    #dayStatus {
+        padding: 4px 6px;
+        font-size: 7px;
+    }
+
+    table {
+        min-width: 600px;
+    }
+
+    th,
+    td {
+        padding: 8px 7px;
+    }
+
+    th {
+        font-size: 9px;
+    }
+
+    td {
+        font-size: 8px;
+    }
+
+    .status {
+        padding: 3px 6px;
+        font-size: 7px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP SITE ON PHONE
+   ========================================================= */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 190px;
+        height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .heading {
+        width: 100%;
+        height: 70px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .heading h2 {
+        display: block;
+        font-size: 1.05rem;
+    }
+
+    .heading i {
+        font-size: 0.9rem;
+        padding: 6px;
+        margin: 0;
+    }
+
+    .panel a {
+        font-size: 0.78rem;
+        padding: 9px 7px;
+        margin-bottom: 3px;
+    }
+
+    .panel a i {
+        font-size: 0.85rem;
+        margin-right: 7px;
+    }
+
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+
+    /* TOP */
+
+    .top {
+        height: 80px;
+        padding: 10px 14px;
+        margin-bottom: 12px;
+    }
+
+    .title h1 {
+        font-size: 23px;
+    }
+
+    .title p {
+        font-size: 11px;
+    }
+
+    .date-box {
+        padding: 9px 12px;
+    }
+
+    .date-box label {
+        font-size: 10px;
+    }
+
+    .date-box input {
+        font-size: 11px;
+    }
+
+
+    /* SUMMARY */
+
+    .summary {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .summary-card {
+        padding: 11px;
+        gap: 9px;
+        min-width: 0;
+    }
+
+    .summary-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .summary-card p {
+        font-size: 9px;
+    }
+
+    .summary-card h2 {
+        font-size: 18px;
+    }
+
+
+    /* HOLIDAY */
+
+    .holiday {
+        padding: 13px 15px;
+        margin-bottom: 12px;
+    }
+
+    .holiday i {
+        font-size: 20px;
+    }
+
+    .holiday h3 {
+        font-size: 14px;
+    }
+
+    .holiday p {
+        font-size: 10px;
+    }
+
+
+    /* PUNCH */
+
+    .punch-container {
+        padding: 18px;
+    }
+
+    .punch-heading h2 {
+        font-size: 18px;
+    }
+
+    .punch-heading p {
+        font-size: 10px;
+    }
+
+    #dayStatus {
+        padding: 6px 10px;
+        font-size: 9px;
+    }
+
+    table {
+        min-width: 650px;
+    }
+
+    th,
+    td {
+        padding: 11px 9px;
+    }
+
+    th {
+        font-size: 11px;
+    }
+
+    td {
+        font-size: 10px;
+    }
+
+
+    /* COLLAPSED SIDEBAR */
+
+    .panel.collapsed {
+        width: 58px;
+    }
+
+    .panel.collapsed .heading h2,
+    .panel.collapsed .link {
+        display: none;
+    }
+
+    .panel.collapsed .heading {
+        justify-content: center;
+    }
+
+    .panel.collapsed .heading i {
+        margin: 0;
+    }
+
+    .dashboard.reverse {
+        margin-left: 78px;
+        width: calc(100% - 78px);
+    }
+}
+
+
+/* ---------- FINAL SAFETY ---------- */
+
+@media (max-width: 1100px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .top,
+    .summary,
+    .punch-container {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,388 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: border-box;
+}
+body{
+    background-image: url("back-img.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.forgot-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    height: 51vh;
+    width: 45vh;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 8px 30px rgba(18, 53, 91, 0.25);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #CED4DA;
+    border-radius: 1rem;
+}
+.container h2{
+    color: #12355B;
+    font-size: 1.8rem;
+    padding: 5px;
+}
+.container p{
+    font-size: 1rem;
+    padding: 5px;
+}
+p{
+    color: #343A40;
+}
+.form input,button{
+    min-width: 100%;
+    height: 2.2rem;
+    padding: 0 0 5px 5px;
+    border: 1px solid #CED4DA;
+    border-radius: 1rem;
+}
+input{
+    color: #F8F9FA;
+}
+.form p{
+    font-size: 1.1rem;
+    margin-top: 1.3rem;
+}
+.form button{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    background-color: #12355B;
+    color: white;
+    transition: all 0.25s ease;
+}
+button:hover{
+    background-color: #F4B942;
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+}
+.back-login{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+    margin: 0 4.5rem 5.5rem 6.5rem;
+    color: #12355B;
+}
+.back-login:hover{
+    color: #F4B942;
+}
+
+#change{
+    font-size: 0.9rem;
+    color: darkmagenta;
+    padding-left: 20px;
+}
+
+/* ============================= */
+/* FINAL MOBILE FORGOT PASSWORD */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .forgot-container {
+        width: 100%;
+        min-height: 100vh;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 82%;
+        height: auto;
+        min-height: 270px;
+        padding: 15px;
+        box-sizing: border-box;
+        border-radius: 12px;
+    }
+
+    .container h2 {
+        font-size: 1.3rem;
+        padding: 4px;
+    }
+
+    .container > p {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        padding: 4px;
+    }
+
+    .form p {
+        font-size: 0.8rem;
+        margin-top: 12px;
+        padding: 4px;
+    }
+
+    .form input,
+    .form button {
+        width: 100%;
+        min-width: 0;
+        height: 34px;
+        box-sizing: border-box;
+        font-size: 0.75rem;
+        border-radius: 8px;
+    }
+
+    .form input {
+        padding: 5px 8px;
+    }
+
+    .form button {
+        margin-top: 20px;
+        margin-bottom: 15px;
+        font-size: 0.7rem;
+    }
+
+    .back-login {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 0.8rem;
+    }
+}
+
+
+/* ============================= */
+/* VERY SMALL PHONES */
+/* ============================= */
+
+@media (max-width: 380px) {
+
+    .forgot-container {
+        padding: 10px;
+    }
+
+    .container {
+        width: 88%;
+        padding: 12px;
+        min-height: 250px;
+    }
+
+    .container h2 {
+        font-size: 1.15rem;
+    }
+
+    .container > p {
+        font-size: 0.65rem;
+    }
+
+    .form p {
+        font-size: 0.75rem;
+        margin-top: 10px;
+    }
+
+    .form input,
+    .form button {
+        height: 32px;
+        font-size: 0.68rem;
+    }
+
+    .form button {
+        margin-top: 16px;
+    }
+
+    .back-login {
+        font-size: 0.72rem;
+    }
+}
+
+
+
+
+/* ================================= */
+/* ADDITIONAL RESPONSIVE CSS */
+/* FORGOT PASSWORD */
+/* ================================= */
+
+/* ---------- TABLET MODE ---------- */
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    .forgot-container {
+        width: 100%;
+        min-height: 100vh;
+        padding: 25px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 380px;
+        min-height: 340px;
+        height: auto;
+        padding: 22px;
+        box-sizing: border-box;
+    }
+
+    .container h2 {
+        font-size: 1.6rem;
+        padding: 5px;
+    }
+
+    .container > p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        padding: 5px;
+    }
+
+    .form p {
+        font-size: 1rem;
+        margin-top: 18px;
+        padding: 5px;
+    }
+
+    .form input,
+    .form button {
+        width: 100%;
+        min-width: 0;
+        height: 40px;
+        box-sizing: border-box;
+    }
+
+    .form input {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .form button {
+        margin-top: 25px;
+        margin-bottom: 20px;
+        font-size: 0.8rem;
+    }
+
+    .back-login {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 1rem;
+    }
+}
+
+
+/* ---------- SMALL TABLETS / LANDSCAPE PHONES ---------- */
+@media (min-width: 601px) and (max-width: 800px) {
+
+    .container {
+        width: 350px;
+        padding: 20px;
+    }
+
+    .container h2 {
+        font-size: 1.5rem;
+    }
+
+    .container > p {
+        font-size: 0.85rem;
+    }
+
+    .form p {
+        font-size: 0.95rem;
+    }
+
+    .form input,
+    .form button {
+        height: 38px;
+    }
+
+    .back-login {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ---------- DESKTOP POLISH ---------- */
+@media (min-width: 1101px) {
+
+    .container {
+        box-sizing: border-box;
+        max-width: 420px;
+    }
+
+    .container h2 {
+        margin-bottom: 3px;
+    }
+
+    .form input:focus {
+        outline: none;
+        border-color: #12355B;
+        box-shadow: 0 0 0 3px rgba(18, 53, 91, 0.12);
+    }
+
+    .form button:focus {
+        outline: none;
+    }
+
+    .back-login {
+        transition: all 0.25s ease;
+    }
+}
+
+
+/* ---------- DESKTOP SITE ON PHONE ---------- */
+@media (pointer: coarse) and (min-width: 601px) {
+
+    .forgot-container {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 360px;
+        height: auto;
+        min-height: 330px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .container h2 {
+        font-size: 1.45rem;
+    }
+
+    .container > p {
+        font-size: 0.82rem;
+        line-height: 1.4;
+    }
+
+    .form p {
+        font-size: 0.9rem;
+        margin-top: 16px;
+    }
+
+    .form input,
+    .form button {
+        width: 100%;
+        min-width: 0;
+        height: 38px;
+        box-sizing: border-box;
+    }
+
+    .form button {
+        margin-top: 22px;
+        margin-bottom: 18px;
+    }
+
+    .back-login {
+        margin: 0 auto;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,1201 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: border-box;
+}
+body{
+    background-color: #E8EEF6;
+}
+.panel{
+    display:flex;
+    flex-direction: column;
+    height: 109vh;
+    width: 40vh;
+    padding: 10px;
+    background-color: #12355B;
+    color: white;
+    position:absolute;
+}
+.heading{
+    display: flex;
+    height: 100px;
+    width: 90%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.heading i{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.panel a{
+    font-size: 1.2rem;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.5rem;
+    display: block;
+    transition: all 0.25s ease;
+    border-radius: 8px;
+}
+a:hover{
+    background-color: #1E4A78;
+    color: #ffffff;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+a:active{
+    background-color: #FFE8A3;
+    color: #12355B;
+}
+.panel i{
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.dashboard{
+
+    margin-left: 43vh;
+
+    padding: 10px;
+
+    transition: 0.3s;
+
+}
+
+
+
+/* HEADING */
+
+.result-heading{
+
+    background: white;
+
+    padding: 0 15px 0 15px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+    height: 100px;
+}
+
+
+.result-heading h1{
+
+    color: #12355B;
+
+    font-size: 30px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.result-heading p{
+
+    color: #777;
+
+    font-size: 14px;
+
+}
+
+
+.result-heading > i{
+
+    width: 55px;
+
+    height: 55px;
+
+    background: #1976E8;
+
+    color: white;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 22px;
+
+}
+
+
+
+/* SUMMARY */
+
+.result-summary{
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.result-card{
+
+    background: white;
+
+    min-height: 105px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.06);
+
+}
+
+
+.result-card i{
+
+    width: 48px;
+
+    height: 48px;
+
+    background: #EAF2FF;
+
+    color: #1976E8;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 20px;
+
+}
+
+
+.result-card p{
+
+    color: #777;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.result-card h2{
+
+    color: #12355B;
+
+    font-size: 22px;
+
+}
+
+
+
+/* RESULT SECTION */
+
+.result-section{
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.06);
+
+}
+
+
+.result-top{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.result-top h2{
+
+    color: #12355B;
+
+    font-size: 21px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.result-top p{
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+#semester{
+
+    padding: 9px 12px;
+
+    border: 1px solid #D5DDE7;
+
+    border-radius: 8px;
+
+    color: #12355B;
+
+    background: white;
+
+}
+
+
+
+/* TABLE */
+
+.result-table{
+
+    width: 100%;
+
+}
+
+
+.table-heading{
+
+    background: #12355B;
+
+    color: white;
+
+    min-height: 50px;
+
+    padding: 0px 20px;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    align-items: center;
+
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+
+.table-heading span{
+
+    font-size: 13px;
+
+}
+
+
+
+/* ROW */
+
+.result-row{
+
+    min-height: 65px;
+
+    padding: 0px 20px;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    align-items: center;
+
+    border-bottom: 1px solid #E5E9EF;
+
+}
+
+
+.result-row > div{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #12355B;
+
+    font-size: 14px;
+
+}
+
+
+.result-row i{
+
+    width: 35px;
+
+    height: 35px;
+
+    background: #EAF2FF;
+
+    color: #1976E8;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.result-row span{
+
+    color: #666;
+
+    font-size: 14px;
+
+}
+
+
+.result-row strong{
+
+    color: #12A866;
+
+    font-size: 14px;
+
+}
+
+
+
+/* COLLAPSED PANEL */
+
+.panel{
+    width: 40vh;
+}
+.dashboard{
+    margin-left: 43vh;
+}
+.panel.collapsed{
+    width: 50px;
+    transition: all 2s ease;
+    .heading h2{
+        display: none;
+    }
+    .link{
+        display: none;
+    }
+}
+.dashboard.reverse{
+    margin-left: 75px;
+    transition: all 2s ease;
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .dashboard{
+
+        margin-left: 40vh;
+
+        padding: 15px;
+
+    }
+
+
+    .result-summary{
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .result-card{
+
+        padding: 12px;
+
+    }
+
+
+    .result-card h2{
+
+        font-size: 18px;
+
+    }
+
+
+    .result-section{
+
+        padding: 15px;
+
+        overflow-x: auto;
+
+    }
+
+
+    .result-table{
+
+        min-width: 550px;
+
+    }
+
+}
+
+
+
+
+
+/* =========================================================
+   EXTRA RESULT PAGE CSS
+   Add this at the bottom of result.css
+   ========================================================= */
+
+
+/* ---------- GENERAL IMPROVEMENT ---------- */
+
+.result-heading,
+.result-card,
+.result-section {
+    transition: all 0.25s ease;
+}
+
+.result-heading,
+.result-section {
+    box-shadow: 0 4px 12px rgba(18, 53, 91, 0.06);
+}
+
+.result-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(18, 53, 91, 0.11);
+}
+
+.result-row {
+    transition: background 0.2s ease;
+}
+
+.result-row:hover {
+    background: #F8FAFD;
+}
+
+.result-card i {
+    flex-shrink: 0;
+}
+
+.result-row > div {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1101px) {
+
+    .dashboard {
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .result-heading,
+    .result-summary,
+    .result-section {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .result-heading {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    .dashboard {
+        margin-left: 200px;
+        width: calc(100% - 210px);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .result-heading {
+        height: 85px;
+        padding: 0 18px;
+        margin-bottom: 15px;
+    }
+
+    .result-heading h1 {
+        font-size: 25px;
+    }
+
+    .result-heading p {
+        font-size: 12px;
+    }
+
+    .result-heading > i {
+        width: 48px;
+        height: 48px;
+        font-size: 19px;
+    }
+
+
+    /* SUMMARY */
+
+    .result-summary {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .result-card {
+        min-height: 85px;
+        padding: 13px;
+        gap: 11px;
+    }
+
+    .result-card i {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .result-card p {
+        font-size: 10px;
+    }
+
+    .result-card h2 {
+        font-size: 19px;
+    }
+
+
+    /* RESULT SECTION */
+
+    .result-section {
+        padding: 18px;
+    }
+
+    .result-top h2 {
+        font-size: 19px;
+    }
+
+    .result-top p {
+        font-size: 11px;
+    }
+
+    #semester {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .table-heading {
+        min-height: 45px;
+        padding: 0 15px;
+    }
+
+    .table-heading span {
+        font-size: 11px;
+    }
+
+    .result-row {
+        min-height: 58px;
+        padding: 0 15px;
+    }
+
+    .result-row > div {
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .result-row i {
+        width: 31px;
+        height: 31px;
+        font-size: 12px;
+    }
+
+    .result-row span,
+    .result-row strong {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   NORMAL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 58px;
+        height: 100vh;
+        padding: 4px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+    .heading {
+        width: 100%;
+        height: 58px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .heading h2 {
+        display: none;
+    }
+
+    .heading i {
+        margin: 0;
+        font-size: 0.95rem;
+        padding: 6px;
+    }
+
+    .panel a {
+        width: 100%;
+        height: 42px;
+        padding: 9px 3px;
+        margin-bottom: 3px;
+        box-sizing: border-box;
+        font-size: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .panel a i {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 58px;
+        width: calc(100% - 58px);
+        padding: 7px;
+        box-sizing: border-box;
+    }
+
+
+    /* HEADING */
+
+    .result-heading {
+        width: 100%;
+        height: auto;
+        min-height: 72px;
+        padding: 12px;
+        margin-bottom: 12px;
+        border-radius: 11px;
+        box-sizing: border-box;
+    }
+
+    .result-heading h1 {
+        font-size: 19px;
+        margin-bottom: 4px;
+    }
+
+    .result-heading p {
+        font-size: 9px;
+    }
+
+    .result-heading > i {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        font-size: 16px;
+    }
+
+
+    /* SUMMARY */
+
+    .result-summary {
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+        margin-bottom: 12px;
+    }
+
+    .result-card {
+        min-height: 70px;
+        padding: 9px;
+        border-radius: 10px;
+        gap: 7px;
+        box-sizing: border-box;
+    }
+
+    .result-card i {
+        width: 32px;
+        height: 32px;
+        border-radius: 7px;
+        font-size: 13px;
+    }
+
+    .result-card p {
+        font-size: 8px;
+        margin-bottom: 3px;
+    }
+
+    .result-card h2 {
+        font-size: 16px;
+    }
+
+
+    /* RESULT SECTION */
+
+    .result-section {
+        width: 100%;
+        padding: 12px;
+        border-radius: 11px;
+        box-sizing: border-box;
+        overflow-x: auto;
+    }
+
+    .result-top {
+        margin-bottom: 12px;
+        gap: 8px;
+    }
+
+    .result-top h2 {
+        font-size: 15px;
+        margin-bottom: 3px;
+    }
+
+    .result-top p {
+        font-size: 8px;
+    }
+
+    #semester {
+        padding: 7px 8px;
+        font-size: 9px;
+        border-radius: 6px;
+    }
+
+
+    /* TABLE */
+
+    .result-table {
+        min-width: 500px;
+    }
+
+    .table-heading {
+        min-height: 42px;
+        padding: 0 10px;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .table-heading span {
+        font-size: 9px;
+    }
+
+    .result-row {
+        min-height: 55px;
+        padding: 0 10px;
+    }
+
+    .result-row > div {
+        gap: 7px;
+        font-size: 10px;
+    }
+
+    .result-row i {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        font-size: 11px;
+    }
+
+    .result-row span,
+    .result-row strong {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .panel {
+        width: 52px;
+    }
+
+    .dashboard {
+        margin-left: 52px;
+        width: calc(100% - 52px);
+        padding: 5px;
+    }
+
+    .panel a {
+        height: 39px;
+    }
+
+    .panel a i {
+        font-size: 0.9rem;
+    }
+
+
+    .result-heading {
+        min-height: 64px;
+        padding: 10px;
+    }
+
+    .result-heading h1 {
+        font-size: 16px;
+    }
+
+    .result-heading p {
+        font-size: 8px;
+    }
+
+    .result-heading > i {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+
+    .result-summary {
+        gap: 5px;
+    }
+
+    .result-card {
+        min-height: 63px;
+        padding: 7px;
+        gap: 5px;
+    }
+
+    .result-card i {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+
+    .result-card p {
+        font-size: 7px;
+    }
+
+    .result-card h2 {
+        font-size: 14px;
+    }
+
+
+    .result-section {
+        padding: 9px;
+    }
+
+    .result-top h2 {
+        font-size: 13px;
+    }
+
+    .result-top p {
+        font-size: 7px;
+    }
+
+    #semester {
+        padding: 6px;
+        font-size: 8px;
+    }
+
+
+    .result-table {
+        min-width: 450px;
+    }
+
+    .table-heading {
+        min-height: 38px;
+        padding: 0 8px;
+    }
+
+    .table-heading span {
+        font-size: 8px;
+    }
+
+    .result-row {
+        min-height: 50px;
+        padding: 0 8px;
+    }
+
+    .result-row > div {
+        font-size: 9px;
+    }
+
+    .result-row i {
+        width: 25px;
+        height: 25px;
+        font-size: 10px;
+    }
+
+    .result-row span,
+    .result-row strong {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP SITE ON PHONE
+   ========================================================= */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 190px;
+        height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .heading {
+        width: 100%;
+        height: 70px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .heading h2 {
+        display: block;
+        font-size: 1.05rem;
+    }
+
+    .heading i {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    .panel a {
+        font-size: 0.78rem;
+        padding: 9px 7px;
+        margin-bottom: 3px;
+    }
+
+    .panel a i {
+        font-size: 0.85rem;
+        margin-right: 7px;
+    }
+
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+
+    /* HEADING */
+
+    .result-heading {
+        height: 75px;
+        padding: 10px 14px;
+        margin-bottom: 12px;
+    }
+
+    .result-heading h1 {
+        font-size: 23px;
+    }
+
+    .result-heading p {
+        font-size: 11px;
+    }
+
+    .result-heading > i {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+
+    /* SUMMARY */
+
+    .result-summary {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .result-card {
+        min-height: 80px;
+        padding: 11px;
+        gap: 9px;
+    }
+
+    .result-card i {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .result-card p {
+        font-size: 9px;
+    }
+
+    .result-card h2 {
+        font-size: 18px;
+    }
+
+
+    /* RESULT */
+
+    .result-section {
+        padding: 16px;
+    }
+
+    .result-top h2 {
+        font-size: 18px;
+    }
+
+    .result-top p {
+        font-size: 10px;
+    }
+
+    #semester {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+
+    /* TABLE */
+
+    .result-table {
+        min-width: 520px;
+    }
+
+    .table-heading {
+        min-height: 45px;
+        padding: 0 14px;
+    }
+
+    .table-heading span {
+        font-size: 10px;
+    }
+
+    .result-row {
+        min-height: 58px;
+        padding: 0 14px;
+    }
+
+    .result-row > div {
+        gap: 8px;
+        font-size: 11px;
+    }
+
+    .result-row i {
+        width: 30px;
+        height: 30px;
+        font-size: 11px;
+    }
+
+    .result-row span,
+    .result-row strong {
+        font-size: 11px;
+    }
+
+
+    /* COLLAPSED SIDEBAR */
+
+    .panel.collapsed {
+        width: 58px;
+    }
+
+    .panel.collapsed .heading h2,
+    .panel.collapsed .link {
+        display: none;
+    }
+
+    .panel.collapsed .heading {
+        justify-content: center;
+    }
+
+    .panel.collapsed .heading i {
+        margin: 0;
+    }
+
+    .dashboard.reverse {
+        margin-left: 78px;
+        width: calc(100% - 78px);
+    }
+}
+
+
+/* ---------- FINAL OVERFLOW SAFETY ---------- */
+
+@media (max-width: 1100px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .result-heading,
+    .result-summary,
+    .result-section {
+        max-width: 100%;
+    }
+}

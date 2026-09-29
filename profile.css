@@ -1,0 +1,1758 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #E8EEF6;
+}
+.panel{
+    display:flex;
+    flex-direction: column;
+    height: 140vh;
+    width: 40vh;
+    padding: 10px;
+    background-color: #12355B;
+    color: white;
+    position:absolute;
+}
+.heading{
+    display: flex;
+    height: 100px;
+    width: 90%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.heading i{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.panel a{
+    font-size: 1.2rem;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.5rem;
+    display: block;
+    transition: all 0.25s ease;
+    border-radius: 8px;
+}
+a:hover{
+    background-color: #1E4A78;
+    color: #ffffff;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+a:active{
+    background-color: #FFE8A3;
+    color: #12355B;
+}
+.panel i{
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.dashboard{
+    margin-left: 43vh;
+    background-color: #E8EEF6;
+    color: #334155;
+    padding: 10px;
+}
+
+
+/* HEADER */
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    height: 100px;
+    border: 2px solid #D9E2EC;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 0 15px 0 15px;
+}
+
+.profile-title h1 {
+    font-size: 30px;
+    color: #12355B;
+}
+
+.profile-title p {
+    margin-top: 6px;
+    color: #777;
+}
+
+
+/* STATUS */
+
+.profile-status {
+    background: #e1f7ec;
+    color: #12A866;
+
+    padding: 9px 15px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.profile-status i {
+    font-size: 8px;
+    margin-right: 5px;
+}
+
+
+/* PROFILE CARD */
+
+.profile-card {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+}
+
+
+/* PROFILE TOP */
+
+.profile-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+/* PROFILE PICTURE */
+
+.profile-picture-section {
+    text-align: center;
+}
+
+.profile-photo {
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    background: #E8EEF6;
+
+    color: #12355B;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    position: relative;
+
+    border: 4px solid white;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: none;
+    cursor: pointer;
+}
+
+.profile-photo i {
+    font-size: 40px;
+}
+
+
+/* CHANGE PHOTO */
+
+.change-photo {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: #6C4CE8;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+.change-photo:hover {
+    text-decoration: underline;
+}
+
+#imageUpload {
+    display: none;
+}
+
+
+/* NAME */
+
+.student-name h2 {
+    color: #12355B;
+
+    margin-bottom: 7px;
+}
+
+.student-name p {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+.student-name p i {
+    margin-right: 5px;
+
+    color: #6C4CE8;
+}
+
+.student-name > span {
+    display: inline-block;
+
+    background: #eee7ff;
+
+    color: #6C4CE8;
+
+    padding: 5px 10px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* EDIT BUTTON */
+
+.edit-area {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 20px;
+}
+
+#editBtn {
+    border: none;
+
+    background: #12355B;
+
+    color: white;
+
+    padding: 10px 17px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+#editBtn:hover {
+    background: #0d2947;
+}
+
+
+/* SECTION TITLE */
+
+.section-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 28px;
+
+    margin-bottom: 18px;
+}
+
+.section-title i {
+    color: #6C4CE8;
+
+    font-size: 17px;
+}
+
+.section-title h3 {
+    color: #12355B;
+
+    font-size: 18px;
+}
+
+
+/* INFORMATION GRID */
+
+.information-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+/* INFORMATION BOX */
+
+.information-box {
+    background: #f7f9fc;
+
+    border: 1px solid #edf0f5;
+
+    border-radius: 10px;
+
+    padding: 14px;
+}
+
+.information-box p {
+    color: #888;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+}
+
+.information-box input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #333;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-sizing: border-box;
+}
+
+.information-box input:not(:disabled) {
+    background: white;
+
+    border: 1px solid #6C4CE8;
+
+    border-radius: 6px;
+
+    padding: 7px;
+}
+
+
+/* ACADEMIC */
+
+.academic-title {
+    margin-top: 32px;
+}
+
+.academic-title i {
+    color: #1976E8;
+}
+
+
+/* CONTACT */
+
+.contact-title {
+    margin-top: 32px;
+}
+
+.contact-title i {
+    color: #12A866;
+}
+
+
+/* CONTACT GRID */
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+/* CONTACT BOX */
+
+.contact-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background: #f7f9fc;
+
+    border: 1px solid #edf0f5;
+
+    border-radius: 10px;
+
+    padding: 16px;
+}
+
+.contact-box > i {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #e1f7ec;
+
+    color: #12A866;
+
+    flex-shrink: 0;
+}
+
+.contact-box p {
+    color: #888;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+.contact-box input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #333;
+
+    font-size: 13px;
+
+    box-sizing: border-box;
+}
+
+.contact-box input:not(:disabled) {
+    background: white;
+
+    border: 1px solid #12A866;
+
+    border-radius: 6px;
+
+    padding: 7px;
+}
+
+
+/* SAVE AREA */
+
+.save-area {
+    display: none;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eee;
+}
+
+
+/* SAVE BUTTON */
+
+.save-btn {
+    border: none;
+
+    background: #12A866;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+.save-btn:hover {
+    background: #0d8e57;
+}
+
+
+/* CANCEL */
+
+.cancel-btn {
+    border: 1px solid #ddd;
+
+    background: white;
+
+    color: #555;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+.cancel-btn:hover {
+    background: #f5f5f5;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .dashboard {
+        padding: 20px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-top {
+        align-items: flex-start;
+    }
+
+    .profile-photo {
+        width: 75px;
+        height: 75px;
+    }
+
+    .profile-photo i {
+        font-size: 28px;
+    }
+
+    .student-name h2 {
+        font-size: 20px;
+    }
+
+    .information-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+.panel{
+    width: 40vh;
+}
+.dashboard{
+    margin-left: 43vh;
+}
+.panel.collapsed{
+    width: 50px;
+    transition: all 2s ease;
+    .heading h2{
+        display: none;
+    }
+    .link{
+        display: none;
+    }
+}
+.dashboard.reverse{
+    margin-left: 75px;
+    transition: all 2s ease;
+}
+
+
+/* =========================================================
+   PROFESSIONAL PROFILE RESPONSIVE DESIGN
+   ========================================================= */
+
+
+/* =========================
+   NORMAL MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+    }
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 58px;
+        height: 100vh;
+        padding: 5px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+    .heading {
+        width: 100%;
+        height: 55px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .heading h2 {
+        display: none;
+    }
+
+    .heading i {
+        font-size: 1rem;
+        padding: 7px;
+        margin: 0;
+    }
+
+    .panel a {
+        width: 100%;
+        height: 43px;
+        padding: 9px 3px;
+        margin-bottom: 3px;
+        box-sizing: border-box;
+        font-size: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .panel a i {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    /* MAIN CONTAINER */
+
+    .container {
+        width: calc(100% - 68px);
+        margin-left: 68px;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .container.reverse {
+        margin-left: 68px;
+    }
+
+    /* PROFILE HEADER */
+
+    .navbar {
+        width: 100%;
+        height: 70px;
+        padding: 8px 10px;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    .navbar h1 {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+
+    .navbar p {
+        font-size: .65rem;
+        margin-top: 4px;
+    }
+
+    /* PROFILE INFORMATION */
+
+    .info {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin-top: 8px;
+        padding: 12px 9px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* PROFILE IMAGE */
+
+    .profile-pic {
+        position: relative;
+        width: 105px;
+        height: 105px;
+        margin: 0 auto 8px;
+        flex-shrink: 0;
+        border: 3px solid #D9E2EC;
+    }
+
+    /* INFORMATION */
+
+    .info pre {
+        width: 100%;
+        min-height: 30px;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 7px 8px;
+        font-family: inherit;
+        font-size: .68rem;
+        line-height: 1.35;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        border-left: 2px solid #D9E2EC;
+        border-bottom: 1px solid #D9E2EC;
+        border-radius: 6px;
+    }
+
+    /* ADDRESSES */
+
+    .info pre:nth-last-child(2),
+    .info pre:last-child {
+        line-height: 1.45;
+        padding: 8px;
+    }
+
+    /* BUTTONS */
+
+    .changes {
+        width: 100%;
+        height: 48px;
+        margin-top: 9px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .changes button {
+        width: 90px;
+        height: 36px;
+        font-size: .72rem;
+        border-radius: 8px;
+    }
+}
+
+
+/* =========================================================
+   CHROME MOBILE - DESKTOP SITE
+   ========================================================= */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+    }
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 190px;
+        height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow-y: auto;
+        transition: width .3s ease;
+    }
+
+    .heading {
+        width: 90%;
+        height: 75px;
+        padding: 10px;
+    }
+
+    .heading h2 {
+        display: block;
+        font-size: 1.05rem;
+    }
+
+    .heading i {
+        font-size: .9rem;
+        padding: 7px;
+    }
+
+    .panel a {
+        font-size: .78rem;
+        padding: 10px 8px;
+        margin-bottom: 3px;
+    }
+
+    .panel i {
+        font-size: .9rem;
+        margin-right: 8px;
+    }
+
+    /* MAIN AREA */
+
+    .container {
+        width: calc(100% - 210px);
+        margin-left: 210px;
+        min-height: 100vh;
+        box-sizing: border-box;
+        transition: margin-left .3s ease;
+    }
+
+    /* SIDEBAR COLLAPSE */
+
+    .panel.collapsed {
+        width: 58px;
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: none;
+    }
+
+    .panel.collapsed .link {
+        display: none;
+    }
+
+    .container.reverse {
+        width: calc(100% - 78px);
+        margin-left: 78px;
+    }
+
+    /* PROFILE HEADER */
+
+    .navbar {
+        width: 100%;
+        height: 80px;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        border-radius: 12px;
+    }
+
+    .navbar h1 {
+        font-size: 1.25rem;
+    }
+
+    .navbar p {
+        font-size: .75rem;
+        margin-top: 4px;
+    }
+
+    /* PROFILE CARD */
+
+    .info {
+        width: calc(100% - 24px);
+        min-height: 400px;
+        height: auto;
+        margin: 12px;
+        padding: 18px;
+        box-sizing: border-box;
+        border-radius: 12px;
+
+        display: grid;
+        grid-template-columns: 150px minmax(0, 1fr);
+        column-gap: 18px;
+        row-gap: 7px;
+        align-items: start;
+    }
+
+    /* PROFILE PHOTO */
+
+    .profile-pic {
+        position: relative;
+        grid-column: 1;
+        grid-row: 1 / span 9;
+
+        width: 135px;
+        height: 135px;
+        margin: 5px auto 0;
+
+        border: 3px solid #D9E2EC;
+    }
+
+    /* INFORMATION TEXT */
+
+    .info pre {
+        grid-column: 2;
+
+        width: 100%;
+        min-height: 31px;
+        box-sizing: border-box;
+
+        margin: 0;
+        padding: 6px 9px;
+
+        font-family: inherit;
+        font-size: .78rem;
+        line-height: 1.35;
+
+        white-space: normal;
+        overflow-wrap: anywhere;
+
+        border-left: 2px solid #D9E2EC;
+        border-bottom: 1px solid #D9E2EC;
+        border-radius: 6px;
+    }
+
+    /* ADDRESS ROWS */
+
+    .info pre:nth-last-child(2),
+    .info pre:last-child {
+        grid-column: 1 / -1;
+        line-height: 1.45;
+        padding: 8px 10px;
+    }
+
+    /* BUTTONS */
+
+    .changes {
+        width: calc(100% - 24px);
+        height: 55px;
+        margin: 0 12px 12px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .changes button {
+        width: 100px;
+        height: 38px;
+        font-size: .78rem;
+        border-radius: 9px;
+    }
+
+    .info pre:nth-last-child(2),
+    .info pre:last-child {
+        grid-column: 2;
+        width: 100%;
+        min-height: 31px;
+        margin: 0;
+        padding: 6px 9px;
+        font-size: .78rem;
+        line-height: 1.35;
+        box-sizing: border-box;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        border-left: 2px solid #D9E2EC;
+        border-bottom: 1px solid #D9E2EC;
+        border-radius: 6px;
+    }
+}
+
+
+
+
+/* =========================================================
+   EXTRA PROFILE RESPONSIVE + VISUAL CSS
+   Add this at the very bottom of profile.css
+   Do not remove existing CSS
+   ========================================================= */
+
+
+/* ---------- GENERAL VISUAL ---------- */
+
+.profile-header,
+.profile-card,
+.information-box,
+.contact-box {
+    transition: all 0.25s ease;
+}
+
+.profile-header {
+    box-shadow: 0 4px 12px rgba(18, 53, 91, 0.05);
+}
+
+.profile-card {
+    box-shadow: 0 5px 18px rgba(18, 53, 91, 0.07);
+}
+
+.information-box:hover,
+.contact-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(18, 53, 91, 0.08);
+}
+
+
+/* ---------- PROFILE PHOTO ---------- */
+
+.profile-photo {
+    flex-shrink: 0;
+}
+
+.change-photo {
+    transition: all 0.2s ease;
+}
+
+.change-photo:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+#editBtn,
+.save-btn,
+.cancel-btn {
+    transition: all 0.2s ease;
+}
+
+#editBtn:hover,
+.save-btn:hover {
+    transform: translateY(-2px);
+}
+
+.cancel-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ---------- DESKTOP ---------- */
+
+@media (min-width: 1101px) {
+
+    .dashboard {
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .profile-header,
+    .profile-card {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profile-header {
+        margin-bottom: 20px;
+    }
+
+    .profile-card {
+        box-sizing: border-box;
+    }
+
+    .profile-top {
+        min-width: 0;
+    }
+
+    .student-name {
+        min-width: 0;
+    }
+
+    .information-box,
+    .contact-box {
+        min-width: 0;
+    }
+
+    .information-box input,
+    .contact-box input {
+        min-width: 0;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    .dashboard {
+        margin-left: 200px;
+        width: calc(100% - 210px);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .profile-header {
+        height: 85px;
+        padding: 0 18px;
+        margin-bottom: 15px;
+    }
+
+    .profile-title h1 {
+        font-size: 25px;
+    }
+
+    .profile-title p {
+        font-size: 12px;
+    }
+
+    .profile-card {
+        padding: 22px;
+        box-sizing: border-box;
+    }
+
+    .profile-photo {
+        width: 110px;
+        height: 110px;
+    }
+
+    .profile-photo i {
+        font-size: 34px;
+    }
+
+    .student-name h2 {
+        font-size: 22px;
+    }
+
+    .information-grid,
+    .contact-grid {
+        gap: 10px;
+    }
+
+    .information-box,
+    .contact-box {
+        padding: 12px;
+    }
+}
+
+
+/* =========================================================
+   NORMAL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 58px;
+        height: 100vh;
+        padding: 4px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+    .heading {
+        width: 100%;
+        height: 58px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .heading h2 {
+        display: none;
+    }
+
+    .heading i {
+        margin: 0;
+        font-size: 0.95rem;
+        padding: 6px;
+    }
+
+    .panel a {
+        width: 100%;
+        height: 42px;
+        padding: 9px 3px;
+        margin-bottom: 3px;
+        box-sizing: border-box;
+        font-size: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .panel a i {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+
+    /* MAIN AREA */
+
+    .dashboard {
+        margin-left: 58px;
+        width: calc(100% - 58px);
+        padding: 7px;
+        box-sizing: border-box;
+    }
+
+
+    /* PROFILE HEADER */
+
+    .profile-header {
+        width: 100%;
+        height: auto;
+        min-height: 82px;
+        padding: 13px;
+        margin-bottom: 10px;
+        border-radius: 11px;
+        box-sizing: border-box;
+
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .profile-title {
+        min-width: 0;
+    }
+
+    .profile-title h1 {
+        font-size: 19px;
+        line-height: 1.2;
+    }
+
+    .profile-title p {
+        font-size: 9px;
+        margin-top: 4px;
+        line-height: 1.3;
+    }
+
+    .profile-status {
+        flex-shrink: 0;
+        padding: 6px 8px;
+        border-radius: 15px;
+        font-size: 8px;
+    }
+
+    .profile-status i {
+        font-size: 6px;
+        margin-right: 3px;
+    }
+
+
+    /* PROFILE CARD */
+
+    .profile-card {
+        width: 100%;
+        padding: 13px;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+
+    /* PROFILE TOP */
+
+    .profile-top {
+        gap: 12px;
+        padding-bottom: 15px;
+        align-items: center;
+    }
+
+
+    /* PROFILE PHOTO */
+
+    .profile-photo {
+        width: 75px;
+        height: 75px;
+        border-width: 3px;
+    }
+
+    .profile-photo i {
+        font-size: 25px;
+    }
+
+    .change-photo {
+        margin-top: 7px;
+        font-size: 8px;
+    }
+
+
+    /* STUDENT NAME */
+
+    .student-name {
+        min-width: 0;
+    }
+
+    .student-name h2 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .student-name p {
+        font-size: 9px;
+        margin-bottom: 5px;
+    }
+
+    .student-name p i {
+        margin-right: 3px;
+    }
+
+    .student-name > span {
+        padding: 4px 7px;
+        font-size: 8px;
+    }
+
+
+    /* EDIT BUTTON */
+
+    .edit-area {
+        margin-top: 12px;
+    }
+
+    #editBtn {
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+
+
+    /* SECTION TITLES */
+
+    .section-title {
+        gap: 7px;
+        margin-top: 20px;
+        margin-bottom: 12px;
+    }
+
+    .section-title i {
+        font-size: 13px;
+    }
+
+    .section-title h3 {
+        font-size: 14px;
+    }
+
+
+    /* INFORMATION */
+
+    .information-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .information-box {
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .information-box p {
+        font-size: 9px;
+        margin-bottom: 5px;
+    }
+
+    .information-box input {
+        font-size: 11px;
+    }
+
+    .information-box input:not(:disabled) {
+        padding: 6px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .contact-box {
+        padding: 10px;
+        gap: 10px;
+        border-radius: 8px;
+    }
+
+    .contact-box > i {
+        width: 32px;
+        height: 32px;
+        border-radius: 7px;
+        font-size: 12px;
+    }
+
+    .contact-box p {
+        font-size: 9px;
+        margin-bottom: 4px;
+    }
+
+    .contact-box input {
+        font-size: 10px;
+    }
+
+    .contact-box input:not(:disabled) {
+        padding: 6px;
+    }
+
+
+    /* SAVE AREA */
+
+    .save-area {
+        margin-top: 20px;
+        padding-top: 14px;
+        gap: 7px;
+    }
+
+    .save-btn,
+    .cancel-btn {
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .panel {
+        width: 52px;
+    }
+
+    .dashboard {
+        margin-left: 52px;
+        width: calc(100% - 52px);
+        padding: 5px;
+    }
+
+    .panel a {
+        height: 39px;
+    }
+
+    .panel a i {
+        font-size: 0.9rem;
+    }
+
+
+    .profile-header {
+        min-height: 72px;
+        padding: 10px;
+    }
+
+    .profile-title h1 {
+        font-size: 16px;
+    }
+
+    .profile-title p {
+        font-size: 8px;
+    }
+
+    .profile-status {
+        padding: 5px 6px;
+        font-size: 7px;
+    }
+
+
+    .profile-card {
+        padding: 10px;
+    }
+
+    .profile-top {
+        gap: 9px;
+    }
+
+    .profile-photo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .profile-photo i {
+        font-size: 22px;
+    }
+
+    .change-photo {
+        font-size: 7px;
+    }
+
+    .student-name h2 {
+        font-size: 16px;
+    }
+
+    .student-name p {
+        font-size: 8px;
+    }
+
+    .student-name > span {
+        font-size: 7px;
+        padding: 3px 5px;
+    }
+
+
+    .section-title {
+        margin-top: 16px;
+        margin-bottom: 9px;
+    }
+
+    .section-title h3 {
+        font-size: 12px;
+    }
+
+    .section-title i {
+        font-size: 11px;
+    }
+
+
+    .information-box,
+    .contact-box {
+        padding: 8px;
+    }
+
+    .information-box p,
+    .contact-box p {
+        font-size: 8px;
+    }
+
+    .information-box input,
+    .contact-box input {
+        font-size: 9px;
+    }
+
+    .contact-box > i {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP SITE ON PHONE
+   ========================================================= */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 190px;
+        height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .heading {
+        width: 100%;
+        height: 70px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .heading h2 {
+        display: block;
+        font-size: 1.05rem;
+    }
+
+    .heading i {
+        font-size: 0.9rem;
+        padding: 6px;
+        margin: 0;
+    }
+
+    .panel a {
+        font-size: 0.78rem;
+        padding: 9px 7px;
+        margin-bottom: 3px;
+    }
+
+    .panel a i {
+        font-size: 0.85rem;
+        margin-right: 7px;
+    }
+
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+
+    /* HEADER */
+
+    .profile-header {
+        height: 75px;
+        padding: 10px 14px;
+        margin-bottom: 12px;
+    }
+
+    .profile-title h1 {
+        font-size: 23px;
+    }
+
+    .profile-title p {
+        font-size: 11px;
+    }
+
+    .profile-status {
+        font-size: 10px;
+        padding: 7px 10px;
+    }
+
+
+    /* PROFILE CARD */
+
+    .profile-card {
+        padding: 20px;
+        border-radius: 13px;
+    }
+
+    .profile-photo {
+        width: 105px;
+        height: 105px;
+    }
+
+    .profile-photo i {
+        font-size: 32px;
+    }
+
+    .student-name h2 {
+        font-size: 21px;
+    }
+
+    .student-name p {
+        font-size: 11px;
+    }
+
+    .student-name > span {
+        font-size: 9px;
+    }
+
+
+    /* INFORMATION GRID */
+
+    .information-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .information-box {
+        padding: 11px;
+    }
+
+    .information-box p {
+        font-size: 9px;
+    }
+
+    .information-box input {
+        font-size: 11px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .contact-box {
+        padding: 11px;
+    }
+
+    .contact-box p {
+        font-size: 9px;
+    }
+
+    .contact-box input {
+        font-size: 10px;
+    }
+
+
+    /* COLLAPSED SIDEBAR */
+
+    .panel.collapsed {
+        width: 58px;
+    }
+
+    .panel.collapsed .heading h2,
+    .panel.collapsed .link {
+        display: none;
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .panel.collapsed .heading i {
+        margin: 0;
+    }
+
+    .dashboard.reverse {
+        margin-left: 78px;
+        width: calc(100% - 78px);
+    }
+}
+
+
+/* ---------- FINAL SAFETY ---------- */
+
+@media (max-width: 1100px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .profile-card,
+    .profile-header {
+        max-width: 100%;
+    }
+}

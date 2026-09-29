@@ -1,0 +1,1143 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: border-box;
+}
+body{
+    background-color: #E8EEF6;
+}
+.panel{
+    display:flex;
+    flex-direction: column;
+    height: 182vh;
+    width: 40vh;
+    padding: 10px;
+    background-color: #12355B;
+    color: white;
+    position:absolute;
+}
+.heading{
+    display: flex;
+    height: 100px;
+    width: 90%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.heading i{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.panel a{
+    font-size: 1.2rem;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.5rem;
+    display: block;
+    transition: all 0.25s ease;
+    border-radius: 8px;
+}
+a:hover{
+    background-color: #1E4A78;
+    color: #ffffff;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+a:active{
+    background-color: #FFE8A3;
+    color: #12355B;
+}
+.panel i{
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.dashboard{
+
+    margin-left: 43vh;
+
+    padding: 10px;
+
+    transition: 0.3s;
+
+}
+
+/* HEADER */
+
+.setting-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 2px solid #D9E2EC;
+    border-radius: 1rem;
+    padding: 0 15px 0 15px;
+}
+
+.setting-header h1 {
+    color: #12355B;
+    font-size: 30px;
+}
+
+.setting-header p {
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+.setting-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #e5edff;
+    color: #1976E8;
+
+    font-size: 21px;
+}
+
+
+/* CONTAINER */
+
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* SECTION */
+
+.settings-section {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+
+/* SECTION TITLE */
+
+.settings-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding-bottom: 18px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.title-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+}
+
+.account-icon {
+    background: #e5edff;
+    color: #1976E8;
+}
+
+.notification-icon {
+    background: #eee8ff;
+    color: #6C4CE8;
+}
+
+.appearance-icon {
+    background: #fff1df;
+    color: #F28C00;
+}
+
+.privacy-icon {
+    background: #e4f8ef;
+    color: #12A866;
+}
+
+.settings-title h2 {
+    color: #12355B;
+    font-size: 19px;
+}
+
+.settings-title p {
+    color: #6b7280;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+
+/* SETTING ROW */
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.setting-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.setting-info h3 {
+    color: #12355B;
+    font-size: 15px;
+}
+
+.setting-info p {
+    color: #7a8089;
+    font-size: 13px;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+
+/* BUTTON */
+
+.setting-btn {
+    border: none;
+    background: #12355B;
+    color: white;
+
+    padding: 9px 16px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.setting-btn:hover {
+    background: #1976E8;
+}
+
+
+/* SWITCH */
+
+.switch {
+    position: relative;
+
+    width: 48px;
+    height: 25px;
+
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+
+    cursor: pointer;
+
+    inset: 0;
+
+    background: #d1d5db;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 19px;
+    height: 19px;
+
+    left: 3px;
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+    background: #1976E8;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(23px);
+}
+
+
+/* THEME SELECT */
+
+#themeSelect {
+    padding: 9px 35px 9px 12px;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    color: #12355B;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+
+/* ACTIONS */
+
+.settings-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.reset-btn,
+.save-btn {
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+.reset-btn {
+    background: #edf0f5;
+    color: #12355B;
+}
+
+.save-btn {
+    background: #12A866;
+    color: white;
+}
+
+.save-btn:hover {
+    background: #0d8c54;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .dashboard {
+        padding: 20px;
+    }
+
+    .setting-header {
+        align-items: flex-start;
+    }
+
+    .setting-header h1 {
+        font-size: 25px;
+    }
+
+    .setting-row {
+        align-items: flex-start;
+    }
+
+    .setting-btn {
+        padding: 8px 12px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .setting-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .setting-icon {
+        display: none;
+    }
+
+    .setting-row {
+        flex-direction: column;
+    }
+
+    .setting-btn,
+    #themeSelect {
+        width: 100%;
+    }
+
+    .settings-actions {
+        flex-direction: column;
+    }
+
+    .reset-btn,
+    .save-btn {
+        width: 100%;
+    }
+
+}
+
+.panel{
+    width: 40vh;
+}
+.dashboard{
+    margin-left: 43vh;
+}
+.panel.collapsed{
+    width: 50px;
+    transition: all 2s ease;
+    .heading h2{
+        display: none;
+    }
+    .link{
+        display: none;
+    }
+}
+.dashboard.reverse{
+    margin-left: 75px;
+    transition: all 2s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   EXTRA SETTINGS PAGE CSS
+   Add this at the very bottom of setting.css
+   ========================================================= */
+
+
+/* ---------- GENERAL IMPROVEMENT ---------- */
+
+.setting-header,
+.settings-section,
+.settings-actions {
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+}
+
+.setting-header,
+.settings-section,
+.settings-actions {
+    box-shadow: 0 5px 15px rgba(18, 53, 91, 0.07);
+}
+
+.settings-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px rgba(18, 53, 91, 0.12);
+}
+
+.setting-btn,
+.reset-btn,
+.save-btn {
+    transition: all 0.25s ease;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1101px) {
+
+    .dashboard {
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .setting-header,
+    .settings-container,
+    .settings-actions {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .setting-header {
+        margin-bottom: 25px;
+    }
+
+    .settings-actions {
+        margin-top: 20px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    .dashboard {
+        margin-left: 200px;
+        width: calc(100% - 210px);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+
+    /* HEADER */
+
+    .setting-header {
+        height: 85px;
+        padding: 0 15px;
+        margin-bottom: 15px;
+    }
+
+    .setting-header h1 {
+        font-size: 24px;
+    }
+
+    .setting-header p {
+        font-size: 11px;
+    }
+
+    .setting-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+
+    /* SECTIONS */
+
+    .settings-container {
+        gap: 15px;
+    }
+
+    .settings-section {
+        padding: 18px;
+    }
+
+    .settings-title {
+        gap: 12px;
+        padding-bottom: 14px;
+    }
+
+    .title-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
+
+    .settings-title h2 {
+        font-size: 16px;
+    }
+
+    .settings-title p {
+        font-size: 11px;
+    }
+
+
+    /* ROWS */
+
+    .setting-row {
+        padding: 15px 0;
+        gap: 13px;
+    }
+
+    .setting-info h3 {
+        font-size: 13px;
+    }
+
+    .setting-info p {
+        font-size: 11px;
+    }
+
+    .setting-btn {
+        padding: 8px 13px;
+        font-size: 11px;
+    }
+
+    #themeSelect {
+        padding: 8px 30px 8px 10px;
+        font-size: 11px;
+    }
+
+    .switch {
+        width: 44px;
+        height: 23px;
+    }
+
+
+    /* ACTIONS */
+
+    .settings-actions {
+        padding: 16px;
+    }
+
+    .reset-btn,
+    .save-btn {
+        padding: 9px 16px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   NORMAL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 58px;
+        height: 100vh;
+        padding: 4px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+    .heading {
+        width: 100%;
+        height: 58px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .heading h2 {
+        display: none;
+    }
+
+    .heading i {
+        margin: 0;
+        font-size: 0.95rem;
+        padding: 6px;
+    }
+
+    .panel a {
+        width: 100%;
+        height: 42px;
+        padding: 9px 3px;
+        margin-bottom: 3px;
+        box-sizing: border-box;
+        font-size: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .panel a i {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 58px;
+        width: calc(100% - 58px);
+        padding: 7px;
+        box-sizing: border-box;
+    }
+
+
+    /* HEADER */
+
+    .setting-header {
+        width: 100%;
+        height: auto;
+        min-height: 80px;
+        padding: 12px;
+        margin-bottom: 12px;
+        border-radius: 11px;
+        box-sizing: border-box;
+    }
+
+    .setting-header h1 {
+        font-size: 19px;
+    }
+
+    .setting-header p {
+        font-size: 9px;
+        margin-top: 4px;
+    }
+
+    .setting-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+
+    /* SECTIONS */
+
+    .settings-container {
+        gap: 9px;
+    }
+
+    .settings-section {
+        width: 100%;
+        padding: 12px;
+        border-radius: 11px;
+        box-sizing: border-box;
+    }
+
+    .settings-title {
+        gap: 9px;
+        padding-bottom: 11px;
+    }
+
+    .title-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        font-size: 12px;
+    }
+
+    .settings-title h2 {
+        font-size: 13px;
+    }
+
+    .settings-title p {
+        font-size: 8px;
+        margin-top: 3px;
+    }
+
+
+    /* ROWS */
+
+    .setting-row {
+        padding: 12px 0;
+        gap: 9px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .setting-info {
+        width: 100%;
+    }
+
+    .setting-info h3 {
+        font-size: 11px;
+    }
+
+    .setting-info p {
+        font-size: 9px;
+        margin-top: 3px;
+        line-height: 1.4;
+    }
+
+    .setting-btn,
+    #themeSelect {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .setting-btn {
+        padding: 8px;
+        font-size: 9px;
+    }
+
+    #themeSelect {
+        padding: 8px 10px;
+        font-size: 9px;
+    }
+
+    .switch {
+        align-self: flex-end;
+        width: 42px;
+        height: 22px;
+    }
+
+    .slider::before {
+        width: 16px;
+        height: 16px;
+    }
+
+    .switch input:checked + .slider::before {
+        transform: translateX(20px);
+    }
+
+
+    /* ACTIONS */
+
+    .settings-actions {
+        width: 100%;
+        padding: 12px;
+        border-radius: 11px;
+        box-sizing: border-box;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .reset-btn,
+    .save-btn {
+        width: 100%;
+        padding: 9px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .panel {
+        width: 52px;
+    }
+
+    .dashboard {
+        margin-left: 52px;
+        width: calc(100% - 52px);
+        padding: 5px;
+    }
+
+    .panel a {
+        height: 39px;
+    }
+
+    .panel a i {
+        font-size: 0.9rem;
+    }
+
+
+    .setting-header {
+        min-height: 70px;
+        padding: 9px;
+    }
+
+    .setting-header h1 {
+        font-size: 16px;
+    }
+
+    .setting-header p {
+        font-size: 8px;
+    }
+
+    .setting-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+
+    .settings-section {
+        padding: 9px;
+    }
+
+    .title-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+    }
+
+    .settings-title h2 {
+        font-size: 12px;
+    }
+
+    .settings-title p {
+        font-size: 7px;
+    }
+
+
+    .setting-info h3 {
+        font-size: 10px;
+    }
+
+    .setting-info p {
+        font-size: 8px;
+    }
+
+    .setting-btn,
+    #themeSelect {
+        padding: 7px;
+        font-size: 8px;
+    }
+
+    .switch {
+        width: 38px;
+        height: 20px;
+    }
+
+    .slider::before {
+        width: 14px;
+        height: 14px;
+    }
+
+    .switch input:checked + .slider::before {
+        transform: translateX(18px);
+    }
+
+
+    .settings-actions {
+        padding: 9px;
+        gap: 6px;
+    }
+
+    .reset-btn,
+    .save-btn {
+        padding: 8px;
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP SITE ON PHONE
+   ========================================================= */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 190px;
+        height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .heading {
+        width: 100%;
+        height: 70px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .heading h2 {
+        display: block;
+        font-size: 1.05rem;
+    }
+
+    .heading i {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    .panel a {
+        font-size: 0.78rem;
+        padding: 9px 7px;
+        margin-bottom: 3px;
+    }
+
+    .panel a i {
+        font-size: 0.85rem;
+        margin-right: 7px;
+    }
+
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+
+    /* HEADER */
+
+    .setting-header {
+        height: 75px;
+        padding: 10px 14px;
+        margin-bottom: 12px;
+    }
+
+    .setting-header h1 {
+        font-size: 23px;
+    }
+
+    .setting-header p {
+        font-size: 10px;
+    }
+
+    .setting-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+
+    /* SECTIONS */
+
+    .settings-container {
+        gap: 12px;
+    }
+
+    .settings-section {
+        padding: 16px;
+    }
+
+    .settings-title {
+        gap: 12px;
+    }
+
+    .title-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .settings-title h2 {
+        font-size: 17px;
+    }
+
+    .settings-title p {
+        font-size: 9px;
+    }
+
+
+    /* ROWS */
+
+    .setting-row {
+        padding: 15px 0;
+    }
+
+    .setting-info h3 {
+        font-size: 13px;
+    }
+
+    .setting-info p {
+        font-size: 10px;
+    }
+
+    .setting-btn {
+        padding: 8px 13px;
+        font-size: 10px;
+    }
+
+    #themeSelect {
+        padding: 8px 30px 8px 10px;
+        font-size: 10px;
+    }
+
+
+    /* ACTIONS */
+
+    .settings-actions {
+        padding: 16px;
+    }
+
+    .reset-btn,
+    .save-btn {
+        padding: 9px 15px;
+        font-size: 11px;
+    }
+
+
+    /* COLLAPSED SIDEBAR */
+
+    .panel.collapsed {
+        width: 58px;
+    }
+
+    .panel.collapsed .heading h2,
+    .panel.collapsed .link {
+        display: none;
+    }
+
+    .panel.collapsed .heading {
+        justify-content: center;
+    }
+
+    .panel.collapsed .heading i {
+        margin: 0;
+    }
+
+    .dashboard.reverse {
+        margin-left: 78px;
+        width: calc(100% - 78px);
+    }
+}
+
+
+/* ---------- FINAL OVERFLOW SAFETY ---------- */
+
+@media (max-width: 1100px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .setting-header,
+    .settings-container,
+    .settings-actions {
+        max-width: 100%;
+    }
+}

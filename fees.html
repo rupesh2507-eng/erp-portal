@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Fees</title>
+    <link rel="stylesheet" href="fees.css">
+</head>
+<body>
+    <div class="panel">
+        <div class="heading">
+            <h2>Student ERP</h2>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <a href="dashboard.html" class="link"><i class="fa-regular fa-house"></i>Dashboard</a>
+        <a href="profile.html" class="link"><i class="fa-regular fa-circle-user"></i>Profile</a>
+        <a href="attandance.html" class="link"><i class="fa-regular fa-calendar-days"></i>Attandane Record</a>
+        <a href="punch.html" class="link"><i class="fa-regular fa-clock"></i>Daily Punch Record</a>
+        <a href="courses.html" class="link"><i class="fa-solid fa-book-open"></i>Courses</a>
+        <a href="result.html" class="link"><i class="fa-regular fa-calendar"></i>Time Table</a>
+        <a href="result.html" class="link"><i class="fa-solid fa-chart-simple"></i>Results</a>
+        <a href="fees.html" class="link"><i class="fa-solid fa-wallet"></i>Fees</a>
+        <a href="notices.html" class="link"><i class="fa-regular fa-bell"></i>Notices</a>
+        <a href="setting.html" class="link"><i class="fa-solid fa-gear"></i></i>Setting</a>
+    </div>
+
+    <div class="dashboard">
+
+        <!-- HEADER -->
+
+        <div class="fees-header">
+
+            <div>
+                <h1>Fees & Payments</h1>
+                <p>View your fee details and payment history</p>
+            </div>
+
+            <div class="academic-year">
+                <i class="fa-solid fa-calendar"></i>
+                Academic Year 2026-27
+            </div>
+
+        </div>
+
+
+        <!-- SUMMARY CARDS -->
+
+        <div class="fees-summary">
+
+            <div class="fees-card">
+
+                <div class="fees-icon total">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+
+                <div>
+                    <p>Total Fees</p>
+                    <h2 id="totalAmount">₹0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="fees-card">
+
+                <div class="fees-icon paid">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+                    <p>Paid Amount</p>
+                    <h2 id="paidAmount">₹0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="fees-card">
+
+                <div class="fees-icon pending">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div>
+                    <p>Pending Amount</p>
+                    <h2 id="pendingAmount">₹0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="fees-card">
+
+                <div class="fees-icon progress">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+
+                <div>
+                    <p>Payment Progress</p>
+                    <h2 id="paymentPercentage">0%</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PAYMENT PROGRESS -->
+
+        <div class="payment-progress">
+
+            <div class="progress-heading">
+
+                <div>
+                    <h2>Fee Payment Progress</h2>
+                    <p>Overall payment status for this academic year</p>
+                </div>
+
+                <strong id="progressPercentage">0%</strong>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill" id="progressFill"></div>
+
+            </div>
+
+            <div class="progress-info">
+
+                <span id="progressPaid">Paid: ₹0</span>
+
+                <span id="progressRemaining">Remaining: ₹0</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- FEE BREAKDOWN -->
+
+        <div class="fees-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Fee Breakdown</h2>
+                    <p>Details of your current academic fees</p>
+                </div>
+
+            </div>
+
+
+            <div class="fee-table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Fee Type</th>
+                            <th>Total Amount</th>
+                            <th>Paid</th>
+                            <th>Pending</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                Tuition Fees
+                            </td>
+
+                            <td>₹60,000</td>
+
+                            <td>₹40,000</td>
+
+                            <td>₹20,000</td>
+
+                            <td>
+                                <span class="status pending-status">
+                                    Pending
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-building"></i>
+                                Hostel Fees
+                            </td>
+
+                            <td>₹20,000</td>
+
+                            <td>₹10,000</td>
+
+                            <td>₹10,000</td>
+
+                            <td>
+                                <span class="status pending-status">
+                                    Pending
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-book"></i>
+                                Examination Fees
+                            </td>
+
+                            <td>₹5,000</td>
+
+                            <td>₹0</td>
+
+                            <td>₹5,000</td>
+
+                            <td>
+                                <span class="status pending-status">
+                                    Pending
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- PAYMENT HISTORY -->
+
+        <div class="fees-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Payment History</h2>
+                    <p>Your recent fee transactions</p>
+                </div>
+
+            </div>
+
+
+            <div class="payment-table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Date</th>
+                            <th>Fee Type</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>#TXN10245</td>
+
+                            <td>10 Sep 2026</td>
+
+                            <td>Tuition Fees</td>
+
+                            <td>₹25,000</td>
+
+                            <td>
+                                <span class="status paid-status">
+                                    Paid
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>#TXN09872</td>
+
+                            <td>15 Aug 2026</td>
+
+                            <td>Tuition Fees</td>
+
+                            <td>₹15,000</td>
+
+                            <td>
+                                <span class="status paid-status">
+                                    Paid
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>#TXN09124</td>
+
+                            <td>05 Aug 2026</td>
+
+                            <td>Hostel Fees</td>
+
+                            <td>₹10,000</td>
+
+                            <td>
+                                <span class="status paid-status">
+                                    Paid
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- NEXT PAYMENT -->
+
+        <div class="next-payment">
+
+            <div class="next-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div class="next-details">
+
+                <p>Next Payment Due</p>
+
+                <h2>₹35,000</h2>
+
+                <span>
+                    Due Date: 30 September 2026
+                </span>
+
+            </div>
+
+            <button class="pay-btn">
+                <i class="fa-solid fa-credit-card"></i>
+                Pay Fees
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="fees.js"></script>
+</body>
+</html>
