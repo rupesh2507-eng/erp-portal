@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Notices</title>
+    <link rel="stylesheet" href="notices.css">
+</head>
+<body>
+    <div class="panel">
+        <div class="heading">
+            <h2>Student ERP</h2>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <a href="dashboard.html" class="link"><i class="fa-regular fa-house"></i>Dashboard</a>
+        <a href="profile.html" class="link"><i class="fa-regular fa-circle-user"></i>Profile</a>
+        <a href="attandance.html" class="link"><i class="fa-regular fa-calendar-days"></i>Attandane Record</a>
+        <a href="punch.html" class="link"><i class="fa-regular fa-clock"></i>Daily Punch Record</a>
+        <a href="courses.html" class="link"><i class="fa-solid fa-book-open"></i>Courses</a>
+        <a href="result.html" class="link"><i class="fa-regular fa-calendar"></i>Time Table</a>
+        <a href="result.html" class="link"><i class="fa-solid fa-chart-simple"></i>Results</a>
+        <a href="fees.html" class="link"><i class="fa-solid fa-wallet"></i>Fees</a>
+        <a href="notices.html" class="link"><i class="fa-regular fa-bell"></i>Notices</a>
+        <a href="setting.html" class="link"><i class="fa-solid fa-gear"></i></i>Setting</a>
+    </div>
+
+    <div class="dashboard">
+
+        <!-- HEADER -->
+
+        <div class="notices-header">
+
+            <div>
+                <h1>Notices</h1>
+                <p>Latest announcements and important updates</p>
+            </div>
+
+            <div class="notice-date">
+                <i class="fa-regular fa-calendar"></i>
+                September 2026
+            </div>
+
+        </div>
+
+
+        <!-- NOTICE SUMMARY -->
+
+        <div class="notice-summary">
+
+            <div class="notice-card">
+
+                <div class="notice-icon important">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>
+
+                <div>
+                    <p>Important Notices</p>
+                    <h2>3</h2>
+                </div>
+
+            </div>
+
+
+            <div class="notice-card">
+
+                <div class="notice-icon academic">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <div>
+                    <p>Academic</p>
+                    <h2>4</h2>
+                </div>
+
+            </div>
+
+
+            <div class="notice-card">
+
+                <div class="notice-icon event">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <div>
+                    <p>Events</p>
+                    <h2>2</h2>
+                </div>
+
+            </div>
+
+
+            <div class="notice-card">
+
+                <div class="notice-icon total">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+
+                <div>
+                    <p>Total Notices</p>
+                    <h2 id="totalNotices">9</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NOTICE SECTION -->
+
+        <div class="notices-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Latest Notices</h2>
+                    <p>Important announcements for students</p>
+                </div>
+
+                <select id="noticeFilter">
+
+                    <option value="all">All Notices</option>
+                    <option value="important">Important</option>
+                    <option value="academic">Academic</option>
+                    <option value="event">Events</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- NOTICE 1 -->
+
+            <div class="notice-item" data-category="important">
+
+                <div class="notice-left">
+
+                    <div class="notice-main-icon important">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <div class="notice-content">
+
+                        <div class="notice-title">
+
+                            <h3>Mid Semester Examination Schedule</h3>
+
+                            <span class="notice-tag important-tag">
+                                Important
+                            </span>
+
+                        </div>
+
+                        <p>
+                            The mid semester examination schedule has been
+                            released. Students are advised to check the
+                            examination timetable.
+                        </p>
+
+                        <span class="notice-time">
+                            <i class="fa-regular fa-clock"></i>
+                            24 September 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button class="view-btn">
+                    View
+                </button>
+
+            </div>
+
+
+            <!-- NOTICE 2 -->
+
+            <div class="notice-item" data-category="academic">
+
+                <div class="notice-left">
+
+                    <div class="notice-main-icon academic">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <div class="notice-content">
+
+                        <div class="notice-title">
+
+                            <h3>Assignment Submission Reminder</h3>
+
+                            <span class="notice-tag academic-tag">
+                                Academic
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Students are requested to submit their pending
+                            assignments before the given deadline.
+                        </p>
+
+                        <span class="notice-time">
+                            <i class="fa-regular fa-clock"></i>
+                            23 September 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button class="view-btn">
+                    View
+                </button>
+
+            </div>
+
+
+            <!-- NOTICE 3 -->
+
+            <div class="notice-item" data-category="event">
+
+                <div class="notice-left">
+
+                    <div class="notice-main-icon event">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div class="notice-content">
+
+                        <div class="notice-title">
+
+                            <h3>Technical Fest 2026</h3>
+
+                            <span class="notice-tag event-tag">
+                                Event
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Registration for the upcoming technical fest
+                            is now open. Students can participate in various
+                            technical activities and competitions.
+                        </p>
+
+                        <span class="notice-time">
+                            <i class="fa-regular fa-clock"></i>
+                            22 September 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button class="view-btn">
+                    View
+                </button>
+
+            </div>
+
+
+            <!-- NOTICE 4 -->
+
+            <div class="notice-item" data-category="academic">
+
+                <div class="notice-left">
+
+                    <div class="notice-main-icon academic">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <div class="notice-content">
+
+                        <div class="notice-title">
+
+                            <h3>Attendance Requirement</h3>
+
+                            <span class="notice-tag academic-tag">
+                                Academic
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Students are reminded to maintain the required
+                            attendance percentage for appearing in examinations.
+                        </p>
+
+                        <span class="notice-time">
+                            <i class="fa-regular fa-clock"></i>
+                            20 September 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button class="view-btn">
+                    View
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="notices.js"></script>
+</body>
+</html>

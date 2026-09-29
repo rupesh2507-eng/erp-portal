@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student ERP Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-box">
+        <div class="container">
+            <h2>Welcome Back!</h2>
+            <p>Sign in to Login your Account</p>
+            <div class="form">
+                <form action="dashboard.html">
+                    <p>Select Role</p>
+                    <select required>
+                        <option value="">Select Role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Student">Student</option>
+                    </select>
+                    <p>Email</p>
+                    <input type="text" placeholder="Enter Your Email" required>
+                    <p>Password</p>
+                    <input type="password" placeholder="Enter Your Password" required><br>
+                    <label>
+                        <pre><input type="checkbox" class="remember">Remember me         <a href="forgot.html">Forgot Password?</a></pre>
+                    </label><br>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

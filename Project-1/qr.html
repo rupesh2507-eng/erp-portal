@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>QR</title>
+    <link rel="stylesheet" href="qr.css">
+</head>
+<body>
+    <div class="panel">
+        <div class="heading">
+            <h2>Student ERP</h2>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <a href="dashboard.html" class="link"><i class="fa-regular fa-house"></i>Dashboard</a>
+        <a href="profile.html" class="link"><i class="fa-regular fa-circle-user"></i>Profile</a>
+        <a href="attandance.html" class="link"><i class="fa-regular fa-calendar-days"></i>Attandane Record</a>
+        <a href="punch.html" class="link"><i class="fa-regular fa-clock"></i>Daily Punch Record</a>
+        <a href="courses.html" class="link"><i class="fa-solid fa-book-open"></i>Courses</a>
+        <a href="result.html" class="link"><i class="fa-regular fa-calendar"></i>Time Table</a>
+        <a href="result.html" class="link"><i class="fa-solid fa-chart-simple"></i>Results</a>
+        <a href="fees.html" class="link"><i class="fa-solid fa-wallet"></i>Fees</a>
+        <a href="notices.html" class="link"><i class="fa-regular fa-bell"></i>Notices</a>
+        <a href="setting.html" class="link"><i class="fa-solid fa-gear"></i></i>Setting</a>
+    </div>
+
+    <div class="dashboard">
+
+        <div class="navbar">
+            <div class="msg">
+                <h2>Pay Fees</h2>
+                <p>Complete your pending fee payment</p>
+            </div>
+
+            <a href="dashboard.html">
+                Dashboard
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </div>
+
+        <div class="payment-container">
+
+            <div class="payment-card">
+
+                <div class="payment-icon">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+
+                <h2>Pending Fees</h2>
+
+                <div class="amount">
+                    ₹35,000
+                </div>
+
+                <p class="due">
+                    <i class="fa-regular fa-calendar"></i>
+                    Due Date: 30 Sep 2026
+                </p>
+
+                <div class="show-qr">
+                    <div class="qr"></div>
+                </div>
+
+                <div class="msg">
+                    <p>Scan this QR to make the payment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="qr.js"></script>
+</body>
+</html>

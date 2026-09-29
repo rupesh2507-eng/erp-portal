@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="punch.css">
+    <title>Daily Punch Record</title>
+</head>
+<body>
+    <div class="panel">
+        <div class="heading">
+            <h2>Student ERP</h2>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <a href="dashboard.html" class="link"><i class="fa-regular fa-house"></i>Dashboard</a>
+        <a href="profile.html" class="link"><i class="fa-regular fa-circle-user"></i>Profile</a>
+        <a href="attandance.html" class="link"><i class="fa-regular fa-calendar-days"></i>Attandane Record</a>
+        <a href="punch.html" class="link"><i class="fa-regular fa-clock"></i>Daily Punch Record</a>
+        <a href="courses.html" class="link"><i class="fa-solid fa-book-open"></i>Courses</a>
+        <a href="table.html" class="link"><i class="fa-regular fa-calendar"></i>Time Table</a>
+        <a href="result.html" class="link"><i class="fa-solid fa-chart-simple"></i>Results</a>
+        <a href="fees.html" class="link"><i class="fa-solid fa-wallet"></i>Fees</a>
+        <a href="notices.html" class="link"><i class="fa-regular fa-bell"></i>Notices</a>
+        <a href="setting.html" class="link"><i class="fa-solid fa-gear"></i></i>Setting</a>
+    </div>
+
+    <div class="dashboard">
+
+        <!-- TOP SECTION -->
+
+        <div class="top">
+
+            <div class="title">
+                <h1>Daily Punch Record</h1>
+                <p>View your subject-wise daily punch record</p>
+            </div>
+
+            <div class="date-box">
+                <label for="date">Select Date</label>
+                <input type="date" id="date">
+            </div>
+
+        </div>
+
+
+        <!-- SUMMARY CARDS -->
+
+        <div class="summary">
+
+            <div class="summary-card">
+
+                <div class="summary-icon present">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div>
+                    <p>Present</p>
+                    <h2 id="presentCount">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon absent">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+                <div>
+                    <p>Absent</p>
+                    <h2 id="absentCount">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon total">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <div>
+                    <p>Total Classes</p>
+                    <h2 id="totalClasses">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon percentage">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+
+                <div>
+                    <p>Day Attendance</p>
+                    <h2 id="percentage">0%</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HOLIDAY MESSAGE -->
+
+        <div class="holiday" id="holiday">
+
+            <i class="fa-solid fa-umbrella-beach"></i>
+
+            <div>
+                <h3>Holiday</h3>
+
+                <p>
+                    Can't track Daily Punch Record because of Holiday.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- PUNCH RECORD -->
+
+        <div class="punch-container">
+
+            <div class="punch-heading">
+
+                <div>
+                    <h2>Subject Wise Punch</h2>
+
+                    <p id="selectedDate">
+                        Select a date to view your record
+                    </p>
+                </div>
+
+                <span id="dayStatus">--</span>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Subject</th>
+                            <th>Time</th>
+                            <th>Room</th>
+                            <th>Punch In</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="punchTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="punch.js"></script>
+</body>
+</html>

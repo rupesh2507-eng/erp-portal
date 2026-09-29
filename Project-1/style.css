@@ -1,0 +1,397 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: border-box;
+}
+body{
+    background-image: url("back-img.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.login-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    height: 49vh;
+    width: 40vh;
+    border: 2px solid lightgray;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 8px 30px rgba(18, 53, 91, 0.25);
+    padding: 1.2rem;    
+    border-radius: 1rem;
+}
+.container h2{
+    color: #12355B;
+    font-size: 2rem;
+    padding: 5px;
+}
+.container p{
+    color: #343A40;
+    padding: 5px;
+}
+p{
+    color: #343A40;
+}
+form input,select,button,option{
+    min-width: 100%;
+    height: 2rem;
+    padding-left: 5px;
+    border: 1px solid lightgray;
+    border-radius: 0.75rem;
+}
+
+.remember{
+    min-width: 1%;
+    height:unset;
+    margin: 0.5rem;
+}
+label a{
+    text-decoration: none;
+    color: #12355B;
+}
+button{
+    background-color: #12355B;
+    color: white;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+button:hover{
+    background-color: #F4B942;
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+}
+pre{
+    font-size: 0.85rem;
+}
+
+
+
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+        height: auto;
+    }
+
+    .container h2 {
+        font-size: 1.6rem;
+    }
+
+    .container p {
+        font-size: 0.9rem;
+    }
+
+    form input,
+    select,
+    button {
+        width: 100%;
+    }
+
+    pre {
+        white-space: normal;
+        font-size: 0.75rem;
+    }
+}
+@media (max-width: 600px) {
+    pre {
+        font-size: 0.7rem;
+        white-space: normal;
+    }
+}
+@media (max-width: 600px) {
+
+    body {
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .container {
+        width: 80%;
+        height: auto;
+        padding: 15px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    pre {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        font-size: 0.7rem;
+    }
+
+    .remember {
+        min-width: 14px;
+        width: 14px;
+        height: 14px;
+        margin: 0 5px 0 0;
+    }
+
+    pre a {
+        font-size: 0.7rem;
+        margin-left: auto;
+    }
+}
+
+/* PHONE DESKTOP SITE FIX */
+
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .login-box {
+        min-height: 100vh;
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 80%;
+        height: auto;
+        max-width: 400px;
+        padding: 15px;
+        box-sizing: border-box;
+        border-radius: 1rem;
+    }
+
+    .container h2 {
+        font-size: 1.6rem;
+    }
+
+    .container p {
+        font-size: 0.9rem;
+    }
+
+    form input,
+    form select,
+    form button {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    pre {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        font-size: 0.7rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .remember {
+        min-width: 14px;
+        width: 14px;
+        height: 14px;
+        margin: 0 5px 0 0;
+    }
+
+    pre a {
+        font-size: 0.7rem;
+        margin-left: auto;
+    }
+}
+
+
+
+/* =================================================
+   EXTRA RESPONSIVE CSS - LOGIN PAGE
+   Add this at the bottom of your existing CSS
+   ================================================= */
+
+/* ---------- Better Desktop View ---------- */
+
+@media (min-width: 1101px) {
+
+    .container {
+        transition: all 0.3s ease;
+    }
+
+    .container:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(18, 53, 91, 0.30);
+    }
+
+    .container h2 {
+        letter-spacing: 0.5px;
+    }
+
+    form input,
+    select {
+        transition: all 0.2s ease;
+    }
+
+    form input:focus,
+    select:focus {
+        outline: none;
+        border-color: #12355B;
+        box-shadow: 0 0 0 2px rgba(18, 53, 91, 0.12);
+    }
+}
+
+
+/* ---------- Tablet / Desktop Mode on Smaller Screens ---------- */
+
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    .login-box {
+        padding: 20px;
+    }
+
+    .container {
+        width: 380px;
+        max-width: 90%;
+        height: auto;
+        min-height: 370px;
+        padding: 20px;
+    }
+
+    .container h2 {
+        font-size: 1.8rem;
+    }
+
+    form input,
+    form select,
+    form button {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+
+    .login-box {
+        padding: 15px;
+    }
+
+    .container {
+        width: 92%;
+        height: auto;
+        min-height: auto;
+        padding: 20px 16px;
+    }
+
+    .container h2 {
+        font-size: 1.55rem;
+    }
+
+    .container p {
+        font-size: 0.88rem;
+    }
+
+    form input,
+    form select,
+    form button {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    form input,
+    form select {
+        height: 40px;
+    }
+
+    form button {
+        height: 40px;
+    }
+
+    pre {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        box-sizing: border-box;
+        font-size: 0.7rem;
+    }
+
+    .remember {
+        width: 14px;
+        min-width: 14px;
+        height: 14px;
+        margin: 0 5px 0 0;
+    }
+
+    pre a {
+        font-size: 0.7rem;
+        margin-left: auto;
+    }
+}
+
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width: 380px) {
+
+    .login-box {
+        padding: 10px;
+    }
+
+    .container {
+        width: 96%;
+        padding: 18px 14px;
+    }
+
+    .container h2 {
+        font-size: 1.4rem;
+    }
+
+    .container p {
+        font-size: 0.82rem;
+    }
+
+    form input,
+    form select,
+    form button {
+        height: 38px;
+        font-size: 0.85rem;
+    }
+
+    pre,
+    pre a {
+        font-size: 0.65rem;
+    }
+
+    .remember {
+        width: 13px;
+        min-width: 13px;
+        height: 13px;
+    }
+}
+
+
+/* ---------- Prevent Horizontal Scrolling ---------- */
+
+@media (max-width: 1100px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}

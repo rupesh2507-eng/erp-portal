@@ -1,0 +1,1451 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: border-box;
+}
+body{
+    background-color: #E8EEF6;
+}
+.panel{
+    display:flex;
+    flex-direction: column;
+    height: 113vh;
+    width: 40vh;
+    padding: 10px;
+    background-color: #12355B;
+    color: white;
+    position:absolute;
+}
+.heading{
+    display: flex;
+    height: 100px;
+    width: 90%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.heading i{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.panel a{
+    font-size: 1.2rem;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.5rem;
+    display: block;
+    transition: all 0.25s ease;
+    border-radius: 8px;
+}
+a:hover{
+    background-color: #1E4A78;
+    color: #ffffff;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+a:active{
+    background-color: #FFE8A3;
+    color: #12355B;
+}
+.panel i{
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+/* dashboard */
+.dashboard{
+    margin-left: 43vh;
+    background-color: #E8EEF6;
+    color: #334155;
+    padding: 10px;
+}
+.navbar{
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 0 15px;
+    border: 2px solid #D9E2EC;
+    border-radius: 1rem;
+    color: #12355B;
+    background-color: #ffffff;
+    height: 100px;
+}
+.navbar a{
+    background-color: #FEF2F2;
+    color: #12355B;
+    text-decoration: none;
+    padding: 7px;
+    border-radius: 0.4rem;
+    font-size: 1.3rem;
+    transition: all 0.25s ease;
+    border: 2px solid #D9E2EC;
+}
+.navbar a:hover{
+    background-color: #DC3545;
+    color: #ffffff;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+    border-color: #3B82F6;
+}
+.navbar i{
+    margin-left: 10px;
+}
+.msg{
+    color: #12355B;
+}
+.attandance{
+    height: 150px;
+    width: 150px;
+    background-color: #ffffff;
+    color: #334155;
+    border: 2px solid #D9E2EC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+.attandance p{
+    font-size: 1.5rem;
+    margin-top: 0.7rem;
+    padding: 5px;
+    font-weight: 700;
+    color: #6C4CE8;
+}
+.attandance h3{
+    color: #12355B;
+}
+.attandance:hover{
+    background-color: #F8FAFC;
+    color: #334155;
+    border-color: #3B82F6;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+}
+.attandance i{
+    padding: 10px;
+    border: 1.5px solid #D9E2EC;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    background-color: #F0EBFF;
+    color: #6C4CE8;
+}
+.dues{
+    height: 150px;
+    width: 150px;
+    border: 2px solid #D9E2EC;
+    background-color: #ffffff;
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+.dues p{
+    font-size: 1.5rem;
+    margin-top: 0.7rem;
+    padding: 5px;
+    color: #12A866;
+    font-weight: 700;
+}
+.dues h3{
+    color: #12355B;
+}
+.dues:hover{
+    background-color: #F8FAFC;
+    color: #334155;
+    border-color: #3B82F6;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+}
+.dues i{
+    padding: 10px;
+    border: 1.5px solid #D9E2EC;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    background-color: #E7F8EF;
+    color: #12A866;
+}
+.courses{
+    height: 150px;
+    width: 150px;
+    border: 2px solid #D9E2EC;
+    background-color: #ffffff;
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+.courses p{
+    font-size: 1.5rem;
+    margin-top: 0.7rem;
+    padding: 5px;
+    color: #1976E8;
+    font-weight: 700;
+}
+.courses h3{
+    color: #12355B;
+}
+.courses:hover{
+    background-color: #F8FAFC;
+    color: #334155;
+    border-color: #3B82F6;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+}
+.courses i{
+    padding: 10px;
+    border: 1.5px solid #D9E2EC;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    background-color: #E8F1FF;
+    color: #1976E8;
+}
+.result{
+    height: 150px;
+    width: 150px;
+    border: 2px solid #D9E2EC;
+    background-color: #ffffff;
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+.result p{
+    font-size: 1.5rem;
+    margin-top: 0.7rem;
+    padding: 5px;
+    color: #F28C00;
+    font-weight: 700;
+}
+.result h3{
+    color: #12355B;
+}
+.result:hover{
+    background-color: #F8FAFC;
+    color: #334155;
+    border-color: #3B82F6;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+}
+.result i{
+    padding: 10px;
+    border: 1.5px solid #D9E2EC;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    background-color: #FFF1DF;
+    color: #F28C00;
+}
+.hostel{
+    height: 150px;
+    width: 150px;
+    border: 2px solid #D9E2EC;
+    background-color: #ffffff;
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+.hostel p{
+    font-size: 1.5rem;
+    margin-top: 0.7rem;
+    padding: 5px;
+    text-decoration: none;
+    color: #F05278;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.hostel h3{
+    color: #12355B;
+}
+.hostel:hover{
+    background-color: #F8FAFC;
+    color: #334155;
+    border-color: #3B82F6;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+}
+.hostel i{
+    padding: 10px;
+    border: 1.5px solid #D9E2EC;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    background-color: #FFE8EE;
+    color: #F05278;
+}
+.info1{
+    display: flex;
+    justify-content: space-evenly;
+}
+.info2{
+    height: 210px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.classes {
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    height: 250px;
+    width: 330px;
+}
+.class-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 12px; */
+}
+
+.class-head h3 {
+    color: #12355B;
+    font-size: 17px;
+}
+
+.class-head p {
+    color: #888;
+    font-size: 10px;
+    margin-top: 1px;
+}
+
+.class-head a {
+    text-decoration: none;
+    color: #1976E8;
+    font-size: 10px;
+    font-weight: 600;
+}
+.class-head a:hover{
+    background-color: #ffffff;
+}
+
+.class-head a i {
+    margin-left: 4px;
+}
+
+.class-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.class-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.class-item:last-child {
+    border-bottom: none;
+}
+
+.class-time {
+    width: 75px;
+    color: #6C4CE8;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.class-info {
+    flex: 1;
+}
+
+.class-info h4 {
+    color: #12355B;
+    font-size: 12px;
+}
+
+.class-info p {
+    color: #888;
+    font-size: 9px;
+    margin-top: 3px;
+}
+
+.class-room {
+    background: #eef4ff;
+    color: #1976E8;
+    padding: 4px 7px;
+    border-radius: 5px;
+    font-size: 9px;
+}
+
+.notices {
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    height: 250px;
+}
+
+
+/* NOTICE HEADER */
+
+.notice-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.notice-head h3 {
+    color: #12355B;
+    font-size: 18px;
+}
+
+.notice-head p {
+    color: #7a8089;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+
+/* VIEW ALL */
+
+.view-all {
+    text-decoration: none;
+    color: #1976E8;
+    font-size: 12px;
+    font-weight: 600;
+}
+.view-all:hover{
+    background-color: #ffffff;
+    color: #1976E8;
+}
+
+.view-all i {
+    margin-left: 4px;
+}
+
+
+/* NOTICE ITEM */
+
+.notice-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #edf0f5;
+
+    cursor: pointer;
+}
+
+.notice-item:last-child {
+    border-bottom: none;
+}
+
+
+/* ICON */
+
+.notice-icon {
+    min-width: 38px;
+    height: 38px;
+
+    border-radius: 9px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notice-icon.exam {
+    background: #ffe5e5;
+    color: #e53935;
+}
+
+.notice-icon.fee {
+    background: #e4f8ef;
+    color: #12A866;
+}
+
+.notice-icon.holiday {
+    background: #eee8ff;
+    color: #6C4CE8;
+}
+
+
+/* TEXT */
+
+.notice-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.notice-text h4 {
+    color: #12355B;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.notice-text p {
+    color: #7a8089;
+    font-size: 11px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notice-text span {
+    display: block;
+
+    color: #9aa0a8;
+
+    font-size: 10px;
+
+    margin-top: 5px;
+}
+
+.notice-text span i {
+    margin-right: 4px;
+}
+
+
+/* ARROW */
+
+.notice-arrow {
+    color: #a5abb3;
+    font-size: 10px;
+}
+
+.notice-item:hover .notice-arrow {
+    color: #1976E8;
+}
+
+.notice-item:hover .notice-text h4 {
+    color: #1976E8;
+}
+
+.notice-icon.event {
+    background: #FFF3E0;
+    color: #F28C00;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .notice-text p {
+        white-space: normal;
+    }
+
+}
+.info3{
+    height: 150px;
+    border: 2px solid #D9E2EC;
+    padding: 15px;
+    margin-top: 3rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+.info3 h3{
+    font-size: 1.8rem;
+    padding: 5px;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    color: #12355B;
+}
+.links{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    font-size: 1.3rem;
+}
+.links a{
+    text-decoration: none;
+    color: #12355B;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #D9E2EC;
+    border-radius: 0.5rem;
+    transition: all 0.25s ease;
+}
+.links i{
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+.links a:hover{
+    border: 1px solid #3B82F6;
+    background-color: #F8FAFC;
+    color: #334155;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+}
+#time{
+    color: #1976E8;
+    background-color: #E8F1FF;
+}
+#res{
+    color: #12A866;
+    background-color: #E7F8EF;
+}
+#pay{
+    color: #6C4CE8;
+    background-color: #F0EBFF;
+}
+#hos{
+    color: #F28C00;
+    background-color: #FFF1DF;
+}
+#not{
+    color: #F05278;
+    background-color: #FFE8EE;
+}
+.extra{
+    height: 70px;
+}
+
+/* for toggle */
+
+.panel{
+    width: 40vh;
+}
+.dashboard{
+    margin-left: 43vh;
+}
+.panel.collapsed{
+    width: 50px;
+    transition: all 2s ease;
+    .heading h2{
+        display: none;
+    }
+    .link{
+        display: none;
+    }
+}
+.dashboard.reverse{
+    margin-left: 75px;
+    transition: all 2s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   EXTRA DASHBOARD PAGE CSS
+   Add this at the very bottom of dashboard.css
+   ========================================================= */
+
+
+/* ---------- GENERAL IMPROVEMENT ---------- */
+
+.navbar,
+.classes,
+.notices,
+.info3 {
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+}
+
+.attandance,
+.dues,
+.courses,
+.result,
+.hostel {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1101px) {
+
+    .dashboard {
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .navbar,
+    .info1,
+    .info2,
+    .info3 {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info2 {
+        margin-top: 2.5rem;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    .dashboard {
+        margin-left: 200px;
+        width: calc(100% - 210px);
+        padding: 12px;
+        box-sizing: border-box;
+    }
+
+
+    /* NAVBAR */
+
+    .navbar {
+        height: 80px;
+        padding: 0 15px;
+    }
+
+    .msg h1 {
+        font-size: 21px;
+    }
+
+    .msg p {
+        font-size: 11px;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+        padding: 6px;
+    }
+
+
+    /* INFO1 CARDS */
+
+    .info1 {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .attandance,
+    .dues,
+    .courses,
+    .result,
+    .hostel {
+        height: 120px;
+        width: 120px;
+        margin: 6px;
+    }
+
+    .attandance p,
+    .dues p,
+    .courses p,
+    .result p {
+        font-size: 1.2rem;
+    }
+
+    .attandance h3,
+    .dues h3,
+    .courses h3,
+    .result h3,
+    .hostel h3 {
+        font-size: 0.85rem;
+    }
+
+    .attandance i,
+    .dues i,
+    .courses i,
+    .result i,
+    .hostel i {
+        font-size: 1.15rem;
+        padding: 8px;
+    }
+
+
+    /* INFO2 */
+
+    .info2 {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+    }
+
+    .classes,
+    .notices {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+    }
+
+
+    /* INFO3 */
+
+    .info3 {
+        height: auto;
+        padding: 15px;
+    }
+
+    .links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .links a {
+        font-size: 1rem;
+    }
+}
+
+
+/* =========================================================
+   NORMAL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 58px;
+        height: 100vh;
+        padding: 4px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+    .heading {
+        width: 100%;
+        height: 58px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .heading h2 {
+        display: none;
+    }
+
+    .heading i {
+        margin: 0;
+        font-size: 0.95rem;
+        padding: 6px;
+    }
+
+    .panel a {
+        width: 100%;
+        height: 42px;
+        padding: 9px 3px;
+        margin-bottom: 3px;
+        box-sizing: border-box;
+        font-size: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .panel a i {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 58px;
+        width: calc(100% - 58px);
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+
+    /* NAVBAR */
+
+    .navbar {
+        width: 100%;
+        height: auto;
+        min-height: 70px;
+        padding: 12px;
+        border-radius: 11px;
+        box-sizing: border-box;
+    }
+
+    .msg h1 {
+        font-size: 16px;
+    }
+
+    .msg p {
+        font-size: 9px;
+        margin-top: 3px;
+    }
+
+    .navbar a {
+        font-size: 0.75rem;
+        padding: 6px 8px;
+        white-space: nowrap;
+    }
+
+    .navbar i {
+        margin-left: 5px;
+    }
+
+
+    /* INFO1 CARDS */
+
+    .info1 {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .attandance,
+    .dues,
+    .courses,
+    .result,
+    .hostel {
+        height: 95px;
+        width: calc(33.333% - 8px);
+        min-width: 90px;
+        margin: 0;
+        padding: 4px;
+        border-radius: 0.7rem;
+    }
+
+    .attandance p,
+    .dues p,
+    .courses p,
+    .result p,
+    .hostel p {
+        font-size: 0.85rem;
+        margin-top: 4px;
+        padding: 2px;
+    }
+
+    .attandance h3,
+    .dues h3,
+    .courses h3,
+    .result h3,
+    .hostel h3 {
+        font-size: 0.65rem;
+    }
+
+    .attandance i,
+    .dues i,
+    .courses i,
+    .result i,
+    .hostel i {
+        font-size: 0.85rem;
+        padding: 6px;
+        margin-bottom: 4px;
+    }
+
+
+    /* INFO2 */
+
+    .info2 {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        margin-top: 1.5rem;
+    }
+
+    .classes,
+    .notices {
+        width: 100%;
+        height: auto;
+        min-height: 150px;
+        padding: 12px;
+        border-radius: 11px;
+        box-sizing: border-box;
+    }
+
+    .class-head h3,
+    .notice-head h3 {
+        font-size: 14px;
+    }
+
+    .class-head p,
+    .notice-head p {
+        font-size: 8px;
+    }
+
+    .class-head a,
+    .view-all {
+        font-size: 9px;
+    }
+
+    .class-time {
+        width: 55px;
+        font-size: 9px;
+    }
+
+    .class-info h4 {
+        font-size: 11px;
+    }
+
+    .class-info p {
+        font-size: 8px;
+    }
+
+    .class-room {
+        font-size: 8px;
+        padding: 3px 6px;
+    }
+
+    .notice-icon {
+        min-width: 32px;
+        height: 32px;
+    }
+
+    .notice-text h4 {
+        font-size: 11px;
+    }
+
+    .notice-text p {
+        font-size: 9px;
+    }
+
+    .notice-text span {
+        font-size: 8px;
+    }
+
+
+    /* INFO3 */
+
+    .info3 {
+        height: auto;
+        padding: 12px;
+        margin-top: 1.5rem;
+        border-radius: 11px;
+    }
+
+    .info3 h3 {
+        font-size: 1.15rem;
+    }
+
+    .links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        font-size: 1rem;
+        padding: 6px;
+    }
+
+    .links a {
+        font-size: 0.7rem;
+        padding: 8px 9px;
+    }
+
+    .links i {
+        font-size: 0.85rem;
+        margin-right: 5px;
+    }
+
+    .extra {
+        height: 30px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .panel {
+        width: 52px;
+    }
+
+    .dashboard {
+        margin-left: 52px;
+        width: calc(100% - 52px);
+        padding: 6px;
+    }
+
+    .panel a {
+        height: 39px;
+    }
+
+    .panel a i {
+        font-size: 0.9rem;
+    }
+
+
+    .navbar {
+        padding: 9px;
+    }
+
+    .msg h1 {
+        font-size: 14px;
+    }
+
+    .msg p {
+        font-size: 8px;
+    }
+
+    .navbar a {
+        font-size: 0.65rem;
+        padding: 5px 6px;
+    }
+
+
+    .info1 {
+        gap: 6px;
+    }
+
+    .attandance,
+    .dues,
+    .courses,
+    .result,
+    .hostel {
+        height: 80px;
+        width: calc(33.333% - 6px);
+        min-width: 78px;
+    }
+
+    .attandance p,
+    .dues p,
+    .courses p,
+    .result p,
+    .hostel p {
+        font-size: 0.7rem;
+    }
+
+    .attandance h3,
+    .dues h3,
+    .courses h3,
+    .result h3,
+    .hostel h3 {
+        font-size: 0.55rem;
+    }
+
+    .attandance i,
+    .dues i,
+    .courses i,
+    .result i,
+    .hostel i {
+        font-size: 0.7rem;
+        padding: 5px;
+    }
+
+
+    .classes,
+    .notices {
+        padding: 9px;
+    }
+
+    .info3 {
+        padding: 9px;
+    }
+
+    .info3 h3 {
+        font-size: 1rem;
+    }
+
+    .links a {
+        font-size: 0.6rem;
+        padding: 6px 7px;
+    }
+
+    .links i {
+        font-size: 0.75rem;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP SITE ON PHONE
+   ========================================================= */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 190px;
+        height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .heading {
+        width: 100%;
+        height: 70px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .heading h2 {
+        display: block;
+        font-size: 1.05rem;
+    }
+
+    .heading i {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    .panel a {
+        font-size: 0.78rem;
+        padding: 9px 7px;
+        margin-bottom: 3px;
+    }
+
+    .panel a i {
+        font-size: 0.85rem;
+        margin-right: 7px;
+    }
+
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+        padding: 12px;
+        box-sizing: border-box;
+    }
+
+
+    /* NAVBAR */
+
+    .navbar {
+        height: 80px;
+        padding: 0 15px;
+    }
+
+    .msg h1 {
+        font-size: 20px;
+    }
+
+    .msg p {
+        font-size: 10px;
+    }
+
+    .navbar a {
+        font-size: 0.95rem;
+    }
+
+
+    /* INFO1 CARDS */
+
+    .info1 {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .attandance,
+    .dues,
+    .courses,
+    .result,
+    .hostel {
+        height: 115px;
+        width: 115px;
+        margin: 5px;
+    }
+
+    .attandance p,
+    .dues p,
+    .courses p,
+    .result p {
+        font-size: 1.1rem;
+    }
+
+    .attandance h3,
+    .dues h3,
+    .courses h3,
+    .result h3,
+    .hostel h3 {
+        font-size: 0.8rem;
+    }
+
+    .attandance i,
+    .dues i,
+    .courses i,
+    .result i,
+    .hostel i {
+        font-size: 1.05rem;
+        padding: 7px;
+    }
+
+
+    /* INFO2 */
+
+    .info2 {
+        flex-direction: column;
+        height: auto;
+        gap: 12px;
+    }
+
+    .classes,
+    .notices {
+        width: 100%;
+        height: auto;
+        min-height: 190px;
+    }
+
+
+    /* INFO3 */
+
+    .info3 {
+        height: auto;
+        padding: 15px;
+    }
+
+    .links {
+        flex-wrap: wrap;
+        gap: 9px;
+    }
+
+    .links a {
+        font-size: 0.95rem;
+    }
+
+
+    /* COLLAPSED SIDEBAR */
+
+    .panel.collapsed {
+        width: 58px;
+    }
+
+    .panel.collapsed .heading h2,
+    .panel.collapsed .link {
+        display: none;
+    }
+
+    .panel.collapsed .heading {
+        justify-content: center;
+    }
+
+    .panel.collapsed .heading i {
+        margin: 0;
+    }
+
+    .dashboard.reverse {
+        margin-left: 78px;
+        width: calc(100% - 78px);
+    }
+}
+
+
+/* ---------- FINAL OVERFLOW SAFETY ---------- */
+
+@media (max-width: 1100px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .navbar,
+    .info1,
+    .info2,
+    .info3 {
+        max-width: 100%;
+    }
+}
+
+
+
+/* ---------- HOSTEL TABLET FIX ---------- */
+
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    .hostel p {
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
+
+}
+
+
+/* ---------- DESKTOP SITE ON PHONE HOSTEL FIX ---------- */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    .hostel p {
+        font-size: 1.1rem;
+        white-space: nowrap;
+    }
+
+}

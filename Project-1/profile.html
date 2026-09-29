@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="panel">
+        <div class="heading">
+            <h2>Student ERP</h2>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <a href="dashboard.html" class="link"><i class="fa-regular fa-house"></i>Dashboard</a>
+        <a href="profile.html" class="link"><i class="fa-regular fa-circle-user"></i>Profile</a>
+        <a href="attandance.html" class="link"><i class="fa-regular fa-calendar-days"></i>Attandane Record</a>
+        <a href="punch.html" class="link"><i class="fa-regular fa-clock"></i>Daily Punch Record</a>
+        <a href="courses.html" class="link"><i class="fa-solid fa-book-open"></i>Courses</a>
+        <a href="table.html" class="link"><i class="fa-regular fa-calendar"></i>Time Table</a>
+        <a href="result.html" class="link"><i class="fa-solid fa-chart-simple"></i>Results</a>
+        <a href="fees.html" class="link"><i class="fa-solid fa-wallet"></i>Fees</a>
+        <a href="notices.html" class="link"><i class="fa-regular fa-bell"></i>Notices</a>
+        <a href="setting.html" class="link"><i class="fa-solid fa-gear"></i></i>Setting</a>
+    </div>
+
+    <div class="dashboard">
+
+        <!-- PROFILE HEADER -->
+
+        <div class="profile-header">
+
+            <div class="profile-title">
+                <h1>My Profile</h1>
+                <p>View and manage your student information</p>
+            </div>
+
+            <div class="profile-status">
+                <i class="fa-solid fa-circle"></i>
+                Active Student
+            </div>
+
+        </div>
+
+
+        <!-- PROFILE CARD -->
+
+        <div class="profile-card">
+
+
+            <!-- PROFILE TOP -->
+
+            <div class="profile-top">
+
+                <div class="profile-picture-section">
+
+                    <div class="profile-photo">
+
+                        <img id="profileImage"
+                            src="profile-picture.jpeg"
+                            alt="Profile Picture">
+
+                        <i id="defaultIcon"
+                        class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <label for="imageUpload" class="change-photo">
+
+                        <i class="fa-solid fa-camera"></i>
+                        Change Photo
+
+                    </label>
+
+                    <input type="file"
+                        id="imageUpload"
+                        accept="image/*">
+
+                </div>
+
+
+                <div class="student-name">
+
+                    <h2 id="displayName">
+                        Rupesh Kumar
+                    </h2>
+
+                    <p>
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                        Roll No:
+                        <span id="displayRoll">
+                            13250781
+                        </span>
+
+                    </p>
+
+                    <span>
+                        BCA • 3rd Semester
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- EDIT BUTTON -->
+
+            <div class="edit-area">
+
+                <button id="editBtn">
+
+                    <i class="fa-solid fa-pen"></i>
+                    Edit Profile
+
+                </button>
+
+            </div>
+
+
+            <!-- PERSONAL INFORMATION -->
+
+            <div class="section-title">
+
+                <i class="fa-solid fa-user"></i>
+
+                <h3>Personal Information</h3>
+
+            </div>
+
+
+            <div class="information-grid">
+
+
+                <div class="information-box">
+
+                    <p>Full Name</p>
+
+                    <input
+                        type="text"
+                        id="name"
+                        value="Rupesh Kumar"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="information-box">
+
+                    <p>Student ID</p>
+
+                    <input
+                        type="text"
+                        value="13250781"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="information-box">
+
+                    <p>Date of Birth</p>
+
+                    <input
+                        type="text"
+                        value="10 March 2006"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="information-box">
+
+                    <p>Gender</p>
+
+                    <input
+                        type="text"
+                        value="Male"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="information-box">
+
+                    <p>Mobile Number</p>
+
+                    <input
+                        type="text"
+                        id="phone"
+                        value="+91 XXXXX XXXXX"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="information-box">
+
+                    <p>Email</p>
+
+                    <input
+                        type="email"
+                        id="email"
+                        value="student@example.com"
+                        disabled
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ACADEMIC INFORMATION -->
+
+            <div class="section-title academic-title">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <h3>Academic Information</h3>
+
+            </div>
+
+
+            <div class="information-grid">
+
+
+                <div class="information-box">
+
+                    <p>Course</p>
+
+                    <input
+                        type="text"
+                        value="Bachelor of Computer Applications"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="information-box">
+
+                    <p>Semester</p>
+
+                    <input
+                        type="text"
+                        value="3rd Semester"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="information-box">
+
+                    <p>Section</p>
+
+                    <input
+                        type="text"
+                        value="BCA"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="information-box">
+
+                    <p>Session</p>
+
+                    <input
+                        type="text"
+                        value="2025 - 2028"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="information-box">
+
+                    <p>Department</p>
+
+                    <input
+                        type="text"
+                        value="Computer Applications"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="information-box">
+
+                    <p>University</p>
+
+                    <input
+                        type="text"
+                        value="MMDU Mullana"
+                        disabled
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT INFORMATION -->
+
+            <div class="section-title contact-title">
+
+                <i class="fa-solid fa-address-book"></i>
+
+                <h3>Contact Information</h3>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <div class="contact-box">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <div>
+
+                        <p>Phone Number</p>
+
+                        <input
+                            type="text"
+                            id="contactPhone"
+                            value="+91 XXXXX XXXXX"
+                            disabled
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <div>
+
+                        <p>Email Address</p>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            value="student@example.com"
+                            disabled
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+
+                        <p>Address</p>
+
+                        <input
+                            type="text"
+                            id="address"
+                            value="Student Address"
+                            disabled
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SAVE / CANCEL -->
+
+            <div class="save-area" id="saveArea">
+
+                <button id="cancelBtn" class="cancel-btn">
+                    Cancel
+                </button>
+
+                <button id="saveBtn" class="save-btn">
+                    <i class="fa-solid fa-check"></i>
+                    Save Changes
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>
