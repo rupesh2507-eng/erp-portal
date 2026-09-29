@@ -1,0 +1,860 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* box-sizing: border-box; */
+}
+body{
+    background-color: #E8EEF6;
+}
+.panel{
+    display:flex;
+    flex-direction: column;
+    height: 122vh;
+    width: 40vh;
+    padding: 10px;
+    background-color: #12355B;
+    color: white;
+    position:absolute;
+}
+.heading{
+    display: flex;
+    height: 100px;
+    width: 90%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.heading i{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.panel a{
+    font-size: 1.2rem;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.5rem;
+    display: block;
+    transition: all 0.25s ease;
+    border-radius: 8px;
+}
+a:hover{
+    background-color: #1E4A78;
+    color: #ffffff;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+a:active{
+    background-color: #FFE8A3;
+    color: #12355B;
+}
+.panel i{
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+/* dashboard */
+
+.dashboard{
+
+    margin-left: 43vh;
+
+    padding: 10px;
+
+    transition: 0.3s;
+
+}
+
+
+
+/* COURSE HEADING */
+
+.course-heading{
+
+    margin-bottom: 25px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 2px solid #D9E2EC;
+    border-radius: 1rem;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+.course-heading h1{
+
+    color: #12355B;
+
+    font-size: 30px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.course-heading p{
+
+    color: #777;
+
+    font-size: 15px;
+
+}
+
+
+
+/* COURSE CONTAINER */
+
+.course-container{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+
+/* COURSE BOX */
+
+.course-box{
+
+    width: 100%;
+
+    min-height: 110px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.08);
+
+}
+
+
+
+/* ICON */
+
+.course-icon{
+
+    width: 65px;
+
+    height: 65px;
+
+    background: #EAF2FF;
+
+    color: #1976E8;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 25px;
+
+    margin-right: 20px;
+
+}
+
+
+
+/* COURSE INFORMATION */
+
+.course-content{
+
+    flex: 1;
+
+}
+
+
+.course-content h2{
+
+    color: #12355B;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.course-content p{
+
+    display: inline-block;
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-right: 20px;
+
+}
+
+
+
+/* BUTTON */
+
+.course-button button{
+
+    border: none;
+
+    background: #1976E8;
+
+    color: white;
+
+    padding: 9px 14px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+}
+
+
+.course-button button:hover{
+
+    background: #12355B;
+
+}
+
+
+/* fot toggle */
+
+.panel{
+    width: 40vh;
+}
+.dashboard{
+    margin-left: 43vh;
+}
+.panel.collapsed{
+    width: 50px;
+    transition: all 2s ease;
+    .heading h2{
+        display: none;
+    }
+    .link{
+        display: none;
+    }
+}
+.dashboard.reverse{
+    margin-left: 75px;
+    transition: all 2s ease;
+}
+
+
+
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .dashboard{
+
+        margin-left: 40vh;
+
+        padding: 15px;
+
+    }
+
+
+    .course-content h2{
+
+        font-size: 15px;
+
+    }
+
+
+    .course-content p{
+
+        font-size: 11px;
+
+        margin-right: 8px;
+
+    }
+
+
+    .course-button button{
+
+        padding: 7px;
+
+        font-size: 11px;
+
+    }
+
+
+    .course-icon{
+
+        width: 50px;
+
+        height: 50px;
+
+        font-size: 20px;
+
+        margin-right: 10px;
+
+    }
+
+}
+
+
+
+
+
+/* =========================================================
+   EXTRA COURSES PAGE CSS
+   Add this at the very bottom of courses.css
+   Do not remove existing CSS
+   ========================================================= */
+
+
+/* ---------- GENERAL VISUAL IMPROVEMENT ---------- */
+
+.course-heading,
+.course-box {
+    transition: all 0.25s ease;
+}
+
+.course-heading {
+    box-shadow: 0 4px 12px rgba(18, 53, 91, 0.05);
+}
+
+.course-box {
+    box-sizing: border-box;
+}
+
+.course-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(18, 53, 91, 0.12);
+}
+
+.course-icon {
+    flex-shrink: 0;
+}
+
+.course-content {
+    min-width: 0;
+}
+
+.course-content h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.course-button {
+    flex-shrink: 0;
+}
+
+.course-button button {
+    transition: all 0.2s ease;
+}
+
+.course-button button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1101px) {
+
+    .dashboard {
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .course-heading,
+    .course-container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .course-heading {
+        margin-bottom: 20px;
+    }
+
+    .course-box {
+        min-width: 0;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    .dashboard {
+        margin-left: 200px;
+        width: calc(100% - 210px);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .course-heading {
+        height: 85px;
+        padding-left: 18px;
+        margin-bottom: 15px;
+    }
+
+    .course-heading h1 {
+        font-size: 25px;
+    }
+
+    .course-heading p {
+        font-size: 12px;
+    }
+
+    .course-container {
+        gap: 12px;
+    }
+
+    .course-box {
+        min-height: 95px;
+        padding: 12px;
+    }
+
+    .course-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 20px;
+        margin-right: 14px;
+    }
+
+    .course-content h2 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .course-content p {
+        font-size: 11px;
+        margin-right: 12px;
+    }
+
+    .course-button button {
+        padding: 8px 11px;
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   NORMAL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 58px;
+        height: 100vh;
+        padding: 4px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+    .heading {
+        width: 100%;
+        height: 58px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .heading h2 {
+        display: none;
+    }
+
+    .heading i {
+        margin: 0;
+        font-size: 0.95rem;
+        padding: 6px;
+    }
+
+    .panel a {
+        width: 100%;
+        height: 42px;
+        padding: 9px 3px;
+        margin-bottom: 3px;
+        box-sizing: border-box;
+        font-size: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .panel a i {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 58px;
+        width: calc(100% - 58px);
+        padding: 7px;
+        box-sizing: border-box;
+    }
+
+
+    /* COURSE HEADING */
+
+    .course-heading {
+        width: 100%;
+        height: auto;
+        min-height: 72px;
+        padding: 12px;
+        margin-bottom: 10px;
+        border-radius: 11px;
+        box-sizing: border-box;
+    }
+
+    .course-heading h1 {
+        font-size: 19px;
+        margin-bottom: 4px;
+    }
+
+    .course-heading p {
+        font-size: 9px;
+        line-height: 1.3;
+    }
+
+
+    /* COURSE LIST */
+
+    .course-container {
+        width: 100%;
+        gap: 8px;
+    }
+
+
+    /* COURSE BOX */
+
+    .course-box {
+        width: 100%;
+        min-height: 85px;
+        padding: 10px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        gap: 0;
+    }
+
+
+    /* ICON */
+
+    .course-icon {
+        width: 42px;
+        height: 42px;
+        margin-right: 10px;
+        border-radius: 9px;
+        font-size: 17px;
+    }
+
+
+    /* CONTENT */
+
+    .course-content {
+        min-width: 0;
+    }
+
+    .course-content h2 {
+        font-size: 13px;
+        line-height: 1.25;
+        margin-bottom: 5px;
+        white-space: normal;
+    }
+
+    .course-content p {
+        font-size: 8px;
+        margin-right: 6px;
+        white-space: nowrap;
+    }
+
+
+    /* BUTTON */
+
+    .course-button {
+        margin-left: 5px;
+    }
+
+    .course-button button {
+        padding: 6px 7px;
+        border-radius: 6px;
+        font-size: 8px;
+        white-space: nowrap;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .panel {
+        width: 52px;
+    }
+
+    .dashboard {
+        margin-left: 52px;
+        width: calc(100% - 52px);
+        padding: 5px;
+    }
+
+    .panel a {
+        height: 39px;
+    }
+
+    .panel a i {
+        font-size: 0.9rem;
+    }
+
+
+    .course-heading {
+        min-height: 65px;
+        padding: 10px;
+    }
+
+    .course-heading h1 {
+        font-size: 16px;
+    }
+
+    .course-heading p {
+        font-size: 8px;
+    }
+
+
+    .course-container {
+        gap: 6px;
+    }
+
+    .course-box {
+        min-height: 76px;
+        padding: 8px;
+    }
+
+    .course-icon {
+        width: 36px;
+        height: 36px;
+        margin-right: 8px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .course-content h2 {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+
+    .course-content p {
+        font-size: 7px;
+        margin-right: 4px;
+    }
+
+    .course-button {
+        margin-left: 3px;
+    }
+
+    .course-button button {
+        padding: 5px 5px;
+        font-size: 7px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP SITE ON PHONE
+   ========================================================= */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* SIDEBAR */
+
+    .panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 190px;
+        height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .heading {
+        width: 100%;
+        height: 70px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .heading h2 {
+        display: block;
+        font-size: 1.05rem;
+    }
+
+    .heading i {
+        font-size: 0.9rem;
+        padding: 6px;
+        margin: 0;
+    }
+
+    .panel a {
+        font-size: 0.78rem;
+        padding: 9px 7px;
+        margin-bottom: 3px;
+    }
+
+    .panel a i {
+        font-size: 0.85rem;
+        margin-right: 7px;
+    }
+
+
+    /* MAIN */
+
+    .dashboard {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+
+    /* HEADING */
+
+    .course-heading {
+        height: 75px;
+        padding-left: 14px;
+        margin-bottom: 12px;
+    }
+
+    .course-heading h1 {
+        font-size: 23px;
+    }
+
+    .course-heading p {
+        font-size: 11px;
+    }
+
+
+    /* COURSES */
+
+    .course-container {
+        gap: 10px;
+    }
+
+    .course-box {
+        min-height: 90px;
+        padding: 11px;
+    }
+
+    .course-icon {
+        width: 48px;
+        height: 48px;
+        margin-right: 12px;
+        font-size: 19px;
+    }
+
+    .course-content h2 {
+        font-size: 15px;
+    }
+
+    .course-content p {
+        font-size: 10px;
+        margin-right: 10px;
+    }
+
+    .course-button button {
+        padding: 7px 10px;
+        font-size: 10px;
+    }
+
+
+    /* COLLAPSED SIDEBAR */
+
+    .panel.collapsed {
+        width: 58px;
+    }
+
+    .panel.collapsed .heading h2,
+    .panel.collapsed .link {
+        display: none;
+    }
+
+    .panel.collapsed .heading {
+        justify-content: center;
+    }
+
+    .panel.collapsed .heading i {
+        margin: 0;
+    }
+
+    .dashboard.reverse {
+        margin-left: 78px;
+        width: calc(100% - 78px);
+    }
+}
+
+
+/* ---------- FINAL SAFETY ---------- */
+
+@media (max-width: 1100px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .course-heading,
+    .course-container,
+    .course-box {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="setting.css">
+    <title>Setting</title>
+</head>
+<body>
+    <div class="panel">
+        <div class="heading">
+            <h2>Student ERP</h2>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <a href="dashboard.html" class="link"><i class="fa-regular fa-house"></i>Dashboard</a>
+        <a href="profile.html" class="link"><i class="fa-regular fa-circle-user"></i>Profile</a>
+        <a href="attandance.html" class="link"><i class="fa-regular fa-calendar-days"></i>Attandane Record</a>
+        <a href="punch.html" class="link"><i class="fa-regular fa-clock"></i>Daily Punch Record</a>
+        <a href="courses.html" class="link"><i class="fa-solid fa-book-open"></i>Courses</a>
+        <a href="table.html" class="link"><i class="fa-regular fa-calendar"></i>Time Table</a>
+        <a href="result.html" class="link"><i class="fa-solid fa-chart-simple"></i>Results</a>
+        <a href="fees.html" class="link"><i class="fa-solid fa-wallet"></i>Fees</a>
+        <a href="notices.html" class="link"><i class="fa-regular fa-bell"></i>Notices</a>
+        <a href="setting.html" class="link"><i class="fa-solid fa-gear"></i></i>Setting</a>
+    </div>
+
+    <div class="dashboard">
+
+        <!-- HEADER -->
+
+        <div class="setting-header">
+
+            <div>
+                <h1>Settings</h1>
+                <p>Manage your account and application preferences</p>
+            </div>
+
+            <div class="setting-icon">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+
+        </div>
+
+
+        <!-- SETTINGS CONTAINER -->
+
+        <div class="settings-container">
+
+            <!-- ACCOUNT SETTINGS -->
+
+            <div class="settings-section">
+
+                <div class="settings-title">
+
+                    <div class="title-icon account-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <h2>Account Settings</h2>
+                        <p>Manage your account information</p>
+                    </div>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Profile Information</h3>
+
+                        <p>
+                            Update your personal information and profile details.
+                        </p>
+
+                    </div>
+
+                    <button class="setting-btn" id="profileBtn">
+                        Edit Profile
+                    </button>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Change Password</h3>
+
+                        <p>
+                            Update your password to keep your account secure.
+                        </p>
+
+                    </div>
+
+                    <button class="setting-btn" id="passwordBtn">
+                        Change Password
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTIFICATION SETTINGS -->
+
+            <div class="settings-section">
+
+                <div class="settings-title">
+
+                    <div class="title-icon notification-icon">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+
+                    <div>
+                        <h2>Notifications</h2>
+                        <p>Control how you receive notifications</p>
+                    </div>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Notice Notifications</h3>
+
+                        <p>
+                            Receive notifications when a new notice is published.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input type="checkbox" id="noticeNotification" checked>
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Attendance Alerts</h3>
+
+                        <p>
+                            Get alerts when your attendance is updated.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input type="checkbox" id="attendanceNotification" checked>
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Fee Reminders</h3>
+
+                        <p>
+                            Receive reminders about upcoming fee payments.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input type="checkbox" id="feeNotification" checked>
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- APPEARANCE -->
+
+            <div class="settings-section">
+
+                <div class="settings-title">
+
+                    <div class="title-icon appearance-icon">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+
+                    <div>
+                        <h2>Appearance</h2>
+                        <p>Customize the appearance of your portal</p>
+                    </div>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Theme</h3>
+
+                        <p>
+                            Choose how the Student ERP Portal looks.
+                        </p>
+
+                    </div>
+
+                    <select id="themeSelect">
+
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRIVACY -->
+
+            <div class="settings-section">
+
+                <div class="settings-title">
+
+                    <div class="title-icon privacy-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div>
+                        <h2>Privacy & Security</h2>
+                        <p>Manage your privacy and security preferences</p>
+                    </div>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Login Activity</h3>
+
+                        <p>
+                            Review your recent login activity.
+                        </p>
+
+                    </div>
+
+                    <button class="setting-btn" id="loginActivityBtn">
+                        View Activity
+                    </button>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>Two-Factor Authentication</h3>
+
+                        <p>
+                            Add an extra layer of security to your account.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input type="checkbox" id="twoFactor">
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- SAVE -->
+
+            <div class="settings-actions">
+
+                <button class="reset-btn" id="resetBtn">
+                    Reset Settings
+                </button>
+
+                <button class="save-btn" id="saveBtn">
+                    <i class="fa-solid fa-check"></i>
+                    Save Changes
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="setting.js"></script>
+</body>
+</html>

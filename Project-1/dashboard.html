@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="panel">
+        <div class="heading">
+            <h2>Student ERP</h2>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <a href="dashboard.html" class="link"><i class="fa-regular fa-house"></i>Dashboard</a>
+        <a href="profile.html" class="link"><i class="fa-regular fa-circle-user"></i>Profile</a>
+        <a href="attandance.html" class="link"><i class="fa-regular fa-calendar-days"></i>Attandane Record</a>
+        <a href="punch.html" class="link"><i class="fa-regular fa-clock"></i>Daily Punch Record</a>
+        <a href="courses.html" class="link"><i class="fa-solid fa-book-open"></i>Courses</a>
+        <a href="table.html" class="link"><i class="fa-regular fa-calendar"></i>Time Table</a>
+        <a href="result.html" class="link"><i class="fa-solid fa-chart-simple"></i>Results</a>
+        <a href="fees.html" class="link"><i class="fa-solid fa-wallet"></i>Fees</a>
+        <a href="notices.html" class="link"><i class="fa-regular fa-bell"></i>Notices</a>
+        <a href="setting.html" class="link"><i class="fa-solid fa-gear"></i></i>Setting</a>
+    </div>
+    <div class="dashboard">
+        <div class="navbar">
+            <div class="msg">
+                <h1>Welcome Back!</h1>
+                <p>Here's your Academic Overview</p>
+            </div>
+            <a href="index.html">Log Out<i class="fa-solid fa-right-from-bracket"></i></a>
+        </div>
+        <div class="info1">
+            <a href="attandance.html" class="attandance">
+                <i class="fa-solid fa-people-group"></i>
+                <h3>Attandance</h3>
+                <p>85%</p>
+            </a>
+            <a href="fees.html" class="dues">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+                <h3>Student Dues</h3>
+                <p>₹ 35000</p>
+            </a>
+            <a href="courses.html" class="courses">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Courses</h3>
+                <p>5 Subjects</p>
+            </a>
+            <a href="result.html" class="result">
+                <i class="fa-regular fa-star"></i>
+                <h3>Result</h3>
+                <p>8.2</p>
+            </a>
+            <a href="hostel.html" class="hostel">
+                <i class="fa-solid fa-hotel"></i>
+                <h3>Hostel</h3>
+                <p>Apply Hostel</p>
+            </a>
+        </div>
+        <div class="info2">
+            <div class="classes">
+
+                <div class="class-head">
+                    <div>
+                        <h3>Upcoming Classes</h3>
+                        <p id="today">Today's Schedule</p>
+                    </div>
+
+                    <a href="table.html">
+                        View Timetable
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="class-list" id="classList">
+                    <!-- Classes will appear here -->
+                </div>
+
+            </div>
+            <div class="notices">
+
+                <div class="notice-head">
+
+                    <div>
+                        <h3>Recent Notices</h3>
+                        <p>Latest announcements</p>
+                    </div>
+
+                    <a href="notices.html" class="view-all">
+                        View All
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="notice-item">
+
+                    <div class="notice-icon exam">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+
+                    <div class="notice-text">
+
+                        <h4>Exam Schedule Released</h4>
+
+                        <p>
+                        Mid semester examination schedule has been released.
+                        </p>
+
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            24 Sep 2026
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right notice-arrow"></i>
+
+                </div>
+
+
+                <div class="notice-item">
+
+                    <div class="notice-icon fee">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                    </div>
+
+                    <div class="notice-text">
+
+                        <h4>Fee Deadline Approaching</h4>
+
+                        <p>
+                        Please complete your pending fee payment before the due date.
+                        </p>
+
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            23 Sep 2026
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right notice-arrow"></i>
+
+                </div>
+
+                <div class="notice-item">
+
+                    <div class="notice-icon event">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div class="notice-text">
+
+                        <h4>Technical Fest 2026</h4>
+
+                        <p>
+                        Registration for the upcoming technical fest is now open.
+                        </p>
+
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            22 Sep 2026
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right notice-arrow"></i>
+
+                </div>
+
+
+            </div>
+        </div>
+        <div class="info3">
+            <h3>Quick Actions</h3><br>
+            <div class="links">
+                <a href="table.html" id="time"><i class="fa-regular fa-calendar-days"></i>Time table</a>
+                <a href="result.html" id="res"><i class="fa-solid fa-chart-simple"></i>Results</a>
+                <a href="payment.html" id="pay"><i class="fa-solid fa-indian-rupee-sign"></i>Pay Fees</a>
+                <a href="hostel.html" id="hos"><i class="fa-solid fa-hotel"></i>Hostels</a>
+                <a href="notices.html" id="not"><i class="fa-regular fa-bell"></i>Notices</a>
+            </div>
+        </div>
+        <div class="extra"></div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
