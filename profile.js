@@ -934,7 +934,12 @@ if (saveBtn) {
                                         updatedEmail,
 
                                     phone:
-                                        updatedPhone
+                                        updatedPhone,
+
+                                    address:
+                                        addressInput
+                                            ? addressInput.value.trim()
+                                            : ""
 
                                 })
 

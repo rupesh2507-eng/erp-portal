@@ -2416,8 +2416,9 @@ app.get("/student-data", authenticateToken, async (req, res) => {
                 section,
                 department,
                 session,
-                profile_picture
-            FROM students
+                profile_picture,
+                address
+                FROM students
             WHERE id = ?
             `,
             [studentId]
@@ -2755,7 +2756,14 @@ app.put("/student/:studentId", authenticateToken, async (req, res) => {
             });
         }
 
-        const { name, email, phone } = req.body;
+        const { name, email, phone, address } = req.body;
+
+        console.log("PROFILE DATA:", {
+            name,
+            email,
+            phone,
+            address
+        });
 
         if (!name || !email || !phone) {
             return res.status(400).json({
@@ -2779,9 +2787,15 @@ app.put("/student/:studentId", authenticateToken, async (req, res) => {
 
         await db.query(
             `UPDATE students
-             SET name = ?, email = ?, phone = ?
+             SET name = ?, email = ?, phone = ?, address = ?
              WHERE id = ?`,
-            [name, email, phone, studentId]
+            [
+                name,
+                email,
+                phone,
+                address || "",
+                studentId
+            ]
         );
 
         const [rows] = await db.query(
@@ -2793,6 +2807,7 @@ app.put("/student/:studentId", authenticateToken, async (req, res) => {
                 course,
                 semester,
                 phone,
+                address,
                 DATE_FORMAT(dob, '%d/%m/%Y') AS dob,
                 gender,
                 section,
