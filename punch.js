@@ -1,3 +1,9 @@
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+    document.body.classList.add("dark-theme");
+}
+
 const date = document.querySelector("#date");
 
 const punchTable = document.querySelector("#punchTable");
@@ -33,51 +39,206 @@ const holidays = [
 ];
 
 
-/* SUBJECT DATA */
+/* SHOW RECORD FROM DATABASE */
 
-const subjects = [
+async function showPunchRecord(selected) {
 
-    {
-        subject: "CSA",
-        time: "10:25 - 11:20",
-        room: "R-307",
-        punch: "10:18 AM",
-        status: "Present"
-    },
+    punchTable.innerHTML = "";
 
-    {
-        subject: "DBMS",
-        time: "11:20 - 12:15",
-        room: "R-204",
-        punch: "11:12 AM",
-        status: "Present"
-    },
+    const newDate = new Date(selected + "T00:00:00");
 
-    {
-        subject: "CSA",
-        time: "12:15 - 01:10",
-        room: "R-204",
-        punch: "12:20 PM",
-        status: "Present"
-    },
+    const selectedDay = newDate.toLocaleDateString("en-US", {
+        weekday: "long"
+    });
 
-    {
-        subject: "DCN",
-        time: "02:00 - 02:50",
-        room: "R-204",
-        punch: "--",
-        status: "Absent"
-    },
+let lunchTime = "";
 
-    {
-        subject: "OS",
-        time: "02:50 - 03:40",
-        room: "R-204",
-        punch: "02:45 PM",
-        status: "Present"
+if (selectedDay === "Monday" || selectedDay === "Tuesday") {
+    lunchTime = "02:00 PM";
+} else {
+    lunchTime = "01:10 PM";
+}
+
+    const options = {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+    };
+
+    selectedDate.innerText =
+        newDate.toLocaleDateString("en-IN", options);
+
+    dayStatus.innerText = "Class Day";
+
+    const student = JSON.parse(localStorage.getItem("student"));
+
+    if (!student) {
+        window.location.href = "index.html";
+        return;
     }
 
-];
+    try {
+
+        const response = await fetch(
+            `https://erp-portal-xgjf.onrender.com/punch/${student.id}?date=${selected}`,
+            {
+                headers: {
+                    "Authorization":
+                        `Bearer ${localStorage.getItem("token")}`
+                }
+            }
+        );
+        const data = await response.json();
+
+        if (!data.success) {
+            console.error("Failed to load punch record");
+            return;
+        }
+
+        const records = data.punch;
+
+        let present = 0;
+        let absent = 0;
+
+        records.forEach((item) => {
+
+    /* SHOW LUNCH */
+
+    if (
+        (selectedDay === "Monday" || selectedDay === "Tuesday") &&
+        item.start_time === "02:00 PM"
+    ) {
+        const lunchRow = document.createElement("tr");
+
+        lunchRow.innerHTML = `
+            <td>
+                <strong>🍴 LUNCH</strong>
+            </td>
+
+            <td>
+                ${
+                    selectedDay === "Monday" || selectedDay === "Tuesday"
+                        ? "01:10 PM - 02:00 PM"
+                        : "12:15 PM - 01:10 PM"
+                }
+            </td>
+
+            <td>
+                —
+            </td>
+
+            <td>
+                —
+            </td>
+
+            <td>
+                <span class="status lunch">
+                    Lunch
+                </span>
+            </td>
+        `;
+
+        punchTable.appendChild(lunchRow);
+    }
+
+    if (
+        (selectedDay === "Wednesday" ||
+         selectedDay === "Thursday" ||
+         selectedDay === "Friday") &&
+        item.start_time === "01:10 PM"
+    ) {
+        const lunchRow = document.createElement("tr");
+
+        lunchRow.innerHTML = `
+            <td>
+                <strong>🍴 LUNCH</strong>
+            </td>
+
+            <td>
+                ${
+                    selectedDay === "Monday" || selectedDay === "Tuesday"
+                        ? "01:10 PM - 02:00 PM"
+                        : "12:15 PM - 01:10 PM"
+                }
+            </td>
+
+            <td>
+                —
+            </td>
+
+            <td>
+                —
+            </td>
+
+            <td>
+                <span class="status lunch">
+                    Lunch
+                </span>
+            </td>
+        `;
+
+        punchTable.appendChild(lunchRow);
+    }
+
+
+    /* ATTENDANCE COUNT */
+
+    if (item.status === "Present") {
+        present++;
+    } else if (item.status === "Absent") {
+        absent++;
+    }
+
+
+    /* SUBJECT ROW */
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>
+            <strong>${item.subject}</strong>
+        </td>
+
+        <td>
+            ${item.start_time} - ${item.end_time}
+        </td>
+
+        <td>
+            ${item.room}
+        </td>
+
+        <td>
+            ${item.punch_in}
+        </td>
+
+        <td>
+            <span class="status ${item.status.toLowerCase().replace(" ", "-")}">
+                ${item.status}
+            </span>
+        </td>
+    `;
+
+    punchTable.appendChild(row);
+
+});
+
+        const total = records.length;
+
+        const percent = total > 0
+            ? Math.round((present / total) * 100)
+            : 0;
+
+        presentCount.innerText = present;
+        absentCount.innerText = absent;
+        totalClasses.innerText = total;
+        percentage.innerText = percent + "%";
+
+    } catch (error) {
+
+        console.error("Punch error:", error);
+
+    }
+}
 
 
 /* DATE CHANGE */
@@ -124,100 +285,6 @@ date.addEventListener("change", () => {
 
 });
 
-
-/* SHOW RECORD */
-
-function showPunchRecord(selected) {
-
-    punchTable.innerHTML = "";
-
-    const newDate = new Date(selected);
-
-    const options = {
-        day: "2-digit",
-        month: "short",
-        year: "numeric"
-    };
-
-    selectedDate.innerText =
-        newDate.toLocaleDateString("en-IN", options);
-
-    dayStatus.innerText = "Class Day";
-
-
-    let present = 0;
-
-    let absent = 0;
-
-
-    subjects.forEach((item) => {
-
-        if (item.status === "Present") {
-
-            present++;
-
-        } else {
-
-            absent++;
-
-        }
-
-
-        const row = document.createElement("tr");
-
-
-        row.innerHTML = `
-
-            <td>
-                <strong>${item.subject}</strong>
-            </td>
-
-            <td>
-                ${item.time}
-            </td>
-
-            <td>
-                ${item.room}
-            </td>
-
-            <td>
-                ${item.punch}
-            </td>
-
-            <td>
-
-                <span class="status ${item.status.toLowerCase()}">
-
-                    ${item.status}
-
-                </span>
-
-            </td>
-
-        `;
-
-
-        punchTable.appendChild(row);
-
-    });
-
-
-    const total = subjects.length;
-
-    const percent = Math.round(
-        (present / total) * 100
-    );
-
-
-    presentCount.innerText = present;
-
-    absentCount.innerText = absent;
-
-    totalClasses.innerText = total;
-
-    percentage.innerText = percent + "%";
-
-}
 
 const icon = document.querySelector(".heading i");
 const panel = document.querySelector(".panel");

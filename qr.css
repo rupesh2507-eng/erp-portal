@@ -745,3 +745,137 @@ a:active{
     background-position: center;
     background-repeat: no-repeat;
 }
+
+/* =========================================================
+   QR PAYMENT PAGE - DARK THEME
+   ========================================================= */
+
+body.dark-theme {
+    background-color: #101820;
+    color: #E5E7EB;
+}
+
+body.dark-theme .dashboard {
+    background-color: #101820;
+    color: #E5E7EB;
+}
+
+
+/* NAVBAR */
+
+body.dark-theme .navbar {
+    background-color: #1B2733;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-theme .msg h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .msg p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .navbar > a {
+    color: #5CA7FF;
+}
+
+body.dark-theme .navbar > a:hover {
+    color: #8FC4FF;
+}
+
+body.dark-theme .navbar a:hover {
+    background-color: transparent;
+}
+
+
+/* PAYMENT CARD */
+
+body.dark-theme .payment-card {
+    background-color: #1B2733;
+    color: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-theme .payment-card:hover {
+    box-shadow: 0 9px 25px rgba(0, 0, 0, 0.30);
+}
+
+
+/* PAYMENT ICON */
+
+body.dark-theme .payment-icon {
+    background-color: #193C32;
+    color: #32D38A;
+}
+
+
+/* PAYMENT TEXT */
+
+body.dark-theme .payment-card h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .amount {
+    color: #32D38A;
+}
+
+body.dark-theme .due {
+    color: #B8C3CC;
+}
+
+
+/* QR CODE */
+
+body.dark-theme .qr {
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+
+/* MESSAGE */
+
+body.dark-theme .payment-card .msg p {
+    color: #B8C3CC;
+}
+
+
+/* SIDEBAR */
+
+body.dark-theme .panel {
+    background-color: #12355B;
+    color: #ffffff;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body.dark-theme .payment-card {
+        background-color: #1B2733;
+    }
+
+}
+
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 380px) {
+
+    body.dark-theme .payment-card {
+        background-color: #1B2733;
+    }
+
+}
+
+
+/* DESKTOP SITE ON PHONE */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    body.dark-theme .payment-card {
+        background-color: #1B2733;
+    }
+
+}

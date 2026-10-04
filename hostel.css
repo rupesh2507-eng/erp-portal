@@ -1,75 +1,189 @@
-*{
-    margin: 0px;
-    padding: 0px;
+/* =========================================================
+   HOSTEL PAGE
+   PROFILE MASTER DESIGN
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
     background-color: #E8EEF6;
+    color: #334155;
+    overflow-x: hidden;
 }
-.panel{
-    display:flex;
+
+
+/* =========================================================
+   SIDEBAR - PROFILE MASTER
+   ========================================================= */
+
+.panel {
+    display: flex;
     flex-direction: column;
-    height: 155vh;
-    width: 40vh;
+
+    width: 250px;
+    height: 100vh;
+
     padding: 10px;
+
     background-color: #12355B;
     color: white;
-    position:absolute;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition: width 0.25s ease;
 }
-.heading{
+
+.heading {
     display: flex;
-    height: 100px;
-    width: 90%;
-    padding: 10px;
-    justify-content: space-between;
     align-items: center;
-}
-.heading i{
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 6px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.panel a{
-    font-size: 1.2rem;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 70px;
+
     padding: 10px;
-    text-decoration: none;
-    color: black;
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0.5rem;
-    display: block;
-    transition: all 0.25s ease;
-    border-radius: 8px;
+    flex-shrink: 0;
 }
-a:hover{
+
+.heading h2 {
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+
+.heading i {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+
+    font-size: 0.95rem;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease;
+}
+
+.heading i:hover {
+    background-color: #1E4A78;
+    border-color: rgba(255, 255, 255, 0.65);
+}
+
+.heading i:active {
+    background-color: #FFE8A3;
+    color: #12355B;
+    transform: scale(0.95);
+}
+
+.panel a {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 11px 10px;
+    margin-bottom: 3px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 1rem;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.panel a:hover {
     background-color: #1E4A78;
     color: #ffffff;
-    transform: translateY(-3px);
-    padding-left: 10px;
+
+    transform: translateY(-2px);
+
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-a:active{
+
+.panel a:active {
     background-color: #FFE8A3;
     color: #12355B;
 }
-.panel i{
+
+.panel a i {
+    width: 24px;
+
     margin-right: 10px;
-    font-size: 1.3rem;
+
+    font-size: 1.1rem;
+
+    text-align: center;
+    flex-shrink: 0;
 }
 
-.dashboard{
-    margin-left: 43vh;
+
+/* =========================================================
+   MAIN DASHBOARD
+   ========================================================= */
+
+.dashboard {
+    min-height: 100vh;
+
+    margin-left: 250px;
+
+    width: calc(100% - 250px);
+
+    padding: 30px;
+
     background-color: #E8EEF6;
     color: #334155;
-    padding: 30px;
+
+    transition:
+        margin-left 0.25s ease,
+        width 0.25s ease;
 }
 
-/* HEADER */
+
+/* =========================================================
+   HOSTEL HEADER
+   ========================================================= */
 
 .hostel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    gap: 20px;
+
     margin-bottom: 25px;
 }
 
@@ -79,16 +193,24 @@ a:active{
 }
 
 .hostel-header p {
-    color: #6b7280;
+    color: #64748B;
     margin-top: 5px;
 }
 
 .hostel-status {
-    background: #e4f8ef;
+    display: flex;
+    align-items: center;
+
+    background: #E4F8EF;
     color: #12A866;
+
     padding: 11px 16px;
+
     border-radius: 10px;
+
     font-weight: 600;
+
+    white-space: nowrap;
 }
 
 .hostel-status i {
@@ -96,115 +218,156 @@ a:active{
 }
 
 
-/* SUMMARY */
+/* =========================================================
+   HOSTEL SUMMARY
+   ========================================================= */
 
 .hostel-summary {
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
+
     gap: 18px;
+
     margin-bottom: 25px;
 }
 
 .hostel-card {
-    background: white;
-    padding: 20px;
-
-    border-radius: 14px;
-
     display: flex;
     align-items: center;
+
     gap: 15px;
 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #E1E8F0;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 15px rgba(18, 53, 91, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.hostel-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 22px rgba(18, 53, 91, 0.12);
 }
 
 .hostel-icon {
     width: 50px;
     height: 50px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 12px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     font-size: 20px;
+
+    flex-shrink: 0;
 }
 
 .hostel-icon.room {
-    background: #ffe8ed;
+    background: #FFE8ED;
     color: #F05278;
 }
 
 .hostel-icon.block {
-    background: #e5edff;
+    background: #E5EDFF;
     color: #1976E8;
 }
 
 .hostel-icon.bed {
-    background: #eee8ff;
+    background: #EEE8FF;
     color: #6C4CE8;
 }
 
 .hostel-icon.floor {
-    background: #e4f8ef;
+    background: #E4F8EF;
     color: #12A866;
 }
 
 .hostel-card p {
-    color: #6b7280;
+    color: #64748B;
     font-size: 13px;
 }
 
 .hostel-card h2 {
     color: #12355B;
+
     margin-top: 4px;
+
+    font-size: 20px;
 }
 
 
-/* CONTENT */
+/* =========================================================
+   HOSTEL CONTENT
+   ========================================================= */
 
 .hostel-content {
     display: flex;
     flex-direction: column;
+
     gap: 20px;
 }
 
 
-/* SECTION */
+/* =========================================================
+   HOSTEL SECTION
+   ========================================================= */
 
 .hostel-section {
-    background: white;
+    width: 100%;
+
     padding: 25px;
 
+    background: #ffffff;
+
+    border: 1px solid #E1E8F0;
     border-radius: 15px;
 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    box-shadow:
+        0 4px 15px rgba(18, 53, 91, 0.06);
 }
 
 
-/* HEADING */
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
 
 .section-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    gap: 15px;
+
     margin-bottom: 20px;
 }
 
 .section-heading h2 {
     color: #12355B;
+    font-size: 20px;
 }
 
 .section-heading p {
-    color: #6b7280;
+    color: #64748B;
+
     font-size: 13px;
+
     margin-top: 5px;
 }
 
 .room-status {
-    background: #e4f8ef;
+    background: #E4F8EF;
     color: #12A866;
 
     padding: 6px 12px;
@@ -213,47 +376,66 @@ a:active{
 
     font-size: 12px;
     font-weight: 600;
+
+    white-space: nowrap;
 }
 
 
-/* ROOM DETAILS */
+/* =========================================================
+   ROOM DETAILS
+   ========================================================= */
 
 .room-details {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 15px;
 }
 
 .detail-item {
     display: flex;
     align-items: center;
+
     gap: 12px;
 
     padding: 15px;
 
-    background: #f8fafc;
+    background: #F8FAFC;
+
+    border: 1px solid #EDF0F5;
 
     border-radius: 10px;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.detail-item:hover {
+    transform: translateY(-2px);
 }
 
 .detail-item > i {
     width: 38px;
     height: 38px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 9px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: #e5edff;
+    background: #E5EDFF;
     color: #1976E8;
+
+    flex-shrink: 0;
 }
 
 .detail-item span {
     display: block;
 
-    color: #7a8089;
+    color: #7A8089;
 
     font-size: 12px;
 }
@@ -269,11 +451,15 @@ a:active{
 }
 
 
-/* ROOMMATES */
+/* =========================================================
+   ROOMMATES
+   ========================================================= */
 
 .roommates {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
+
     gap: 15px;
 }
 
@@ -285,42 +471,65 @@ a:active{
 
     padding: 15px;
 
-    border: 1px solid #edf0f5;
+    background: #ffffff;
+
+    border: 1px solid #E1E8F0;
 
     border-radius: 10px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.roommate:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(18, 53, 91, 0.08);
 }
 
 .roommate-avatar {
     width: 45px;
     height: 45px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 50%;
 
-    background: #e5edff;
+    background: #E5EDFF;
     color: #1976E8;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-shrink: 0;
 }
 
 .roommate-info {
     flex: 1;
+    min-width: 0;
 }
 
 .roommate-info h3 {
     color: #12355B;
+
     font-size: 15px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .roommate-info p {
-    color: #7a8089;
+    color: #7A8089;
+
     font-size: 12px;
+
     margin-top: 4px;
 }
 
 .bed-label {
-    background: #eee8ff;
+    background: #EEE8FF;
     color: #6C4CE8;
 
     padding: 5px 9px;
@@ -329,14 +538,20 @@ a:active{
 
     font-size: 11px;
     font-weight: 600;
+
+    white-space: nowrap;
 }
 
 
-/* FACILITIES */
+/* =========================================================
+   FACILITIES
+   ========================================================= */
 
 .facilities {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 15px;
 }
 
@@ -348,86 +563,115 @@ a:active{
 
     padding: 15px;
 
-    background: #f8fafc;
+    background: #F8FAFC;
+
+    border: 1px solid #EDF0F5;
 
     border-radius: 10px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.facility:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(18, 53, 91, 0.08);
 }
 
 .facility-icon {
     width: 40px;
     height: 40px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 9px;
 
-    background: #ffe8ed;
+    background: #FFE8ED;
     color: #F05278;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-shrink: 0;
 }
 
 .facility h3 {
     color: #12355B;
+
     font-size: 14px;
 }
 
 .facility p {
     color: #12A866;
+
     font-size: 12px;
 
     margin-top: 3px;
 }
 
 
-/* ACTION */
+/* =========================================================
+   HOSTEL ACTIONS
+   ========================================================= */
 
 .hostel-actions {
-    background: white;
-
-    padding: 22px 25px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     gap: 20px;
+
+    padding: 22px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #E1E8F0;
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(18, 53, 91, 0.06);
 }
 
 .action-info {
     display: flex;
     align-items: center;
+
     gap: 15px;
+
+    min-width: 0;
 }
 
 .action-icon {
     width: 48px;
     height: 48px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 10px;
 
-    background: #ffe8ed;
+    background: #FFE8ED;
     color: #F05278;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     font-size: 19px;
+
+    flex-shrink: 0;
 }
 
 .action-info h2 {
     color: #12355B;
+
     font-size: 17px;
 }
 
 .action-info p {
-    color: #6b7280;
+    color: #64748B;
+
     font-size: 13px;
+
     margin-top: 5px;
 }
 
@@ -435,7 +679,7 @@ a:active{
     border: none;
 
     background: #F05278;
-    color: white;
+    color: #ffffff;
 
     padding: 11px 18px;
 
@@ -446,342 +690,175 @@ a:active{
     font-weight: 600;
 
     white-space: nowrap;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .hostel-actions button:hover {
-    background: #d83d62;
+    background: #D83D62;
+
+    transform: translateY(-1px);
 }
 
-
-/* MOBILE */
-
-@media (max-width: 900px) {
-
-    .hostel-summary {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .room-details {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .facilities {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .dashboard {
-        padding: 20px;
-    }
-
-    .hostel-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .hostel-summary {
-        grid-template-columns: 1fr;
-    }
-
-    .room-details {
-        grid-template-columns: 1fr;
-    }
-
-    .roommates {
-        grid-template-columns: 1fr;
-    }
-
-    .facilities {
-        grid-template-columns: 1fr;
-    }
-
-    .hostel-actions {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hostel-actions button {
-        width: 100%;
-    }
-
-}
-
-.panel{
-    width: 40vh;
-}
-.dashboard{
-    margin-left: 43vh;
-}
-.panel.collapsed{
-    width: 50px;
-    transition: all 2s ease;
-    .heading h2{
-        display: none;
-    }
-    .link{
-        display: none;
-    }
-}
-.dashboard.reverse{
-    margin-left: 75px;
-    transition: all 2s ease;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   EXTRA HOSTEL PAGE CSS
-   Add this at the very bottom of hostel.css
-   ========================================================= */
-
-
-/* ---------- GENERAL IMPROVEMENT ---------- */
-
-.hostel-header,
-.hostel-card,
-.hostel-section,
-.hostel-actions {
-    box-sizing: border-box;
-    transition: all 0.25s ease;
-}
-
-.hostel-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 9px 22px rgba(18, 53, 91, 0.12);
-}
-
-.roommate,
-.detail-item,
-.facility {
-    box-sizing: border-box;
-    transition: all 0.2s ease;
+.hostel-actions button:disabled {
+    cursor: not-allowed;
+    transform: none;
 }
 
 
 /* =========================================================
-   DESKTOP
+   LAPTOP
    ========================================================= */
 
-@media (min-width: 1101px) {
+@media (min-width: 769px) and (max-width: 1200px) {
 
-    .dashboard {
-        min-height: 100vh;
-        box-sizing: border-box;
+    .panel {
+        width: 210px;
     }
 
-    .hostel-header,
-    .hostel-summary,
-    .hostel-content {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (min-width: 601px) and (max-width: 1100px) {
-
     .dashboard {
-        margin-left: 200px;
+        margin-left: 210px;
         width: calc(100% - 210px);
-        padding: 15px;
-        box-sizing: border-box;
+
+        padding: 22px;
     }
 
+    .hostel-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-    /* HEADER */
+    .room-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .facilities {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / IPAD
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+
+    .panel {
+        width: 175px;
+    }
+
+    .heading {
+        height: 65px;
+    }
+
+    .heading h2 {
+        font-size: 1.05rem;
+    }
+
+    .heading i {
+        width: 32px;
+        height: 32px;
+    }
+
+    .panel a {
+        font-size: 0.85rem;
+        padding: 10px 7px;
+    }
+
+    .panel a i {
+        width: 20px;
+        margin-right: 7px;
+        font-size: 0.95rem;
+    }
+
+    .dashboard {
+        margin-left: 175px;
+        width: calc(100% - 175px);
+
+        padding: 18px;
+    }
 
     .hostel-header h1 {
-        font-size: 24px;
+        font-size: 25px;
     }
-
-    .hostel-header p {
-        font-size: 11px;
-    }
-
-    .hostel-status {
-        padding: 9px 12px;
-        font-size: 11px;
-    }
-
-
-    /* SUMMARY */
 
     .hostel-summary {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
-        margin-bottom: 18px;
     }
 
     .hostel-card {
-        padding: 14px;
-        gap: 11px;
+        padding: 15px;
     }
-
-    .hostel-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-
-    .hostel-card p {
-        font-size: 10px;
-    }
-
-    .hostel-card h2 {
-        font-size: 17px;
-    }
-
-
-    /* SECTIONS */
-
-    .hostel-content {
-        gap: 15px;
-    }
-
-    .hostel-section {
-        padding: 18px;
-    }
-
-    .section-heading h2 {
-        font-size: 17px;
-    }
-
-    .section-heading p {
-        font-size: 11px;
-    }
-
-    .room-status {
-        font-size: 11px;
-        padding: 5px 10px;
-    }
-
-
-    /* ROOM DETAILS */
 
     .room-details {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
 
-    .detail-item {
-        padding: 12px;
-        gap: 10px;
-    }
-
-    .detail-item > i {
-        width: 33px;
-        height: 33px;
-    }
-
-    .detail-item span {
-        font-size: 11px;
-    }
-
-    .detail-item strong {
-        font-size: 13px;
-    }
-
-
-    /* ROOMMATES */
-
-    .roommates {
-        gap: 12px;
-    }
-
-    .roommate {
-        padding: 12px;
-        gap: 11px;
-    }
-
-    .roommate-avatar {
-        width: 40px;
-        height: 40px;
-    }
-
-    .roommate-info h3 {
-        font-size: 14px;
-    }
-
-    .roommate-info p {
-        font-size: 11px;
-    }
-
-    .bed-label {
-        font-size: 10px;
-    }
-
-
-    /* FACILITIES */
-
     .facilities {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
 
-    .facility {
-        padding: 12px;
-        gap: 10px;
+}
+
+
+/* =========================================================
+   DESKTOP COLLAPSED SIDEBAR
+   ========================================================= */
+
+@media (min-width: 601px) {
+
+    .panel.collapsed {
+        width: 58px;
+        padding: 4px;
+
+        overflow-x: hidden;
     }
 
-    .facility-icon {
-        width: 36px;
-        height: 36px;
+    .panel.collapsed .heading {
+        justify-content: center;
+
+        width: 100%;
+        padding: 0;
     }
 
-    .facility h3 {
-        font-size: 13px;
+    .panel.collapsed .heading h2 {
+        display: none;
     }
 
-    .facility p {
-        font-size: 11px;
+    .panel.collapsed .heading i {
+        margin: 0;
     }
 
+    .panel.collapsed .link {
+        display: flex;
 
-    /* ACTIONS */
+        justify-content: center;
 
-    .hostel-actions {
-        padding: 18px;
-        gap: 15px;
+        width: 100%;
+
+        padding: 10px 3px;
+
+        font-size: 0;
     }
 
-    .action-icon {
-        width: 42px;
-        height: 42px;
-        font-size: 16px;
+    .panel.collapsed .link i {
+        width: auto;
+        margin: 0;
+
+        font-size: 1.05rem;
     }
 
-    .action-info h2 {
-        font-size: 15px;
+    .dashboard.reverse {
+        margin-left: 58px;
+        width: calc(100% - 58px);
     }
 
-    .action-info p {
-        font-size: 11px;
-    }
-
-    .hostel-actions button {
-        padding: 9px 14px;
-        font-size: 11px;
-    }
 }
 
 
@@ -795,28 +872,40 @@ a:active{
     body {
         width: 100%;
         max-width: 100%;
+
         overflow-x: hidden;
     }
 
 
-    /* SIDEBAR */
+    /* SIDEBAR ICON RAIL */
 
     .panel {
         position: fixed;
+
         top: 0;
         left: 0;
+
         width: 58px;
         height: 100vh;
+
         padding: 4px;
+
         box-sizing: border-box;
+
         z-index: 1000;
+
         overflow: hidden;
+
+        transition:
+            width 0.25s ease;
     }
 
     .heading {
         width: 100%;
         height: 58px;
+
         padding: 0;
+
         justify-content: center;
     }
 
@@ -825,154 +914,242 @@ a:active{
     }
 
     .heading i {
+        width: 32px;
+        height: 32px;
+
+        padding: 0;
+
         margin: 0;
-        font-size: 0.95rem;
-        padding: 6px;
+
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 7px;
+
+        font-size: 0.9rem;
     }
 
     .panel a {
         width: 100%;
         height: 42px;
+
         padding: 9px 3px;
         margin-bottom: 3px;
-        box-sizing: border-box;
+
         font-size: 0;
+
         display: flex;
+
         justify-content: center;
         align-items: center;
     }
 
     .panel a i {
+        width: auto;
+
         margin: 0;
+
         font-size: 1rem;
     }
 
 
-    /* MAIN */
+    /* MAIN CONTENT */
 
-    .dashboard {
+    .dashboard,
+    .dashboard.reverse {
         margin-left: 58px;
+
         width: calc(100% - 58px);
-        padding: 7px;
-        box-sizing: border-box;
+
+        padding: 12px;
     }
 
 
-    /* HEADER */
+    /* MOBILE OVERLAY SIDEBAR */
+
+    .panel.collapsed {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 215px;
+        height: 100vh;
+
+        padding: 8px;
+
+        z-index: 1100;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+        height: 58px;
+
+        padding: 0 4px;
+
+        justify-content: space-between;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: block;
+
+        font-size: 1.05rem;
+    }
+
+    .panel.collapsed .heading i {
+        width: 32px;
+        height: 32px;
+
+        margin: 0;
+    }
+
+    .panel.collapsed .link {
+        display: flex;
+
+        width: 100%;
+        height: auto;
+
+        padding: 10px 8px;
+
+        font-size: 0.82rem;
+
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .panel.collapsed .link i {
+        width: 24px;
+
+        margin-right: 9px;
+
+        font-size: 1rem;
+    }
+
+
+    /* HOSTEL HEADER */
 
     .hostel-header {
-        width: 100%;
-        gap: 10px;
-        margin-bottom: 12px;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+        margin-bottom: 15px;
     }
 
     .hostel-header h1 {
-        font-size: 19px;
+        font-size: 22px;
     }
 
     .hostel-header p {
-        font-size: 9px;
-        margin-top: 4px;
+        font-size: 10px;
     }
 
     .hostel-status {
-        padding: 7px 9px;
-        font-size: 9px;
-        border-radius: 7px;
-    }
+        padding: 8px 11px;
 
-    .hostel-status i {
-        margin-right: 4px;
+        font-size: 10px;
+
+        border-radius: 8px;
     }
 
 
     /* SUMMARY */
 
     .hostel-summary {
-        width: 100%;
-        gap: 7px;
-        margin-bottom: 12px;
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+
+        margin-bottom: 15px;
     }
 
     .hostel-card {
-        padding: 9px;
-        gap: 7px;
-        border-radius: 10px;
+        padding: 12px;
+
+        gap: 9px;
+
+        border-radius: 11px;
     }
 
     .hostel-icon {
-        width: 31px;
-        height: 31px;
-        border-radius: 7px;
-        font-size: 12px;
+        width: 38px;
+        height: 38px;
+
+        border-radius: 9px;
+
+        font-size: 15px;
     }
 
     .hostel-card p {
-        font-size: 7px;
+        font-size: 9px;
     }
 
     .hostel-card h2 {
-        font-size: 14px;
-        margin-top: 3px;
+        font-size: 15px;
     }
 
 
     /* SECTIONS */
 
     .hostel-content {
-        gap: 9px;
+        gap: 12px;
     }
 
     .hostel-section {
-        width: 100%;
-        padding: 12px;
-        border-radius: 11px;
-        box-sizing: border-box;
+        padding: 15px;
+
+        border-radius: 12px;
     }
 
     .section-heading {
-        margin-bottom: 12px;
-        gap: 10px;
+        margin-bottom: 14px;
     }
 
     .section-heading h2 {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .section-heading p {
-        font-size: 8px;
-        margin-top: 3px;
+        font-size: 9px;
     }
 
     .room-status {
-        font-size: 8px;
-        padding: 4px 8px;
+        padding: 5px 8px;
+
+        font-size: 9px;
     }
 
 
     /* ROOM DETAILS */
 
     .room-details {
-        gap: 7px;
+        grid-template-columns: 1fr;
+
+        gap: 9px;
     }
 
     .detail-item {
-        padding: 9px;
-        gap: 8px;
+        padding: 11px;
+
+        gap: 9px;
     }
 
     .detail-item > i {
-        width: 30px;
-        height: 30px;
+        width: 32px;
+        height: 32px;
+
         font-size: 11px;
     }
 
     .detail-item span {
-        font-size: 8px;
+        font-size: 9px;
     }
 
     .detail-item strong {
-        font-size: 10px;
+        font-size: 11px;
     }
 
 
@@ -980,21 +1157,23 @@ a:active{
 
     .roommates {
         grid-template-columns: 1fr;
-        gap: 7px;
-    }
 
-    .roommate {
-        padding: 9px;
         gap: 9px;
     }
 
+    .roommate {
+        padding: 11px;
+
+        gap: 10px;
+    }
+
     .roommate-avatar {
-        width: 36px;
-        height: 36px;
+        width: 38px;
+        height: 38px;
     }
 
     .roommate-info h3 {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .roommate-info p {
@@ -1002,58 +1181,67 @@ a:active{
     }
 
     .bed-label {
-        font-size: 8px;
+        font-size: 9px;
     }
 
 
     /* FACILITIES */
 
     .facilities {
-        grid-template-columns: 1fr 1fr;
-        gap: 7px;
-    }
+        grid-template-columns: repeat(2, 1fr);
 
-    .facility {
-        padding: 9px;
-        gap: 7px;
-    }
-
-    .facility-icon {
-        width: 30px;
-        height: 30px;
-    }
-
-    .facility h3 {
-        font-size: 10px;
-    }
-
-    .facility p {
-        font-size: 8px;
-    }
-
-
-    /* ACTIONS */
-
-    .hostel-actions {
-        width: 100%;
-        padding: 12px;
-        border-radius: 11px;
-        box-sizing: border-box;
-        gap: 10px;
-    }
-
-    .action-info {
         gap: 9px;
     }
 
+    .facility {
+        padding: 10px;
+
+        gap: 8px;
+    }
+
+    .facility-icon {
+        width: 32px;
+        height: 32px;
+
+        font-size: 12px;
+    }
+
+    .facility h3 {
+        font-size: 11px;
+    }
+
+    .facility p {
+        font-size: 9px;
+    }
+
+
+    /* ACTION */
+
+    .hostel-actions {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 15px;
+
+        gap: 12px;
+    }
+
+    .action-info {
+        width: 100%;
+
+        gap: 10px;
+    }
+
     .action-icon {
-        width: 34px;
-        height: 34px;
-        font-size: 13px;
+        width: 38px;
+        height: 38px;
+
+        font-size: 14px;
     }
 
     .action-info h2 {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .action-info p {
@@ -1062,15 +1250,17 @@ a:active{
 
     .hostel-actions button {
         width: 100%;
-        padding: 9px;
+
+        padding: 10px;
+
         font-size: 10px;
-        margin-top: 3px;
     }
+
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 380px) {
@@ -1079,10 +1269,17 @@ a:active{
         width: 52px;
     }
 
-    .dashboard {
-        margin-left: 52px;
-        width: calc(100% - 52px);
-        padding: 5px;
+    .heading {
+        height: 54px;
+    }
+
+    .heading i {
+        width: 30px;
+        height: 30px;
+
+        border-radius: 6px;
+
+        font-size: 0.82rem;
     }
 
     .panel a {
@@ -1093,9 +1290,41 @@ a:active{
         font-size: 0.9rem;
     }
 
+    .dashboard,
+    .dashboard.reverse {
+        margin-left: 52px;
+
+        width: calc(100% - 52px);
+
+        padding: 8px;
+    }
+
+
+    /* MOBILE OVERLAY */
+
+    .panel.collapsed {
+        width: 200px;
+
+        padding: 7px;
+    }
+
+    .panel.collapsed .heading {
+        height: 54px;
+    }
+
+    .panel.collapsed .heading h2 {
+        font-size: 0.95rem;
+    }
+
+    .panel.collapsed .link {
+        font-size: 0.76rem;
+    }
+
+
+    /* HEADER */
 
     .hostel-header h1 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .hostel-header p {
@@ -1103,41 +1332,48 @@ a:active{
     }
 
     .hostel-status {
-        font-size: 7px;
-        padding: 6px 7px;
+        font-size: 8px;
+
+        padding: 7px 9px;
     }
 
 
+    /* SUMMARY */
+
     .hostel-summary {
-        gap: 5px;
+        gap: 7px;
     }
 
     .hostel-card {
-        padding: 7px;
-        gap: 5px;
+        padding: 9px;
+
+        gap: 7px;
     }
 
     .hostel-icon {
-        width: 27px;
-        height: 27px;
-        font-size: 10px;
+        width: 32px;
+        height: 32px;
+
+        font-size: 12px;
     }
 
     .hostel-card p {
-        font-size: 6px;
+        font-size: 7px;
     }
 
     .hostel-card h2 {
-        font-size: 12px;
+        font-size: 13px;
     }
 
 
+    /* SECTION */
+
     .hostel-section {
-        padding: 9px;
+        padding: 11px;
     }
 
     .section-heading h2 {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .section-heading p {
@@ -1149,15 +1385,19 @@ a:active{
     }
 
 
+    /* DETAILS */
+
     .detail-item {
-        padding: 7px;
-        gap: 6px;
+        padding: 9px;
+
+        gap: 7px;
     }
 
     .detail-item > i {
-        width: 26px;
-        height: 26px;
-        font-size: 9px;
+        width: 28px;
+        height: 28px;
+
+        font-size: 10px;
     }
 
     .detail-item span {
@@ -1165,18 +1405,19 @@ a:active{
     }
 
     .detail-item strong {
-        font-size: 9px;
+        font-size: 10px;
     }
 
 
+    /* ROOMMATES */
+
     .roommate {
-        padding: 7px;
-        gap: 7px;
+        padding: 9px;
     }
 
     .roommate-avatar {
-        width: 32px;
-        height: 32px;
+        width: 34px;
+        height: 34px;
     }
 
     .roommate-info h3 {
@@ -1187,16 +1428,24 @@ a:active{
         font-size: 8px;
     }
 
+    .bed-label {
+        font-size: 7px;
+    }
+
+
+    /* FACILITIES */
 
     .facility {
-        padding: 7px;
-        gap: 5px;
+        padding: 8px;
+
+        gap: 6px;
     }
 
     .facility-icon {
-        width: 27px;
-        height: 27px;
-        font-size: 9px;
+        width: 28px;
+        height: 28px;
+
+        font-size: 10px;
     }
 
     .facility h3 {
@@ -1208,14 +1457,17 @@ a:active{
     }
 
 
+    /* ACTION */
+
     .hostel-actions {
-        padding: 9px;
+        padding: 10px;
     }
 
     .action-icon {
-        width: 30px;
-        height: 30px;
-        font-size: 11px;
+        width: 32px;
+        height: 32px;
+
+        font-size: 12px;
     }
 
     .action-info h2 {
@@ -1229,11 +1481,111 @@ a:active{
     .hostel-actions button {
         font-size: 9px;
     }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+    .panel {
+        width: 48px;
+    }
+
+    .heading {
+        height: 50px;
+    }
+
+    .heading i {
+        width: 28px;
+        height: 28px;
+
+        border-radius: 6px;
+
+        font-size: 0.75rem;
+    }
+
+    .panel a {
+        height: 37px;
+    }
+
+    .panel a i {
+        font-size: 0.82rem;
+    }
+
+    .dashboard,
+    .dashboard.reverse {
+        margin-left: 48px;
+
+        width: calc(100% - 48px);
+
+        padding: 6px;
+    }
+
+    .panel.collapsed {
+        width: 185px;
+    }
+
+    .panel.collapsed .heading h2 {
+        font-size: 0.9rem;
+    }
+
+    .panel.collapsed .link {
+        font-size: 0.72rem;
+    }
+
+    .hostel-header h1 {
+        font-size: 16px;
+    }
+
+    .hostel-header p {
+        font-size: 7px;
+    }
+
+    .hostel-card {
+        padding: 8px;
+    }
+
+    .hostel-icon {
+        width: 29px;
+        height: 29px;
+
+        font-size: 11px;
+    }
+
+    .hostel-card p {
+        font-size: 6px;
+    }
+
+    .hostel-card h2 {
+        font-size: 11px;
+    }
+
+    .hostel-section {
+        padding: 9px;
+    }
+
+    .section-heading h2 {
+        font-size: 12px;
+    }
+
+    .detail-item strong {
+        font-size: 9px;
+    }
+
+    .facility h3 {
+        font-size: 8px;
+    }
+
 }
 
 
 /* =========================================================
    DESKTOP SITE ON PHONE
+   PROFILE MASTER BEHAVIOR
    ========================================================= */
 
 @media (pointer: coarse) and (min-width: 601px) {
@@ -1242,50 +1594,65 @@ a:active{
     body {
         width: 100%;
         max-width: 100%;
+
         overflow-x: hidden;
     }
-
 
     /* SIDEBAR */
 
     .panel {
         position: fixed;
+
         top: 0;
         left: 0;
+
         width: 190px;
         height: 100vh;
+
         padding: 10px;
-        box-sizing: border-box;
+
         z-index: 1000;
+
         overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .heading {
         width: 100%;
         height: 70px;
+
         padding: 10px;
-        box-sizing: border-box;
     }
 
     .heading h2 {
         display: block;
+
         font-size: 1.05rem;
     }
 
     .heading i {
+        width: 32px;
+        height: 32px;
+
         margin: 0;
+
         font-size: 0.9rem;
     }
 
     .panel a {
         font-size: 0.78rem;
+
         padding: 9px 7px;
+
         margin-bottom: 3px;
     }
 
     .panel a i {
-        font-size: 0.85rem;
+        width: 20px;
+
         margin-right: 7px;
+
+        font-size: 0.85rem;
     }
 
 
@@ -1293,13 +1660,14 @@ a:active{
 
     .dashboard {
         margin-left: 190px;
+
         width: calc(100% - 190px);
+
         padding: 15px;
-        box-sizing: border-box;
     }
 
 
-    /* HEADER */
+    /* HOSTEL */
 
     .hostel-header h1 {
         font-size: 23px;
@@ -1311,25 +1679,26 @@ a:active{
 
     .hostel-status {
         padding: 8px 11px;
+
         font-size: 10px;
     }
 
-
-    /* SUMMARY */
-
     .hostel-summary {
         grid-template-columns: repeat(4, 1fr);
+
         gap: 10px;
-        margin-bottom: 12px;
     }
 
     .hostel-card {
-        padding: 11px;
+        padding: 12px;
+
+        gap: 9px;
     }
 
     .hostel-icon {
-        width: 39px;
-        height: 39px;
+        width: 40px;
+        height: 40px;
+
         font-size: 15px;
     }
 
@@ -1338,18 +1707,11 @@ a:active{
     }
 
     .hostel-card h2 {
-        font-size: 17px;
-    }
-
-
-    /* SECTIONS */
-
-    .hostel-content {
-        gap: 12px;
+        font-size: 16px;
     }
 
     .hostel-section {
-        padding: 16px;
+        padding: 17px;
     }
 
     .section-heading h2 {
@@ -1360,15 +1722,9 @@ a:active{
         font-size: 9px;
     }
 
-    .room-status {
-        font-size: 10px;
-    }
-
-
-    /* ROOM DETAILS */
-
     .room-details {
         grid-template-columns: repeat(3, 1fr);
+
         gap: 10px;
     }
 
@@ -1384,11 +1740,9 @@ a:active{
         font-size: 12px;
     }
 
-
-    /* ROOMMATES */
-
     .roommates {
         grid-template-columns: repeat(2, 1fr);
+
         gap: 10px;
     }
 
@@ -1404,11 +1758,9 @@ a:active{
         font-size: 10px;
     }
 
-
-    /* FACILITIES */
-
     .facilities {
         grid-template-columns: repeat(3, 1fr);
+
         gap: 10px;
     }
 
@@ -1424,11 +1776,8 @@ a:active{
         font-size: 10px;
     }
 
-
-    /* ACTIONS */
-
     .hostel-actions {
-        padding: 16px;
+        padding: 17px;
     }
 
     .action-info h2 {
@@ -1441,49 +1790,319 @@ a:active{
 
     .hostel-actions button {
         padding: 9px 14px;
+
         font-size: 11px;
     }
 
 
-    /* COLLAPSED SIDEBAR */
+    /* DESKTOP-SITE COLLAPSE */
 
     .panel.collapsed {
         width: 58px;
-    }
 
-    .panel.collapsed .heading h2,
-    .panel.collapsed .link {
-        display: none;
+        padding: 4px;
     }
 
     .panel.collapsed .heading {
         justify-content: center;
+
+        padding: 0;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: none;
     }
 
     .panel.collapsed .heading i {
         margin: 0;
     }
 
-    .dashboard.reverse {
-        margin-left: 78px;
-        width: calc(100% - 78px);
+    .panel.collapsed .link {
+        display: flex;
+
+        justify-content: center;
+
+        font-size: 0;
+
+        padding: 10px 3px;
     }
+
+    .panel.collapsed .link i {
+        margin: 0;
+
+        font-size: 1.05rem;
+    }
+
+    .dashboard.reverse {
+        margin-left: 58px;
+
+        width: calc(100% - 58px);
+    }
+
 }
 
 
-/* ---------- FINAL OVERFLOW SAFETY ---------- */
+/* =========================================================
+   DARK THEME
+   ========================================================= */
 
-@media (max-width: 1100px) {
+body.dark-theme {
+    background-color: #101820;
+    color: #E5E7EB;
+}
 
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
+body.dark-theme .dashboard {
+    background-color: #101820;
+    color: #E5E7EB;
+}
+
+
+/* HEADER */
+
+body.dark-theme .hostel-header h1 {
+    color: #ffffff;
+}
+
+body.dark-theme .hostel-header p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .hostel-status {
+    background-color: #193C32;
+    color: #32D38A;
+}
+
+
+/* SUMMARY */
+
+body.dark-theme .hostel-card {
+    background-color: #1B2733;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-theme .hostel-card:hover {
+    box-shadow:
+        0 9px 22px rgba(0, 0, 0, 0.30);
+}
+
+body.dark-theme .hostel-card p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .hostel-card h2 {
+    color: #ffffff;
+}
+
+
+/* ICONS */
+
+body.dark-theme .hostel-icon.room {
+    background-color: #40282B;
+    color: #FF7373;
+}
+
+body.dark-theme .hostel-icon.block {
+    background-color: #203A5A;
+    color: #5CA7FF;
+}
+
+body.dark-theme .hostel-icon.bed {
+    background-color: #33294F;
+    color: #A78BFA;
+}
+
+body.dark-theme .hostel-icon.floor {
+    background-color: #193C32;
+    color: #32D38A;
+}
+
+
+/* SECTIONS */
+
+body.dark-theme .hostel-section {
+    background-color: #1B2733;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-theme .section-heading h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .section-heading p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .room-status {
+    background-color: #193C32;
+    color: #32D38A;
+}
+
+
+/* DETAILS */
+
+body.dark-theme .detail-item {
+    background-color: #243442;
+    border-color: #3A4B59;
+}
+
+body.dark-theme .detail-item > i {
+    background-color: #203A5A;
+    color: #5CA7FF;
+}
+
+body.dark-theme .detail-item span {
+    color: #9FAFBC;
+}
+
+body.dark-theme .detail-item strong {
+    color: #ffffff;
+}
+
+
+/* ROOMMATES */
+
+body.dark-theme .roommate {
+    background-color: #1B2733;
+
+    border-color: #3A4B59;
+}
+
+body.dark-theme .roommate-avatar {
+    background-color: #203A5A;
+    color: #5CA7FF;
+}
+
+body.dark-theme .roommate-info h3 {
+    color: #ffffff;
+}
+
+body.dark-theme .roommate-info p {
+    color: #9FAFBC;
+}
+
+body.dark-theme .bed-label {
+    background-color: #33294F;
+    color: #A78BFA;
+}
+
+
+/* FACILITIES */
+
+body.dark-theme .facility {
+    background-color: #243442;
+
+    border-color: #3A4B59;
+}
+
+body.dark-theme .facility-icon {
+    background-color: #40282B;
+    color: #FF7373;
+}
+
+body.dark-theme .facility h3 {
+    color: #ffffff;
+}
+
+body.dark-theme .facility p {
+    color: #32D38A;
+}
+
+
+/* ACTION */
+
+body.dark-theme .hostel-actions {
+    background-color: #1B2733;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-theme .action-icon {
+    background-color: #40282B;
+    color: #FF7373;
+}
+
+body.dark-theme .action-info h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .action-info p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .hostel-actions button {
+    background-color: #F05278;
+    color: #ffffff;
+}
+
+body.dark-theme .hostel-actions button:hover {
+    background-color: #D83D62;
+}
+
+
+/* SIDEBAR */
+
+body.dark-theme .panel {
+    background-color: #12355B;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TOUCH DEVICES - REMOVE HOVER LIFT
+   ========================================================= */
+
+@media (pointer: coarse) {
+
+    .hostel-card:hover,
+    .roommate:hover,
+    .detail-item:hover,
+    .facility:hover {
+        transform: none;
     }
+
+}
+
+
+/* =========================================================
+   FINAL SAFETY
+   ========================================================= */
+
+img,
+svg,
+video {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+@media (max-width: 600px) {
 
     .hostel-header,
     .hostel-summary,
     .hostel-content {
         max-width: 100%;
     }
+
 }

@@ -1,83 +1,203 @@
-*{
-    margin: 0px;
-    padding: 0px;
+/* =========================================================
+   PAYMENT PAGE
+   PROFILE MASTER DESIGN
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
     background-color: #E8EEF6;
+    color: #334155;
+    overflow-x: hidden;
 }
-.panel{
-    display:flex;
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.panel {
+    display: flex;
     flex-direction: column;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
     height: 100vh;
-    width: 40vh;
+
     padding: 10px;
+
     background-color: #12355B;
     color: white;
-    position:absolute;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition:
+        width 0.3s ease,
+        padding 0.3s ease;
 }
-.heading{
+
+.heading {
     display: flex;
-    height: 100px;
-    width: 90%;
+
+    width: 100%;
+    height: 70px;
+
     padding: 10px;
+
     justify-content: space-between;
     align-items: center;
+
+    flex-shrink: 0;
 }
-.heading i{
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 6px;
-    border-radius: 6px;
-    cursor: pointer;
+
+.heading h2 {
+    font-size: 1.25rem;
+    white-space: nowrap;
 }
-.panel a{
-    font-size: 1.2rem;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0.5rem;
-    display: block;
-    transition: all 0.25s ease;
+
+.heading i {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 8px;
+
+    padding: 0;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition: all 0.25s ease;
 }
-a:hover{
+
+.heading i:hover {
     background-color: #1E4A78;
-    color: #ffffff;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.65);
 }
-a:active{
+
+.heading i:active {
     background-color: #FFE8A3;
     color: #12355B;
 }
-.panel i{
-    margin-right: 10px;
-    font-size: 1.3rem;
+
+.panel a {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin-bottom: 3px;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+
+    transition: all 0.25s ease;
+
+    flex-shrink: 0;
 }
 
-.dashboard{
-    margin-left: 43vh;
+.panel a:hover {
+    background-color: #1E4A78;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.panel a:active {
+    background-color: #FFE8A3;
+    color: #12355B;
+}
+
+.panel a i {
+    width: 22px;
+
+    margin-right: 10px;
+
+    font-size: 1.15rem;
+
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD
+   ========================================================= */
+
+.dashboard {
+    min-height: 100vh;
+
+    margin-left: 250px;
+
+    width: calc(100% - 250px);
+
+    padding: 30px;
+
     background-color: #E8EEF6;
     color: #334155;
-    padding: 10px;
+
+    transition:
+        margin-left 0.3s ease,
+        width 0.3s ease;
 }
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    background: white;
+    width: 100%;
+
+    background-color: #ffffff;
+
     padding: 18px 25px;
+
     border-radius: 12px;
 
     margin-bottom: 20px;
-}
 
-.navbar a:hover{
-    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(18, 53, 91, 0.06);
+
+    transition: all 0.25s ease;
 }
 
 .msg h2 {
@@ -86,123 +206,233 @@ a:active{
 }
 
 .msg p {
-    color: #777;
+    color: #64748B;
+
     font-size: 12px;
+
     margin-top: 4px;
 }
 
 .navbar > a {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 10px;
+
     text-decoration: none;
+
     color: #12355B;
 
     font-size: 13px;
     font-weight: 600;
 
-    display: flex;
-    align-items: center;
-    gap: 7px;
+    border-radius: 8px;
+
+    transition: all 0.25s ease;
 }
 
 .navbar > a:hover {
     color: #1976E8;
+    background-color: #F1F6FC;
+    transform: none;
+    box-shadow: none;
 }
+
+
+/* =========================================================
+   PAYMENT CONTAINER
+   ========================================================= */
 
 .payment-container {
     display: flex;
+
     justify-content: center;
     align-items: center;
-    padding: 30px;
+
+    width: 100%;
+
+    padding: 30px 15px;
 }
+
+
+/* =========================================================
+   PAYMENT CARD
+   ========================================================= */
 
 .payment-card {
-    background: white;
-    width: 420px;
-    padding: 25px;
+    width: 100%;
+    max-width: 460px;
+
+    background-color: #ffffff;
+
+    padding: 28px;
+
     border-radius: 15px;
+
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+    box-shadow: 0 4px 15px rgba(18, 53, 91, 0.08);
+
+    transition: all 0.25s ease;
 }
 
+.payment-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 25px rgba(18, 53, 91, 0.12);
+}
+
+
+/* =========================================================
+   PAYMENT ICON
+   ========================================================= */
+
 .payment-icon {
-    width: 55px;
-    height: 55px;
-    margin: auto;
-    border-radius: 50%;
-    background: #e4f8ef;
-    color: #12A866;
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    border-radius: 50%;
+
+    background-color: #E4F8EF;
+    color: #12A866;
 
     font-size: 23px;
 }
 
+
+/* =========================================================
+   PAYMENT TEXT
+   ========================================================= */
+
 .payment-card h2 {
-    margin-top: 12px;
+    margin-top: 13px;
+
     color: #12355B;
+
     font-size: 20px;
 }
 
 .amount {
     color: #12A866;
+
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 700;
+
     margin-top: 8px;
 }
 
 .due {
-    color: #777;
+    color: #64748B;
+
     font-size: 12px;
-    margin-top: 5px;
+
+    margin-top: 6px;
 }
+
+.due i {
+    margin-right: 4px;
+}
+
+
+/* =========================================================
+   PAYMENT INFORMATION
+   ========================================================= */
 
 .payment-info {
     margin-top: 25px;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+
+    border-top: 1px solid #E1E8F0;
+    border-bottom: 1px solid #E1E8F0;
 }
 
 .payment-info div {
     display: flex;
+
     justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
     padding: 12px 0;
 }
 
 .payment-info span {
-    color: #888;
+    color: #64748B;
+
     font-size: 12px;
+
+    text-align: left;
 }
 
 .payment-info strong {
     color: #12355B;
+
     font-size: 12px;
+
+    text-align: right;
+
+    word-break: break-word;
 }
+
+
+/* =========================================================
+   PAY BUTTON
+   ========================================================= */
 
 #payBtn {
     width: 100%;
+
     margin-top: 20px;
+
     padding: 12px;
 
     border: none;
     border-radius: 8px;
 
-    background: #12A866;
-    color: white;
+    background-color: #12A866;
+    color: #ffffff;
 
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 700;
 
     cursor: pointer;
+
+    transition: all 0.25s ease;
 }
 
 #payBtn:hover {
-    background: #0d8d55;
+    background-color: #0D8C54;
+
+    transform: translateY(-1px);
 }
 
+#payBtn:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   SECURE PAYMENT
+   ========================================================= */
+
 .secure {
-    color: #999;
+    color: #94A3B8;
+
     font-size: 10px;
+
     margin-top: 12px;
 }
 
@@ -210,78 +440,269 @@ a:active{
     margin-right: 4px;
 }
 
-.panel{
-    width: 40vh;
-}
-.dashboard{
-    margin-left: 43vh;
-}
-.panel.collapsed{
-    width: 50px;
-    transition: all 2s ease;
-    .heading h2{
-        display: none;
-    }
-    .link{
-        display: none;
-    }
-}
-.dashboard.reverse{
-    margin-left: 75px;
-    transition: all 2s ease;
-}
-
-
-
-
-
-
-
-
-
-
-
 
 /* =========================================================
-   EXTRA PAYMENT PAGE CSS
-   Add this at the very bottom of payment.css
+   CUSTOM PAYMENT
    ========================================================= */
 
+.custom-payment-box {
+    width: 100%;
 
-/* ---------- GENERAL IMPROVEMENT ---------- */
-
-.navbar,
-.payment-card {
-    box-sizing: border-box;
-    transition: all 0.25s ease;
+    text-align: center;
 }
 
-.payment-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 9px 25px rgba(18, 53, 91, 0.12);
+#chooseCustomBtn {
+    background: transparent;
+
+    border: none;
+
+    color: #12355B;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: underline;
+
+    margin: 5px 0 12px;
+
+    transition: color 0.2s ease;
 }
 
-#payBtn {
-    transition: all 0.25s ease;
+#chooseCustomBtn:hover {
+    color: #1976E8;
 }
 
 
 /* =========================================================
-   DESKTOP
+   CUSTOM AMOUNT INPUT
+   ========================================================= */
+
+#customAmountArea {
+    width: 100%;
+
+    text-align: center;
+}
+
+.custom-amount-display {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 5px;
+}
+
+.custom-amount-display .rupee-symbol {
+    color: #12A866;
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+#customAmount {
+    width: 145px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #12A866;
+
+    font-size: 34px;
+    font-weight: 700;
+
+    text-align: center;
+
+    padding: 0;
+}
+
+#customAmount::-webkit-outer-spin-button,
+#customAmount::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#customAmount {
+    -moz-appearance: textfield;
+}
+
+.amount .custom-amount-input {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 2px;
+}
+
+.amount .custom-amount-input span {
+    color: #12A866;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.amount .custom-amount-input input {
+    width: 150px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #12A866;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+.amount .custom-amount-input input::-webkit-outer-spin-button,
+.amount .custom-amount-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.amount .custom-amount-input input {
+    -moz-appearance: textfield;
+}
+
+#amountMessage {
+    min-height: 20px;
+
+    margin: 5px 0 8px;
+
+    color: #D93025;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR - DESKTOP
    ========================================================= */
 
 @media (min-width: 1101px) {
 
+    .panel.collapsed {
+        width: 58px;
+
+        padding: 4px;
+
+        overflow: hidden;
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: none;
+    }
+
+    .panel.collapsed .heading i {
+        margin: 0;
+    }
+
+    .panel.collapsed .link {
+        justify-content: center;
+
+        font-size: 0;
+
+        padding: 9px 3px;
+    }
+
+    .panel.collapsed .link i {
+        margin: 0;
+
+        font-size: 1rem;
+    }
+
+    .dashboard.reverse {
+        margin-left: 58px;
+
+        width: calc(100% - 58px);
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    .panel {
+        width: 210px;
+    }
+
     .dashboard {
-        min-height: 100vh;
-        box-sizing: border-box;
+        margin-left: 210px;
+
+        width: calc(100% - 210px);
+
+        padding: 20px;
+    }
+
+    .heading {
+        height: 65px;
+    }
+
+    .heading h2 {
+        font-size: 1.1rem;
+    }
+
+    .panel a {
+        font-size: 0.9rem;
+
+        padding: 9px 8px;
+    }
+
+    .panel a i {
+        font-size: 1rem;
     }
 
     .navbar {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 20px;
+        padding: 16px 20px;
+    }
+
+    .msg h2 {
+        font-size: 20px;
+    }
+
+    .payment-card {
+        max-width: 430px;
+    }
+
+    .panel.collapsed {
+        width: 58px;
+
+        padding: 4px;
+    }
+
+    .panel.collapsed .heading {
+        justify-content: center;
+    }
+
+    .panel.collapsed .heading h2,
+    .panel.collapsed .link {
+        display: none;
+    }
+
+    .dashboard.reverse {
+        margin-left: 58px;
+
+        width: calc(100% - 58px);
     }
 }
 
@@ -290,73 +711,90 @@ a:active{
    TABLET
    ========================================================= */
 
-@media (min-width: 601px) and (max-width: 1100px) {
+@media (min-width: 601px) and (max-width: 768px) {
 
-    .dashboard {
-        margin-left: 200px;
-        width: calc(100% - 210px);
-        padding: 10px;
-        box-sizing: border-box;
+    .panel {
+        width: 175px;
     }
 
+    .dashboard {
+        margin-left: 175px;
 
-    /* NAVBAR */
+        width: calc(100% - 175px);
+
+        padding: 15px;
+    }
+
+    .heading {
+        height: 65px;
+    }
+
+    .heading h2 {
+        font-size: 1rem;
+    }
+
+    .heading i {
+        width: 34px;
+        height: 34px;
+    }
+
+    .panel a {
+        font-size: 0.78rem;
+
+        padding: 9px 7px;
+    }
+
+    .panel a i {
+        font-size: 0.9rem;
+
+        margin-right: 7px;
+    }
 
     .navbar {
-        padding: 15px 20px;
+        padding: 14px 17px;
     }
 
     .msg h2 {
-        font-size: 19px;
-    }
-
-    .msg p {
-        font-size: 11px;
-    }
-
-    .navbar > a {
-        font-size: 12px;
-    }
-
-
-    /* PAYMENT CARD */
-
-    .payment-container {
-        padding: 20px;
-    }
-
-    .payment-card {
-        width: 100%;
-        max-width: 380px;
-        padding: 22px;
-    }
-
-    .payment-icon {
-        width: 48px;
-        height: 48px;
-        font-size: 20px;
-    }
-
-    .payment-card h2 {
         font-size: 18px;
     }
 
-    .amount {
-        font-size: 28px;
+    .msg p {
+        font-size: 10px;
     }
 
-    .due {
+    .navbar > a {
         font-size: 11px;
     }
 
-    .payment-info span,
-    .payment-info strong {
-        font-size: 11px;
+    .payment-container {
+        padding: 20px 10px;
     }
 
-    #payBtn {
-        padding: 11px;
-        font-size: 13px;
+    .payment-card {
+        max-width: 390px;
+
+        padding: 23px;
+    }
+
+    .panel.collapsed {
+        width: 58px;
+
+        padding: 4px;
+    }
+
+    .panel.collapsed .heading {
+        justify-content: center;
+    }
+
+    .panel.collapsed .heading h2,
+    .panel.collapsed .link {
+        display: none;
+    }
+
+    .dashboard.reverse {
+        margin-left: 58px;
+
+        width: calc(100% - 58px);
     }
 }
 
@@ -371,6 +809,7 @@ a:active{
     body {
         width: 100%;
         max-width: 100%;
+
         overflow-x: hidden;
     }
 
@@ -379,20 +818,32 @@ a:active{
 
     .panel {
         position: fixed;
+
         top: 0;
         left: 0;
+
         width: 58px;
         height: 100vh;
+
         padding: 4px;
+
         box-sizing: border-box;
+
         z-index: 1000;
+
         overflow: hidden;
+
+        transition:
+            width 0.3s ease,
+            box-shadow 0.3s ease;
     }
 
     .heading {
         width: 100%;
         height: 58px;
+
         padding: 0;
+
         justify-content: center;
     }
 
@@ -401,48 +852,66 @@ a:active{
     }
 
     .heading i {
+        width: 32px;
+        height: 32px;
+
+        padding: 0;
+
         margin: 0;
-        font-size: 0.95rem;
-        padding: 6px;
+
+        font-size: 0.9rem;
+
+        border-radius: 7px;
     }
 
     .panel a {
         width: 100%;
         height: 42px;
+
         padding: 9px 3px;
+
         margin-bottom: 3px;
-        box-sizing: border-box;
+
         font-size: 0;
+
         display: flex;
+
         justify-content: center;
         align-items: center;
     }
 
     .panel a i {
         margin: 0;
+
         font-size: 1rem;
     }
 
 
-    /* MAIN */
+    /* MOBILE MAIN */
 
     .dashboard {
         margin-left: 58px;
+
         width: calc(100% - 58px);
+
         padding: 7px;
+
         box-sizing: border-box;
     }
 
 
-    /* NAVBAR */
+    /* MOBILE NAVBAR */
 
     .navbar {
         width: 100%;
-        padding: 12px;
-        border-radius: 11px;
+
+        padding: 11px;
+
+        border-radius: 10px;
+
         margin-bottom: 12px;
-        gap: 10px;
-        box-sizing: border-box;
+
+        gap: 8px;
     }
 
     .msg h2 {
@@ -450,17 +919,21 @@ a:active{
     }
 
     .msg p {
-        font-size: 9px;
+        font-size: 8px;
+
         margin-top: 3px;
     }
 
     .navbar > a {
-        font-size: 10px;
-        gap: 5px;
+        font-size: 9px;
+
+        gap: 4px;
+
+        padding: 6px;
     }
 
 
-    /* PAYMENT CARD */
+    /* MOBILE PAYMENT */
 
     .payment-container {
         padding: 8px;
@@ -469,24 +942,28 @@ a:active{
     .payment-card {
         width: 100%;
         max-width: 100%;
-        padding: 16px;
+
+        padding: 17px;
+
         border-radius: 12px;
-        box-sizing: border-box;
     }
 
     .payment-icon {
-        width: 42px;
-        height: 42px;
+        width: 43px;
+        height: 43px;
+
         font-size: 17px;
     }
 
     .payment-card h2 {
         font-size: 15px;
+
         margin-top: 9px;
     }
 
     .amount {
         font-size: 24px;
+
         margin-top: 6px;
     }
 
@@ -500,6 +977,8 @@ a:active{
 
     .payment-info div {
         padding: 9px 0;
+
+        gap: 8px;
     }
 
     .payment-info span,
@@ -509,19 +988,114 @@ a:active{
 
     #payBtn {
         margin-top: 12px;
+
         padding: 10px;
+
         font-size: 11px;
+    }
+
+    #chooseCustomBtn {
+        font-size: 11px;
+
+        margin-bottom: 9px;
+    }
+
+    .amount .custom-amount-input span {
+        font-size: 24px;
+    }
+
+    .amount .custom-amount-input input {
+        width: 120px;
+
+        font-size: 24px;
+    }
+
+    #amountMessage {
+        font-size: 9px;
     }
 
     .secure {
         font-size: 8px;
+
         margin-top: 9px;
+    }
+
+
+    /* =====================================================
+       MOBILE OVERLAY SIDEBAR
+
+       IMPORTANT:
+       Content DOES NOT move when opened.
+       ===================================================== */
+
+    .panel.collapsed {
+        width: 215px;
+
+        padding: 8px;
+
+        overflow-y: auto;
+
+        box-shadow:
+            8px 0 25px rgba(0, 0, 0, 0.20);
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+
+        height: 58px;
+
+        padding: 0 4px;
+
+        justify-content: space-between;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: block;
+
+        font-size: 1.05rem;
+    }
+
+    .panel.collapsed .heading i {
+        width: 32px;
+        height: 32px;
+
+        margin: 0;
+    }
+
+    .panel.collapsed .link {
+        display: flex;
+
+        width: 100%;
+        height: auto;
+
+        min-height: 42px;
+
+        padding: 9px;
+
+        font-size: 0.82rem;
+
+        justify-content: flex-start;
+    }
+
+    .panel.collapsed .link i {
+        width: 22px;
+
+        margin-right: 9px;
+
+        font-size: 1rem;
+    }
+
+    .dashboard,
+    .dashboard.reverse {
+        margin-left: 58px;
+
+        width: calc(100% - 58px);
     }
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 380px) {
@@ -530,10 +1104,17 @@ a:active{
         width: 52px;
     }
 
-    .dashboard {
-        margin-left: 52px;
-        width: calc(100% - 52px);
-        padding: 5px;
+    .heading {
+        height: 54px;
+    }
+
+    .heading i {
+        width: 30px;
+        height: 30px;
+
+        border-radius: 6px;
+
+        font-size: 0.85rem;
     }
 
     .panel a {
@@ -544,11 +1125,24 @@ a:active{
         font-size: 0.9rem;
     }
 
+    .dashboard,
+    .dashboard.reverse {
+        margin-left: 52px;
+
+        width: calc(100% - 52px);
+
+        padding: 5px;
+    }
+
+
+    /* NAVBAR */
 
     .navbar {
         padding: 9px;
-        flex-wrap: wrap;
+
         gap: 6px;
+
+        flex-wrap: wrap;
     }
 
     .msg h2 {
@@ -556,21 +1150,28 @@ a:active{
     }
 
     .msg p {
-        font-size: 8px;
+        font-size: 7px;
     }
 
     .navbar > a {
-        font-size: 9px;
+        font-size: 8px;
     }
 
 
+    /* PAYMENT */
+
+    .payment-container {
+        padding: 5px;
+    }
+
     .payment-card {
-        padding: 12px;
+        padding: 13px;
     }
 
     .payment-icon {
         width: 36px;
         height: 36px;
+
         font-size: 14px;
     }
 
@@ -597,11 +1198,133 @@ a:active{
 
     #payBtn {
         padding: 9px;
+
         font-size: 10px;
+    }
+
+    #chooseCustomBtn {
+        font-size: 9px;
+    }
+
+    .amount .custom-amount-input span {
+        font-size: 20px;
+    }
+
+    .amount .custom-amount-input input {
+        width: 100px;
+
+        font-size: 20px;
+    }
+
+    #amountMessage {
+        font-size: 8px;
     }
 
     .secure {
         font-size: 7px;
+    }
+
+
+    /* SMALL MOBILE OVERLAY */
+
+    .panel.collapsed {
+        width: 200px;
+
+        padding: 7px;
+    }
+
+    .panel.collapsed .heading h2 {
+        font-size: 0.95rem;
+    }
+
+    .panel.collapsed .link {
+        font-size: 0.76rem;
+    }
+
+    .panel.collapsed .link i {
+        font-size: 0.9rem;
+
+        margin-right: 8px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+    .panel {
+        width: 48px;
+
+        padding: 3px;
+    }
+
+    .heading {
+        height: 50px;
+    }
+
+    .heading i {
+        width: 28px;
+        height: 28px;
+
+        border-radius: 6px;
+
+        font-size: 0.78rem;
+    }
+
+    .panel a {
+        height: 37px;
+
+        padding: 8px 2px;
+    }
+
+    .panel a i {
+        font-size: 0.82rem;
+    }
+
+    .dashboard,
+    .dashboard.reverse {
+        margin-left: 48px;
+
+        width: calc(100% - 48px);
+
+        padding: 4px;
+    }
+
+    .payment-card {
+        padding: 10px;
+    }
+
+    .payment-card h2 {
+        font-size: 12px;
+    }
+
+    .amount {
+        font-size: 18px;
+    }
+
+    .payment-info span,
+    .payment-info strong {
+        font-size: 7px;
+    }
+
+    #payBtn {
+        font-size: 9px;
+    }
+
+
+    .panel.collapsed {
+        width: 185px;
+    }
+
+    .panel.collapsed .heading h2 {
+        font-size: 0.85rem;
+    }
+
+    .panel.collapsed .link {
+        font-size: 0.7rem;
     }
 }
 
@@ -616,6 +1339,7 @@ a:active{
     body {
         width: 100%;
         max-width: 100%;
+
         overflow-x: hidden;
     }
 
@@ -624,41 +1348,53 @@ a:active{
 
     .panel {
         position: fixed;
+
         top: 0;
         left: 0;
+
         width: 190px;
         height: 100vh;
+
         padding: 10px;
-        box-sizing: border-box;
+
         z-index: 1000;
+
         overflow-y: auto;
     }
 
     .heading {
         width: 100%;
         height: 70px;
+
         padding: 10px;
-        box-sizing: border-box;
     }
 
     .heading h2 {
         display: block;
+
         font-size: 1.05rem;
     }
 
     .heading i {
+        width: 34px;
+        height: 34px;
+
         margin: 0;
+
         font-size: 0.9rem;
     }
 
     .panel a {
         font-size: 0.78rem;
+
         padding: 9px 7px;
+
         margin-bottom: 3px;
     }
 
     .panel a i {
         font-size: 0.85rem;
+
         margin-right: 7px;
     }
 
@@ -667,9 +1403,10 @@ a:active{
 
     .dashboard {
         margin-left: 190px;
+
         width: calc(100% - 190px);
-        padding: 10px;
-        box-sizing: border-box;
+
+        padding: 15px;
     }
 
 
@@ -688,25 +1425,26 @@ a:active{
     }
 
     .navbar > a {
-        font-size: 12px;
+        font-size: 11px;
     }
 
 
-    /* PAYMENT CARD */
+    /* PAYMENT */
 
     .payment-container {
         padding: 18px;
     }
 
     .payment-card {
-        width: 100%;
-        max-width: 360px;
-        padding: 20px;
+        max-width: 370px;
+
+        padding: 21px;
     }
 
     .payment-icon {
-        width: 46px;
-        height: 46px;
+        width: 47px;
+        height: 47px;
+
         font-size: 19px;
     }
 
@@ -715,7 +1453,7 @@ a:active{
     }
 
     .amount {
-        font-size: 26px;
+        font-size: 27px;
     }
 
     .due {
@@ -729,14 +1467,21 @@ a:active{
 
     #payBtn {
         padding: 10px;
+
         font-size: 12px;
     }
 
 
-    /* COLLAPSED SIDEBAR */
+    /* COLLAPSED DESKTOP-SITE SIDEBAR */
 
     .panel.collapsed {
         width: 58px;
+
+        padding: 4px;
+    }
+
+    .panel.collapsed .heading {
+        justify-content: center;
     }
 
     .panel.collapsed .heading h2,
@@ -744,36 +1489,213 @@ a:active{
         display: none;
     }
 
-    .panel.collapsed .heading {
-        justify-content: center;
-    }
-
     .panel.collapsed .heading i {
         margin: 0;
     }
 
     .dashboard.reverse {
-        margin-left: 78px;
-        width: calc(100% - 78px);
+        margin-left: 58px;
+
+        width: calc(100% - 58px);
     }
 }
 
 
-/* ---------- FINAL OVERFLOW SAFETY ---------- */
+/* =========================================================
+   FINAL OVERFLOW SAFETY
+   ========================================================= */
 
 @media (max-width: 1100px) {
 
     html,
     body {
         max-width: 100%;
+
         overflow-x: hidden;
     }
 
-    .navbar {
+    .dashboard {
         max-width: 100%;
     }
 
     .payment-card {
         max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+body.dark-theme {
+    background-color: #101820;
+
+    color: #E5E7EB;
+}
+
+body.dark-theme .dashboard {
+    background-color: #101820;
+
+    color: #E5E7EB;
+}
+
+
+/* NAVBAR */
+
+body.dark-theme .navbar {
+    background-color: #1B2733;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-theme .msg h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .msg p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .navbar > a {
+    color: #5CA7FF;
+}
+
+body.dark-theme .navbar > a:hover {
+    color: #8FC4FF;
+
+    background-color: #243442;
+}
+
+
+/* PAYMENT CARD */
+
+body.dark-theme .payment-card {
+    background-color: #1B2733;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-theme .payment-card:hover {
+    box-shadow:
+        0 9px 25px rgba(0, 0, 0, 0.30);
+}
+
+
+/* PAYMENT ICON */
+
+body.dark-theme .payment-icon {
+    background-color: #193C32;
+
+    color: #32D38A;
+}
+
+
+/* TEXT */
+
+body.dark-theme .payment-card h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .amount {
+    color: #32D38A;
+}
+
+body.dark-theme .due {
+    color: #B8C3CC;
+}
+
+
+/* PAYMENT INFO */
+
+body.dark-theme .payment-info {
+    border-top-color: #3A4B59;
+    border-bottom-color: #3A4B59;
+}
+
+body.dark-theme .payment-info span {
+    color: #B8C3CC;
+}
+
+body.dark-theme .payment-info strong {
+    color: #ffffff;
+}
+
+
+/* CUSTOM PAYMENT */
+
+body.dark-theme #chooseCustomBtn {
+    color: #8FC4FF;
+}
+
+body.dark-theme #chooseCustomBtn:hover {
+    color: #B8DAFF;
+}
+
+body.dark-theme .amount .custom-amount-input span,
+body.dark-theme .amount .custom-amount-input input {
+    color: #32D38A;
+}
+
+
+/* PAY BUTTON */
+
+body.dark-theme #payBtn {
+    background-color: #12A866;
+
+    color: #ffffff;
+}
+
+body.dark-theme #payBtn:hover {
+    background-color: #0D8C54;
+}
+
+
+/* SECURITY */
+
+body.dark-theme .secure {
+    color: #9FAFBC;
+}
+
+
+/* SIDEBAR */
+
+body.dark-theme .panel {
+    background-color: #12355B;
+
+    color: #ffffff;
+}
+
+
+/* MOBILE DARK THEME */
+
+@media (max-width: 600px) {
+
+    body.dark-theme .payment-card {
+        background-color: #1B2733;
+    }
+}
+
+
+/* VERY SMALL DARK THEME */
+
+@media (max-width: 380px) {
+
+    body.dark-theme .payment-card {
+        background-color: #1B2733;
+    }
+}
+
+
+/* DESKTOP SITE DARK THEME */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    body.dark-theme .payment-card {
+        background-color: #1B2733;
     }
 }

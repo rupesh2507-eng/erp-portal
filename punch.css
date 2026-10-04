@@ -1,975 +1,824 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    border: border-box;
-}
-body{
-    background-color: #E8EEF6;
-}
-.panel{
-    display:flex;
-    flex-direction: column;
-    height: 98vh;
-    width: 40vh;
-    padding: 10px;
-    background-color: #12355B;
-    color: white;
-    position:absolute;
-}
-.heading{
-    display: flex;
-    height: 100px;
-    width: 90%;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: center;
-}
-.heading i{
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 6px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.panel a{
-    font-size: 1.2rem;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0.5rem;
-    display: block;
-    transition: all 0.25s ease;
-    border-radius: 8px;
-}
-a:hover{
-    background-color: #1E4A78;
-    color: #ffffff;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-a:active{
-    background-color: #FFE8A3;
-    color: #12355B;
-}
-.panel i{
-    margin-right: 10px;
-    font-size: 1.3rem;
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.dashboard{
-    margin-left: 43vh;
-    background-color: #E8EEF6;
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: #E8EEF6;
     color: #334155;
-    padding: 10px;
+    font-family: Arial, sans-serif;
 }
-
-
-/* TOP */
-
-.top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-    height: 100px;
-    background-color: #ffffff;
-    border: 2px solid #D9E2EC;
-    border-radius: 1rem;
-    padding: 0 15px 0 15px;
-}
-
-.title h1 {
-    font-size: 30px;
-    color: #12355B;
-}
-
-.title p {
-    margin-top: 6px;
-    color: #777;
-}
-
-
-/* DATE */
-
-.date-box {
-    background: white;
-    padding: 15px 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-.date-box label {
-    display: block;
-    font-size: 13px;
-    color: #777;
-    margin-bottom: 6px;
-}
-
-.date-box input {
-    border: 1px solid #ddd;
-    padding: 8px 10px;
-    border-radius: 7px;
-    font-size: 14px;
-    outline: none;
-}
-
-
-/* SUMMARY */
-
-.summary {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    margin-bottom: 25px;
-}
-
-.summary-card {
-    background: white;
-    border-radius: 14px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-}
-
-.summary-card p {
-    color: #777;
-    font-size: 14px;
-}
-
-.summary-card h2 {
-    margin-top: 5px;
-    color: #12355B;
-}
-
-
-/* ICONS */
-
-.summary-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 10px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 19px;
-}
-
-.present {
-    background: #e1f7ec;
-    color: #12A866;
-}
-
-.absent {
-    background: #ffe5e5;
-    color: #e53935;
-}
-
-.total {
-    background: #e4efff;
-    color: #1976E8;
-}
-
-.percentage {
-    background: #eee7ff;
-    color: #6C4CE8;
-}
-
-
-/* HOLIDAY */
-
-.holiday {
-    display: none;
-
-    background: #fff4df;
-
-    border-left: 5px solid #F28C00;
-
-    padding: 18px 20px;
-
-    border-radius: 10px;
-
-    margin-bottom: 25px;
-
-    align-items: center;
-
-    gap: 15px;
-}
-
-.holiday i {
-    font-size: 25px;
-    color: #F28C00;
-}
-
-.holiday h3 {
-    color: #b56800;
-}
-
-.holiday p {
-    margin-top: 4px;
-    color: #777;
-}
-
-
-/* PUNCH CONTAINER */
-
-.punch-container {
-    background: white;
-
-    border-radius: 15px;
-
-    padding: 25px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-}
-
-
-/* HEADING */
-
-.punch-heading {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 20px;
-}
-
-.punch-heading h2 {
-    color: #12355B;
-}
-
-.punch-heading p {
-    color: #888;
-
-    margin-top: 5px;
-}
-
-#dayStatus {
-    padding: 8px 15px;
-
-    border-radius: 20px;
-
-    background: #e1f7ec;
-
-    color: #12A866;
-
-    font-size: 13px;
-
-    font-weight: bold;
-}
-
-
-/* TABLE */
-
-.table-container {
-    width: 100%;
-
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-
-    border-collapse: collapse;
-}
-
-thead {
-    background: #12355B;
-
-    color: white;
-}
-
-th,
-td {
-    padding: 15px;
-
-    text-align: left;
-}
-
-th {
-    font-size: 14px;
-}
-
-td {
-    border-bottom: 1px solid #eee;
-
-    color: #444;
-}
-
-tbody tr:hover {
-    background: #f7f9fc;
-}
-
-
-/* STATUS */
-
-.status {
-    display: inline-block;
-
-    padding: 6px 12px;
-
-    border-radius: 20px;
-
-    font-size: 12px;
-
-    font-weight: bold;
-}
-
-.status.present {
-    background: #e1f7ec;
-
-    color: #12A866;
-}
-
-.status.absent {
-    background: #ffe5e5;
-
-    color: #e53935;
-}
-
-.panel{
-    width: 40vh;
-}
-.dashboard{
-    margin-left: 43vh;
-}
-.panel.collapsed{
-    width: 50px;
-    transition: all 2s ease;
-    .heading h2{
-        display: none;
-    }
-    .link{
-        display: none;
-    }
-}
-.dashboard.reverse{
-    margin-left: 75px;
-    transition: all 2s ease;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .dashboard {
-        padding: 20px;
-    }
-
-    .top {
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 15px;
-    }
-
-    .date-box {
-        width: 100%;
-
-        box-sizing: border-box;
-    }
-
-    .date-box input {
-        width: 100%;
-
-        box-sizing: border-box;
-    }
-
-    .summary {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .punch-container {
-        padding: 15px;
-    }
-
-    th,
-    td {
-        padding: 12px 10px;
-
-        white-space: nowrap;
-    }
-
-}
-
-.panel{
-    width: 40vh;
-}
-.dashboard{
-    margin-left: 43vh;
-}
-.panel.collapsed{
-    width: 50px;
-    transition: all 2s ease;
-    .heading h2{
-        display: none;
-    }
-    .link{
-        display: none;
-    }
-}
-.dashboard.reverse{
-    margin-left: 75px;
-    transition: all 2s ease;
-}
-
-/* ============================= */
-/* MOBILE PUNCH RECORD */
-/* ============================= */
-
-@media (max-width: 600px) {
-
-    html,
-    body {
-        width: 100%;
-        min-height: 100%;
-        overflow-x: hidden;
-    }
-
-    /* SIDEBAR */
-
-    .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 58px;
-        height: 100vh;
-        padding: 4px;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow: hidden;
-    }
-
-    .heading {
-        width: 100%;
-        height: 58px;
-        padding: 0;
-        justify-content: center;
-    }
-
-    .heading h2 {
-        display: none;
-    }
-
-    .heading i {
-        font-size: 0.95rem;
-        padding: 6px;
-        margin: 0;
-    }
-
-    .panel a {
-        width: 100%;
-        height: 42px;
-        box-sizing: border-box;
-        padding: 9px 3px;
-        margin-bottom: 3px;
-        font-size: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 7px;
-    }
-
-    .panel a i {
-        font-size: 1rem;
-        margin: 0;
-    }
-
-    /* MAIN */
-
-    .dashboard {
-        margin-left: 64px;
-        width: calc(100% - 64px);
-        min-height: 100vh;
-        box-sizing: border-box;
-    }
-
-    /* NAVBAR */
-
-    .navbar {
-        width: 100%;
-        height: 55px;
-        padding: 6px 8px;
-        box-sizing: border-box;
-        border-radius: 9px;
-    }
-
-    .navbar h2 {
-        font-size: 1rem;
-    }
-
-    /* STUDENT DETAILS */
-
-    .detail {
-        width: 100%;
-        height: auto;
-        min-height: 125px;
-        margin: 8px 0 0 0;
-        padding: 8px;
-        box-sizing: border-box;
-        border-radius: 9px;
-    }
-
-    .detail p {
-        font-size: 0.7rem;
-        padding: 6px 5px;
-        margin: 0;
-        border-bottom: 1px solid #D9E2EC;
-    }
-
-    .detail p:last-child {
-        border-bottom: none;
-    }
-
-    /* PUNCH BOX */
-
-    .show-punch {
-        width: 100%;
-        height: auto;
-        min-height: 150px;
-        margin: 8px 0 0 0;
-        padding: 15px 8px;
-        box-sizing: border-box;
-        border-radius: 9px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .show-punch b {
-        font-size: 0.75rem;
-        line-height: 1.3;
-        padding: 0;
-        margin-bottom: 10px;
-    }
-
-    .show-punch input {
-        width: 85%;
-        height: 35px;
-        box-sizing: border-box;
-        font-size: 0.7rem;
-        padding: 5px 8px;
-        background-color: #F8FAFC;
-    }
-
-    .show-punch p {
-        width: 100%;
-        margin: 12px 0 0 0;
-        padding: 8px 5px;
-        box-sizing: border-box;
-        font-size: 0.68rem;
-        line-height: 1.4;
-        border-top: 1px solid #D9E2EC;
-    }
-}
-
-
-/* ============================= */
-/* VERY SMALL PHONES */
-/* ============================= */
-
-@media (max-width: 380px) {
-
-    .panel {
-        width: 52px;
-    }
-
-    .dashboard {
-        margin-left: 57px;
-        width: calc(100% - 57px);
-    }
-
-    .panel a {
-        height: 39px;
-    }
-
-    .panel a i {
-        font-size: 0.9rem;
-    }
-
-    .navbar {
-        height: 52px;
-    }
-
-    .navbar h2 {
-        font-size: 0.85rem;
-    }
-
-    .detail {
-        min-height: 115px;
-        padding: 6px;
-    }
-
-    .detail p {
-        font-size: 0.62rem;
-        padding: 5px 4px;
-    }
-
-    .show-punch {
-        min-height: 140px;
-        padding: 12px 6px;
-    }
-
-    .show-punch b {
-        font-size: 0.65rem;
-    }
-
-    .show-punch input {
-        width: 90%;
-        height: 32px;
-        font-size: 0.65rem;
-    }
-
-    .show-punch p {
-        font-size: 0.6rem;
-    }
-}
-
-
-/* ============================= */
-/* CHROME ANDROID - DESKTOP SITE */
-/* ============================= */
-
-@media (pointer: coarse) and (min-width: 601px) {
-
-    /* SIDEBAR */
-
-    .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 190px;
-        height: 98vh;
-        padding: 10px;
-        box-sizing: border-box;
-        z-index: 1000;
-    }
-
-    .heading {
-        width: 100%;
-        height: 70px;
-        padding: 10px;
-        box-sizing: border-box;
-    }
-
-    .heading h2 {
-        display: block;
-        font-size: 1.1rem;
-    }
-
-    .heading i {
-        font-size: 0.95rem;
-        padding: 6px;
-        margin: 0;
-    }
-
-    .panel a {
-        width: 100%;
-        height: auto;
-        box-sizing: border-box;
-        padding: 9px 7px;
-        margin-bottom: 3px;
-        font-size: 0.78rem;
-        display: block;
-    }
-
-    .panel a i {
-        font-size: 0.85rem;
-        margin-right: 7px;
-    }
-
-    /* MAIN */
-
-    .dashboard {
-        margin-left: 210px;
-        width: calc(100% - 210px);
-        min-height: 100vh;
-        box-sizing: border-box;
-    }
-
-    /* NAVBAR */
-
-    .navbar {
-        width: 100%;
-        height: 70px;
-        padding: 8px 12px;
-        box-sizing: border-box;
-        border-radius: 10px;
-    }
-
-    .navbar h2 {
-        font-size: 1.25rem;
-    }
-
-    /* STUDENT DETAILS */
-
-    .detail {
-        width: 100%;
-        height: auto;
-        min-height: 120px;
-        margin: 12px 0 0 0;
-        padding: 12px 15px;
-        box-sizing: border-box;
-        border-radius: 10px;
-
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-    }
-
-    .detail p {
-        margin: 0;
-        padding: 9px;
-        font-size: 0.78rem;
-        border-left: 2px solid #D9E2EC;
-    }
-
-    /* PUNCH RECORD */
-
-    .show-punch {
-        width: 100%;
-        height: auto;
-        min-height: 150px;
-        margin: 12px 0 0 0;
-        padding: 22px 15px;
-        box-sizing: border-box;
-        border-radius: 10px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .show-punch b {
-        font-size: 0.9rem;
-        padding: 0;
-        margin-bottom: 15px;
-        color: #12355B;
-    }
-
-    .show-punch input {
-        width: 220px;
-        height: 38px;
-        padding: 6px 9px;
-        box-sizing: border-box;
-        font-size: 0.75rem;
-        background-color: #F8FAFC;
-    }
-
-    .show-punch p {
-        width: 100%;
-        margin: 15px 0 0 0;
-        padding-top: 10px;
-        font-size: 0.78rem;
-        border-top: 1px solid #D9E2EC;
-    }
-
-    /* COLLAPSED SIDEBAR */
-
-    .panel.collapsed {
-        width: 58px;
-    }
-
-    .panel.collapsed .heading h2,
-    .panel.collapsed .link {
-        display: none;
-    }
-
-    .panel.collapsed .heading {
-        justify-content: center;
-    }
-
-    .panel.collapsed .heading i {
-        margin: 0;
-    }
-
-    .dashboard.reverse {
-        margin-left: 78px;
-        width: calc(100% - 78px);
-    }
-}
-
-
-
 
 
 /* =========================================================
-   EXTRA DAILY PUNCH RECORD CSS
-   Add this at the very bottom of punch.css
-   Do not remove existing CSS
-   ========================================================= */
+   SIDEBAR
+========================================================= */
 
+.panel {
+    position: fixed;
+    top: 0;
+    left: 0;
 
-/* ---------- GENERAL VISUAL IMPROVEMENT ---------- */
+    width: 250px;
+    height: 100vh;
 
-.top,
-.summary-card,
-.holiday,
-.punch-container {
-    transition: all 0.25s ease;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #12355B;
+    color: #ffffff;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition: width 0.3s ease;
 }
 
-.top,
-.punch-container {
-    box-shadow: 0 5px 18px rgba(18, 53, 91, 0.07);
+.panel::-webkit-scrollbar {
+    width: 5px;
 }
 
-.summary-card {
-    box-shadow: 0 5px 15px rgba(18, 53, 91, 0.07);
+.panel::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.25);
+    border-radius: 10px;
 }
 
-.summary-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 9px 20px rgba(18, 53, 91, 0.12);
+
+/* =========================================================
+   SIDEBAR HEADING
+========================================================= */
+
+.heading {
+    width: 100%;
+    height: 80px;
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
 }
 
-.date-box input:focus {
-    border-color: #1976E8;
-    box-shadow: 0 0 0 2px rgba(25, 118, 232, 0.10);
-}
+.heading h2 {
+    color: #ffffff;
 
-#dayStatus {
+    font-size: 1.35rem;
     white-space: nowrap;
 }
 
 
-/* ---------- TOP SECTION ---------- */
+/* =========================================================
+   BAR ICON
+========================================================= */
+
+.heading i {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+    min-height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.heading i:hover {
+    background: #1E4A78;
+}
+
+.heading i:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   SIDEBAR LINKS
+========================================================= */
+
+.panel a {
+    width: 100%;
+    min-height: 44px;
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 1rem;
+
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+
+    flex-shrink: 0;
+}
+
+.panel a:hover {
+    background: #1E4A78;
+    transform: translateY(-2px);
+}
+
+.panel a:active {
+    background: #FFE8A3;
+    color: #12355B;
+}
+
+.panel a i {
+    width: 22px;
+
+    margin-right: 10px;
+
+    font-size: 1.1rem;
+
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   DESKTOP COLLAPSED SIDEBAR
+========================================================= */
+
+.panel.collapsed {
+    width: 58px;
+    padding: 0;
+}
+
+.panel.collapsed .heading {
+    width: 58px;
+    height: 58px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel.collapsed .heading h2,
+.panel.collapsed .link {
+    display: none;
+}
+
+.panel.collapsed .heading i {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+    min-height: 38px;
+
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD
+========================================================= */
+
+.dashboard {
+    width: calc(100% - 250px);
+    min-height: 100vh;
+
+    margin-left: 250px;
+
+    padding: 28px;
+
+    background: #E8EEF6;
+
+    transition:
+        width 0.3s ease,
+        margin-left 0.3s ease;
+}
+
+.dashboard.reverse {
+    width: calc(100% - 58px);
+    margin-left: 58px;
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.top {
+    width: 100%;
+
+    margin-bottom: 22px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 24px;
+}
 
 .title {
     min-width: 0;
 }
 
 .title h1 {
-    letter-spacing: 0.3px;
+    color: #12355B;
+
+    font-size: 30px;
+    line-height: 1.2;
 }
 
+.title p {
+    margin-top: 7px;
+
+    color: #64748B;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   DATE BOX
+========================================================= */
+
 .date-box {
+    padding: 12px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #D9E2EC;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(18,53,91,0.05);
+
     flex-shrink: 0;
 }
 
+.date-box label {
+    color: #475569;
 
-/* ---------- SUMMARY ---------- */
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.date-box input {
+    height: 35px;
+
+    padding: 5px 9px;
+
+    background: #F8FAFC;
+    color: #334155;
+
+    border: 1px solid #CBD5E1;
+    border-radius: 7px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.date-box input:focus {
+    border-color: #6C4CE8;
+
+    box-shadow:
+        0 0 0 3px rgba(108,76,232,0.10);
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.summary {
+    width: 100%;
+
+    margin-bottom: 22px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   SUMMARY CARD
+========================================================= */
 
 .summary-card {
     min-width: 0;
+    min-height: 105px;
+
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #D9E2EC;
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 14px rgba(18,53,91,0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(18,53,91,0.09);
 }
 
 .summary-card > div:last-child {
     min-width: 0;
 }
 
-.summary-card p,
-.summary-card h2 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.summary-card p {
+    margin-bottom: 5px;
+
+    color: #64748B;
+
+    font-size: 13px;
 }
 
+.summary-card h2 {
+    color: #12355B;
+
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   SUMMARY ICONS
+========================================================= */
+
 .summary-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    flex-shrink: 0;
+
+    font-size: 20px;
+}
+
+.summary-icon.present {
+    background: #E1F7EC;
+    color: #12A866;
+}
+
+.summary-icon.absent {
+    background: #FDE7E7;
+    color: #E34B4B;
+}
+
+.summary-icon.total {
+    background: #E5EEFF;
+    color: #1976E8;
+}
+
+.summary-icon.percentage {
+    background: #EEE7FF;
+    color: #6C4CE8;
+}
+
+
+/* =========================================================
+   HOLIDAY
+========================================================= */
+
+.holiday {
+    width: 100%;
+
+    margin-bottom: 20px;
+    padding: 18px 20px;
+
+    display: none;
+    align-items: center;
+
+    gap: 15px;
+
+    background: #FFF7E1;
+
+    border: 1px solid #F4D98C;
+    border-left: 5px solid #F28C00;
+
+    border-radius: 11px;
+}
+
+.holiday > i {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #FFE8B3;
+    color: #F28C00;
+
+    border-radius: 50%;
+
+    font-size: 19px;
+
+    flex-shrink: 0;
+}
+
+.holiday h3 {
+    margin-bottom: 4px;
+
+    color: #A85E00;
+
+    font-size: 17px;
+}
+
+.holiday p {
+    color: #805A28;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PUNCH CONTAINER
+========================================================= */
+
+.punch-container {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #D9E2EC;
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 18px rgba(18,53,91,0.06);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PUNCH HEADING
+========================================================= */
+
+.punch-heading {
+    min-height: 85px;
+
+    padding: 20px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom: 1px solid #E5EAF0;
+}
+
+.punch-heading > div {
+    min-width: 0;
+}
+
+.punch-heading h2 {
+    color: #12355B;
+
+    font-size: 21px;
+}
+
+.punch-heading p {
+    margin-top: 5px;
+
+    color: #64748B;
+
+    font-size: 12px;
+}
+
+.punch-heading > span {
+    padding: 7px 12px;
+
+    background: #E1F7EC;
+    color: #12A866;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
     flex-shrink: 0;
 }
 
 
-/* ---------- HOLIDAY ---------- */
-
-.holiday {
-    box-shadow: 0 4px 12px rgba(242, 140, 0, 0.08);
-}
-
-.holiday > div {
-    min-width: 0;
-}
-
-
-/* ---------- PUNCH TABLE ---------- */
-
-.punch-container {
-    overflow: hidden;
-}
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
 
 .table-container {
-    scrollbar-width: thin;
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
+.table-container::-webkit-scrollbar {
+    height: 7px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
 table {
+    width: 100%;
+
     min-width: 700px;
+
+    border-collapse: collapse;
+
+    background: #ffffff;
+}
+
+thead {
+    background: #F5F8FC;
+}
+
+th {
+    padding: 14px 16px;
+
+    color: #475569;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #E2E8F0;
+}
+
+td {
+    padding: 15px 16px;
+
+    color: #64748B;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid #EEF2F6;
+
+    white-space: nowrap;
 }
 
 tbody tr {
     transition: background-color 0.2s ease;
 }
 
-th {
-    white-space: nowrap;
+tbody tr:hover {
+    background: #F8FAFC;
 }
 
-td {
-    vertical-align: middle;
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+td strong {
+    color: #12355B;
+
+    font-size: 13px;
 }
 
 
-/* ---------- DESKTOP ---------- */
+/* =========================================================
+   STATUS
+========================================================= */
 
-@media (min-width: 1101px) {
+.status {
+    min-width: 72px;
 
-    .dashboard {
-        min-height: 100vh;
-        box-sizing: border-box;
+    padding: 6px 10px;
+
+    display: inline-block;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status.present {
+    background: #E1F7EC;
+    color: #12A866;
+}
+
+.status.absent {
+    background: #FDE7E7;
+    color: #D93636;
+}
+
+.status.lunch {
+    background: #FFF1D6;
+    color: #C87800;
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .panel {
+        width: 210px;
     }
 
-    .top,
-    .summary,
-    .holiday,
-    .punch-container {
-        max-width: 1250px;
-        margin-left: auto;
-        margin-right: auto;
+    .heading {
+        height: 75px;
+    }
+
+    .heading h2 {
+        font-size: 1.1rem;
+    }
+
+    .panel a {
+        padding: 10px 8px;
+
+        font-size: 0.9rem;
+    }
+
+    .panel a i {
+        font-size: 1rem;
+    }
+
+    .dashboard {
+        width: calc(100% - 210px);
+        margin-left: 210px;
+
+        padding: 22px;
+    }
+
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+        margin-left: 58px;
+    }
+
+    .title h1 {
+        font-size: 27px;
     }
 
     .summary {
-        gap: 18px;
+        gap: 12px;
     }
 
     .summary-card {
-        min-width: 0;
+        padding: 14px;
     }
 
-    .punch-container {
-        box-sizing: border-box;
+    .summary-icon {
+        width: 43px;
+        height: 43px;
+
+        font-size: 18px;
     }
 }
 
 
 /* =========================================================
-   TABLET
-   ========================================================= */
+   TABLET / IPAD
+========================================================= */
 
-@media (min-width: 601px) and (max-width: 1100px) {
+@media (min-width: 601px) and (max-width: 768px) {
+
+    .panel {
+        width: 175px;
+        padding: 7px;
+    }
+
+    .heading {
+        height: 70px;
+        padding: 7px;
+    }
+
+    .heading h2 {
+        font-size: 0.95rem;
+    }
+
+    .heading i {
+        width: 37px;
+        height: 37px;
+
+        min-width: 37px;
+        min-height: 37px;
+
+        font-size: 17px;
+    }
+
+    .panel a {
+        padding: 9px 6px;
+
+        font-size: 0.73rem;
+    }
+
+    .panel a i {
+        margin-right: 6px;
+
+        font-size: 0.85rem;
+    }
 
     .dashboard {
-        margin-left: 200px;
-        width: calc(100% - 210px);
-        padding: 10px;
-        box-sizing: border-box;
+        width: calc(100% - 175px);
+        margin-left: 175px;
+
+        padding: 17px;
+    }
+
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+        margin-left: 58px;
     }
 
     .top {
-        height: 85px;
-        padding: 0 18px;
-        margin-bottom: 15px;
+        align-items: flex-start;
     }
 
     .title h1 {
@@ -977,117 +826,55 @@ td {
     }
 
     .title p {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .date-box {
-        padding: 10px 14px;
+        padding: 10px;
     }
-
-    .date-box label {
-        font-size: 11px;
-    }
-
-    .date-box input {
-        padding: 7px 8px;
-        font-size: 12px;
-    }
-
-
-    /* SUMMARY */
 
     .summary {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
         gap: 12px;
-        margin-bottom: 15px;
     }
 
     .summary-card {
-        padding: 15px;
-        gap: 12px;
-    }
-
-    .summary-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 17px;
-    }
-
-    .summary-card p {
-        font-size: 12px;
-    }
-
-    .summary-card h2 {
-        font-size: 20px;
-    }
-
-
-    /* PUNCH */
-
-    .punch-container {
-        padding: 20px;
-    }
-
-    .punch-heading h2 {
-        font-size: 20px;
-    }
-
-    .punch-heading p {
-        font-size: 11px;
-    }
-
-    #dayStatus {
-        font-size: 11px;
-        padding: 7px 11px;
-    }
-
-    th,
-    td {
-        padding: 12px 10px;
-    }
-
-    th {
-        font-size: 12px;
-    }
-
-    td {
-        font-size: 11px;
+        min-height: 92px;
     }
 }
 
 
 /* =========================================================
    NORMAL MOBILE
-   ========================================================= */
+   ICON RAIL + OVERLAY DRAWER
+========================================================= */
 
 @media (max-width: 600px) {
 
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
+    /* -----------------------------------------------------
+       SIDEBAR ICON RAIL
+    ----------------------------------------------------- */
 
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 58px;
-        height: 100vh;
-        padding: 4px;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow: hidden;
+        padding: 0;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        z-index: 2000;
     }
 
     .heading {
-        width: 100%;
+        width: 58px;
         height: 58px;
+
         padding: 0;
+
+        display: flex;
+        align-items: center;
         justify-content: center;
     }
 
@@ -1096,164 +883,249 @@ td {
     }
 
     .heading i {
-        margin: 0;
-        font-size: 0.95rem;
-        padding: 6px;
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
+        font-size: 18px;
     }
 
     .panel a {
         width: 100%;
-        height: 42px;
-        padding: 9px 3px;
-        margin-bottom: 3px;
-        box-sizing: border-box;
-        font-size: 0;
-        display: flex;
+
+        height: 43px;
+        min-height: 43px;
+
+        margin-bottom: 2px;
+
+        padding: 8px 3px;
+
         justify-content: center;
-        align-items: center;
+
+        font-size: 0;
+
+        border-bottom: none;
+        border-radius: 8px;
     }
 
     .panel a i {
+        width: auto;
+
         margin: 0;
-        font-size: 1rem;
+
+        font-size: 16px;
     }
 
 
-    /* MAIN */
+    /* -----------------------------------------------------
+       MOBILE OPEN DRAWER
+       DOES NOT MOVE DASHBOARD
+    ----------------------------------------------------- */
 
-    .dashboard {
-        margin-left: 58px;
+    .panel.collapsed {
+        width: 215px;
+        padding: 8px;
+
+        box-shadow:
+            5px 0 20px rgba(0,0,0,0.20);
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+        height: 58px;
+
+        padding: 0 4px;
+
+        justify-content: space-between;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: block;
+
+        color: #ffffff;
+
+        font-size: 1.05rem;
+    }
+
+    .panel.collapsed .heading i {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
+        flex: 0 0 38px;
+    }
+
+    .panel.collapsed .link {
+        display: flex;
+
+        width: 100%;
+        min-height: 42px;
+
+        padding: 9px 10px;
+
+        justify-content: flex-start;
+
+        color: #ffffff;
+
+        font-size: 0.9rem;
+
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .panel.collapsed .link i {
+        width: 22px;
+
+        margin-right: 10px;
+
+        font-size: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       DASHBOARD
+    ----------------------------------------------------- */
+
+    .dashboard,
+    .dashboard.reverse {
         width: calc(100% - 58px);
-        padding: 7px;
-        box-sizing: border-box;
+        margin-left: 58px;
+
+        padding: 14px 10px;
     }
 
 
-    /* TOP */
+    /* -----------------------------------------------------
+       TOP
+    ----------------------------------------------------- */
 
     .top {
-        width: 100%;
-        height: auto;
-        min-height: 120px;
-        padding: 13px;
-        margin-bottom: 10px;
-        border-radius: 12px;
-        box-sizing: border-box;
+        margin-bottom: 15px;
 
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: center;
-        gap: 10px;
+        display: block;
     }
 
     .title h1 {
-        font-size: 19px;
-        line-height: 1.2;
+        font-size: 22px;
     }
 
     .title p {
-        font-size: 9px;
-        margin-top: 4px;
-        line-height: 1.3;
-    }
+        margin-top: 5px;
 
-
-    /* DATE */
-
-    .date-box {
-        width: 100%;
-        padding: 9px 10px;
-        box-sizing: border-box;
-        border-radius: 9px;
-    }
-
-    .date-box label {
-        font-size: 9px;
-        margin-bottom: 4px;
-    }
-
-    .date-box input {
-        width: 100%;
-        height: 34px;
-        padding: 5px 7px;
-        box-sizing: border-box;
         font-size: 10px;
     }
 
+    .date-box {
+        width: 100%;
 
-    /* SUMMARY */
+        margin-top: 12px;
+
+        padding: 10px;
+
+        justify-content: space-between;
+    }
+
+    .date-box label {
+        font-size: 11px;
+    }
+
+    .date-box input {
+        height: 32px;
+
+        font-size: 11px;
+    }
+
+
+    /* -----------------------------------------------------
+       SUMMARY
+    ----------------------------------------------------- */
 
     .summary {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 7px;
-        margin-bottom: 10px;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+
+        margin-bottom: 15px;
     }
 
     .summary-card {
-        min-height: 68px;
-        padding: 9px;
-        gap: 8px;
+        min-height: 82px;
+
+        padding: 11px;
+
+        gap: 9px;
+
         border-radius: 10px;
-        box-sizing: border-box;
     }
 
     .summary-icon {
-        width: 31px;
-        height: 31px;
-        border-radius: 7px;
-        font-size: 13px;
+        width: 35px;
+        height: 35px;
+
+        border-radius: 8px;
+
+        font-size: 14px;
     }
 
     .summary-card p {
-        font-size: 8px;
+        margin-bottom: 3px;
+
+        font-size: 9px;
     }
 
     .summary-card h2 {
-        font-size: 17px;
-        margin-top: 3px;
+        font-size: 18px;
     }
 
 
-    /* HOLIDAY */
+    /* -----------------------------------------------------
+       HOLIDAY
+    ----------------------------------------------------- */
 
     .holiday {
-        padding: 11px;
-        margin-bottom: 10px;
-        gap: 9px;
+        margin-bottom: 14px;
+
+        padding: 12px;
+
+        gap: 10px;
+
         border-radius: 9px;
     }
 
-    .holiday i {
-        font-size: 19px;
-        flex-shrink: 0;
+    .holiday > i {
+        width: 34px;
+        height: 34px;
+
+        font-size: 15px;
     }
 
     .holiday h3 {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .holiday p {
         font-size: 9px;
-        line-height: 1.35;
     }
 
 
-    /* PUNCH CONTAINER */
+    /* -----------------------------------------------------
+       PUNCH CONTAINER
+    ----------------------------------------------------- */
 
     .punch-container {
-        width: 100%;
-        padding: 12px;
         border-radius: 11px;
-        box-sizing: border-box;
     }
 
     .punch-heading {
-        margin-bottom: 13px;
-        gap: 8px;
-    }
+        min-height: 68px;
 
-    .punch-heading > div {
-        min-width: 0;
+        padding: 13px;
+
+        gap: 8px;
     }
 
     .punch-heading h2 {
@@ -1261,53 +1133,55 @@ td {
     }
 
     .punch-heading p {
-        font-size: 9px;
-        line-height: 1.3;
-    }
+        margin-top: 3px;
 
-    #dayStatus {
-        padding: 5px 8px;
         font-size: 8px;
-        flex-shrink: 0;
+    }
+
+    .punch-heading > span {
+        padding: 5px 8px;
+
+        font-size: 8px;
     }
 
 
-    /* TABLE */
-
-    .table-container {
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
+    /* -----------------------------------------------------
+       TABLE
+    ----------------------------------------------------- */
 
     table {
         min-width: 650px;
     }
 
-    th,
-    td {
-        padding: 9px 8px;
-        white-space: nowrap;
-    }
-
     th {
-        font-size: 10px;
+        padding: 11px 10px;
+
+        font-size: 9px;
     }
 
     td {
+        padding: 12px 10px;
+
+        font-size: 9px;
+    }
+
+    td strong {
         font-size: 9px;
     }
 
     .status {
-        padding: 4px 8px;
+        min-width: 55px;
+
+        padding: 5px 7px;
+
         font-size: 8px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 380px) {
 
@@ -1315,31 +1189,179 @@ td {
         width: 52px;
     }
 
-    .dashboard {
-        margin-left: 52px;
-        width: calc(100% - 52px);
-        padding: 5px;
+    .heading {
+        width: 52px;
+        height: 52px;
+    }
+
+    .heading i {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+        min-height: 34px;
+
+        font-size: 16px;
+
+        border-radius: 6px;
     }
 
     .panel a {
-        height: 39px;
+        height: 40px;
+        min-height: 40px;
     }
 
     .panel a i {
-        font-size: 0.9rem;
+        font-size: 14px;
     }
 
 
-    /* TOP */
+    /* OPEN DRAWER */
 
-    .top {
-        min-height: 112px;
-        padding: 10px;
-        gap: 8px;
+    .panel.collapsed {
+        width: 200px;
+        padding: 7px;
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+        height: 52px;
+    }
+
+    .panel.collapsed .heading h2 {
+        font-size: 0.95rem;
+    }
+
+    .panel.collapsed .heading i {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+        min-height: 34px;
+
+        flex: 0 0 34px;
+    }
+
+    .panel.collapsed .link {
+        min-height: 40px;
+
+        font-size: 0.82rem;
+    }
+
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 52px);
+        margin-left: 52px;
+
+        padding: 10px 7px;
     }
 
     .title h1 {
+        font-size: 19px;
+    }
+
+    .title p {
+        font-size: 9px;
+    }
+
+    .summary {
+        gap: 7px;
+    }
+
+    .summary-card {
+        min-height: 73px;
+
+        padding: 8px;
+
+        gap: 7px;
+    }
+
+    .summary-icon {
+        width: 30px;
+        height: 30px;
+
+        font-size: 12px;
+    }
+
+    .summary-card p {
+        font-size: 8px;
+    }
+
+    .summary-card h2 {
         font-size: 16px;
+    }
+
+    .punch-heading h2 {
+        font-size: 13px;
+    }
+
+    .punch-heading p {
+        font-size: 7px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 320px) {
+
+    .panel {
+        width: 48px;
+    }
+
+    .heading {
+        width: 48px;
+        height: 48px;
+    }
+
+    .heading i {
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+        min-height: 32px;
+
+        font-size: 14px;
+    }
+
+    .panel a {
+        height: 37px;
+        min-height: 37px;
+    }
+
+    .panel a i {
+        font-size: 13px;
+    }
+
+
+    /* OPEN DRAWER */
+
+    .panel.collapsed {
+        width: 185px;
+    }
+
+    .panel.collapsed .heading {
+        height: 50px;
+    }
+
+    .panel.collapsed .heading h2 {
+        font-size: 0.85rem;
+    }
+
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 48px);
+        margin-left: 48px;
+
+        padding: 8px 6px;
+    }
+
+    .title h1 {
+        font-size: 17px;
     }
 
     .title p {
@@ -1351,31 +1373,30 @@ td {
     }
 
     .date-box label {
-        font-size: 8px;
-    }
-
-    .date-box input {
-        height: 31px;
         font-size: 9px;
     }
 
+    .date-box input {
+        width: 120px;
 
-    /* SUMMARY */
+        font-size: 9px;
+    }
 
     .summary {
         gap: 5px;
     }
 
     .summary-card {
-        min-height: 63px;
         padding: 7px;
-        gap: 6px;
+
+        gap: 5px;
     }
 
     .summary-icon {
         width: 27px;
         height: 27px;
-        font-size: 11px;
+
+        font-size: 10px;
     }
 
     .summary-card p {
@@ -1383,299 +1404,367 @@ td {
     }
 
     .summary-card h2 {
-        font-size: 15px;
-    }
-
-
-    /* HOLIDAY */
-
-    .holiday {
-        padding: 9px;
-        gap: 7px;
-    }
-
-    .holiday i {
-        font-size: 16px;
-    }
-
-    .holiday h3 {
-        font-size: 11px;
-    }
-
-    .holiday p {
-        font-size: 8px;
-    }
-
-
-    /* PUNCH */
-
-    .punch-container {
-        padding: 9px;
+        font-size: 14px;
     }
 
     .punch-heading {
-        margin-bottom: 10px;
+        padding: 10px;
     }
 
     .punch-heading h2 {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .punch-heading p {
-        font-size: 8px;
-    }
-
-    #dayStatus {
-        padding: 4px 6px;
-        font-size: 7px;
-    }
-
-    table {
-        min-width: 600px;
-    }
-
-    th,
-    td {
-        padding: 8px 7px;
-    }
-
-    th {
-        font-size: 9px;
-    }
-
-    td {
-        font-size: 8px;
-    }
-
-    .status {
-        padding: 3px 6px;
-        font-size: 7px;
+        font-size: 6.5px;
     }
 }
 
 
 /* =========================================================
-   DESKTOP SITE ON PHONE
-   ========================================================= */
+   DESKTOP SITE MODE ON PHONE
+========================================================= */
 
 @media (pointer: coarse) and (min-width: 601px) {
 
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
-
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 190px;
-        height: 100vh;
-        padding: 10px;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow-y: auto;
+        padding: 8px;
     }
 
     .heading {
-        width: 100%;
         height: 70px;
-        padding: 10px;
-        box-sizing: border-box;
     }
 
     .heading h2 {
         display: block;
-        font-size: 1.05rem;
+
+        font-size: 1rem;
     }
 
     .heading i {
-        font-size: 0.9rem;
-        padding: 6px;
-        margin: 0;
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
+        font-size: 18px;
     }
 
     .panel a {
-        font-size: 0.78rem;
-        padding: 9px 7px;
-        margin-bottom: 3px;
+        padding: 9px 6px;
+
+        font-size: 0.75rem;
     }
 
     .panel a i {
+        margin-right: 6px;
+
         font-size: 0.85rem;
-        margin-right: 7px;
     }
-
-
-    /* MAIN */
 
     .dashboard {
-        margin-left: 190px;
         width: calc(100% - 190px);
-        padding: 10px;
-        box-sizing: border-box;
-    }
+        margin-left: 190px;
 
-
-    /* TOP */
-
-    .top {
-        height: 80px;
-        padding: 10px 14px;
-        margin-bottom: 12px;
-    }
-
-    .title h1 {
-        font-size: 23px;
-    }
-
-    .title p {
-        font-size: 11px;
-    }
-
-    .date-box {
-        padding: 9px 12px;
-    }
-
-    .date-box label {
-        font-size: 10px;
-    }
-
-    .date-box input {
-        font-size: 11px;
-    }
-
-
-    /* SUMMARY */
-
-    .summary {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 10px;
-        margin-bottom: 12px;
-    }
-
-    .summary-card {
-        padding: 11px;
-        gap: 9px;
-        min-width: 0;
-    }
-
-    .summary-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 15px;
-    }
-
-    .summary-card p {
-        font-size: 9px;
-    }
-
-    .summary-card h2 {
-        font-size: 18px;
-    }
-
-
-    /* HOLIDAY */
-
-    .holiday {
-        padding: 13px 15px;
-        margin-bottom: 12px;
-    }
-
-    .holiday i {
-        font-size: 20px;
-    }
-
-    .holiday h3 {
-        font-size: 14px;
-    }
-
-    .holiday p {
-        font-size: 10px;
-    }
-
-
-    /* PUNCH */
-
-    .punch-container {
-        padding: 18px;
-    }
-
-    .punch-heading h2 {
-        font-size: 18px;
-    }
-
-    .punch-heading p {
-        font-size: 10px;
-    }
-
-    #dayStatus {
-        padding: 6px 10px;
-        font-size: 9px;
-    }
-
-    table {
-        min-width: 650px;
-    }
-
-    th,
-    td {
-        padding: 11px 9px;
-    }
-
-    th {
-        font-size: 11px;
-    }
-
-    td {
-        font-size: 10px;
-    }
-
-
-    /* COLLAPSED SIDEBAR */
-
-    .panel.collapsed {
-        width: 58px;
-    }
-
-    .panel.collapsed .heading h2,
-    .panel.collapsed .link {
-        display: none;
-    }
-
-    .panel.collapsed .heading {
-        justify-content: center;
-    }
-
-    .panel.collapsed .heading i {
-        margin: 0;
+        padding: 18px 14px;
     }
 
     .dashboard.reverse {
-        margin-left: 78px;
-        width: calc(100% - 78px);
+        width: calc(100% - 58px);
+        margin-left: 58px;
+    }
+
+    .summary {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
     }
 }
 
 
-/* ---------- FINAL SAFETY ---------- */
+/* =========================================================
+   LANDSCAPE PHONE
+========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 768px) and (orientation: landscape) {
 
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
+    .top {
+        display: flex;
+        align-items: center;
     }
 
-    .top,
-    .summary,
-    .punch-container {
-        max-width: 100%;
+    .date-box {
+        width: auto;
+
+        margin-top: 0;
+    }
+
+    .summary {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+    .panel a:hover {
+        transform: none;
+    }
+
+    .summary-card:hover {
+        transform: none;
+
+        box-shadow:
+            0 4px 14px rgba(18,53,91,0.05);
+    }
+
+    tbody tr:hover {
+        background: transparent;
+    }
+}
+
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+body.dark-theme {
+    background: #101820;
+    color: #E5E7EB;
+}
+
+body.dark-theme .dashboard {
+    background: #101820;
+}
+
+
+/* TOP */
+
+body.dark-theme .title h1 {
+    color: #ffffff;
+}
+
+body.dark-theme .title p {
+    color: #AAB7C4;
+}
+
+
+/* DATE */
+
+body.dark-theme .date-box {
+    background: #1B2733;
+    border-color: #3A4B59;
+}
+
+body.dark-theme .date-box label {
+    color: #CBD5E1;
+}
+
+body.dark-theme .date-box input {
+    background: #243442;
+    border-color: #465A6A;
+    color: #ffffff;
+}
+
+
+/* SUMMARY */
+
+body.dark-theme .summary-card {
+    background: #1B2733;
+
+    border-color: #3A4B59;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.16);
+}
+
+body.dark-theme .summary-card p {
+    color: #AAB7C4;
+}
+
+body.dark-theme .summary-card h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .summary-icon.present {
+    background: #173D31;
+    color: #45D69A;
+}
+
+body.dark-theme .summary-icon.absent {
+    background: #43292C;
+    color: #FF7474;
+}
+
+body.dark-theme .summary-icon.total {
+    background: #1D3652;
+    color: #63A7FF;
+}
+
+body.dark-theme .summary-icon.percentage {
+    background: #332C4E;
+    color: #A88CFF;
+}
+
+
+/* HOLIDAY */
+
+body.dark-theme .holiday {
+    background: #3A301E;
+    border-color: #6C5527;
+}
+
+body.dark-theme .holiday > i {
+    background: #51401F;
+    color: #FFB84D;
+}
+
+body.dark-theme .holiday h3 {
+    color: #FFCA70;
+}
+
+body.dark-theme .holiday p {
+    color: #D9BE8B;
+}
+
+
+/* PUNCH */
+
+body.dark-theme .punch-container {
+    background: #1B2733;
+
+    border-color: #3A4B59;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.18);
+}
+
+body.dark-theme .punch-heading {
+    border-color: #3A4B59;
+}
+
+body.dark-theme .punch-heading h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .punch-heading p {
+    color: #AAB7C4;
+}
+
+body.dark-theme .punch-heading > span {
+    background: #173D31;
+    color: #45D69A;
+}
+
+
+/* TABLE */
+
+body.dark-theme table {
+    background: #1B2733;
+}
+
+body.dark-theme thead {
+    background: #243442;
+}
+
+body.dark-theme th {
+    color: #CBD5E1;
+    border-color: #3A4B59;
+}
+
+body.dark-theme td {
+    color: #CBD5E1;
+    border-color: #344653;
+}
+
+body.dark-theme td strong {
+    color: #ffffff;
+}
+
+body.dark-theme tbody tr:hover {
+    background: #243442;
+}
+
+body.dark-theme .table-container::-webkit-scrollbar-track {
+    background: #1B2733;
+}
+
+body.dark-theme .table-container::-webkit-scrollbar-thumb {
+    background: #465A6A;
+}
+
+
+/* DARK STATUS */
+
+body.dark-theme .status.present {
+    background: #173D31;
+    color: #45D69A;
+}
+
+body.dark-theme .status.absent {
+    background: #43292C;
+    color: #FF7474;
+}
+
+body.dark-theme .status.lunch {
+    background: #49391F;
+    color: #FFBE58;
+}
+
+
+/* =========================================================
+   FINAL BAR ICON SAFETY
+========================================================= */
+
+.panel .heading i {
+    box-sizing: border-box;
+
+    flex: 0 0 40px;
+
+    overflow: visible;
+
+    text-align: center;
+}
+
+.panel.collapsed .heading i {
+    flex: 0 0 38px;
+}
+
+@media (max-width: 600px) {
+
+    .panel .heading i {
+        flex: 0 0 38px;
+    }
+
+    .panel.collapsed .heading i {
+        flex: 0 0 38px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .panel .heading i {
+        flex: 0 0 34px;
+    }
+
+    .panel.collapsed .heading i {
+        flex: 0 0 34px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .panel .heading i {
+        flex: 0 0 32px;
+    }
+
+    .panel.collapsed .heading i {
+        flex: 0 0 32px;
     }
 }

@@ -1,100 +1,209 @@
-*{
-    margin: 0px;
-    padding: 0px;
+/* =========================================================
+   NOTICES PAGE
+   PROFILE MASTER DESIGN
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
     background-color: #E8EEF6;
+    color: #334155;
+    font-family: Arial, sans-serif;
 }
-.panel{
-    display:flex;
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.panel {
+    display: flex;
     flex-direction: column;
-    height: 123vh;
-    width: 40vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
     padding: 10px;
+
     background-color: #12355B;
     color: white;
-    position:absolute;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition: width 0.3s ease;
 }
-.heading{
+
+.heading {
     display: flex;
-    height: 100px;
-    width: 90%;
-    padding: 10px;
-    justify-content: space-between;
     align-items: center;
-}
-.heading i{
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 6px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.panel a{
-    font-size: 1.2rem;
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: 70px;
+
     padding: 10px;
-    text-decoration: none;
-    color: black;
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0.5rem;
-    display: block;
-    transition: all 0.25s ease;
-    border-radius: 8px;
 }
-a:hover{
+
+.heading h2 {
+    color: white;
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+
+.heading i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 7px;
+
+    color: white;
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.heading i:hover {
     background-color: #1E4A78;
-    color: #ffffff;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-a:active{
+
+.panel a {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 11px 10px;
+    margin-bottom: 3px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+
+    transition: 0.25s ease;
+}
+
+.panel a i {
+    width: 25px;
+    margin-right: 10px;
+
+    font-size: 1rem;
+    text-align: center;
+}
+
+.panel a:hover {
+    background-color: #1E4A78;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.panel a:active {
     background-color: #FFE8A3;
     color: #12355B;
 }
-.panel i{
-    margin-right: 10px;
-    font-size: 1.3rem;
-}
 
-.dashboard{
-    margin-left: 43vh;
+
+/* =========================================================
+   MAIN DASHBOARD
+   ========================================================= */
+
+.dashboard {
+    min-height: 100vh;
+
+    margin-left: 250px;
+    width: calc(100% - 250px);
+
+    padding: 20px;
+
     background-color: #E8EEF6;
     color: #334155;
-    padding: 10px;
+
+    transition: margin-left 0.3s ease,
+                width 0.3s ease;
 }
 
-/* HEADER */
+
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 .notices-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
-    height: 100px;
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: 105px;
+
+    padding: 20px 22px;
+    margin-bottom: 20px;
+
     background-color: #ffffff;
-    border: 2px solid #D9E2EC;
-    border-radius: 1rem;
-    padding: 0 15px 0 15px;
+
+    border: 1px solid #D9E2EC;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 15px rgba(18,53,91,0.07);
+
+    gap: 20px;
 }
 
 .notices-header h1 {
-    font-size: 30px;
     color: #12355B;
+    font-size: 30px;
+    line-height: 1.2;
 }
 
 .notices-header p {
-    color: #6b7280;
-    margin-top: 5px;
+    margin-top: 6px;
+
+    color: #64748B;
+    font-size: 14px;
 }
 
 .notice-date {
-    background: white;
-    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+
+    padding: 11px 16px;
+
+    background-color: #F5F8FC;
+
+    border: 1px solid #D9E2EC;
     border-radius: 10px;
+
     color: #12355B;
+
+    font-size: 14px;
     font-weight: 600;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+
+    white-space: nowrap;
 }
 
 .notice-date i {
@@ -102,194 +211,250 @@ a:active{
 }
 
 
-/* SUMMARY */
+/* =========================================================
+   SUMMARY CARDS
+   ========================================================= */
 
 .notice-summary {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    margin-bottom: 25px;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+
+    width: 100%;
+
+    margin-bottom: 20px;
 }
 
 .notice-card {
-    background: white;
-    padding: 20px;
-    border-radius: 14px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+
+    min-width: 0;
+
+    padding: 18px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #D9E2EC;
+    border-radius: 14px;
+
+    gap: 13px;
+
+    box-shadow: 0 5px 15px rgba(18,53,91,0.07);
+
+    transition: 0.25s ease;
+}
+
+.notice-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px rgba(18,53,91,0.12);
 }
 
 .notice-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 21px;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 11px;
+
+    font-size: 20px;
 }
 
 .notice-icon.important,
 .notice-main-icon.important {
-    background: #ffe5e5;
-    color: #e53935;
+    background-color: #FFE5E5;
+    color: #E53935;
 }
 
 .notice-icon.academic,
 .notice-main-icon.academic {
-    background: #e5edff;
+    background-color: #E5EDFF;
     color: #1976E8;
 }
 
 .notice-icon.event,
 .notice-main-icon.event {
-    background: #eee8ff;
+    background-color: #EEE8FF;
     color: #6C4CE8;
 }
 
 .notice-icon.total {
-    background: #e4f8ef;
+    background-color: #E4F8EF;
     color: #12A866;
 }
 
 .notice-card p {
-    color: #6b7280;
-    font-size: 14px;
+    color: #64748B;
+    font-size: 13px;
 }
 
 .notice-card h2 {
     margin-top: 4px;
+
     color: #12355B;
+    font-size: 22px;
 }
 
 
-/* NOTICE SECTION */
+/* =========================================================
+   NOTICE SECTION
+   ========================================================= */
 
 .notices-section {
-    background: white;
+    width: 100%;
+
+    padding: 22px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #D9E2EC;
     border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+
+    box-shadow: 0 5px 15px rgba(18,53,91,0.07);
 }
 
 .section-heading {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
 }
 
 .section-heading h2 {
     color: #12355B;
+    font-size: 21px;
 }
 
 .section-heading p {
-    color: #6b7280;
     margin-top: 5px;
+
+    color: #64748B;
+    font-size: 13px;
 }
 
 #noticeFilter {
-    padding: 10px 14px;
-    border: 1px solid #ddd;
+    padding: 9px 13px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #D9E2EC;
     border-radius: 8px;
+
+    color: #334155;
+
+    font-size: 13px;
+
     outline: none;
+    cursor: pointer;
+}
+
+#noticeFilter:focus {
+    border-color: #1976E8;
 }
 
 
-/* NOTICE ITEM */
+/* =========================================================
+   NOTICE ITEMS
+   ========================================================= */
 
 .notice-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
 
-    padding: 20px;
-    border: 1px solid #edf0f5;
+    width: 100%;
+
+    padding: 18px;
+
+    margin-bottom: 13px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #E1E8F0;
     border-radius: 12px;
 
-    margin-bottom: 15px;
+    gap: 18px;
 
-    transition: 0.2s;
+    transition: 0.25s ease;
+}
+
+.notice-item:last-child {
+    margin-bottom: 0;
 }
 
 .notice-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+
+    box-shadow: 0 6px 16px rgba(18,53,91,0.08);
 }
 
 .notice-left {
     display: flex;
-    gap: 15px;
     align-items: flex-start;
+
+    min-width: 0;
+
+    gap: 14px;
 }
 
 .notice-main-icon {
-    min-width: 48px;
-    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    min-width: 46px;
+    width: 46px;
+    height: 46px;
 
     border-radius: 10px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 19px;
+    font-size: 18px;
 }
 
 .notice-content {
-    max-width: 850px;
+    min-width: 0;
+    max-width: 900px;
 }
 
 .notice-title {
     display: flex;
     align-items: center;
-    gap: 10px;
+
     flex-wrap: wrap;
+
+    gap: 9px;
 }
 
 .notice-title h3 {
     color: #12355B;
-    font-size: 17px;
+    font-size: 16px;
+    line-height: 1.3;
 }
 
 .notice-content p {
-    color: #6b7280;
-    font-size: 14px;
-    line-height: 1.6;
     margin: 7px 0;
-}
 
+    color: #64748B;
 
-/* TAGS */
-
-.notice-tag {
-    font-size: 11px;
-    padding: 4px 8px;
-    border-radius: 20px;
-    font-weight: 600;
-}
-
-.important-tag {
-    background: #ffe5e5;
-    color: #e53935;
-}
-
-.academic-tag {
-    background: #e5edff;
-    color: #1976E8;
-}
-
-.event-tag {
-    background: #eee8ff;
-    color: #6C4CE8;
+    font-size: 13px;
+    line-height: 1.55;
 }
 
 .notice-time {
+    color: #8A8F98;
     font-size: 12px;
-    color: #8a8f98;
 }
 
 .notice-time i {
@@ -297,168 +462,185 @@ a:active{
 }
 
 
-/* VIEW BUTTON */
+/* =========================================================
+   TAGS
+   ========================================================= */
 
-.view-btn {
-    border: none;
-    background: #12355B;
-    color: white;
-    padding: 9px 17px;
-    border-radius: 8px;
-    cursor: pointer;
+.notice-tag {
+    padding: 4px 8px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
     font-weight: 600;
 }
 
+.important-tag {
+    background-color: #FFE5E5;
+    color: #E53935;
+}
+
+.academic-tag {
+    background-color: #E5EDFF;
+    color: #1976E8;
+}
+
+.event-tag {
+    background-color: #EEE8FF;
+    color: #6C4CE8;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+   ========================================================= */
+
+.view-btn {
+    flex-shrink: 0;
+
+    padding: 9px 17px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #12355B;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
 .view-btn:hover {
-    background: #1976E8;
+    background-color: #1976E8;
 }
 
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-    .dashboard {
-        padding: 20px;
-    }
-
-    .notices-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .notice-summary {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .notice-item {
-        align-items: flex-start;
-    }
-
-}
-
-
-@media (max-width: 550px) {
-
-    .notice-summary {
-        grid-template-columns: 1fr;
-    }
-
-    .section-heading {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .notice-item {
-        flex-direction: column;
-    }
-
-    .view-btn {
-        width: 100%;
-    }
-
-}
-
-.panel{
-    width: 40vh;
-}
-.dashboard{
-    margin-left: 43vh;
-}
-.panel.collapsed{
-    width: 50px;
-    transition: all 2s ease;
-    .heading h2{
-        display: none;
-    }
-    .link{
-        display: none;
-    }
-}
-.dashboard.reverse{
-    margin-left: 75px;
-    transition: all 2s ease;
-}
-
-
-
-
-
-/* =========================================================
-   EXTRA NOTICES PAGE CSS
-   Add this at the very bottom of notices.css
-   ========================================================= */
-
-
-/* ---------- GENERAL IMPROVEMENT ---------- */
-
-.notices-header,
-.notice-card,
-.notices-section,
-.notice-item {
-    box-sizing: border-box;
-    transition: all 0.25s ease;
-}
-
-.notices-header,
-.notice-card,
-.notices-section {
-    box-shadow: 0 5px 15px rgba(18, 53, 91, 0.07);
-}
-
-.notice-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 9px 22px rgba(18, 53, 91, 0.12);
+.view-btn:active {
+    transform: scale(0.97);
 }
 
 
 /* =========================================================
-   DESKTOP
+   COLLAPSED DESKTOP SIDEBAR
    ========================================================= */
 
-@media (min-width: 1101px) {
+.panel.collapsed {
+    width: 58px;
+    padding: 0;
 
-    .dashboard {
-        min-height: 100vh;
-        box-sizing: border-box;
-    }
+    transition: width 0.3s ease;
+}
 
-    .notices-header,
-    .notice-summary,
-    .notices-section {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+.panel.collapsed .heading {
+    justify-content: center;
 
-    .notice-summary {
-        margin-bottom: 25px;
-    }
+    padding: 10px 0;
+}
+
+.panel.collapsed .heading h2,
+.panel.collapsed .link {
+    display: none;
+}
+
+.panel.collapsed .heading i {
+    margin: 0;
+}
+
+.dashboard.reverse {
+    margin-left: 58px;
+    width: calc(100% - 58px);
+
+    transition: margin-left 0.3s ease,
+                width 0.3s ease;
 }
 
 
 /* =========================================================
-   TABLET
+   LAPTOP
    ========================================================= */
 
-@media (min-width: 601px) and (max-width: 1100px) {
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .panel {
+        width: 210px;
+    }
 
     .dashboard {
-        margin-left: 200px;
+        margin-left: 210px;
         width: calc(100% - 210px);
-        padding: 10px;
-        box-sizing: border-box;
+
+        padding: 16px;
     }
 
+    .panel a {
+        font-size: 0.88rem;
+        padding: 10px 8px;
+    }
 
-    /* HEADER */
+    .heading h2 {
+        font-size: 1.1rem;
+    }
 
     .notices-header {
-        height: 85px;
-        padding: 0 15px;
-        margin-bottom: 15px;
+        min-height: 95px;
+    }
+
+    .notices-header h1 {
+        font-size: 27px;
+    }
+
+    .notice-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .notice-content {
+        max-width: 700px;
+    }
+}
+
+
+/* =========================================================
+   TABLET / IPAD
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+
+    .panel {
+        width: 175px;
+    }
+
+    .dashboard {
+        margin-left: 175px;
+        width: calc(100% - 175px);
+
+        padding: 12px;
+    }
+
+    .panel a {
+        font-size: 0.78rem;
+        padding: 9px 7px;
+    }
+
+    .panel a i {
+        font-size: 0.9rem;
+        margin-right: 7px;
+    }
+
+    .heading {
+        min-height: 65px;
+        padding: 8px;
+    }
+
+    .heading h2 {
+        font-size: 1rem;
+    }
+
+    .notices-header {
+        min-height: 90px;
+        padding: 15px;
     }
 
     .notices-header h1 {
@@ -466,74 +648,35 @@ a:active{
     }
 
     .notices-header p {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .notice-date {
         padding: 9px 12px;
-        font-size: 11px;
+        font-size: 12px;
     }
 
-
-    /* SUMMARY */
-
     .notice-summary {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
-        margin-bottom: 18px;
     }
 
     .notice-card {
         padding: 14px;
-        gap: 11px;
     }
 
     .notice-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-
-    .notice-card p {
-        font-size: 10px;
-    }
-
-    .notice-card h2 {
-        font-size: 18px;
-    }
-
-
-    /* SECTION */
-
-    .notices-section {
-        padding: 18px;
-    }
-
-    .section-heading h2 {
+        width: 42px;
+        height: 42px;
         font-size: 17px;
     }
 
-    .section-heading p {
-        font-size: 11px;
+    .notices-section {
+        padding: 17px;
     }
-
-    #noticeFilter {
-        padding: 8px 12px;
-        font-size: 11px;
-    }
-
-
-    /* NOTICE ITEM */
 
     .notice-item {
         padding: 15px;
-        gap: 13px;
-    }
-
-    .notice-main-icon {
-        min-width: 42px;
-        height: 42px;
-        font-size: 16px;
     }
 
     .notice-title h3 {
@@ -543,24 +686,12 @@ a:active{
     .notice-content p {
         font-size: 12px;
     }
-
-    .notice-time {
-        font-size: 11px;
-    }
-
-    .notice-tag {
-        font-size: 10px;
-    }
-
-    .view-btn {
-        padding: 8px 14px;
-        font-size: 11px;
-    }
 }
 
 
 /* =========================================================
    NORMAL MOBILE
+   ICON RAIL + OVERLAY DRAWER
    ========================================================= */
 
 @media (max-width: 600px) {
@@ -572,25 +703,32 @@ a:active{
         overflow-x: hidden;
     }
 
-
-    /* SIDEBAR */
+    /* SIDEBAR ICON RAIL */
 
     .panel {
         position: fixed;
+
         top: 0;
         left: 0;
+
         width: 58px;
         height: 100vh;
+
         padding: 4px;
-        box-sizing: border-box;
+
         z-index: 1000;
+
         overflow: hidden;
+
+        transition: width 0.3s ease;
     }
 
     .heading {
         width: 100%;
         height: 58px;
+
         padding: 0;
+
         justify-content: center;
     }
 
@@ -599,50 +737,121 @@ a:active{
     }
 
     .heading i {
+        width: 30px;
+        height: 30px;
+
         margin: 0;
-        font-size: 0.95rem;
-        padding: 6px;
+
+        padding: 0;
+
+        font-size: 0.9rem;
     }
 
     .panel a {
+        display: flex;
+
         width: 100%;
         height: 42px;
+
         padding: 9px 3px;
         margin-bottom: 3px;
-        box-sizing: border-box;
-        font-size: 0;
-        display: flex;
+
         justify-content: center;
         align-items: center;
+
+        font-size: 0;
     }
 
     .panel a i {
+        width: auto;
         margin: 0;
+
         font-size: 1rem;
     }
 
 
-    /* MAIN */
+    /* MAIN CONTENT */
 
     .dashboard {
         margin-left: 58px;
         width: calc(100% - 58px);
+
+        padding: 8px;
+
+        min-height: 100vh;
+    }
+
+
+    /* MOBILE OVERLAY */
+
+    .panel.collapsed {
+        width: 215px;
+
         padding: 7px;
-        box-sizing: border-box;
+
+        box-shadow: 5px 0 18px rgba(0,0,0,0.18);
+
+        overflow-y: auto;
+    }
+
+    .panel.collapsed .heading {
+        height: 58px;
+
+        justify-content: space-between;
+
+        padding: 8px;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: block;
+
+        color: white;
+        font-size: 1rem;
+    }
+
+    .panel.collapsed .link {
+        display: flex;
+
+        width: 100%;
+        height: auto;
+
+        padding: 10px 8px;
+
+        font-size: 0.86rem;
+
+        justify-content: flex-start;
+    }
+
+    .panel.collapsed .link i {
+        margin-right: 9px;
+
+        font-size: 0.95rem;
+    }
+
+    /*
+       IMPORTANT:
+       dashboard.reverse does NOT move content on mobile.
+       Sidebar opens above the content as an overlay.
+    */
+
+    .dashboard.reverse {
+        margin-left: 58px;
+        width: calc(100% - 58px);
     }
 
 
     /* HEADER */
 
     .notices-header {
-        width: 100%;
-        height: auto;
-        min-height: 80px;
+        min-height: 92px;
+
         padding: 12px;
-        margin-bottom: 12px;
+
+        margin-bottom: 11px;
+
         border-radius: 11px;
-        gap: 10px;
-        box-sizing: border-box;
+
+        gap: 9px;
     }
 
     .notices-header h1 {
@@ -650,14 +859,17 @@ a:active{
     }
 
     .notices-header p {
-        font-size: 9px;
         margin-top: 4px;
+
+        font-size: 9px;
     }
 
     .notice-date {
         padding: 7px 9px;
-        font-size: 9px;
+
         border-radius: 7px;
+
+        font-size: 9px;
     }
 
     .notice-date i {
@@ -668,22 +880,27 @@ a:active{
     /* SUMMARY */
 
     .notice-summary {
-        width: 100%;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
         gap: 7px;
-        margin-bottom: 12px;
+
+        margin-bottom: 11px;
     }
 
     .notice-card {
         padding: 9px;
+
         gap: 7px;
+
         border-radius: 10px;
     }
 
     .notice-icon {
         width: 31px;
         height: 31px;
+
         border-radius: 7px;
+
         font-size: 12px;
     }
 
@@ -692,18 +909,17 @@ a:active{
     }
 
     .notice-card h2 {
-        font-size: 14px;
         margin-top: 3px;
+        font-size: 14px;
     }
 
 
-    /* SECTION */
+    /* NOTICE SECTION */
 
     .notices-section {
-        width: 100%;
         padding: 12px;
+
         border-radius: 11px;
-        box-sizing: border-box;
     }
 
     .section-heading {
@@ -715,12 +931,14 @@ a:active{
     }
 
     .section-heading p {
-        font-size: 8px;
         margin-top: 3px;
+
+        font-size: 8px;
     }
 
     #noticeFilter {
         padding: 7px 9px;
+
         font-size: 8px;
     }
 
@@ -728,60 +946,72 @@ a:active{
     /* NOTICE ITEM */
 
     .notice-item {
-        width: 100%;
-        padding: 12px;
-        gap: 9px;
-        border-radius: 10px;
-        margin-bottom: 9px;
-        box-sizing: border-box;
+        align-items: flex-start;
+
+        padding: 11px;
+
+        gap: 8px;
+
+        border-radius: 9px;
+
+        margin-bottom: 8px;
     }
 
     .notice-left {
-        gap: 9px;
+        gap: 8px;
     }
 
     .notice-main-icon {
         min-width: 34px;
+        width: 34px;
         height: 34px;
+
         border-radius: 8px;
-        font-size: 13px;
+
+        font-size: 12px;
     }
 
     .notice-content {
         max-width: 100%;
-        min-width: 0;
+    }
+
+    .notice-title {
+        gap: 5px;
     }
 
     .notice-title h3 {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .notice-tag {
-        font-size: 8px;
         padding: 3px 6px;
+
+        font-size: 7px;
     }
 
     .notice-content p {
-        font-size: 9px;
         margin: 5px 0;
+
+        font-size: 8px;
         line-height: 1.5;
     }
 
     .notice-time {
-        font-size: 8px;
+        font-size: 7px;
     }
 
     .view-btn {
-        width: 100%;
-        padding: 8px;
-        font-size: 9px;
-        margin-top: 5px;
+        align-self: stretch;
+
+        padding: 7px 9px;
+
+        font-size: 8px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 380px) {
@@ -790,10 +1020,12 @@ a:active{
         width: 52px;
     }
 
-    .dashboard {
+    .dashboard,
+    .dashboard.reverse {
         margin-left: 52px;
         width: calc(100% - 52px);
-        padding: 5px;
+
+        padding: 6px;
     }
 
     .panel a {
@@ -804,9 +1036,16 @@ a:active{
         font-size: 0.9rem;
     }
 
+    .panel.collapsed {
+        width: 200px;
+    }
+
+    .panel.collapsed .link {
+        font-size: 0.8rem;
+    }
 
     .notices-header {
-        min-height: 70px;
+        min-height: 78px;
         padding: 9px;
     }
 
@@ -815,14 +1054,13 @@ a:active{
     }
 
     .notices-header p {
-        font-size: 8px;
+        font-size: 7px;
     }
 
     .notice-date {
-        font-size: 7px;
         padding: 6px 7px;
+        font-size: 7px;
     }
-
 
     .notice-summary {
         gap: 5px;
@@ -847,7 +1085,6 @@ a:active{
         font-size: 12px;
     }
 
-
     .notices-section {
         padding: 9px;
     }
@@ -861,76 +1098,158 @@ a:active{
     }
 
     #noticeFilter {
-        font-size: 7px;
         padding: 6px 8px;
+        font-size: 7px;
     }
 
-
     .notice-item {
-        padding: 9px;
+        padding: 8px;
     }
 
     .notice-main-icon {
         min-width: 30px;
+        width: 30px;
         height: 30px;
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .notice-title h3 {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .notice-tag {
-        font-size: 7px;
+        font-size: 6px;
     }
 
     .notice-content p {
-        font-size: 8px;
-    }
-
-    .notice-time {
         font-size: 7px;
     }
 
+    .notice-time {
+        font-size: 6px;
+    }
+
     .view-btn {
-        font-size: 9px;
+        padding: 6px;
+        font-size: 8px;
     }
 }
 
 
 /* =========================================================
-   DESKTOP SITE ON PHONE
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+    .panel {
+        width: 48px;
+    }
+
+    .dashboard,
+    .dashboard.reverse {
+        margin-left: 48px;
+        width: calc(100% - 48px);
+
+        padding: 5px;
+    }
+
+    .panel.collapsed {
+        width: 185px;
+    }
+
+    .panel a {
+        height: 37px;
+    }
+
+    .panel a i {
+        font-size: 0.82rem;
+    }
+
+    .notices-header h1 {
+        font-size: 14px;
+    }
+
+    .notices-header p {
+        font-size: 6px;
+    }
+
+    .notice-date {
+        font-size: 6px;
+    }
+
+    .notice-card {
+        padding: 6px;
+    }
+
+    .notice-card p {
+        font-size: 5px;
+    }
+
+    .notice-card h2 {
+        font-size: 11px;
+    }
+
+    .notice-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 9px;
+    }
+
+    .notices-section {
+        padding: 7px;
+    }
+
+    .section-heading h2 {
+        font-size: 11px;
+    }
+
+    .notice-item {
+        padding: 7px;
+    }
+
+    .notice-main-icon {
+        min-width: 27px;
+        width: 27px;
+        height: 27px;
+    }
+
+    .notice-title h3 {
+        font-size: 9px;
+    }
+
+    .notice-content p {
+        font-size: 6px;
+    }
+
+    .notice-time {
+        font-size: 5.5px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP SITE MODE ON PHONE
    ========================================================= */
 
 @media (pointer: coarse) and (min-width: 601px) {
 
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
-
     .panel {
         position: fixed;
-        top: 0;
-        left: 0;
+
         width: 190px;
         height: 100vh;
+
         padding: 10px;
-        box-sizing: border-box;
-        z-index: 1000;
+
         overflow-y: auto;
     }
 
     .heading {
         width: 100%;
         height: 70px;
+
         padding: 10px;
-        box-sizing: border-box;
     }
 
     .heading h2 {
@@ -946,7 +1265,6 @@ a:active{
     .panel a {
         font-size: 0.78rem;
         padding: 9px 7px;
-        margin-bottom: 3px;
     }
 
     .panel a i {
@@ -954,22 +1272,18 @@ a:active{
         margin-right: 7px;
     }
 
-
-    /* MAIN */
-
     .dashboard {
         margin-left: 190px;
         width: calc(100% - 190px);
+
         padding: 10px;
-        box-sizing: border-box;
     }
 
-
-    /* HEADER */
-
     .notices-header {
-        height: 75px;
+        min-height: 80px;
+
         padding: 10px 14px;
+
         margin-bottom: 12px;
     }
 
@@ -986,12 +1300,11 @@ a:active{
         font-size: 10px;
     }
 
-
-    /* SUMMARY */
-
     .notice-summary {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+
         gap: 10px;
+
         margin-bottom: 12px;
     }
 
@@ -1002,6 +1315,7 @@ a:active{
     .notice-icon {
         width: 39px;
         height: 39px;
+
         font-size: 15px;
     }
 
@@ -1012,9 +1326,6 @@ a:active{
     .notice-card h2 {
         font-size: 17px;
     }
-
-
-    /* SECTION */
 
     .notices-section {
         padding: 16px;
@@ -1033,41 +1344,40 @@ a:active{
         font-size: 10px;
     }
 
-
-    /* NOTICE ITEM */
-
     .notice-item {
-        padding: 16px;
+        padding: 15px;
     }
 
     .notice-main-icon {
         min-width: 42px;
+        width: 42px;
         height: 42px;
-        font-size: 17px;
-    }
 
-    .notice-title h3 {
         font-size: 16px;
     }
 
+    .notice-title h3 {
+        font-size: 15px;
+    }
+
     .notice-content p {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .notice-time {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .view-btn {
-        padding: 9px 15px;
-        font-size: 11px;
+        padding: 8px 14px;
+        font-size: 10px;
     }
 
-
-    /* COLLAPSED SIDEBAR */
+    /* Desktop-site keeps normal desktop sidebar behavior */
 
     .panel.collapsed {
         width: 58px;
+        padding: 0;
     }
 
     .panel.collapsed .heading h2,
@@ -1084,13 +1394,239 @@ a:active{
     }
 
     .dashboard.reverse {
-        margin-left: 78px;
-        width: calc(100% - 78px);
+        margin-left: 58px;
+        width: calc(100% - 58px);
     }
 }
 
 
-/* ---------- FINAL OVERFLOW SAFETY ---------- */
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+    .panel {
+        width: 58px;
+    }
+
+    .dashboard,
+    .dashboard.reverse {
+        margin-left: 58px;
+        width: calc(100% - 58px);
+    }
+
+    .notice-summary {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .notices-header {
+        min-height: 75px;
+    }
+
+    .notice-card {
+        padding: 8px;
+    }
+
+    .notice-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 11px;
+    }
+
+    .notice-card p {
+        font-size: 7px;
+    }
+
+    .notice-card h2 {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .notice-card:hover,
+    .notice-item:hover {
+        transform: none;
+    }
+
+    .panel a:hover {
+        transform: none;
+    }
+
+    .view-btn:hover {
+        background-color: #12355B;
+    }
+}
+
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+body.dark-theme {
+    background-color: #101820;
+    color: #E5E7EB;
+}
+
+body.dark-theme .dashboard {
+    background-color: #101820;
+    color: #E5E7EB;
+}
+
+body.dark-theme .notices-header,
+body.dark-theme .notice-card,
+body.dark-theme .notices-section {
+    background-color: #1B2733;
+
+    border-color: #3A4B59;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+}
+
+body.dark-theme .notices-header h1,
+body.dark-theme .section-heading h2,
+body.dark-theme .notice-card h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .notices-header p,
+body.dark-theme .section-heading p,
+body.dark-theme .notice-card p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .notice-date {
+    background-color: #243442;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+
+    box-shadow: none;
+}
+
+body.dark-theme .notice-date i {
+    color: #5CA7FF;
+}
+
+
+/* DARK SUMMARY ICONS */
+
+body.dark-theme .notice-icon.important,
+body.dark-theme .notice-main-icon.important {
+    background-color: #40282B;
+    color: #FF7373;
+}
+
+body.dark-theme .notice-icon.academic,
+body.dark-theme .notice-main-icon.academic {
+    background-color: #203A5A;
+    color: #5CA7FF;
+}
+
+body.dark-theme .notice-icon.event,
+body.dark-theme .notice-main-icon.event {
+    background-color: #33294F;
+    color: #A78BFA;
+}
+
+body.dark-theme .notice-icon.total {
+    background-color: #193C32;
+    color: #32D38A;
+}
+
+
+/* DARK FILTER */
+
+body.dark-theme #noticeFilter {
+    background-color: #243442;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+}
+
+
+/* DARK NOTICE ITEMS */
+
+body.dark-theme .notice-item {
+    background-color: #243442;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+}
+
+body.dark-theme .notice-item:hover {
+    background-color: #2D4050;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+body.dark-theme .notice-title h3 {
+    color: #ffffff;
+}
+
+body.dark-theme .notice-content p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .notice-time {
+    color: #9FAFBC;
+}
+
+body.dark-theme .notice-time i {
+    color: #5CA7FF;
+}
+
+
+/* DARK TAGS */
+
+body.dark-theme .important-tag {
+    background-color: #40282B;
+    color: #FF7373;
+}
+
+body.dark-theme .academic-tag {
+    background-color: #203A5A;
+    color: #5CA7FF;
+}
+
+body.dark-theme .event-tag {
+    background-color: #33294F;
+    color: #A78BFA;
+}
+
+
+/* DARK BUTTON */
+
+body.dark-theme .view-btn {
+    background-color: #12355B;
+    color: #ffffff;
+}
+
+body.dark-theme .view-btn:hover {
+    background-color: #1976E8;
+}
+
+
+/* DARK SIDEBAR */
+
+body.dark-theme .panel {
+    background-color: #12355B;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FINAL OVERFLOW SAFETY
+   ========================================================= */
 
 @media (max-width: 1100px) {
 

@@ -1,323 +1,323 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Attandance Record</title>
-    <link rel="stylesheet" href="attandance.css">
-</head>
-<body>
-    <div class="panel">
-        <div class="heading">
-            <h2>Student ERP</h2>
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <a href="dashboard.html" class="link"><i class="fa-regular fa-house"></i>Dashboard</a>
-        <a href="profile.html" class="link"><i class="fa-regular fa-circle-user"></i>Profile</a>
-        <a href="attandance.html" class="link"><i class="fa-regular fa-calendar-days"></i>Attandane Record</a>
-        <a href="punch.html" class="link"><i class="fa-regular fa-clock"></i>Daily Punch Record</a>
-        <a href="courses.html" class="link"><i class="fa-solid fa-book-open"></i>Courses</a>
-        <a href="table.html" class="link"><i class="fa-regular fa-calendar"></i>Time Table</a>
-        <a href="result.html" class="link"><i class="fa-solid fa-chart-simple"></i>Results</a>
-        <a href="fees.html" class="link"><i class="fa-solid fa-wallet"></i>Fees</a>
-        <a href="notices.html" class="link"><i class="fa-regular fa-bell"></i>Notices</a>
-        <a href="setting.html" class="link"><i class="fa-solid fa-gear"></i></i>Setting</a>
-    </div>
-
-    <div class="dashboard">
-        <!-- PAGE HEADING -->
-
-        <div class="att-heading">
-
-            <h1>Attandance Record</h1>
-
-            <p>View your overall and subject-wise attendance</p>
-
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Attandance Record</title>
+        <link rel="stylesheet" href="attandance.css">
+    </head>
+    <body>
+        <div class="panel">
+            <div class="heading">
+                <h2>Student ERP</h2>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <a href="dashboard.html" class="link"><i class="fa-regular fa-house"></i>Dashboard</a>
+            <a href="profile.html" class="link"><i class="fa-regular fa-circle-user"></i>Profile</a>
+            <a href="attandance.html" class="link"><i class="fa-regular fa-calendar-days"></i>Attandane Record</a>
+            <a href="punch.html" class="link"><i class="fa-regular fa-clock"></i>Daily Punch Record</a>
+            <a href="courses.html" class="link"><i class="fa-solid fa-book-open"></i>Courses</a>
+            <a href="table.html" class="link"><i class="fa-regular fa-calendar"></i>Time Table</a>
+            <a href="result.html" class="link"><i class="fa-solid fa-chart-simple"></i>Results</a>
+            <a href="fees.html" class="link"><i class="fa-solid fa-wallet"></i>Fees</a>
+            <a href="notices.html" class="link"><i class="fa-regular fa-bell"></i>Notices</a>
+            <a href="setting.html" class="link"><i class="fa-solid fa-gear"></i></i>Setting</a>
         </div>
 
+        <div class="dashboard">
+            <!-- PAGE HEADING -->
 
+            <div class="att-heading">
 
-        <!-- OVERALL ATTENDANCE -->
+                <h1>Attandance Record</h1>
 
-        <div class="overall-box">
-
-
-            <div class="overall-text">
-
-                <p>Overall Attendance</p>
-
-                <h1>85%</h1>
-
-                <span>85 Present out of 100 Days</span>
+                <p>View your overall and subject-wise attendance</p>
 
             </div>
 
 
-            <div class="circle">
 
-                <span>85%</span>
+            <!-- OVERALL ATTENDANCE -->
+
+            <div class="overall-box">
+
+
+                <div class="overall-text">
+
+                    <p>Overall Attendance</p>
+
+                    <h1>85%</h1>
+
+                    <span>85 Present out of 100 Days</span>
+
+                </div>
+
+
+                <div class="circle">
+
+                    <span>85%</span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ATTENDANCE SUMMARY -->
+
+            <div class="attendance-summary">
+
+
+                <div class="attendance-card">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <div>
+
+                        <p>Total Days</p>
+
+                        <h2>100</h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="attendance-card present">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+
+                        <p>Present Days</p>
+
+                        <h2>85</h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="attendance-card absent">
+
+                    <i class="fa-solid fa-circle-xmark"></i>
+
+                    <div>
+
+                        <p>Absent Days</p>
+
+                        <h2>15</h2>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- SUBJECT ATTENDANCE -->
+
+            <div class="subject-section">
+
+
+                <div class="subject-heading">
+
+                    <div>
+
+                        <h2>Subject Wise Attendance</h2>
+
+                        <p>Attendance percentage for each subject</p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DBMS -->
+
+                <div class="subject">
+
+                    <div class="subject-name">
+
+                        <i class="fa-solid fa-database"></i>
+
+                        <span>DBMS</span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div class="progress-bar dbms"></div>
+
+                    </div>
+
+
+                    <strong>90%</strong>
+
+                </div>
+
+
+
+                <!-- OS -->
+
+                <div class="subject">
+
+                    <div class="subject-name">
+
+                        <i class="fa-solid fa-desktop"></i>
+
+                        <span>Operating System</span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div class="progress-bar os"></div>
+
+                    </div>
+
+
+                    <strong>85%</strong>
+
+                </div>
+
+
+
+                <!-- CSA -->
+
+                <div class="subject">
+
+                    <div class="subject-name">
+
+                        <i class="fa-solid fa-microchip"></i>
+
+                        <span>Computer System Architecture</span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div class="progress-bar cn"></div>
+
+                    </div>
+
+
+                    <strong>80%</strong>
+
+                </div>
+
+
+
+                <!-- WEB -->
+
+                <div class="subject">
+
+                    <div class="subject-name">
+
+                        <i class="fa-solid fa-globe"></i>
+
+                        <span>Web Designing Fundamental</span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div class="progress-bar web"></div>
+
+                    </div>
+
+
+                    <strong>88%</strong>
+
+                </div>
+
+                <!-- DCN -->
+
+                <div class="subject">
+
+                    <div class="subject-name">
+
+                        <i class="fa-solid fa-network-wired"></i>
+
+                        <span>Data Communication & Networking</span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div class="progress-bar dcn"></div>
+
+                    </div>
+
+
+                    <strong>90%</strong>
+
+                </div>
+
+                <!-- NCC -->
+
+                <div class="subject">
+
+                    <div class="subject-name">
+
+                        <i class="fa-solid fa-flag"></i>
+
+                        <span>NCC</span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div class="progress-bar dcn"></div>
+
+                    </div>
+
+
+                    <strong>65%</strong>
+
+                </div>
+
+                <!-- Project -->
+
+                <div class="subject">
+
+                    <div class="subject-name">
+
+                        <i class="fa-solid fa-flask"></i>
+
+                        <span>Project Lab</span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div class="progress-bar dcn"></div>
+
+                    </div>
+
+
+                    <strong>85%</strong>
+
+                </div>
 
             </div>
 
 
         </div>
-
-
-
-        <!-- ATTENDANCE SUMMARY -->
-
-        <div class="attendance-summary">
-
-
-            <div class="attendance-card">
-
-                <i class="fa-solid fa-calendar-days"></i>
-
-                <div>
-
-                    <p>Total Days</p>
-
-                    <h2>100</h2>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="attendance-card present">
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <div>
-
-                    <p>Present Days</p>
-
-                    <h2>85</h2>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="attendance-card absent">
-
-                <i class="fa-solid fa-circle-xmark"></i>
-
-                <div>
-
-                    <p>Absent Days</p>
-
-                    <h2>15</h2>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- SUBJECT ATTENDANCE -->
-
-        <div class="subject-section">
-
-
-            <div class="subject-heading">
-
-                <div>
-
-                    <h2>Subject Wise Attendance</h2>
-
-                    <p>Attendance percentage for each subject</p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- DBMS -->
-
-            <div class="subject">
-
-                <div class="subject-name">
-
-                    <i class="fa-solid fa-database"></i>
-
-                    <span>DBMS</span>
-
-                </div>
-
-
-                <div class="progress">
-
-                    <div class="progress-bar dbms"></div>
-
-                </div>
-
-
-                <strong>90%</strong>
-
-            </div>
-
-
-
-            <!-- OS -->
-
-            <div class="subject">
-
-                <div class="subject-name">
-
-                    <i class="fa-solid fa-desktop"></i>
-
-                    <span>Operating System</span>
-
-                </div>
-
-
-                <div class="progress">
-
-                    <div class="progress-bar os"></div>
-
-                </div>
-
-
-                <strong>85%</strong>
-
-            </div>
-
-
-
-            <!-- CSA -->
-
-            <div class="subject">
-
-                <div class="subject-name">
-
-                    <i class="fa-solid fa-microchip"></i>
-
-                    <span>Computer System Architecture</span>
-
-                </div>
-
-
-                <div class="progress">
-
-                    <div class="progress-bar cn"></div>
-
-                </div>
-
-
-                <strong>80%</strong>
-
-            </div>
-
-
-
-            <!-- WEB -->
-
-            <div class="subject">
-
-                <div class="subject-name">
-
-                    <i class="fa-solid fa-globe"></i>
-
-                    <span>Web Designing Fundamental</span>
-
-                </div>
-
-
-                <div class="progress">
-
-                    <div class="progress-bar web"></div>
-
-                </div>
-
-
-                <strong>88%</strong>
-
-            </div>
-
-            <!-- DCN -->
-
-            <div class="subject">
-
-                <div class="subject-name">
-
-                    <i class="fa-solid fa-network-wired"></i>
-
-                    <span>Data Communication & Networking</span>
-
-                </div>
-
-
-                <div class="progress">
-
-                    <div class="progress-bar dcn"></div>
-
-                </div>
-
-
-                <strong>90%</strong>
-
-            </div>
-
-            <!-- NCC -->
-
-            <div class="subject">
-
-                <div class="subject-name">
-
-                    <i class="fa-solid fa-flag"></i>
-
-                    <span>NCC</span>
-
-                </div>
-
-
-                <div class="progress">
-
-                    <div class="progress-bar dcn"></div>
-
-                </div>
-
-
-                <strong>65%</strong>
-
-            </div>
-
-            <!-- Project -->
-
-            <div class="subject">
-
-                <div class="subject-name">
-
-                    <i class="fa-solid fa-flask"></i>
-
-                    <span>Project Lab</span>
-
-                </div>
-
-
-                <div class="progress">
-
-                    <div class="progress-bar dcn"></div>
-
-                </div>
-
-
-                <strong>85%</strong>
-
-            </div>
-
-        </div>
-
-
-    </div>
-    <script src="attandance.js"></script>
-</body>
-</html>
+        <script src="attandance.js"></script>
+    </body>
+    </html>

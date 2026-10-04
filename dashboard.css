@@ -1,372 +1,574 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    border: border-box;
+/* =========================================================
+   STUDENT ERP PORTAL - DASHBOARD
+   PROFILE MASTER RESPONSIVE DESIGN
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
     background-color: #E8EEF6;
+    color: #334155;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.panel{
-    display:flex;
-    flex-direction: column;
-    height: 113vh;
-    width: 40vh;
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
     padding: 10px;
-    background-color: #12355B;
-    color: white;
-    position:absolute;
-}
-.heading{
+
     display: flex;
-    height: 100px;
-    width: 90%;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: center;
-}
-.heading i{
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 6px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.panel a{
-    font-size: 1.2rem;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
+    flex-direction: column;
+
+    background-color: #12355B;
     color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0.5rem;
-    display: block;
-    transition: all 0.25s ease;
-    border-radius: 8px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    z-index: 1000;
+
+    transition:
+        width 0.35s ease,
+        box-shadow 0.35s ease;
 }
-a:hover{
+
+.heading {
+    min-height: 80px;
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+}
+
+.heading h2 {
+    color: #ffffff;
+
+    font-size: 1.35rem;
+
+    white-space: nowrap;
+}
+
+.heading i {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition: all 0.25s ease;
+}
+
+.heading i:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+
+    transform: scale(1.05);
+}
+
+.panel a {
+    min-height: 44px;
+
+    padding: 11px 10px;
+    margin-bottom: 3px;
+
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+
+    transition: all 0.25s ease;
+
+    flex-shrink: 0;
+}
+
+.panel a:hover {
     background-color: #1E4A78;
     color: #ffffff;
-    transform: translateY(-3px);
-    padding-left: 10px;
+
+    transform: translateY(-2px);
+
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-a:active{
+
+.panel a:active {
     background-color: #FFE8A3;
     color: #12355B;
 }
-.panel i{
+
+.panel a i {
+    width: 22px;
+
     margin-right: 10px;
-    font-size: 1.3rem;
+
+    font-size: 1.1rem;
+
+    text-align: center;
+
+    flex-shrink: 0;
 }
-/* dashboard */
-.dashboard{
-    margin-left: 43vh;
+
+
+/* =========================================================
+   DESKTOP COLLAPSED SIDEBAR
+   ========================================================= */
+
+.panel.collapsed {
+    width: 58px;
+    padding: 0;
+}
+
+.panel.collapsed .heading {
+    min-height: 70px;
+
+    padding: 0;
+
+    justify-content: center;
+}
+
+.panel.collapsed .heading h2,
+.panel.collapsed .link {
+    display: none;
+}
+
+.panel.collapsed .heading i {
+    margin: 0;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD
+   ========================================================= */
+
+.dashboard {
+    width: calc(100% - 250px);
+    min-height: 100vh;
+
+    margin-left: 250px;
+
+    padding: 20px;
+
     background-color: #E8EEF6;
     color: #334155;
-    padding: 10px;
+
+    transition: margin-left 0.35s ease;
 }
-.navbar{
-    height: 3.5rem;
+
+
+/* =========================================================
+   DESKTOP COLLAPSED CONTENT
+   ========================================================= */
+
+.dashboard.reverse {
+    width: calc(100% - 58px);
+    margin-left: 58px;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    min-height: 100px;
+
+    padding: 18px 20px;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 15px 0 15px;
-    border: 2px solid #D9E2EC;
-    border-radius: 1rem;
-    color: #12355B;
+    justify-content: space-between;
+
+    gap: 15px;
+
     background-color: #ffffff;
-    height: 100px;
+
+    border: 2px solid #D9E2EC;
+    border-radius: 16px;
+
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
 }
-.navbar a{
+
+.msg {
+    min-width: 0;
+}
+
+.msg h1 {
+    color: #12355B;
+
+    font-size: 1.8rem;
+}
+
+.msg p {
+    margin-top: 5px;
+
+    color: #64748B;
+
+    font-size: 0.9rem;
+}
+
+.navbar > a {
+    padding: 9px 12px;
+
+    display: flex;
+    align-items: center;
+
     background-color: #FEF2F2;
     color: #12355B;
+
     text-decoration: none;
-    padding: 7px;
-    border-radius: 0.4rem;
-    font-size: 1.3rem;
-    transition: all 0.25s ease;
+
     border: 2px solid #D9E2EC;
+    border-radius: 7px;
+
+    font-size: 0.95rem;
+
+    white-space: nowrap;
+
+    transition: all 0.25s ease;
 }
-.navbar a:hover{
+
+.navbar > a:hover {
     background-color: #DC3545;
     color: #ffffff;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
-    border-color: #3B82F6;
+
+    border-color: #DC3545;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.navbar i{
-    margin-left: 10px;
+
+.navbar > a i {
+    margin-left: 8px;
 }
-.msg{
-    color: #12355B;
+
+
+/* =========================================================
+   TOP INFORMATION CARDS
+   ========================================================= */
+
+.info1 {
+    width: 100%;
+
+    margin-top: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 15px;
 }
-.attandance{
-    height: 150px;
-    width: 150px;
-    background-color: #ffffff;
-    color: #334155;
-    border: 2px solid #D9E2EC;
+
+
+/* =========================================================
+   COMMON INFORMATION CARD
+   ========================================================= */
+
+.attandance,
+.dues,
+.courses,
+.result,
+.hostel {
+    min-width: 0;
+    height: 155px;
+
+    padding: 12px;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
-    padding: 5px;
-    border-radius: 1rem;
-    margin: 1rem;
-    cursor: pointer;
-    transition: all 0.25s ease;
+
+    background-color: #ffffff;
+    color: #334155;
+
+    border: 2px solid #D9E2EC;
+    border-radius: 16px;
+
     text-decoration: none;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+
+    transition: all 0.25s ease;
+
+    overflow: hidden;
 }
-.attandance p{
-    font-size: 1.5rem;
-    margin-top: 0.7rem;
-    padding: 5px;
+
+.attandance:hover,
+.dues:hover,
+.courses:hover,
+.result:hover,
+.hostel:hover {
+    background-color: #F8FAFC;
+
+    border-color: #3B82F6;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   CARD HEADINGS
+   ========================================================= */
+
+.attandance h3,
+.dues h3,
+.courses h3,
+.result h3,
+.hostel h3 {
+    color: #12355B;
+
+    font-size: 0.9rem;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CARD VALUES
+   ========================================================= */
+
+.attandance p,
+.dues p,
+.courses p,
+.result p,
+.hostel p {
+    margin-top: 8px;
+    padding: 2px;
+
+    font-size: 1.3rem;
     font-weight: 700;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CARD ICON COMMON
+   ========================================================= */
+
+.attandance i,
+.dues i,
+.courses i,
+.result i,
+.hostel i {
+    width: 46px;
+    height: 46px;
+
+    margin-bottom: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.35rem;
+
+    border: 1.5px solid #D9E2EC;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   ATTENDANCE
+   ========================================================= */
+
+.attandance p {
     color: #6C4CE8;
 }
-.attandance h3{
-    color: #12355B;
-}
-.attandance:hover{
-    background-color: #F8FAFC;
-    color: #334155;
-    border-color: #3B82F6;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
-}
-.attandance i{
-    padding: 10px;
-    border: 1.5px solid #D9E2EC;
-    border-radius: 0.5rem;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+
+.attandance i {
     background-color: #F0EBFF;
     color: #6C4CE8;
 }
-.dues{
-    height: 150px;
-    width: 150px;
-    border: 2px solid #D9E2EC;
-    background-color: #ffffff;
-    color: #334155;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    border-radius: 1rem;
-    margin: 1rem;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    text-decoration: none;
-}
-.dues p{
-    font-size: 1.5rem;
-    margin-top: 0.7rem;
-    padding: 5px;
+
+
+/* =========================================================
+   DUES
+   ========================================================= */
+
+.dues p {
     color: #12A866;
-    font-weight: 700;
 }
-.dues h3{
-    color: #12355B;
-}
-.dues:hover{
-    background-color: #F8FAFC;
-    color: #334155;
-    border-color: #3B82F6;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
-}
-.dues i{
-    padding: 10px;
-    border: 1.5px solid #D9E2EC;
-    border-radius: 0.5rem;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+
+.dues i {
     background-color: #E7F8EF;
     color: #12A866;
 }
-.courses{
-    height: 150px;
-    width: 150px;
-    border: 2px solid #D9E2EC;
-    background-color: #ffffff;
-    color: #334155;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    border-radius: 1rem;
-    margin: 1rem;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    text-decoration: none;
-}
-.courses p{
-    font-size: 1.5rem;
-    margin-top: 0.7rem;
-    padding: 5px;
+
+
+/* =========================================================
+   COURSES
+   ========================================================= */
+
+.courses p {
     color: #1976E8;
-    font-weight: 700;
 }
-.courses h3{
-    color: #12355B;
-}
-.courses:hover{
-    background-color: #F8FAFC;
-    color: #334155;
-    border-color: #3B82F6;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
-}
-.courses i{
-    padding: 10px;
-    border: 1.5px solid #D9E2EC;
-    border-radius: 0.5rem;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+
+.courses i {
     background-color: #E8F1FF;
     color: #1976E8;
 }
-.result{
-    height: 150px;
-    width: 150px;
-    border: 2px solid #D9E2EC;
-    background-color: #ffffff;
-    color: #334155;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    border-radius: 1rem;
-    margin: 1rem;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    text-decoration: none;
-}
-.result p{
-    font-size: 1.5rem;
-    margin-top: 0.7rem;
-    padding: 5px;
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+.result p {
     color: #F28C00;
-    font-weight: 700;
 }
-.result h3{
-    color: #12355B;
-}
-.result:hover{
-    background-color: #F8FAFC;
-    color: #334155;
-    border-color: #3B82F6;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
-}
-.result i{
-    padding: 10px;
-    border: 1.5px solid #D9E2EC;
-    border-radius: 0.5rem;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+
+.result i {
     background-color: #FFF1DF;
     color: #F28C00;
 }
-.hostel{
-    height: 150px;
-    width: 150px;
-    border: 2px solid #D9E2EC;
-    background-color: #ffffff;
-    color: #334155;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    border-radius: 1rem;
-    margin: 1rem;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    text-decoration: none;
-}
-.hostel p{
-    font-size: 1.5rem;
-    margin-top: 0.7rem;
-    padding: 5px;
-    text-decoration: none;
+
+
+/* =========================================================
+   HOSTEL
+   ========================================================= */
+
+.hostel p {
     color: #F05278;
-    font-weight: 700;
-    white-space: nowrap;
 }
-.hostel h3{
-    color: #12355B;
-}
-.hostel:hover{
-    background-color: #F8FAFC;
-    color: #334155;
-    border-color: #3B82F6;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
-}
-.hostel i{
-    padding: 10px;
-    border: 1.5px solid #D9E2EC;
-    border-radius: 0.5rem;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+
+.hostel i {
     background-color: #FFE8EE;
     color: #F05278;
 }
-.info1{
-    display: flex;
-    justify-content: space-evenly;
-}
-.info2{
-    height: 210px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 2.5rem;
+
+
+/* =========================================================
+   CLASSES + NOTICES
+   ========================================================= */
+
+.info2 {
+    width: 100%;
+
+    margin-top: 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
 }
 
+
+/* =========================================================
+   UPCOMING CLASSES
+   ========================================================= */
+
 .classes {
-    background: white;
-    padding: 10px;
-    border-radius: 12px;
-    height: 250px;
-    width: 330px;
+    min-width: 0;
+    height: 275px;
+
+    padding: 15px;
+
+    background-color: #ffffff;
+
+    border: 2px solid #D9E2EC;
+    border-radius: 16px;
+
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+
+    overflow: hidden;
 }
+
 .class-head {
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
-    /* margin-bottom: 12px; */
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
 }
 
 .class-head h3 {
     color: #12355B;
+
     font-size: 17px;
 }
 
 .class-head p {
-    color: #888;
+    margin-top: 4px;
+
+    color: #888888;
+
     font-size: 10px;
-    margin-top: 1px;
 }
 
 .class-head a {
-    text-decoration: none;
     color: #1976E8;
+
+    text-decoration: none;
+
     font-size: 10px;
     font-weight: 600;
+
+    white-space: nowrap;
 }
-.class-head a:hover{
-    background-color: #ffffff;
+
+.class-head a:hover {
+    color: #125EB8;
 }
 
 .class-head a i {
@@ -376,14 +578,23 @@ a:active{
 .class-list {
     display: flex;
     flex-direction: column;
+
+    max-height: 205px;
+
+    overflow-y: auto;
 }
 
 .class-item {
+    min-width: 0;
+
+    padding: 8px 0;
+
     display: flex;
     align-items: center;
+
     gap: 10px;
-    padding: 3.5px 0;
-    border-bottom: 1px solid #edf0f5;
+
+    border-bottom: 1px solid #EDF0F5;
 }
 
 .class-item:last-child {
@@ -391,150 +602,221 @@ a:active{
 }
 
 .class-time {
-    width: 75px;
+    width: 82px;
+    min-width: 82px;
+
     color: #6C4CE8;
+
     font-size: 10px;
     font-weight: 600;
 }
 
 .class-info {
     flex: 1;
+
+    min-width: 0;
 }
 
 .class-info h4 {
     color: #12355B;
+
     font-size: 12px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .class-info p {
-    color: #888;
-    font-size: 9px;
     margin-top: 3px;
+
+    color: #888888;
+
+    font-size: 9px;
 }
 
 .class-room {
-    background: #eef4ff;
+    padding: 5px 8px;
+
+    background-color: #EEF4FF;
     color: #1976E8;
-    padding: 4px 7px;
-    border-radius: 5px;
+
+    border-radius: 6px;
+
     font-size: 9px;
+
+    white-space: nowrap;
 }
+
+.no-class {
+    padding: 25px 10px;
+
+    color: #888888;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   NOTICES
+   ========================================================= */
 
 .notices {
-    background: white;
-    padding: 10px;
-    border-radius: 12px;
-    height: 250px;
+    min-width: 0;
+    height: 275px;
+
+    padding: 15px;
+
+    background-color: #ffffff;
+
+    border: 2px solid #D9E2EC;
+    border-radius: 16px;
+
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+
+    overflow: hidden;
 }
-
-
-/* NOTICE HEADER */
 
 .notice-head {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 8px;
 }
 
 .notice-head h3 {
     color: #12355B;
-    font-size: 18px;
+
+    font-size: 17px;
 }
 
 .notice-head p {
-    color: #7a8089;
-    font-size: 12px;
     margin-top: 4px;
+
+    color: #7A8089;
+
+    font-size: 10px;
 }
-
-
-/* VIEW ALL */
 
 .view-all {
+    color: #1976E8;
+
     text-decoration: none;
-    color: #1976E8;
-    font-size: 12px;
+
+    font-size: 10px;
     font-weight: 600;
+
+    white-space: nowrap;
 }
-.view-all:hover{
-    background-color: #ffffff;
-    color: #1976E8;
+
+.view-all:hover {
+    color: #125EB8;
 }
 
 .view-all i {
     margin-left: 4px;
 }
 
-
-/* NOTICE ITEM */
-
 .notice-item {
+    min-width: 0;
+
+    padding: 9px 0;
+
     display: flex;
     align-items: center;
 
-    gap: 5px;
+    gap: 8px;
 
-    padding: 12px 0;
-
-    border-bottom: 1px solid #edf0f5;
+    border-bottom: 1px solid #EDF0F5;
 
     cursor: pointer;
+
+    transition: all 0.2s ease;
 }
 
 .notice-item:last-child {
     border-bottom: none;
 }
 
+.notice-item:hover .notice-arrow {
+    color: #1976E8;
 
-/* ICON */
+    transform: translateX(2px);
+}
+
+.notice-item:hover .notice-text h4 {
+    color: #1976E8;
+}
+
+
+/* Notice icons */
 
 .notice-icon {
+    width: 38px;
     min-width: 38px;
+
     height: 38px;
 
-    border-radius: 9px;
-
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
 }
 
 .notice-icon.exam {
-    background: #ffe5e5;
-    color: #e53935;
+    background-color: #FFE5E5;
+    color: #E53935;
 }
 
 .notice-icon.fee {
-    background: #e4f8ef;
+    background-color: #E4F8EF;
     color: #12A866;
 }
 
+.notice-icon.event {
+    background-color: #FFF3E0;
+    color: #F28C00;
+}
+
 .notice-icon.holiday {
-    background: #eee8ff;
+    background-color: #EEE8FF;
     color: #6C4CE8;
 }
 
-
-/* TEXT */
-
 .notice-text {
     flex: 1;
+
     min-width: 0;
 }
 
 .notice-text h4 {
+    margin-bottom: 3px;
+
     color: #12355B;
-    font-size: 13px;
-    margin-bottom: 0px;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .notice-text p {
-    color: #7a8089;
-    font-size: 11px;
+    color: #7A8089;
+
+    font-size: 9px;
 
     white-space: nowrap;
+
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -542,243 +824,202 @@ a:active{
 .notice-text span {
     display: block;
 
-    color: #9aa0a8;
+    margin-top: 3px;
 
-    font-size: 10px;
+    color: #9AA0A8;
 
-    margin-top: 0px;
+    font-size: 8px;
 }
 
 .notice-text span i {
     margin-right: 4px;
 }
 
-
-/* ARROW */
-
 .notice-arrow {
-    color: #a5abb3;
+    color: #A5ABB3;
+
     font-size: 10px;
+
+    flex-shrink: 0;
+
+    transition: all 0.2s ease;
 }
 
-.notice-item:hover .notice-arrow {
-    color: #1976E8;
-}
 
-.notice-item:hover .notice-text h4 {
-    color: #1976E8;
-}
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
 
-.notice-icon.event {
-    background: #FFF3E0;
-    color: #F28C00;
-}
+.info3 {
+    min-height: 155px;
 
-/* MOBILE */
+    margin-top: 25px;
 
-@media (max-width: 600px) {
+    padding: 18px;
 
-    .notice-text p {
-        white-space: normal;
-    }
+    background-color: #ffffff;
 
-}
-.info3{
-    height: 150px;
     border: 2px solid #D9E2EC;
-    padding: 15px;
-    margin-top: 3rem;
-    background-color: #ffffff;
-    border-radius: 1rem;
+    border-radius: 16px;
+
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
 }
-.info3 h3{
-    font-size: 1.8rem;
-    padding: 5px;
-    font-size: 1.7rem;
+
+.info3 h3 {
     display: flex;
-    justify-content: center;
-    color: #12355B;
-}
-.links{
-    display: flex;
-    justify-content: space-evenly;
+
     align-items: center;
-    padding: 10px;
-    font-size: 1.3rem;
-}
-.links a{
-    text-decoration: none;
+    justify-content: center;
+
+    padding: 3px;
+
     color: #12355B;
-    padding: 10px;
-    background-color: #ffffff;
+
+    font-size: 1.35rem;
+}
+
+.links {
+    padding: 12px 5px 5px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.links a {
+    min-width: 0;
+
+    padding: 11px 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #12355B;
+
+    text-decoration: none;
+
     border: 1px solid #D9E2EC;
-    border-radius: 0.5rem;
+    border-radius: 8px;
+
+    font-size: 0.85rem;
+
+    white-space: nowrap;
+
     transition: all 0.25s ease;
 }
-.links i{
-    margin-right: 10px;
-    font-size: 1.3rem;
-}
-.links a:hover{
-    border: 1px solid #3B82F6;
-    background-color: #F8FAFC;
-    color: #334155;
+
+.links a:hover {
+    border-color: #3B82F6;
+
     transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+
+    box-shadow: 0 5px 12px rgba(15, 23, 42, 0.12);
 }
-#time{
+
+.links i {
+    margin-right: 7px;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   QUICK ACTION COLORS
+   ========================================================= */
+
+#time {
     color: #1976E8;
     background-color: #E8F1FF;
 }
-#res{
+
+#res {
     color: #12A866;
     background-color: #E7F8EF;
 }
-#pay{
+
+#pay {
     color: #6C4CE8;
     background-color: #F0EBFF;
 }
-#hos{
+
+#hos {
     color: #F28C00;
     background-color: #FFF1DF;
 }
-#not{
+
+#not {
     color: #F05278;
     background-color: #FFE8EE;
 }
-.extra{
-    height: 70px;
-}
 
-/* for toggle */
-
-.panel{
-    width: 40vh;
-}
-.dashboard{
-    margin-left: 43vh;
-}
-.panel.collapsed{
-    width: 50px;
-    transition: all 2s ease;
-    .heading h2{
-        display: none;
-    }
-    .link{
-        display: none;
-    }
-}
-.dashboard.reverse{
-    margin-left: 75px;
-    transition: all 2s ease;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   EXTRA DASHBOARD PAGE CSS
-   Add this at the very bottom of dashboard.css
-   ========================================================= */
-
-
-/* ---------- GENERAL IMPROVEMENT ---------- */
-
-.navbar,
-.classes,
-.notices,
-.info3 {
-    box-sizing: border-box;
-    transition: all 0.25s ease;
-}
-
-.attandance,
-.dues,
-.courses,
-.result,
-.hostel {
-    box-sizing: border-box;
+.extra {
+    height: 40px;
 }
 
 
 /* =========================================================
-   DESKTOP
+   LAPTOP
+   769px - 1200px
    ========================================================= */
 
-@media (min-width: 1101px) {
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .panel {
+        width: 210px;
+    }
+
+    .heading {
+        padding: 8px;
+    }
+
+    .heading h2 {
+        font-size: 1.15rem;
+    }
+
+    .panel a {
+        padding: 9px 8px;
+
+        font-size: 0.88rem;
+    }
+
+    .panel a i {
+        font-size: 0.95rem;
+    }
 
     .dashboard {
-        min-height: 100vh;
-        box-sizing: border-box;
-    }
-
-    .navbar,
-    .info1,
-    .info2,
-    .info3 {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .info2 {
-        margin-top: 2.5rem;
-    }
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (min-width: 601px) and (max-width: 1100px) {
-
-    .dashboard {
-        margin-left: 200px;
         width: calc(100% - 210px);
-        padding: 12px;
-        box-sizing: border-box;
+
+        margin-left: 210px;
+
+        padding: 15px;
     }
 
+    .dashboard.reverse {
+        width: calc(100% - 58px);
 
-    /* NAVBAR */
+        margin-left: 58px;
+    }
 
     .navbar {
-        height: 80px;
-        padding: 0 15px;
+        min-height: 88px;
+
+        padding: 14px 16px;
     }
 
     .msg h1 {
-        font-size: 21px;
+        font-size: 1.5rem;
     }
 
     .msg p {
-        font-size: 11px;
+        font-size: 0.8rem;
     }
-
-    .navbar a {
-        font-size: 1rem;
-        padding: 6px;
-    }
-
-
-    /* INFO1 CARDS */
 
     .info1 {
-        flex-wrap: wrap;
-        gap: 12px;
+        gap: 10px;
     }
 
     .attandance,
@@ -786,16 +1027,9 @@ a:active{
     .courses,
     .result,
     .hostel {
-        height: 120px;
-        width: 120px;
-        margin: 6px;
-    }
+        height: 135px;
 
-    .attandance p,
-    .dues p,
-    .courses p,
-    .result p {
-        font-size: 1.2rem;
+        padding: 8px;
     }
 
     .attandance h3,
@@ -803,7 +1037,15 @@ a:active{
     .courses h3,
     .result h3,
     .hostel h3 {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
+    }
+
+    .attandance p,
+    .dues p,
+    .courses p,
+    .result p,
+    .hostel p {
+        font-size: 1.05rem;
     }
 
     .attandance i,
@@ -811,155 +1053,127 @@ a:active{
     .courses i,
     .result i,
     .hostel i {
-        font-size: 1.15rem;
-        padding: 8px;
+        width: 40px;
+        height: 40px;
+
+        font-size: 1.1rem;
     }
 
-
-    /* INFO2 */
-
     .info2 {
-        flex-direction: column;
-        height: auto;
         gap: 15px;
     }
 
     .classes,
     .notices {
-        width: 100%;
-        height: auto;
-        min-height: 200px;
+        height: 255px;
     }
 
-
-    /* INFO3 */
-
     .info3 {
-        height: auto;
-        padding: 15px;
+        min-height: 140px;
+
+        padding: 14px;
     }
 
     .links {
-        flex-wrap: wrap;
-        gap: 10px;
+        gap: 8px;
     }
 
     .links a {
-        font-size: 1rem;
+        padding: 9px 5px;
+
+        font-size: 0.75rem;
     }
 }
 
 
 /* =========================================================
-   NORMAL MOBILE
+   TABLET / iPAD
+   601px - 768px
    ========================================================= */
 
-@media (max-width: 600px) {
-
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
+@media (min-width: 601px) and (max-width: 768px) {
 
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 58px;
-        height: 100vh;
-        padding: 4px;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow: hidden;
+        width: 175px;
+
+        padding: 7px;
     }
 
     .heading {
-        width: 100%;
-        height: 58px;
-        padding: 0;
-        justify-content: center;
+        min-height: 70px;
+
+        padding: 7px;
     }
 
     .heading h2 {
-        display: none;
+        font-size: 0.95rem;
     }
 
     .heading i {
-        margin: 0;
-        font-size: 0.95rem;
-        padding: 6px;
+        width: 30px;
+        height: 30px;
+
+        font-size: 0.8rem;
     }
 
     .panel a {
-        width: 100%;
-        height: 42px;
-        padding: 9px 3px;
-        margin-bottom: 3px;
-        box-sizing: border-box;
-        font-size: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        min-height: 38px;
+
+        padding: 8px 6px;
+
+        font-size: 0.72rem;
     }
 
     .panel a i {
-        margin: 0;
-        font-size: 1rem;
+        width: 18px;
+
+        margin-right: 6px;
+
+        font-size: 0.82rem;
     }
-
-
-    /* MAIN */
 
     .dashboard {
-        margin-left: 58px;
-        width: calc(100% - 58px);
-        padding: 8px;
-        box-sizing: border-box;
+        width: calc(100% - 175px);
+
+        margin-left: 175px;
+
+        padding: 10px;
     }
 
+    .dashboard.reverse {
+        width: calc(100% - 58px);
 
-    /* NAVBAR */
+        margin-left: 58px;
+    }
 
     .navbar {
-        width: 100%;
-        height: auto;
-        min-height: 70px;
-        padding: 12px;
-        border-radius: 11px;
-        box-sizing: border-box;
+        min-height: 76px;
+
+        padding: 10px 12px;
+
+        border-radius: 12px;
     }
 
     .msg h1 {
-        font-size: 16px;
+        font-size: 1.15rem;
     }
 
     .msg p {
-        font-size: 9px;
-        margin-top: 3px;
+        font-size: 0.65rem;
     }
 
-    .navbar a {
-        font-size: 0.75rem;
-        padding: 6px 8px;
-        white-space: nowrap;
+    .navbar > a {
+        padding: 7px;
+
+        font-size: 0.72rem;
     }
-
-    .navbar i {
-        margin-left: 5px;
-    }
-
-
-    /* INFO1 CARDS */
 
     .info1 {
-        flex-wrap: wrap;
-        justify-content: center;
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
         gap: 8px;
+
         margin-top: 12px;
     }
 
@@ -968,22 +1182,9 @@ a:active{
     .courses,
     .result,
     .hostel {
-        height: 95px;
-        width: calc(33.333% - 8px);
-        min-width: 90px;
-        margin: 0;
-        padding: 4px;
-        border-radius: 0.7rem;
-    }
+        height: 115px;
 
-    .attandance p,
-    .dues p,
-    .courses p,
-    .result p,
-    .hostel p {
-        font-size: 0.85rem;
-        margin-top: 4px;
-        padding: 2px;
+        padding: 6px;
     }
 
     .attandance h3,
@@ -994,39 +1195,341 @@ a:active{
         font-size: 0.65rem;
     }
 
+    .attandance p,
+    .dues p,
+    .courses p,
+    .result p,
+    .hostel p {
+        font-size: 0.9rem;
+    }
+
     .attandance i,
     .dues i,
     .courses i,
     .result i,
     .hostel i {
+        width: 34px;
+        height: 34px;
+
+        margin-bottom: 5px;
+
         font-size: 0.85rem;
-        padding: 6px;
-        margin-bottom: 4px;
     }
 
-
-    /* INFO2 */
-
     .info2 {
+        display: flex;
         flex-direction: column;
-        height: auto;
-        gap: 10px;
-        margin-top: 1.5rem;
+
+        gap: 12px;
+
+        margin-top: 18px;
     }
 
     .classes,
     .notices {
         width: 100%;
+
         height: auto;
-        min-height: 150px;
-        padding: 12px;
+
+        min-height: 215px;
+    }
+
+    .info3 {
+        margin-top: 18px;
+    }
+
+    .links {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+    .links a {
+        padding: 8px 5px;
+
+        font-size: 0.7rem;
+    }
+}
+
+
+/* =========================================================
+   NORMAL MOBILE
+   381px - 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* -----------------------------------------
+       Fixed icon sidebar
+       ----------------------------------------- */
+
+    .panel {
+        width: 58px;
+        height: 100vh;
+
+        padding: 4px 3px;
+
+        overflow: hidden;
+
+        box-shadow: 2px 0 10px rgba(15, 23, 42, 0.12);
+    }
+
+    .heading {
+        width: 100%;
+        height: 55px;
+        min-height: 55px;
+
+        padding: 0;
+
+        justify-content: center;
+    }
+
+    .heading h2 {
+        display: none;
+    }
+
+    .heading i {
+        width: 38px;
+        height: 38px;
+
+        margin: 0;
+
+        padding: 6px;
+
+        font-size: 0.9rem;
+    }
+
+    .panel a {
+        width: 100%;
+        height: 40px;
+        min-height: 40px;
+
+        margin-bottom: 3px;
+        padding: 7px 2px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-bottom: none;
+
+        font-size: 0;
+    }
+
+    .panel a:hover {
+        transform: none;
+    }
+
+    .panel a i {
+        width: auto;
+
+        margin: 0;
+
+        font-size: 0.95rem;
+    }
+
+
+    /* -----------------------------------------
+       Mobile overlay drawer
+       ----------------------------------------- */
+
+    .panel.collapsed {
+        width: 215px;
+
+        padding: 6px;
+
+        box-shadow: 5px 0 22px rgba(15, 23, 42, 0.28);
+
+        overflow-y: auto;
+    }
+
+    .panel.collapsed .heading {
+        height: 55px;
+        min-height: 55px;
+
+        padding: 5px 8px;
+
+        justify-content: space-between;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: block;
+
+        color: #ffffff;
+
+        font-size: 1.05rem;
+    }
+
+    .panel.collapsed .heading i {
+        margin: 0;
+    }
+
+    .panel.collapsed .link {
+        display: flex;
+
+        width: 100%;
+        height: auto;
+        min-height: 42px;
+
+        padding: 10px;
+
+        justify-content: flex-start;
+
+        font-size: 0.85rem;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .panel.collapsed .link i {
+        width: 22px;
+
+        margin-right: 10px;
+
+        font-size: 0.95rem;
+    }
+
+
+    /* -----------------------------------------
+       Dashboard never moves when drawer opens
+       ----------------------------------------- */
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+
+        margin-left: 58px;
+
+        padding: 8px;
+    }
+
+
+    /* -----------------------------------------
+       Navbar
+       ----------------------------------------- */
+
+    .navbar {
+        min-height: 70px;
+
+        padding: 10px;
+
         border-radius: 11px;
-        box-sizing: border-box;
+    }
+
+    .msg h1 {
+        font-size: 15px;
+
+        white-space: nowrap;
+    }
+
+    .msg p {
+        margin-top: 3px;
+
+        font-size: 8px;
+    }
+
+    .navbar > a {
+        padding: 6px 7px;
+
+        font-size: 0.62rem;
+    }
+
+    .navbar > a i {
+        margin-left: 4px;
+    }
+
+
+    /* -----------------------------------------
+       Top cards
+       ----------------------------------------- */
+
+    .info1 {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 7px;
+
+        margin-top: 10px;
+    }
+
+    .attandance,
+    .dues,
+    .courses,
+    .result,
+    .hostel {
+        height: 95px;
+
+        padding: 5px;
+
+        border-radius: 10px;
+    }
+
+    .attandance h3,
+    .dues h3,
+    .courses h3,
+    .result h3,
+    .hostel h3 {
+        font-size: 0.58rem;
+    }
+
+    .attandance p,
+    .dues p,
+    .courses p,
+    .result p,
+    .hostel p {
+        margin-top: 3px;
+
+        font-size: 0.72rem;
+    }
+
+    .attandance i,
+    .dues i,
+    .courses i,
+    .result i,
+    .hostel i {
+        width: 30px;
+        height: 30px;
+
+        margin-bottom: 4px;
+
+        font-size: 0.75rem;
+
+        border-radius: 7px;
+    }
+
+
+    /* -----------------------------------------
+       Classes + notices
+       ----------------------------------------- */
+
+    .info2 {
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-top: 15px;
+    }
+
+    .classes,
+    .notices {
+        height: auto;
+
+        min-height: 190px;
+
+        padding: 10px;
+
+        border-radius: 11px;
+    }
+
+    .class-head,
+    .notice-head {
+        gap: 5px;
     }
 
     .class-head h3,
     .notice-head h3 {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .class-head p,
@@ -1036,84 +1539,140 @@ a:active{
 
     .class-head a,
     .view-all {
-        font-size: 9px;
+        font-size: 8px;
+    }
+
+
+    /* -----------------------------------------
+       Classes
+       ----------------------------------------- */
+
+    .class-list {
+        max-height: 155px;
+    }
+
+    .class-item {
+        gap: 6px;
+
+        padding: 6px 0;
     }
 
     .class-time {
-        width: 55px;
-        font-size: 9px;
+        width: 54px;
+        min-width: 54px;
+
+        font-size: 8px;
     }
 
     .class-info h4 {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .class-info p {
-        font-size: 8px;
+        font-size: 7px;
     }
 
     .class-room {
-        font-size: 8px;
-        padding: 3px 6px;
+        padding: 3px 5px;
+
+        font-size: 7px;
+    }
+
+
+    /* -----------------------------------------
+       Notices
+       ----------------------------------------- */
+
+    .notice-item {
+        gap: 6px;
+
+        padding: 8px 0;
     }
 
     .notice-icon {
-        min-width: 32px;
-        height: 32px;
+        width: 30px;
+        min-width: 30px;
+
+        height: 30px;
+
+        border-radius: 7px;
+    }
+
+    .notice-icon i {
+        font-size: 0.7rem;
     }
 
     .notice-text h4 {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .notice-text p {
-        font-size: 9px;
+        font-size: 8px;
+
+        white-space: normal;
+
+        line-height: 1.3;
     }
 
     .notice-text span {
+        font-size: 7px;
+    }
+
+    .notice-arrow {
         font-size: 8px;
     }
 
 
-    /* INFO3 */
+    /* -----------------------------------------
+       Quick Actions
+       ----------------------------------------- */
 
     .info3 {
-        height: auto;
-        padding: 12px;
-        margin-top: 1.5rem;
+        min-height: auto;
+
+        margin-top: 15px;
+
+        padding: 10px;
+
         border-radius: 11px;
     }
 
     .info3 h3 {
-        font-size: 1.15rem;
+        font-size: 1rem;
     }
 
     .links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        font-size: 1rem;
-        padding: 6px;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+
+        padding: 6px 3px 3px;
     }
 
     .links a {
-        font-size: 0.7rem;
-        padding: 8px 9px;
+        padding: 8px 4px;
+
+        font-size: 0.62rem;
+
+        text-align: center;
     }
 
     .links i {
-        font-size: 0.85rem;
-        margin-right: 5px;
+        margin-right: 4px;
+
+        font-size: 0.72rem;
     }
 
     .extra {
-        height: 30px;
+        height: 25px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   SMALL MOBILE
+   <= 380px
    ========================================================= */
 
 @media (max-width: 380px) {
@@ -1122,41 +1681,79 @@ a:active{
         width: 52px;
     }
 
-    .dashboard {
-        margin-left: 52px;
-        width: calc(100% - 52px);
-        padding: 6px;
+    .heading {
+        height: 52px;
+        min-height: 52px;
+    }
+
+    .heading i {
+        width: 34px;
+        height: 34px;
+
+        font-size: 0.82rem;
     }
 
     .panel a {
-        height: 39px;
+        height: 38px;
+        min-height: 38px;
     }
 
     .panel a i {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+    }
+
+
+    .panel.collapsed {
+        width: 200px;
+    }
+
+    .panel.collapsed .heading {
+        height: 52px;
+        min-height: 52px;
+    }
+
+    .panel.collapsed .heading h2 {
+        font-size: 0.95rem;
+    }
+
+    .panel.collapsed .link {
+        min-height: 40px;
+
+        font-size: 0.8rem;
+    }
+
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 52px);
+
+        margin-left: 52px;
+
+        padding: 6px;
     }
 
 
     .navbar {
-        padding: 9px;
+        padding: 8px;
     }
 
     .msg h1 {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .msg p {
-        font-size: 8px;
+        font-size: 7px;
     }
 
-    .navbar a {
-        font-size: 0.65rem;
-        padding: 5px 6px;
+    .navbar > a {
+        padding: 5px;
+
+        font-size: 0.56rem;
     }
 
 
     .info1 {
-        gap: 6px;
+        gap: 5px;
     }
 
     .attandance,
@@ -1164,9 +1761,15 @@ a:active{
     .courses,
     .result,
     .hostel {
-        height: 80px;
-        width: calc(33.333% - 6px);
-        min-width: 78px;
+        height: 84px;
+    }
+
+    .attandance h3,
+    .dues h3,
+    .courses h3,
+    .result h3,
+    .hostel h3 {
+        font-size: 0.5rem;
     }
 
     .attandance p,
@@ -1174,15 +1777,7 @@ a:active{
     .courses p,
     .result p,
     .hostel p {
-        font-size: 0.7rem;
-    }
-
-    .attandance h3,
-    .dues h3,
-    .courses h3,
-    .result h3,
-    .hostel h3 {
-        font-size: 0.55rem;
+        font-size: 0.64rem;
     }
 
     .attandance i,
@@ -1190,127 +1785,163 @@ a:active{
     .courses i,
     .result i,
     .hostel i {
-        font-size: 0.7rem;
-        padding: 5px;
+        width: 27px;
+        height: 27px;
+
+        font-size: 0.65rem;
     }
 
 
     .classes,
     .notices {
-        padding: 9px;
+        padding: 8px;
+    }
+
+    .class-head h3,
+    .notice-head h3 {
+        font-size: 11px;
+    }
+
+    .class-head a,
+    .view-all {
+        font-size: 7px;
+    }
+
+    .class-time {
+        width: 48px;
+        min-width: 48px;
+
+        font-size: 7px;
+    }
+
+    .class-info h4 {
+        font-size: 9px;
+    }
+
+    .class-info p {
+        font-size: 6px;
+    }
+
+    .class-room {
+        padding: 3px 4px;
+
+        font-size: 6px;
+    }
+
+    .notice-icon {
+        width: 27px;
+        min-width: 27px;
+
+        height: 27px;
+    }
+
+    .notice-text h4 {
+        font-size: 9px;
+    }
+
+    .notice-text p {
+        font-size: 7px;
+    }
+
+    .notice-text span {
+        font-size: 6px;
     }
 
     .info3 {
-        padding: 9px;
+        padding: 8px;
     }
 
     .info3 h3 {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .links {
+        gap: 5px;
     }
 
     .links a {
-        font-size: 0.6rem;
-        padding: 6px 7px;
+        padding: 6px 3px;
+
+        font-size: 0.55rem;
     }
 
     .links i {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
     }
 }
 
 
 /* =========================================================
-   DESKTOP SITE ON PHONE
+   VERY SMALL MOBILE
+   <= 320px
    ========================================================= */
 
-@media (pointer: coarse) and (min-width: 601px) {
-
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
+@media (max-width: 320px) {
 
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 190px;
-        height: 100vh;
-        padding: 10px;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow-y: auto;
+        width: 48px;
     }
 
     .heading {
-        width: 100%;
-        height: 70px;
-        padding: 10px;
-        box-sizing: border-box;
-    }
-
-    .heading h2 {
-        display: block;
-        font-size: 1.05rem;
+        height: 48px;
+        min-height: 48px;
     }
 
     .heading i {
-        margin: 0;
-        font-size: 0.9rem;
+        width: 31px;
+        height: 31px;
+
+        font-size: 0.75rem;
     }
 
     .panel a {
-        font-size: 0.78rem;
-        padding: 9px 7px;
-        margin-bottom: 3px;
+        height: 35px;
+        min-height: 35px;
     }
 
     .panel a i {
-        font-size: 0.85rem;
-        margin-right: 7px;
+        font-size: 0.75rem;
     }
 
-
-    /* MAIN */
-
-    .dashboard {
-        margin-left: 190px;
-        width: calc(100% - 190px);
-        padding: 12px;
-        box-sizing: border-box;
+    .panel.collapsed {
+        width: 185px;
     }
 
+    .panel.collapsed .link {
+        font-size: 0.75rem;
+    }
 
-    /* NAVBAR */
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 48px);
+
+        margin-left: 48px;
+
+        padding: 4px;
+    }
+
 
     .navbar {
-        height: 80px;
-        padding: 0 15px;
+        padding: 6px;
     }
 
     .msg h1 {
-        font-size: 20px;
+        font-size: 11px;
     }
 
     .msg p {
-        font-size: 10px;
+        font-size: 6px;
     }
 
-    .navbar a {
-        font-size: 0.95rem;
+    .navbar > a {
+        padding: 4px;
+
+        font-size: 0.48rem;
     }
 
-
-    /* INFO1 CARDS */
 
     .info1 {
-        flex-wrap: wrap;
-        gap: 10px;
+        gap: 4px;
     }
 
     .attandance,
@@ -1318,16 +1949,7 @@ a:active{
     .courses,
     .result,
     .hostel {
-        height: 115px;
-        width: 115px;
-        margin: 5px;
-    }
-
-    .attandance p,
-    .dues p,
-    .courses p,
-    .result p {
-        font-size: 1.1rem;
+        height: 76px;
     }
 
     .attandance h3,
@@ -1335,7 +1957,15 @@ a:active{
     .courses h3,
     .result h3,
     .hostel h3 {
-        font-size: 0.8rem;
+        font-size: 0.44rem;
+    }
+
+    .attandance p,
+    .dues p,
+    .courses p,
+    .result p,
+    .hostel p {
+        font-size: 0.56rem;
     }
 
     .attandance i,
@@ -1343,109 +1973,537 @@ a:active{
     .courses i,
     .result i,
     .hostel i {
-        font-size: 1.05rem;
-        padding: 7px;
+        width: 24px;
+        height: 24px;
+
+        font-size: 0.58rem;
     }
 
+    .class-head h3,
+    .notice-head h3 {
+        font-size: 10px;
+    }
 
-    /* INFO2 */
+    .links a {
+        padding: 5px 2px;
+
+        font-size: 0.48rem;
+    }
+
+    .links i {
+        font-size: 0.55rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE LANDSCAPE
+   ========================================================= */
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+    .panel {
+        width: 52px;
+    }
+
+    .heading {
+        height: 48px;
+        min-height: 48px;
+    }
+
+    .heading i {
+        width: 32px;
+        height: 32px;
+    }
+
+    .panel a {
+        height: 34px;
+        min-height: 34px;
+    }
+
+    .panel.collapsed {
+        width: 200px;
+    }
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 52px);
+
+        margin-left: 52px;
+
+        padding: 6px;
+    }
+
+    .navbar {
+        min-height: 62px;
+
+        padding: 8px 10px;
+    }
+
+    .msg h1 {
+        font-size: 13px;
+    }
+
+    .msg p {
+        font-size: 7px;
+    }
+
+    .info1 {
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr));
+
+        gap: 5px;
+    }
+
+    .attandance,
+    .dues,
+    .courses,
+    .result,
+    .hostel {
+        height: 85px;
+    }
 
     .info2 {
-        flex-direction: column;
-        height: auto;
-        gap: 12px;
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
     }
 
     .classes,
     .notices {
-        width: 100%;
-        height: auto;
-        min-height: 190px;
+        min-height: 180px;
     }
 
-
-    /* INFO3 */
-
     .info3 {
-        height: auto;
-        padding: 15px;
+        margin-top: 10px;
     }
 
     .links {
-        flex-wrap: wrap;
-        gap: 9px;
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr));
+
+        gap: 5px;
     }
 
     .links a {
-        font-size: 0.95rem;
+        padding: 7px 3px;
+
+        font-size: 0.58rem;
     }
 
+    .links i {
+        font-size: 0.63rem;
 
-    /* COLLAPSED SIDEBAR */
-
-    .panel.collapsed {
-        width: 58px;
-    }
-
-    .panel.collapsed .heading h2,
-    .panel.collapsed .link {
-        display: none;
-    }
-
-    .panel.collapsed .heading {
-        justify-content: center;
-    }
-
-    .panel.collapsed .heading i {
-        margin: 0;
-    }
-
-    .dashboard.reverse {
-        margin-left: 78px;
-        width: calc(100% - 78px);
+        margin-right: 3px;
     }
 }
 
 
-/* ---------- FINAL OVERFLOW SAFETY ---------- */
-
-@media (max-width: 1100px) {
-
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    .navbar,
-    .info1,
-    .info2,
-    .info3 {
-        max-width: 100%;
-    }
-}
-
-
-
-/* ---------- HOSTEL TABLET FIX ---------- */
-
-@media (min-width: 601px) and (max-width: 1100px) {
-
-    .hostel p {
-        font-size: 1.2rem;
-        white-space: nowrap;
-    }
-
-}
-
-
-/* ---------- DESKTOP SITE ON PHONE HOSTEL FIX ---------- */
+/* =========================================================
+   CHROME MOBILE - DESKTOP SITE MODE
+   ========================================================= */
 
 @media (pointer: coarse) and (min-width: 601px) {
 
-    .hostel p {
-        font-size: 1.1rem;
+    .panel {
+        width: 190px;
+
+        padding: 8px;
+    }
+
+    .heading {
+        min-height: 65px;
+
+        padding: 7px;
+    }
+
+    .heading h2 {
+        display: block;
+
+        font-size: 1rem;
+    }
+
+    .heading i {
+        width: 30px;
+        height: 30px;
+
+        font-size: 0.82rem;
+    }
+
+    .panel a {
+        min-height: 40px;
+
+        padding: 8px 6px;
+
+        font-size: 0.75rem;
+
         white-space: nowrap;
     }
 
+    .panel a i {
+        width: 18px;
+
+        margin-right: 6px;
+
+        font-size: 0.85rem;
+    }
+
+    .dashboard {
+        width: calc(100% - 190px);
+
+        margin-left: 190px;
+
+        padding: 10px;
+    }
+
+    .dashboard.reverse {
+        width: calc(100% - 55px);
+
+        margin-left: 55px;
+    }
+
+    .navbar {
+        min-height: 78px;
+
+        padding: 10px 12px;
+    }
+
+    .msg h1 {
+        font-size: 1.2rem;
+    }
+
+    .msg p {
+        font-size: 0.65rem;
+    }
+
+    .navbar > a {
+        font-size: 0.78rem;
+    }
+
+    .info1 {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+    .attandance,
+    .dues,
+    .courses,
+    .result,
+    .hostel {
+        height: 110px;
+    }
+
+    .attandance h3,
+    .dues h3,
+    .courses h3,
+    .result h3,
+    .hostel h3 {
+        font-size: 0.65rem;
+    }
+
+    .attandance p,
+    .dues p,
+    .courses p,
+    .result p,
+    .hostel p {
+        font-size: 0.85rem;
+    }
+
+    .attandance i,
+    .dues i,
+    .courses i,
+    .result i,
+    .hostel i {
+        width: 34px;
+        height: 34px;
+
+        font-size: 0.85rem;
+    }
+
+    .info2 {
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-top: 15px;
+    }
+
+    .classes,
+    .notices {
+        height: auto;
+
+        min-height: 195px;
+    }
+
+    .info3 {
+        margin-top: 15px;
+
+        min-height: auto;
+    }
+
+    .links {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+    .links a {
+        font-size: 0.68rem;
+
+        text-align: center;
+    }
 }
+
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+body.dark-theme {
+    background-color: #101820;
+
+    color: #E5E7EB;
+}
+
+body.dark-theme .dashboard {
+    background-color: #101820;
+
+    color: #E5E7EB;
+}
+
+
+/* Sidebar */
+
+body.dark-theme .panel {
+    background-color: #12355B;
+
+    color: #ffffff;
+}
+
+
+/* Navbar */
+
+body.dark-theme .navbar {
+    background-color: #1B2733;
+
+    color: #ffffff;
+
+    border-color: #3A4B59;
+}
+
+body.dark-theme .msg h1 {
+    color: #ffffff;
+}
+
+body.dark-theme .msg p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .navbar > a {
+    background-color: #243442;
+
+    color: #ffffff;
+
+    border-color: #3A4B59;
+}
+
+body.dark-theme .navbar > a:hover {
+    background-color: #DC3545;
+
+    color: #ffffff;
+
+    border-color: #DC3545;
+}
+
+
+/* Top cards */
+
+body.dark-theme .attandance,
+body.dark-theme .dues,
+body.dark-theme .courses,
+body.dark-theme .result,
+body.dark-theme .hostel {
+    background-color: #1B2733;
+
+    color: #ffffff;
+
+    border-color: #3A4B59;
+}
+
+body.dark-theme .attandance h3,
+body.dark-theme .dues h3,
+body.dark-theme .courses h3,
+body.dark-theme .result h3,
+body.dark-theme .hostel h3 {
+    color: #ffffff;
+}
+
+body.dark-theme .attandance:hover,
+body.dark-theme .dues:hover,
+body.dark-theme .courses:hover,
+body.dark-theme .result:hover,
+body.dark-theme .hostel:hover {
+    background-color: #243442;
+
+    border-color: #5CA7FF;
+}
+
+
+/* Middle sections */
+
+body.dark-theme .classes,
+body.dark-theme .notices,
+body.dark-theme .info3 {
+    background-color: #1B2733;
+
+    color: #ffffff;
+
+    border-color: #3A4B59;
+}
+
+
+/* Classes */
+
+body.dark-theme .class-item {
+    border-color: #3A4B59;
+}
+
+body.dark-theme .class-info h4 {
+    color: #ffffff;
+}
+
+body.dark-theme .class-info p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .class-time {
+    color: #8B7CFF;
+}
+
+body.dark-theme .class-room {
+    background-color: #243442;
+
+    color: #5CA7FF;
+}
+
+body.dark-theme .no-class {
+    color: #B8C3CC;
+}
+
+
+/* Notices */
+
+body.dark-theme .notice-item {
+    border-color: #3A4B59;
+}
+
+body.dark-theme .notice-text h4 {
+    color: #ffffff;
+}
+
+body.dark-theme .notice-text p,
+body.dark-theme .notice-text span {
+    color: #B8C3CC;
+}
+
+body.dark-theme .notice-arrow {
+    color: #8B98A5;
+}
+
+
+/* Quick Actions */
+
+body.dark-theme .info3 h3 {
+    color: #ffffff;
+}
+
+body.dark-theme .links a {
+    border-color: #3A4B59;
+}
+
+body.dark-theme .links a:hover {
+    background-color: #243442;
+}
+
+
+/* Dark quick-action colors */
+
+body.dark-theme #time {
+    background-color: #243442;
+
+    color: #5CA7FF;
+}
+
+body.dark-theme #res {
+    background-color: #193C32;
+
+    color: #32D38A;
+}
+
+body.dark-theme #pay {
+    background-color: #30284A;
+
+    color: #A99BFF;
+}
+
+body.dark-theme #hos {
+    background-color: #40372A;
+
+    color: #FFB84D;
+}
+
+body.dark-theme #not {
+    background-color: #40282B;
+
+    color: #FF7C9A;
+}
+
+
+/* =========================================================
+   TOUCH DEVICE HOVER SAFETY
+   ========================================================= */
+
+@media (hover: none) {
+
+    .panel a:hover,
+    .attandance:hover,
+    .dues:hover,
+    .courses:hover,
+    .result:hover,
+    .hostel:hover,
+    .links a:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   OVERFLOW SAFETY
+   ========================================================= */
+
+.navbar,
+.info1,
+.info2,
+.info3,
+.classes,
+.notices {
+    max-width: 100%;
+}
+
+.msg,
+.class-info,
+.notice-text {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   END
+   ========================================================= */

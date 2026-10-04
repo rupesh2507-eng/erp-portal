@@ -1,228 +1,418 @@
-*{
-    margin: 0px;
-    padding: 0px;
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color: #E8EEF6;
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
 }
-.panel{
-    display:flex;
-    flex-direction: column;
-    height: 140vh;
-    width: 40vh;
+
+body {
+    background: #E8EEF6;
+    color: #334155;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
     padding: 10px;
-    background-color: #12355B;
-    color: white;
-    position:absolute;
-}
-.heading{
+
     display: flex;
-    height: 100px;
-    width: 90%;
+    flex-direction: column;
+
+    background: #12355B;
+    color: #ffffff;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition:
+        width 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   SIDEBAR HEADING
+========================================================= */
+
+.heading {
+    width: 100%;
+    height: 80px;
+
     padding: 10px;
-    justify-content: space-between;
+
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
 }
-.heading i{
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 6px;
-    border-radius: 6px;
+
+.heading h2 {
+    color: #ffffff;
+
+    font-size: 1.35rem;
+
+    white-space: nowrap;
+}
+
+.heading i {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+    min-height: 40px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 19px;
+    line-height: 1;
+
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 7px;
+
     cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
-.panel a{
-    font-size: 1.2rem;
+
+.heading i:hover {
+    background: #1E4A78;
+}
+
+.heading i:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   SIDEBAR LINKS
+========================================================= */
+
+.panel a {
+    width: 100%;
+    min-height: 44px;
+
     padding: 10px;
+
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
     text-decoration: none;
-    color: black;
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0.5rem;
-    display: block;
-    transition: all 0.25s ease;
+
+    font-size: 1rem;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
     border-radius: 8px;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+
+    flex-shrink: 0;
 }
-a:hover{
-    background-color: #1E4A78;
-    color: #ffffff;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+.panel a:hover {
+    background: #1E4A78;
+
+    transform: translateY(-2px);
 }
-a:active{
-    background-color: #FFE8A3;
+
+.panel a:active {
+    background: #FFE8A3;
     color: #12355B;
 }
-.panel i{
+
+.panel a i {
+    width: 22px;
+
     margin-right: 10px;
-    font-size: 1.3rem;
+
+    font-size: 1.1rem;
+
+    text-align: center;
+
+    flex-shrink: 0;
 }
 
-.dashboard{
-    margin-left: 43vh;
-    background-color: #E8EEF6;
-    color: #334155;
-    padding: 10px;
+
+/* =========================================================
+   COLLAPSED SIDEBAR - DESKTOP
+========================================================= */
+
+.panel.collapsed {
+    width: 58px;
+    padding: 0;
+
+    overflow-x: hidden;
+}
+
+.panel.collapsed .heading {
+    width: 58px;
+    height: 58px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel.collapsed .heading h2,
+.panel.collapsed .link {
+    display: none;
+}
+
+.panel.collapsed .heading i {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+    min-height: 38px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
 }
 
 
-/* HEADER */
+/* =========================================================
+   MAIN PROFILE AREA
+========================================================= */
+
+.dashboard {
+    width: calc(100% - 250px);
+    min-height: 100vh;
+
+    margin-left: 250px;
+
+    padding: 25px 28px;
+
+    background: #E8EEF6;
+
+    transition:
+        width 0.3s ease,
+        margin-left 0.3s ease;
+}
+
+.dashboard.reverse {
+    width: calc(100% - 58px);
+    margin-left: 58px;
+}
+
+
+/* =========================================================
+   PROFILE HEADER
+========================================================= */
 
 .profile-header {
+    width: 100%;
+    min-height: 150px;
+
+    margin-bottom: 22px;
+    padding: 25px 22px;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
-    height: 100px;
-    border: 2px solid #D9E2EC;
-    background-color: #ffffff;
-    border-radius: 1rem;
-    padding: 0 15px 0 15px;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #E1E8F0;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 18px rgba(18,53,91,0.07);
+}
+
+.profile-title {
+    min-width: 0;
 }
 
 .profile-title h1 {
-    font-size: 30px;
     color: #12355B;
+
+    font-size: 32px;
+    line-height: 1.2;
 }
 
 .profile-title p {
-    margin-top: 6px;
-    color: #777;
+    margin-top: 7px;
+
+    color: #64748B;
+
+    font-size: 14px;
 }
 
-
-/* STATUS */
-
 .profile-status {
-    background: #e1f7ec;
-    color: #12A866;
+    padding: 10px 16px;
 
-    padding: 9px 15px;
+    background: #E1F7EC;
+    color: #12A866;
 
     border-radius: 20px;
 
     font-size: 13px;
     font-weight: bold;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
 }
 
 .profile-status i {
-    font-size: 8px;
     margin-right: 5px;
+
+    font-size: 8px;
 }
 
 
-/* PROFILE CARD */
+/* =========================================================
+   PROFILE CARD
+========================================================= */
 
 .profile-card {
-    background: white;
+    width: 100%;
 
+    padding: 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #E1E8F0;
     border-radius: 16px;
 
-    padding: 30px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    box-shadow: 0 5px 18px rgba(18,53,91,0.07);
 }
 
 
-/* PROFILE TOP */
+/* =========================================================
+   PROFILE TOP
+========================================================= */
 
 .profile-top {
-    display: flex;
+    width: 100%;
+    min-height: 150px;
 
+    padding-bottom: 25px;
+
+    display: flex;
     align-items: center;
 
     gap: 25px;
 
-    padding-bottom: 25px;
-
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #EEEEEE;
 }
-
-
-/* PROFILE PICTURE */
 
 .profile-picture-section {
-    text-align: center;
+    flex-shrink: 0;
 }
 
+
+/* =========================================================
+   PROFILE PHOTO
+========================================================= */
+
 .profile-photo {
-    width: 130px;
-    height: 130px;
-
-    border-radius: 50%;
-
-    background: #E8EEF6;
-
-    color: #12355B;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    overflow: hidden;
+    width: 135px;
+    height: 135px;
 
     position: relative;
 
-    border: 4px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    overflow: hidden;
+
+    background: #E8EEF6;
+    color: #12355B;
+
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+
+    flex-shrink: 0;
 }
 
 .profile-photo img {
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
-
     display: none;
-    cursor: pointer;
+
+    object-fit: cover;
 }
 
 .profile-photo i {
-    font-size: 40px;
+    font-size: 42px;
 }
 
 
-/* CHANGE PHOTO */
+/* =========================================================
+   STUDENT NAME
+========================================================= */
 
-.change-photo {
-    display: inline-block;
-
-    margin-top: 10px;
-
-    color: #6C4CE8;
-
-    font-size: 12px;
-
-    cursor: pointer;
-
-    font-weight: 600;
+.student-name {
+    min-width: 0;
 }
-
-.change-photo:hover {
-    text-decoration: underline;
-}
-
-#imageUpload {
-    display: none;
-}
-
-
-/* NAME */
 
 .student-name h2 {
+    margin-bottom: 8px;
+
     color: #12355B;
 
-    margin-bottom: 7px;
+    font-size: 25px;
+    line-height: 1.25;
+
+    word-break: break-word;
 }
 
 .student-name p {
-    color: #777;
+    margin-bottom: 8px;
+
+    color: #64748B;
 
     font-size: 14px;
-
-    margin-bottom: 7px;
 }
 
 .student-name p i {
@@ -234,69 +424,80 @@ a:active{
 .student-name > span {
     display: inline-block;
 
-    background: #eee7ff;
+    max-width: 100%;
 
+    padding: 6px 11px;
+
+    background: #EEE7FF;
     color: #6C4CE8;
-
-    padding: 5px 10px;
 
     border-radius: 6px;
 
     font-size: 12px;
-
     font-weight: bold;
+
+    word-break: break-word;
 }
 
 
-/* EDIT BUTTON */
+/* =========================================================
+   EDIT AREA
+========================================================= */
 
 .edit-area {
-    display: flex;
-
-    justify-content: flex-end;
+    width: 100%;
 
     margin-top: 20px;
+
+    display: flex;
+    justify-content: flex-end;
 }
 
 #editBtn {
-    border: none;
-
-    background: #12355B;
-
-    color: white;
-
     padding: 10px 17px;
 
+    border: none;
     border-radius: 8px;
+
+    background: #12355B;
+    color: #ffffff;
+
+    font-size: 13px;
 
     cursor: pointer;
 
-    font-size: 13px;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 #editBtn:hover {
-    background: #0d2947;
+    background: #0D2947;
+
+    transform: translateY(-2px);
 }
 
 
-/* SECTION TITLE */
+/* =========================================================
+   SECTION TITLES
+========================================================= */
 
 .section-title {
-    display: flex;
+    margin-top: 28px;
+    margin-bottom: 18px;
 
+    display: flex;
     align-items: center;
 
     gap: 10px;
-
-    margin-top: 28px;
-
-    margin-bottom: 18px;
 }
 
 .section-title i {
     color: #6C4CE8;
 
     font-size: 17px;
+
+    flex-shrink: 0;
 }
 
 .section-title h3 {
@@ -305,69 +506,6 @@ a:active{
     font-size: 18px;
 }
 
-
-/* INFORMATION GRID */
-
-.information-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 15px;
-}
-
-
-/* INFORMATION BOX */
-
-.information-box {
-    background: #f7f9fc;
-
-    border: 1px solid #edf0f5;
-
-    border-radius: 10px;
-
-    padding: 14px;
-}
-
-.information-box p {
-    color: #888;
-
-    font-size: 12px;
-
-    margin-bottom: 7px;
-}
-
-.information-box input {
-    width: 100%;
-
-    border: none;
-
-    outline: none;
-
-    background: transparent;
-
-    color: #333;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    box-sizing: border-box;
-}
-
-.information-box input:not(:disabled) {
-    background: white;
-
-    border: 1px solid #6C4CE8;
-
-    border-radius: 6px;
-
-    padding: 7px;
-}
-
-
-/* ACADEMIC */
-
 .academic-title {
     margin-top: 32px;
 }
@@ -375,9 +513,6 @@ a:active{
 .academic-title i {
     color: #1976E8;
 }
-
-
-/* CONTACT */
 
 .contact-title {
     margin-top: 32px;
@@ -388,750 +523,395 @@ a:active{
 }
 
 
-/* CONTACT GRID */
+/* =========================================================
+   INFORMATION GRID
+========================================================= */
 
-.contact-grid {
+.information-grid {
+    width: 100%;
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
     gap: 15px;
 }
 
 
-/* CONTACT BOX */
+/* =========================================================
+   INFORMATION BOX
+========================================================= */
+
+.information-box {
+    min-width: 0;
+
+    padding: 15px;
+
+    background: #F7F9FC;
+
+    border: 1px solid #E9EEF4;
+    border-radius: 10px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.information-box:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 14px rgba(18,53,91,0.08);
+}
+
+.information-box p {
+    margin-bottom: 7px;
+
+    color: #888;
+
+    font-size: 12px;
+}
+
+.information-box input {
+    width: 100%;
+    min-width: 0;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: #222;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.information-box input:not(:disabled) {
+    padding: 7px;
+
+    background: #ffffff;
+
+    border: 1px solid #6C4CE8;
+    border-radius: 6px;
+}
+
+
+/* =========================================================
+   CONTACT GRID
+========================================================= */
+
+.contact-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   CONTACT BOX
+========================================================= */
 
 .contact-box {
-    display: flex;
+    min-width: 0;
 
+    padding: 16px;
+
+    display: flex;
     align-items: center;
 
     gap: 14px;
 
-    background: #f7f9fc;
+    background: #F7F9FC;
 
-    border: 1px solid #edf0f5;
-
+    border: 1px solid #E9EEF4;
     border-radius: 10px;
 
-    padding: 16px;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.contact-box:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 14px rgba(18,53,91,0.08);
 }
 
 .contact-box > i {
     width: 40px;
     height: 40px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 9px;
 
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    background: #e1f7ec;
-
+    background: #E1F7EC;
     color: #12A866;
 
     flex-shrink: 0;
 }
 
+.contact-box > div {
+    width: 100%;
+    min-width: 0;
+}
+
 .contact-box p {
+    margin-bottom: 5px;
+
     color: #888;
 
     font-size: 12px;
-
-    margin-bottom: 5px;
 }
 
 .contact-box input {
     width: 100%;
+    min-width: 0;
+
+    padding: 0;
 
     border: none;
-
     outline: none;
 
     background: transparent;
-
     color: #333;
 
+    font-family: Arial, sans-serif;
     font-size: 13px;
-
-    box-sizing: border-box;
 }
 
 .contact-box input:not(:disabled) {
-    background: white;
+    padding: 7px;
+
+    background: #ffffff;
 
     border: 1px solid #12A866;
-
     border-radius: 6px;
-
-    padding: 7px;
 }
 
 
-/* SAVE AREA */
+/* =========================================================
+   SAVE AREA
+========================================================= */
 
 .save-area {
     display: none;
+
+    margin-top: 30px;
+    padding-top: 20px;
 
     justify-content: flex-end;
 
     gap: 10px;
 
-    margin-top: 30px;
-
-    padding-top: 20px;
-
-    border-top: 1px solid #eee;
+    border-top: 1px solid #EEEEEE;
 }
 
+.save-btn,
+.cancel-btn {
+    padding: 10px 18px;
 
-/* SAVE BUTTON */
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
 
 .save-btn {
     border: none;
 
     background: #12A866;
-
-    color: white;
-
-    padding: 10px 18px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    font-size: 13px;
+    color: #ffffff;
 }
 
 .save-btn:hover {
-    background: #0d8e57;
+    background: #0D8E57;
+
+    transform: translateY(-2px);
 }
 
-
-/* CANCEL */
-
 .cancel-btn {
-    border: 1px solid #ddd;
+    border: 1px solid #DDDDDD;
 
-    background: white;
-
+    background: #ffffff;
     color: #555;
-
-    padding: 10px 18px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    font-size: 13px;
 }
 
 .cancel-btn:hover {
-    background: #f5f5f5;
-}
+    background: #F5F5F5;
 
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .dashboard {
-        padding: 20px;
-    }
-
-    .profile-header {
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 15px;
-    }
-
-    .profile-card {
-        padding: 20px;
-    }
-
-    .profile-top {
-        align-items: flex-start;
-    }
-
-    .profile-photo {
-        width: 75px;
-        height: 75px;
-    }
-
-    .profile-photo i {
-        font-size: 28px;
-    }
-
-    .student-name h2 {
-        font-size: 20px;
-    }
-
-    .information-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-.panel{
-    width: 40vh;
-}
-.dashboard{
-    margin-left: 43vh;
-}
-.panel.collapsed{
-    width: 50px;
-    transition: all 2s ease;
-    .heading h2{
-        display: none;
-    }
-    .link{
-        display: none;
-    }
-}
-.dashboard.reverse{
-    margin-left: 75px;
-    transition: all 2s ease;
+    transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   PROFESSIONAL PROFILE RESPONSIVE DESIGN
-   ========================================================= */
+   LAPTOP
+========================================================= */
 
-
-/* =========================
-   NORMAL MOBILE
-   ========================= */
-
-@media (max-width: 600px) {
-
-    html,
-    body {
-        width: 100%;
-        min-height: 100%;
-        overflow-x: hidden;
-    }
-
-    /* SIDEBAR */
+@media (min-width: 769px) and (max-width: 1200px) {
 
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 58px;
-        height: 100vh;
-        padding: 5px;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow: hidden;
+        width: 210px;
     }
 
     .heading {
-        width: 100%;
-        height: 55px;
-        padding: 0;
-        justify-content: center;
+        height: 75px;
     }
 
     .heading h2 {
-        display: none;
-    }
-
-    .heading i {
-        font-size: 1rem;
-        padding: 7px;
-        margin: 0;
+        font-size: 1.1rem;
     }
 
     .panel a {
-        width: 100%;
-        height: 43px;
-        padding: 9px 3px;
-        margin-bottom: 3px;
-        box-sizing: border-box;
-        font-size: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 10px 8px;
+
+        font-size: 0.9rem;
     }
 
     .panel a i {
         font-size: 1rem;
-        margin: 0;
     }
 
-    /* MAIN CONTAINER */
-
-    .container {
-        width: calc(100% - 68px);
-        margin-left: 68px;
-        min-height: 100vh;
-        box-sizing: border-box;
-    }
-
-    .container.reverse {
-        margin-left: 68px;
-    }
-
-    /* PROFILE HEADER */
-
-    .navbar {
-        width: 100%;
-        height: 70px;
-        padding: 8px 10px;
-        box-sizing: border-box;
-        border-radius: 10px;
-    }
-
-    .navbar h1 {
-        font-size: 1rem;
-        line-height: 1.2;
-    }
-
-    .navbar p {
-        font-size: .65rem;
-        margin-top: 4px;
-    }
-
-    /* PROFILE INFORMATION */
-
-    .info {
-        width: 100%;
-        height: auto;
-        min-height: 0;
-        margin-top: 8px;
-        padding: 12px 9px;
-        box-sizing: border-box;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    /* PROFILE IMAGE */
-
-    .profile-pic {
-        position: relative;
-        width: 105px;
-        height: 105px;
-        margin: 0 auto 8px;
-        flex-shrink: 0;
-        border: 3px solid #D9E2EC;
-    }
-
-    /* INFORMATION */
-
-    .info pre {
-        width: 100%;
-        min-height: 30px;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 7px 8px;
-        font-family: inherit;
-        font-size: .68rem;
-        line-height: 1.35;
-        white-space: normal;
-        overflow-wrap: anywhere;
-        border-left: 2px solid #D9E2EC;
-        border-bottom: 1px solid #D9E2EC;
-        border-radius: 6px;
-    }
-
-    /* ADDRESSES */
-
-    .info pre:nth-last-child(2),
-    .info pre:last-child {
-        line-height: 1.45;
-        padding: 8px;
-    }
-
-    /* BUTTONS */
-
-    .changes {
-        width: 100%;
-        height: 48px;
-        margin-top: 9px;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .changes button {
-        width: 90px;
-        height: 36px;
-        font-size: .72rem;
-        border-radius: 8px;
-    }
-}
-
-
-/* =========================================================
-   CHROME MOBILE - DESKTOP SITE
-   ========================================================= */
-
-@media (pointer: coarse) and (min-width: 601px) {
-
-    html,
-    body {
-        width: 100%;
-        min-height: 100%;
-        overflow-x: hidden;
-    }
-
-    /* SIDEBAR */
-
-    .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 190px;
-        height: 100vh;
-        padding: 10px;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow-y: auto;
-        transition: width .3s ease;
-    }
-
-    .heading {
-        width: 90%;
-        height: 75px;
-        padding: 10px;
-    }
-
-    .heading h2 {
-        display: block;
-        font-size: 1.05rem;
-    }
-
-    .heading i {
-        font-size: .9rem;
-        padding: 7px;
-    }
-
-    .panel a {
-        font-size: .78rem;
-        padding: 10px 8px;
-        margin-bottom: 3px;
-    }
-
-    .panel i {
-        font-size: .9rem;
-        margin-right: 8px;
-    }
-
-    /* MAIN AREA */
-
-    .container {
+    .dashboard {
         width: calc(100% - 210px);
         margin-left: 210px;
-        min-height: 100vh;
-        box-sizing: border-box;
-        transition: margin-left .3s ease;
+
+        padding: 20px;
     }
 
-    /* SIDEBAR COLLAPSE */
-
-    .panel.collapsed {
-        width: 58px;
-    }
-
-    .panel.collapsed .heading {
-        width: 100%;
-        padding: 0;
-        justify-content: center;
-    }
-
-    .panel.collapsed .heading h2 {
-        display: none;
-    }
-
-    .panel.collapsed .link {
-        display: none;
-    }
-
-    .container.reverse {
-        width: calc(100% - 78px);
-        margin-left: 78px;
-    }
-
-    /* PROFILE HEADER */
-
-    .navbar {
-        width: 100%;
-        height: 80px;
-        padding: 10px 15px;
-        box-sizing: border-box;
-        border-radius: 12px;
-    }
-
-    .navbar h1 {
-        font-size: 1.25rem;
-    }
-
-    .navbar p {
-        font-size: .75rem;
-        margin-top: 4px;
-    }
-
-    /* PROFILE CARD */
-
-    .info {
-        width: calc(100% - 24px);
-        min-height: 400px;
-        height: auto;
-        margin: 12px;
-        padding: 18px;
-        box-sizing: border-box;
-        border-radius: 12px;
-
-        display: grid;
-        grid-template-columns: 150px minmax(0, 1fr);
-        column-gap: 18px;
-        row-gap: 7px;
-        align-items: start;
-    }
-
-    /* PROFILE PHOTO */
-
-    .profile-pic {
-        position: relative;
-        grid-column: 1;
-        grid-row: 1 / span 9;
-
-        width: 135px;
-        height: 135px;
-        margin: 5px auto 0;
-
-        border: 3px solid #D9E2EC;
-    }
-
-    /* INFORMATION TEXT */
-
-    .info pre {
-        grid-column: 2;
-
-        width: 100%;
-        min-height: 31px;
-        box-sizing: border-box;
-
-        margin: 0;
-        padding: 6px 9px;
-
-        font-family: inherit;
-        font-size: .78rem;
-        line-height: 1.35;
-
-        white-space: normal;
-        overflow-wrap: anywhere;
-
-        border-left: 2px solid #D9E2EC;
-        border-bottom: 1px solid #D9E2EC;
-        border-radius: 6px;
-    }
-
-    /* ADDRESS ROWS */
-
-    .info pre:nth-last-child(2),
-    .info pre:last-child {
-        grid-column: 1 / -1;
-        line-height: 1.45;
-        padding: 8px 10px;
-    }
-
-    /* BUTTONS */
-
-    .changes {
-        width: calc(100% - 24px);
-        height: 55px;
-        margin: 0 12px 12px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .changes button {
-        width: 100px;
-        height: 38px;
-        font-size: .78rem;
-        border-radius: 9px;
-    }
-
-    .info pre:nth-last-child(2),
-    .info pre:last-child {
-        grid-column: 2;
-        width: 100%;
-        min-height: 31px;
-        margin: 0;
-        padding: 6px 9px;
-        font-size: .78rem;
-        line-height: 1.35;
-        box-sizing: border-box;
-        white-space: normal;
-        overflow-wrap: anywhere;
-        border-left: 2px solid #D9E2EC;
-        border-bottom: 1px solid #D9E2EC;
-        border-radius: 6px;
-    }
-}
-
-
-
-
-/* =========================================================
-   EXTRA PROFILE RESPONSIVE + VISUAL CSS
-   Add this at the very bottom of profile.css
-   Do not remove existing CSS
-   ========================================================= */
-
-
-/* ---------- GENERAL VISUAL ---------- */
-
-.profile-header,
-.profile-card,
-.information-box,
-.contact-box {
-    transition: all 0.25s ease;
-}
-
-.profile-header {
-    box-shadow: 0 4px 12px rgba(18, 53, 91, 0.05);
-}
-
-.profile-card {
-    box-shadow: 0 5px 18px rgba(18, 53, 91, 0.07);
-}
-
-.information-box:hover,
-.contact-box:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 14px rgba(18, 53, 91, 0.08);
-}
-
-
-/* ---------- PROFILE PHOTO ---------- */
-
-.profile-photo {
-    flex-shrink: 0;
-}
-
-.change-photo {
-    transition: all 0.2s ease;
-}
-
-.change-photo:hover {
-    transform: translateY(-1px);
-}
-
-
-/* ---------- BUTTONS ---------- */
-
-#editBtn,
-.save-btn,
-.cancel-btn {
-    transition: all 0.2s ease;
-}
-
-#editBtn:hover,
-.save-btn:hover {
-    transform: translateY(-2px);
-}
-
-.cancel-btn:hover {
-    transform: translateY(-2px);
-}
-
-
-/* ---------- DESKTOP ---------- */
-
-@media (min-width: 1101px) {
-
-    .dashboard {
-        min-height: 100vh;
-        box-sizing: border-box;
-    }
-
-    .profile-header,
-    .profile-card {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+        margin-left: 58px;
     }
 
     .profile-header {
-        margin-bottom: 20px;
-    }
+        min-height: 125px;
 
-    .profile-card {
-        box-sizing: border-box;
-    }
-
-    .profile-top {
-        min-width: 0;
-    }
-
-    .student-name {
-        min-width: 0;
-    }
-
-    .information-box,
-    .contact-box {
-        min-width: 0;
-    }
-
-    .information-box input,
-    .contact-box input {
-        min-width: 0;
-    }
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (min-width: 601px) and (max-width: 1100px) {
-
-    .dashboard {
-        margin-left: 200px;
-        width: calc(100% - 210px);
-        padding: 10px;
-        box-sizing: border-box;
-    }
-
-    .profile-header {
-        height: 85px;
-        padding: 0 18px;
-        margin-bottom: 15px;
+        padding: 22px 20px;
     }
 
     .profile-title h1 {
-        font-size: 25px;
+        font-size: 28px;
+    }
+
+    .profile-card {
+        padding: 24px;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .student-name h2 {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   TABLET / IPAD
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+
+    .panel {
+        width: 175px;
+        padding: 7px;
+    }
+
+    .heading {
+        height: 70px;
+        padding: 7px;
+    }
+
+    .heading h2 {
+        font-size: 0.95rem;
+    }
+
+    .heading i {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
+        font-size: 18px;
+    }
+
+    .panel a {
+        padding: 9px 6px;
+
+        font-size: 0.73rem;
+    }
+
+    .panel a i {
+        margin-right: 6px;
+
+        font-size: 0.85rem;
+    }
+
+    .dashboard {
+        width: calc(100% - 175px);
+        margin-left: 175px;
+
+        padding: 14px;
+    }
+
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+        margin-left: 58px;
+    }
+
+    .profile-header {
+        min-height: 110px;
+
+        padding: 18px;
+
+        border-radius: 12px;
+    }
+
+    .profile-title h1 {
+        font-size: 24px;
     }
 
     .profile-title p {
         font-size: 12px;
     }
 
+    .profile-status {
+        padding: 8px 12px;
+
+        font-size: 11px;
+    }
+
     .profile-card {
-        padding: 22px;
-        box-sizing: border-box;
+        padding: 20px;
+
+        border-radius: 12px;
     }
 
     .profile-photo {
-        width: 110px;
-        height: 110px;
+        width: 105px;
+        height: 105px;
     }
 
     .profile-photo i {
@@ -1139,53 +919,57 @@ a:active{
     }
 
     .student-name h2 {
-        font-size: 22px;
+        font-size: 20px;
+    }
+
+    .student-name p {
+        font-size: 12px;
     }
 
     .information-grid,
     .contact-grid {
-        gap: 10px;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
-    .information-box,
-    .contact-box {
-        padding: 12px;
+    .information-box {
+        padding: 13px;
     }
 }
 
 
 /* =========================================================
    NORMAL MOBILE
-   ========================================================= */
+   ICON SIDEBAR + OVERLAY MENU
+========================================================= */
 
 @media (max-width: 600px) {
 
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
+    /* -----------------------------------------------------
+       SIDEBAR CLOSED
+    ----------------------------------------------------- */
 
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 58px;
-        height: 100vh;
-        padding: 4px;
-        box-sizing: border-box;
-        z-index: 1000;
+        padding: 0;
+
         overflow: hidden;
+
+        box-shadow: none;
+
+        transition:
+            width 0.3s ease,
+            box-shadow 0.3s ease;
     }
 
     .heading {
-        width: 100%;
+        width: 58px;
         height: 58px;
+
         padding: 0;
+
+        display: flex;
+        align-items: center;
         justify-content: center;
     }
 
@@ -1194,164 +978,251 @@ a:active{
     }
 
     .heading i {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
         margin: 0;
-        font-size: 0.95rem;
-        padding: 6px;
+        padding: 0;
+
+        font-size: 18px;
     }
 
     .panel a {
-        width: 100%;
+        width: 50px;
         height: 42px;
-        padding: 9px 3px;
-        margin-bottom: 3px;
-        box-sizing: border-box;
-        font-size: 0;
+        min-height: 42px;
+
+        margin: 0 auto 3px;
+
+        padding: 8px 3px;
+
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+
+        font-size: 0;
+
+        border-bottom: none;
     }
 
     .panel a i {
+        width: auto;
+
         margin: 0;
+
         font-size: 1rem;
     }
 
 
-    /* MAIN AREA */
+    /* -----------------------------------------------------
+       MOBILE OPEN STATE
+       
+       JS adds .collapsed when the bar is tapped.
+       Here .collapsed means OPEN OVERLAY.
+       
+       Dashboard remains at 58px margin.
+    ----------------------------------------------------- */
 
-    .dashboard {
-        margin-left: 58px;
-        width: calc(100% - 58px);
-        padding: 7px;
-        box-sizing: border-box;
+    .panel.collapsed {
+        width: 215px;
+        padding: 6px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        box-shadow:
+            5px 0 20px rgba(0,0,0,0.25);
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+        height: 58px;
+
+        padding: 0 5px;
+
+        justify-content: space-between;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: block;
+
+        color: #ffffff;
+
+        font-size: 1rem;
+
+        white-space: nowrap;
+    }
+
+    .panel.collapsed .heading i {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+    }
+
+    .panel.collapsed .link {
+        display: flex;
+
+        width: 100%;
+        height: 42px;
+        min-height: 42px;
+
+        margin: 0 0 3px;
+
+        padding: 9px 10px;
+
+        justify-content: flex-start;
+
+        color: #ffffff;
+
+        font-size: 0.82rem;
+
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .panel.collapsed .link i {
+        width: 22px;
+
+        margin-right: 10px;
+
+        font-size: 1rem;
     }
 
 
-    /* PROFILE HEADER */
+    /* -----------------------------------------------------
+       DASHBOARD NEVER MOVES
+    ----------------------------------------------------- */
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+
+        margin-left: 58px;
+
+        padding: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       PROFILE HEADER
+    ----------------------------------------------------- */
 
     .profile-header {
-        width: 100%;
-        height: auto;
-        min-height: 82px;
-        padding: 13px;
-        margin-bottom: 10px;
+        min-height: 105px;
+
+        margin-bottom: 12px;
+
+        padding: 15px;
+
+        gap: 10px;
+
         border-radius: 11px;
-        box-sizing: border-box;
-
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .profile-title {
-        min-width: 0;
     }
 
     .profile-title h1 {
-        font-size: 19px;
-        line-height: 1.2;
+        font-size: 21px;
     }
 
     .profile-title p {
-        font-size: 9px;
         margin-top: 4px;
-        line-height: 1.3;
+
+        font-size: 10px;
     }
 
     .profile-status {
-        flex-shrink: 0;
-        padding: 6px 8px;
-        border-radius: 15px;
+        padding: 7px 9px;
+
         font-size: 8px;
     }
 
     .profile-status i {
         font-size: 6px;
-        margin-right: 3px;
     }
 
 
-    /* PROFILE CARD */
+    /* -----------------------------------------------------
+       PROFILE CARD
+    ----------------------------------------------------- */
 
     .profile-card {
-        width: 100%;
-        padding: 13px;
-        border-radius: 12px;
-        box-sizing: border-box;
+        padding: 15px;
+
+        border-radius: 11px;
     }
 
 
-    /* PROFILE TOP */
+    /* -----------------------------------------------------
+       PROFILE TOP
+    ----------------------------------------------------- */
 
     .profile-top {
-        gap: 12px;
-        padding-bottom: 15px;
+        min-height: 0;
+
+        padding-bottom: 18px;
+
+        gap: 14px;
+
         align-items: center;
     }
 
-
-    /* PROFILE PHOTO */
-
     .profile-photo {
-        width: 75px;
-        height: 75px;
+        width: 82px;
+        height: 82px;
+
         border-width: 3px;
     }
 
     .profile-photo i {
-        font-size: 25px;
-    }
-
-    .change-photo {
-        margin-top: 7px;
-        font-size: 8px;
-    }
-
-
-    /* STUDENT NAME */
-
-    .student-name {
-        min-width: 0;
+        font-size: 28px;
     }
 
     .student-name h2 {
-        font-size: 18px;
         margin-bottom: 5px;
+
+        font-size: 16px;
     }
 
     .student-name p {
-        font-size: 9px;
         margin-bottom: 5px;
-    }
 
-    .student-name p i {
-        margin-right: 3px;
+        font-size: 9px;
     }
 
     .student-name > span {
         padding: 4px 7px;
-        font-size: 8px;
+
+        font-size: 7px;
     }
 
 
-    /* EDIT BUTTON */
+    /* -----------------------------------------------------
+       EDIT
+    ----------------------------------------------------- */
 
     .edit-area {
-        margin-top: 12px;
+        margin-top: 13px;
     }
 
     #editBtn {
-        padding: 8px 12px;
-        font-size: 10px;
+        padding: 8px 11px;
+
+        font-size: 9px;
     }
 
 
-    /* SECTION TITLES */
+    /* -----------------------------------------------------
+       SECTION TITLES
+    ----------------------------------------------------- */
 
     .section-title {
-        gap: 7px;
         margin-top: 20px;
         margin-bottom: 12px;
+
+        gap: 7px;
     }
 
     .section-title i {
@@ -1362,22 +1233,32 @@ a:active{
         font-size: 14px;
     }
 
+    .academic-title,
+    .contact-title {
+        margin-top: 22px;
+    }
 
-    /* INFORMATION */
+
+    /* -----------------------------------------------------
+       INFORMATION
+    ----------------------------------------------------- */
 
     .information-grid {
         grid-template-columns: 1fr;
+
         gap: 8px;
     }
 
     .information-box {
-        padding: 10px;
+        padding: 11px;
+
         border-radius: 8px;
     }
 
     .information-box p {
-        font-size: 9px;
         margin-bottom: 5px;
+
+        font-size: 9px;
     }
 
     .information-box input {
@@ -1389,29 +1270,33 @@ a:active{
     }
 
 
-    /* CONTACT */
+    /* -----------------------------------------------------
+       CONTACT
+    ----------------------------------------------------- */
 
     .contact-grid {
         grid-template-columns: 1fr;
+
         gap: 8px;
     }
 
     .contact-box {
-        padding: 10px;
+        padding: 11px;
+
         gap: 10px;
+
         border-radius: 8px;
     }
 
     .contact-box > i {
         width: 32px;
         height: 32px;
-        border-radius: 7px;
+
         font-size: 12px;
     }
 
     .contact-box p {
         font-size: 9px;
-        margin-bottom: 4px;
     }
 
     .contact-box input {
@@ -1423,25 +1308,29 @@ a:active{
     }
 
 
-    /* SAVE AREA */
+    /* -----------------------------------------------------
+       SAVE
+    ----------------------------------------------------- */
 
     .save-area {
         margin-top: 20px;
-        padding-top: 14px;
+        padding-top: 15px;
+
         gap: 7px;
     }
 
     .save-btn,
     .cancel-btn {
-        padding: 8px 12px;
-        font-size: 10px;
+        padding: 8px 10px;
+
+        font-size: 9px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 380px) {
 
@@ -1449,28 +1338,92 @@ a:active{
         width: 52px;
     }
 
-    .dashboard {
-        margin-left: 52px;
-        width: calc(100% - 52px);
-        padding: 5px;
+    .heading {
+        width: 52px;
+        height: 52px;
+    }
+
+    .heading i {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+        min-height: 34px;
+
+        font-size: 16px;
+
+        border-radius: 6px;
     }
 
     .panel a {
+        width: 46px;
+
         height: 39px;
+        min-height: 39px;
     }
 
     .panel a i {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
 
+    /* OPEN OVERLAY */
+
+    .panel.collapsed {
+        width: 200px;
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+        height: 52px;
+    }
+
+    .panel.collapsed .heading h2 {
+        font-size: 0.95rem;
+    }
+
+    .panel.collapsed .heading i {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+        min-height: 34px;
+
+        font-size: 16px;
+    }
+
+    .panel.collapsed .link {
+        width: 100%;
+
+        height: 39px;
+        min-height: 39px;
+
+        font-size: 0.76rem;
+    }
+
+
+    /* DASHBOARD STAYS */
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 52px);
+
+        margin-left: 52px;
+
+        padding: 7px;
+    }
+
+
+    /* PROFILE */
+
     .profile-header {
-        min-height: 72px;
-        padding: 10px;
+        padding: 12px;
+
+        min-height: 90px;
     }
 
     .profile-title h1 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .profile-title p {
@@ -1478,34 +1431,26 @@ a:active{
     }
 
     .profile-status {
-        padding: 5px 6px;
+        padding: 6px 7px;
+
         font-size: 7px;
     }
 
-
     .profile-card {
-        padding: 10px;
-    }
-
-    .profile-top {
-        gap: 9px;
+        padding: 12px;
     }
 
     .profile-photo {
-        width: 65px;
-        height: 65px;
+        width: 70px;
+        height: 70px;
     }
 
     .profile-photo i {
-        font-size: 22px;
-    }
-
-    .change-photo {
-        font-size: 7px;
+        font-size: 24px;
     }
 
     .student-name h2 {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .student-name p {
@@ -1513,246 +1458,372 @@ a:active{
     }
 
     .student-name > span {
-        font-size: 7px;
-        padding: 3px 5px;
-    }
-
-
-    .section-title {
-        margin-top: 16px;
-        margin-bottom: 9px;
+        font-size: 6px;
     }
 
     .section-title h3 {
-        font-size: 12px;
+        font-size: 13px;
     }
 
-    .section-title i {
-        font-size: 11px;
-    }
-
-
-    .information-box,
-    .contact-box {
-        padding: 8px;
-    }
-
-    .information-box p,
-    .contact-box p {
-        font-size: 8px;
-    }
-
-    .information-box input,
-    .contact-box input {
-        font-size: 9px;
-    }
-
-    .contact-box > i {
-        width: 28px;
-        height: 28px;
+    .information-box input {
         font-size: 10px;
     }
 }
 
 
 /* =========================================================
-   DESKTOP SITE ON PHONE
-   ========================================================= */
+   VERY SMALL MOBILE
+========================================================= */
 
-@media (pointer: coarse) and (min-width: 601px) {
-
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
+@media (max-width: 320px) {
 
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 190px;
-        height: 100vh;
-        padding: 10px;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow-y: auto;
+        width: 48px;
     }
 
     .heading {
+        width: 48px;
+        height: 50px;
+    }
+
+    .heading i {
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+        min-height: 32px;
+
+        font-size: 15px;
+    }
+
+    .panel a {
+        width: 42px;
+
+        height: 37px;
+        min-height: 37px;
+    }
+
+    .panel.collapsed {
+        width: 185px;
+    }
+
+    .panel.collapsed .heading {
         width: 100%;
+    }
+
+    .panel.collapsed .link {
+        width: 100%;
+
+        font-size: 0.7rem;
+    }
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 48px);
+
+        margin-left: 48px;
+
+        padding: 6px;
+    }
+
+    .profile-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        min-height: 0;
+    }
+
+    .profile-status {
+        align-self: flex-start;
+    }
+
+    .profile-top {
+        align-items: flex-start;
+    }
+
+    .profile-photo {
+        width: 62px;
+        height: 62px;
+    }
+
+    .student-name h2 {
+        font-size: 13px;
+    }
+
+    .student-name p {
+        font-size: 7px;
+    }
+
+    .student-name > span {
+        font-size: 5.5px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP SITE MODE ON PHONE
+========================================================= */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    .panel {
+        width: 190px;
+        padding: 8px;
+    }
+
+    .heading {
         height: 70px;
-        padding: 10px;
-        box-sizing: border-box;
     }
 
     .heading h2 {
         display: block;
-        font-size: 1.05rem;
+
+        font-size: 1rem;
     }
 
     .heading i {
-        font-size: 0.9rem;
-        padding: 6px;
-        margin: 0;
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
+        font-size: 18px;
     }
 
     .panel a {
-        font-size: 0.78rem;
-        padding: 9px 7px;
-        margin-bottom: 3px;
+        padding: 9px 6px;
+
+        font-size: 0.75rem;
     }
 
     .panel a i {
+        margin-right: 6px;
+
         font-size: 0.85rem;
-        margin-right: 7px;
     }
-
-
-    /* MAIN */
 
     .dashboard {
-        margin-left: 190px;
         width: calc(100% - 190px);
-        padding: 10px;
-        box-sizing: border-box;
+        margin-left: 190px;
+
+        padding: 14px;
     }
 
-
-    /* HEADER */
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+        margin-left: 58px;
+    }
 
     .profile-header {
-        height: 75px;
-        padding: 10px 14px;
-        margin-bottom: 12px;
+        min-height: 110px;
+
+        padding: 18px;
     }
 
     .profile-title h1 {
-        font-size: 23px;
+        font-size: 24px;
     }
 
     .profile-title p {
         font-size: 11px;
     }
 
-    .profile-status {
-        font-size: 10px;
-        padding: 7px 10px;
-    }
-
-
-    /* PROFILE CARD */
-
     .profile-card {
-        padding: 20px;
-        border-radius: 13px;
+        padding: 22px;
     }
 
-    .profile-photo {
-        width: 105px;
-        height: 105px;
-    }
-
-    .profile-photo i {
-        font-size: 32px;
-    }
-
-    .student-name h2 {
-        font-size: 21px;
-    }
-
-    .student-name p {
-        font-size: 11px;
-    }
-
-    .student-name > span {
-        font-size: 9px;
-    }
-
-
-    /* INFORMATION GRID */
-
-    .information-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-    }
-
-    .information-box {
-        padding: 11px;
-    }
-
-    .information-box p {
-        font-size: 9px;
-    }
-
-    .information-box input {
-        font-size: 11px;
-    }
-
-
-    /* CONTACT */
-
+    .information-grid,
     .contact-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-    }
-
-    .contact-box {
-        padding: 11px;
-    }
-
-    .contact-box p {
-        font-size: 9px;
-    }
-
-    .contact-box input {
-        font-size: 10px;
-    }
-
-
-    /* COLLAPSED SIDEBAR */
-
-    .panel.collapsed {
-        width: 58px;
-    }
-
-    .panel.collapsed .heading h2,
-    .panel.collapsed .link {
-        display: none;
-    }
-
-    .panel.collapsed .heading {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .panel.collapsed .heading i {
-        margin: 0;
-    }
-
-    .dashboard.reverse {
-        margin-left: 78px;
-        width: calc(100% - 78px);
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
     }
 }
 
 
-/* ---------- FINAL SAFETY ---------- */
+/* =========================================================
+   LANDSCAPE PHONE
+========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 768px) and (orientation: landscape) {
 
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
+    .profile-top {
+        flex-direction: row;
     }
 
-    .profile-card,
-    .profile-header {
-        max-width: 100%;
+    .information-grid,
+    .contact-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+    .panel a:hover {
+        transform: none;
+    }
+
+    .information-box:hover,
+    .contact-box:hover {
+        transform: none;
+
+        box-shadow: none;
+    }
+
+    #editBtn:hover,
+    .save-btn:hover,
+    .cancel-btn:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+body.dark-theme {
+    background: #101820;
+    color: #E5E7EB;
+}
+
+body.dark-theme .dashboard {
+    background: #101820;
+}
+
+body.dark-theme .profile-header,
+body.dark-theme .profile-card {
+    background: #1B2733;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.18);
+}
+
+body.dark-theme .profile-title h1,
+body.dark-theme .student-name h2,
+body.dark-theme .section-title h3 {
+    color: #ffffff;
+}
+
+body.dark-theme .profile-title p,
+body.dark-theme .student-name p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .profile-top,
+body.dark-theme .save-area {
+    border-color: #3A4B59;
+}
+
+body.dark-theme .profile-photo {
+    background: #243442;
+    color: #5CA7FF;
+
+    border-color: #1B2733;
+}
+
+body.dark-theme .student-name p i {
+    color: #8B72FF;
+}
+
+body.dark-theme .student-name > span {
+    background: #302A4A;
+    color: #A88CFF;
+}
+
+body.dark-theme .information-box,
+body.dark-theme .contact-box {
+    background: #243442;
+
+    border-color: #3A4B59;
+}
+
+body.dark-theme .information-box p,
+body.dark-theme .contact-box p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .information-box input,
+body.dark-theme .contact-box input {
+    color: #ffffff;
+}
+
+body.dark-theme .information-box input:not(:disabled),
+body.dark-theme .contact-box input:not(:disabled) {
+    background: #1B2733;
+
+    color: #ffffff;
+}
+
+body.dark-theme .cancel-btn {
+    background: #243442;
+
+    color: #ffffff;
+
+    border-color: #3A4B59;
+}
+
+body.dark-theme .cancel-btn:hover {
+    background: #304555;
+}
+
+body.dark-theme .panel {
+    background: #12355B;
+}
+
+
+/* =========================================================
+   FINAL BAR ICON SAFETY
+========================================================= */
+
+.panel .heading i {
+    box-sizing: border-box;
+
+    flex: 0 0 40px;
+
+    overflow: visible;
+
+    text-align: center;
+}
+
+.panel.collapsed .heading i {
+    flex: 0 0 38px;
+}
+
+
+/* =========================================================
+   MOBILE BAR SAFETY
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .panel .heading i {
+        flex: 0 0 38px;
+    }
+
+    .panel.collapsed .heading i {
+        flex: 0 0 38px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .panel .heading i {
+        flex: 0 0 34px;
+    }
+
+    .panel.collapsed .heading i {
+        flex: 0 0 34px;
     }
 }

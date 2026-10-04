@@ -1,567 +1,681 @@
-*{
-    margin: 0px;
-    padding: 0px;
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color: #E8EEF6;
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
 }
-.panel{
-    display:flex;
+
+body {
+    background: #E8EEF6;
+    color: #334155;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   SAME AS PROFILE
+========================================================= */
+
+.panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    padding: 10px;
+
+    display: flex;
     flex-direction: column;
-    height: 140vh;
-    width: 40vh;
-    padding: 10px;
-    background-color: #12355B;
-    color: white;
-    position:absolute;
+
+    background: #12355B;
+    color: #ffffff;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition:
+        width 0.3s ease,
+        box-shadow 0.3s ease;
 }
-.heading{
-    display: flex;
-    height: 100px;
-    width: 90%;
+
+
+/* =========================================================
+   SIDEBAR HEADING
+========================================================= */
+
+.heading {
+    width: 100%;
+    height: 80px;
+
     padding: 10px;
-    justify-content: space-between;
+
+    display: flex;
     align-items: center;
-}
-.heading i{
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 6px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.panel a{
-    font-size: 1.2rem;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0.5rem;
-    display: block;
-    transition: all 0.25s ease;
-    border-radius: 8px;
-}
-a:hover{
-    background-color: #1E4A78;
-    color: #ffffff;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-a:active{
-    background-color: #FFE8A3;
-    color: #12355B;
-}
-.panel i{
-    margin-right: 10px;
-    font-size: 1.3rem;
-}
-
-.dashboard{
-
-    margin-left: 43vh;
-
-    padding: 10px;
-
-    transition: 0.3s;
-
-}
-
-
-
-/* HEADING */
-
-.time-heading{
-
-    background: white;
-
-    padding: 0 15px 0 15px;
-
-    border-radius: 15px;
-
-    display: flex;
-
     justify-content: space-between;
 
-    align-items: center;
-
-    margin-bottom: 20px;
-    height: 100px;
+    flex-shrink: 0;
 }
 
+.heading h2 {
+    color: #ffffff;
 
-.time-heading h1{
+    font-size: 1.35rem;
 
-    color: #12355B;
-
-    font-size: 30px;
-
-    margin-bottom: 5px;
-
+    white-space: nowrap;
 }
 
+.heading i {
+    width: 40px;
+    height: 40px;
 
-.time-heading p{
+    min-width: 40px;
+    min-height: 40px;
 
-    color: #777;
-
-    font-size: 14px;
-
-}
-
-
-.time-heading > i{
-
-    width: 55px;
-
-    height: 55px;
-
-    background: #1976E8;
-
-    color: white;
-
-    border-radius: 12px;
+    padding: 0;
 
     display: flex;
-
+    align-items: center;
     justify-content: center;
 
-    align-items: center;
+    color: #ffffff;
 
-    font-size: 22px;
+    font-size: 19px;
+    line-height: 1;
 
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.heading i:hover {
+    background: #1E4A78;
+}
+
+.heading i:active {
+    transform: scale(0.94);
 }
 
 
+/* =========================================================
+   SIDEBAR LINKS
+========================================================= */
 
-/* TODAY BOX */
+.panel a {
+    width: 100%;
+    min-height: 44px;
 
-.today-box{
-
-    margin-bottom: 20px;
-
-}
-
-
-.today-box h2{
-
-    color: #12355B;
-
-    font-size: 22px;
-
-    margin-bottom: 5px;
-
-}
-
-
-.today-box p{
-
-    color: #777;
-
-    font-size: 13px;
-
-}
-
-
-
-/* TIME TABLE */
-
-.time-table{
+    padding: 10px;
 
     display: flex;
+    align-items: center;
 
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 1rem;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+
+    flex-shrink: 0;
+}
+
+.panel a:hover {
+    background: #1E4A78;
+
+    transform: translateY(-2px);
+}
+
+.panel a:active {
+    background: #FFE8A3;
+    color: #12355B;
+}
+
+.panel a i {
+    width: 22px;
+
+    margin-right: 10px;
+
+    font-size: 1.1rem;
+
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR - DESKTOP
+========================================================= */
+
+.panel.collapsed {
+    width: 58px;
+    padding: 0;
+
+    overflow-x: hidden;
+}
+
+.panel.collapsed .heading {
+    width: 58px;
+    height: 58px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel.collapsed .heading h2,
+.panel.collapsed .link {
+    display: none;
+}
+
+.panel.collapsed .heading i {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+    min-height: 38px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   MAIN TIME TABLE AREA
+   SAME PROFILE DASHBOARD
+========================================================= */
+
+.dashboard {
+    width: calc(100% - 250px);
+    min-height: 100vh;
+
+    margin-left: 250px;
+
+    padding: 25px 28px;
+
+    background: #E8EEF6;
+
+    transition:
+        width 0.3s ease,
+        margin-left 0.3s ease;
+}
+
+.dashboard.reverse {
+    width: calc(100% - 58px);
+    margin-left: 58px;
+}
+
+
+/* =========================================================
+   TIME TABLE HEADER
+========================================================= */
+
+.time-heading {
+    width: 100%;
+    min-height: 150px;
+
+    margin-bottom: 22px;
+    padding: 25px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #E1E8F0;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 18px rgba(18,53,91,0.07);
+}
+
+.time-heading h1 {
+    color: #12355B;
+
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.time-heading p {
+    margin-top: 7px;
+
+    color: #64748B;
+
+    font-size: 14px;
+}
+
+.time-heading > i {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1976E8;
+    color: #ffffff;
+
+    border-radius: 11px;
+
+    font-size: 21px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TODAY'S SCHEDULE
+========================================================= */
+
+.today-box {
+    width: 100%;
+
+    margin-bottom: 18px;
+}
+
+.today-box h2 {
+    color: #12355B;
+
+    font-size: 21px;
+
+    margin-bottom: 5px;
+}
+
+.today-box p {
+    color: #64748B;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TIME TABLE LIST
+========================================================= */
+
+.time-table {
+    width: 100%;
+
+    display: flex;
     flex-direction: column;
 
     gap: 15px;
-
 }
 
 
+/* =========================================================
+   CLASS BOX
+========================================================= */
 
-/* CLASS */
-
-.class-box{
-
-    background: white;
-
+.class-box {
+    width: 100%;
     min-height: 95px;
 
     padding: 15px 20px;
 
-    border-radius: 15px;
-
     display: flex;
-
     align-items: center;
 
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.06);
+    background: #ffffff;
 
+    border: 1px solid #E1E8F0;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 18px rgba(18,53,91,0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.class-box:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(18,53,91,0.10);
 }
 
 
+/* =========================================================
+   CLASS TIME
+========================================================= */
 
-/* TIME */
+.class-time {
+    width: 145px;
 
-.class-time{
-
-    width: 150px;
+    flex-shrink: 0;
 
     color: #12355B;
 
+    font-size: 13px;
     font-weight: bold;
 
-    font-size: 14px;
-
+    line-height: 1.4;
 }
 
-
-.class-time i{
-
+.class-time i {
     color: #1976E8;
 
-    margin-right: 8px;
-
+    margin-right: 7px;
 }
 
 
+/* =========================================================
+   CLASS ICON
+========================================================= */
 
-/* ICON */
+.class-icon {
+    width: 52px;
+    height: 52px;
 
-.class-icon{
+    margin-right: 17px;
 
-    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    height: 50px;
+    flex-shrink: 0;
 
     background: #EAF2FF;
-
     color: #1976E8;
 
     border-radius: 10px;
 
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    margin-right: 18px;
-
     font-size: 20px;
-
 }
 
 
+/* =========================================================
+   CLASS INFORMATION
+========================================================= */
 
-/* SUBJECT */
-
-.class-info{
-
+.class-info {
+    min-width: 0;
     flex: 1;
-
 }
 
-
-.class-info h3{
-
+.class-info h3 {
     color: #12355B;
 
     font-size: 17px;
 
     margin-bottom: 6px;
 
+    line-height: 1.3;
+
+    word-break: break-word;
 }
 
-
-.class-info p{
-
-    color: #777;
+.class-info p {
+    color: #64748B;
 
     font-size: 13px;
-
 }
 
 
+/* =========================================================
+   ROOM
+========================================================= */
 
-/* ROOM */
+.room {
+    flex-shrink: 0;
 
-.room{
-
-    background: #EAF2FF;
-
-    color: #1976E8;
+    margin-left: 15px;
 
     padding: 8px 12px;
+
+    background: #EAF2FF;
+    color: #1976E8;
 
     border-radius: 8px;
 
     font-size: 12px;
+    font-weight: bold;
 
+    white-space: nowrap;
 }
 
 
+/* =========================================================
+   LUNCH
+========================================================= */
 
-/* LUNCH */
-
-.lunch{
-
+.class-box.lunch {
     background: #FFF5E6;
-
 }
 
-
-.lunch .class-icon{
-
+.class-box.lunch .class-icon {
     background: #FFF0D6;
-
     color: #F28C00;
+}
 
+.class-box.lunch .class-time i {
+    color: #F28C00;
 }
 
 
-.lunch .room{
+/* =========================================================
+   NO CLASS
+========================================================= */
 
-    background: #FFF0D6;
+.no-class {
+    width: 100%;
+    min-height: 180px;
 
-    color: #F28C00;
-
-}
-
-
-
-/* NO CLASS */
-
-.no-class{
+    padding: 40px 20px;
 
     display: none;
 
-    background: white;
+    align-items: center;
+    justify-content: center;
 
-    padding: 50px;
+    flex-direction: column;
 
-    border-radius: 15px;
+    background: #ffffff;
+
+    border: 1px solid #E1E8F0;
+    border-radius: 16px;
 
     text-align: center;
 
+    box-shadow: 0 5px 18px rgba(18,53,91,0.07);
 }
 
-
-.no-class i{
+.no-class i {
+    color: #1976E8;
 
     font-size: 40px;
 
-    color: #1976E8;
-
     margin-bottom: 15px;
-
 }
 
-
-.no-class h2{
-
+.no-class h2 {
     color: #12355B;
 
     margin-bottom: 8px;
 
+    font-size: 20px;
 }
 
+.no-class p {
+    color: #64748B;
 
-.no-class p{
-
-    color: #777;
-
-}
-
-
-
-/* COLLAPSED PANEL */
-
-.panel{
-    width: 40vh;
-}
-.dashboard{
-    margin-left: 43vh;
-}
-.panel.collapsed{
-    width: 50px;
-    transition: all 2s ease;
-    .heading h2{
-        display: none;
-    }
-    .link{
-        display: none;
-    }
-}
-.dashboard.reverse{
-    margin-left: 75px;
-    transition: all 2s ease;
-}
-
-
-
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-    .dashboard{
-
-        margin-left: 40vh;
-
-        padding: 15px;
-
-    }
-
-
-    .class-box{
-
-        padding: 12px;
-
-    }
-
-
-    .class-time{
-
-        width: 95px;
-
-        font-size: 11px;
-
-    }
-
-
-    .class-icon{
-
-        width: 40px;
-
-        height: 40px;
-
-        margin-right: 10px;
-
-        font-size: 16px;
-
-    }
-
-
-    .class-info h3{
-
-        font-size: 13px;
-
-    }
-
-
-    .class-info p{
-
-        font-size: 11px;
-
-    }
-
-
-    .room{
-
-        display: none;
-
-    }
-
-}
-
-
-
-
-
-
-/* =========================================================
-   EXTRA TIME TABLE PAGE CSS
-   Add this at the very bottom of table.css
-   Do not remove existing HTML/CSS
-   ========================================================= */
-
-
-/* ---------- GENERAL VISUAL ---------- */
-
-.time-heading,
-.class-box,
-.no-class {
-    transition: all 0.25s ease;
-}
-
-.time-heading {
-    box-shadow: 0 4px 12px rgba(18, 53, 91, 0.06);
-}
-
-.class-box {
-    box-sizing: border-box;
-}
-
-.class-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(18, 53, 91, 0.11);
-}
-
-.class-time,
-.class-info {
-    min-width: 0;
-}
-
-.class-icon {
-    flex-shrink: 0;
-}
-
-.room {
-    flex-shrink: 0;
+    font-size: 13px;
 }
 
 
 /* =========================================================
-   DESKTOP
-   ========================================================= */
+   LAPTOP
+   SAME PROFILE RESPONSIVE SYSTEM
+========================================================= */
 
-@media (min-width: 1101px) {
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .panel {
+        width: 210px;
+    }
+
+    .heading {
+        height: 75px;
+    }
+
+    .heading h2 {
+        font-size: 1.1rem;
+    }
+
+    .panel a {
+        padding: 10px 8px;
+
+        font-size: 0.9rem;
+    }
+
+    .panel a i {
+        font-size: 1rem;
+    }
 
     .dashboard {
-        min-height: 100vh;
-        box-sizing: border-box;
-    }
-
-    .time-heading,
-    .today-box,
-    .time-table,
-    .no-class {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .time-heading {
-        margin-bottom: 20px;
-    }
-
-    .class-box {
-        min-width: 0;
-    }
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (min-width: 601px) and (max-width: 1100px) {
-
-    .dashboard {
-        margin-left: 200px;
         width: calc(100% - 210px);
-        padding: 10px;
-        box-sizing: border-box;
+
+        margin-left: 210px;
+
+        padding: 20px;
+    }
+
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+
+        margin-left: 58px;
     }
 
     .time-heading {
-        height: 85px;
-        padding: 0 18px;
-        margin-bottom: 15px;
+        min-height: 125px;
+
+        padding: 22px 20px;
     }
 
     .time-heading h1 {
-        font-size: 25px;
+        font-size: 28px;
+    }
+
+    .time-heading p {
+        font-size: 13px;
+    }
+
+    .class-box {
+        padding: 14px 16px;
+    }
+
+    .class-time {
+        width: 130px;
+    }
+}
+
+
+/* =========================================================
+   TABLET / IPAD
+   SAME PROFILE RESPONSIVE SYSTEM
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+
+    .panel {
+        width: 175px;
+
+        padding: 7px;
+    }
+
+    .heading {
+        height: 70px;
+
+        padding: 7px;
+    }
+
+    .heading h2 {
+        font-size: 0.95rem;
+    }
+
+    .heading i {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
+        font-size: 18px;
+    }
+
+    .panel a {
+        padding: 9px 6px;
+
+        font-size: 0.73rem;
+    }
+
+    .panel a i {
+        margin-right: 6px;
+
+        font-size: 0.85rem;
+    }
+
+    .dashboard {
+        width: calc(100% - 175px);
+
+        margin-left: 175px;
+
+        padding: 14px;
+    }
+
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+
+        margin-left: 58px;
+    }
+
+    .time-heading {
+        min-height: 110px;
+
+        padding: 18px;
+
+        border-radius: 12px;
+    }
+
+    .time-heading h1 {
+        font-size: 24px;
     }
 
     .time-heading p {
@@ -571,46 +685,36 @@ a:active{
     .time-heading > i {
         width: 48px;
         height: 48px;
+
         font-size: 19px;
     }
 
-    .today-box {
-        margin-bottom: 15px;
-    }
-
     .today-box h2 {
-        font-size: 20px;
+        font-size: 19px;
     }
 
     .today-box p {
         font-size: 11px;
     }
 
-
-    /* CLASS */
-
-    .time-table {
-        gap: 12px;
-    }
-
     .class-box {
         min-height: 85px;
-        padding: 12px 15px;
+
+        padding: 12px 14px;
     }
 
     .class-time {
-        width: 120px;
-        font-size: 12px;
-    }
+        width: 115px;
 
-    .class-time i {
-        margin-right: 5px;
+        font-size: 11px;
     }
 
     .class-icon {
         width: 45px;
         height: 45px;
-        margin-right: 13px;
+
+        margin-right: 11px;
+
         font-size: 18px;
     }
 
@@ -623,7 +727,8 @@ a:active{
     }
 
     .room {
-        padding: 7px 10px;
+        padding: 7px 9px;
+
         font-size: 10px;
     }
 }
@@ -631,36 +736,38 @@ a:active{
 
 /* =========================================================
    NORMAL MOBILE
-   ========================================================= */
+   EXACT PROFILE SIDEBAR BEHAVIOUR
+========================================================= */
 
 @media (max-width: 600px) {
 
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
+    /* -----------------------------------------------------
+       SIDEBAR CLOSED
+    ----------------------------------------------------- */
 
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 58px;
-        height: 100vh;
-        padding: 4px;
-        box-sizing: border-box;
-        z-index: 1000;
+
+        padding: 0;
+
         overflow: hidden;
+
+        box-shadow: none;
+
+        transition:
+            width 0.3s ease,
+            box-shadow 0.3s ease;
     }
 
     .heading {
-        width: 100%;
+        width: 58px;
         height: 58px;
+
         padding: 0;
+
+        display: flex;
+
+        align-items: center;
         justify-content: center;
     }
 
@@ -669,69 +776,173 @@ a:active{
     }
 
     .heading i {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
         margin: 0;
-        font-size: 0.95rem;
-        padding: 6px;
+        padding: 0;
+
+        font-size: 18px;
     }
 
     .panel a {
-        width: 100%;
+        width: 50px;
         height: 42px;
-        padding: 9px 3px;
-        margin-bottom: 3px;
-        box-sizing: border-box;
-        font-size: 0;
+        min-height: 42px;
+
+        margin: 0 auto 3px;
+
+        padding: 8px 3px;
+
         display: flex;
-        justify-content: center;
+
         align-items: center;
+        justify-content: center;
+
+        font-size: 0;
+
+        border-bottom: none;
     }
 
     .panel a i {
+        width: auto;
+
         margin: 0;
+
         font-size: 1rem;
     }
 
 
-    /* MAIN */
+    /* -----------------------------------------------------
+       OPEN OVERLAY
+       EXACT PROFILE BEHAVIOUR
+    ----------------------------------------------------- */
 
-    .dashboard {
-        margin-left: 58px;
-        width: calc(100% - 58px);
-        padding: 7px;
-        box-sizing: border-box;
+    .panel.collapsed {
+        width: 215px;
+
+        padding: 6px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        box-shadow:
+            5px 0 20px rgba(0,0,0,0.25);
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+        height: 58px;
+
+        padding: 0 5px;
+
+        justify-content: space-between;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: block;
+
+        color: #ffffff;
+
+        font-size: 1rem;
+
+        white-space: nowrap;
+    }
+
+    .panel.collapsed .heading i {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+    }
+
+    .panel.collapsed .link {
+        display: flex;
+
+        width: 100%;
+        height: 42px;
+        min-height: 42px;
+
+        margin: 0 0 3px;
+
+        padding: 9px 10px;
+
+        justify-content: flex-start;
+
+        color: #ffffff;
+
+        font-size: 0.82rem;
+
+        border-bottom:
+            1px solid rgba(255,255,255,0.15);
+    }
+
+    .panel.collapsed .link i {
+        width: 22px;
+
+        margin-right: 10px;
+
+        font-size: 1rem;
     }
 
 
-    /* HEADING */
+    /* -----------------------------------------------------
+       DASHBOARD NEVER MOVES
+    ----------------------------------------------------- */
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+
+        margin-left: 58px;
+
+        padding: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       TIME TABLE HEADER
+    ----------------------------------------------------- */
 
     .time-heading {
-        width: 100%;
-        height: auto;
-        min-height: 72px;
-        padding: 12px;
+        min-height: 105px;
+
         margin-bottom: 12px;
+
+        padding: 15px;
+
+        gap: 10px;
+
         border-radius: 11px;
-        box-sizing: border-box;
     }
 
     .time-heading h1 {
-        font-size: 19px;
-        margin-bottom: 4px;
+        font-size: 21px;
     }
 
     .time-heading p {
-        font-size: 9px;
+        margin-top: 4px;
+
+        font-size: 10px;
     }
 
     .time-heading > i {
-        width: 38px;
-        height: 38px;
+        width: 42px;
+        height: 42px;
+
+        font-size: 17px;
+
         border-radius: 9px;
-        font-size: 16px;
     }
 
 
-    /* TODAY */
+    /* -----------------------------------------------------
+       TODAY
+    ----------------------------------------------------- */
 
     .today-box {
         margin-bottom: 12px;
@@ -739,7 +950,6 @@ a:active{
 
     .today-box h2 {
         font-size: 16px;
-        margin-bottom: 4px;
     }
 
     .today-box p {
@@ -747,75 +957,82 @@ a:active{
     }
 
 
-    /* TABLE */
+    /* -----------------------------------------------------
+       CLASS CARDS
+    ----------------------------------------------------- */
 
     .time-table {
-        width: 100%;
         gap: 8px;
     }
 
-
-    /* CLASS */
-
     .class-box {
-        width: 100%;
-        min-height: 75px;
-        padding: 9px;
-        border-radius: 10px;
-        box-sizing: border-box;
+        min-height: 82px;
+
+        padding: 10px;
+
+        border-radius: 9px;
     }
 
     .class-time {
-        width: 82px;
+        width: 76px;
+
         font-size: 9px;
-        line-height: 1.3;
+
+        line-height: 1.35;
     }
 
     .class-time i {
-        margin-right: 4px;
+        margin-right: 3px;
     }
 
     .class-icon {
         width: 38px;
         height: 38px;
-        margin-right: 8px;
-        border-radius: 8px;
-        font-size: 15px;
-    }
 
-    .class-info {
-        min-width: 0;
+        margin-right: 8px;
+
+        border-radius: 8px;
+
+        font-size: 15px;
     }
 
     .class-info h3 {
         font-size: 11px;
-        line-height: 1.25;
+
         margin-bottom: 4px;
     }
 
     .class-info p {
-        font-size: 8px;
-        line-height: 1.3;
+        font-size: 7px;
     }
 
     .room {
-        display: block;
+        margin-left: 5px;
+
         padding: 5px 6px;
-        font-size: 7px;
+
         border-radius: 6px;
+
+        font-size: 7px;
     }
 
 
-    /* NO CLASS */
+    /* -----------------------------------------------------
+       NO CLASS
+    ----------------------------------------------------- */
 
     .no-class {
-        padding: 30px 15px;
-        border-radius: 11px;
+        min-height: 155px;
+
+        padding: 25px 10px;
+
+        border-radius: 10px;
     }
 
     .no-class i {
-        font-size: 30px;
-        margin-bottom: 10px;
+        font-size: 32px;
+
+        margin-bottom: 12px;
     }
 
     .no-class h2 {
@@ -823,14 +1040,14 @@ a:active{
     }
 
     .no-class p {
-        font-size: 9px;
+        font-size: 8px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 380px) {
 
@@ -838,28 +1055,93 @@ a:active{
         width: 52px;
     }
 
-    .dashboard {
-        margin-left: 52px;
-        width: calc(100% - 52px);
-        padding: 5px;
+    .heading {
+        width: 52px;
+        height: 52px;
+    }
+
+    .heading i {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+        min-height: 34px;
+
+        font-size: 16px;
+
+        border-radius: 6px;
     }
 
     .panel a {
+        width: 46px;
+
         height: 39px;
+        min-height: 39px;
     }
 
     .panel a i {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
 
+    /* OPEN OVERLAY */
+
+    .panel.collapsed {
+        width: 200px;
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+
+        height: 52px;
+    }
+
+    .panel.collapsed .heading h2 {
+        font-size: 0.95rem;
+    }
+
+    .panel.collapsed .heading i {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+        min-height: 34px;
+
+        font-size: 16px;
+    }
+
+    .panel.collapsed .link {
+        width: 100%;
+
+        height: 39px;
+        min-height: 39px;
+
+        font-size: 0.76rem;
+    }
+
+
+    /* DASHBOARD */
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 52px);
+
+        margin-left: 52px;
+
+        padding: 7px;
+    }
+
+
+    /* HEADER */
+
     .time-heading {
-        min-height: 64px;
-        padding: 10px;
+        min-height: 90px;
+
+        padding: 12px;
     }
 
     .time-heading h1 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .time-heading p {
@@ -867,15 +1149,14 @@ a:active{
     }
 
     .time-heading > i {
-        width: 34px;
-        height: 34px;
-        font-size: 14px;
+        width: 38px;
+        height: 38px;
+
+        font-size: 15px;
     }
 
 
-    .today-box {
-        margin-bottom: 9px;
-    }
+    /* TODAY */
 
     .today-box h2 {
         font-size: 14px;
@@ -886,24 +1167,26 @@ a:active{
     }
 
 
-    .time-table {
-        gap: 6px;
-    }
+    /* CLASS */
 
     .class-box {
-        min-height: 68px;
-        padding: 7px;
+        min-height: 76px;
+
+        padding: 8px;
     }
 
     .class-time {
-        width: 70px;
+        width: 67px;
+
         font-size: 8px;
     }
 
     .class-icon {
-        width: 33px;
-        height: 33px;
+        width: 34px;
+        height: 34px;
+
         margin-right: 6px;
+
         font-size: 13px;
     }
 
@@ -912,21 +1195,24 @@ a:active{
     }
 
     .class-info p {
-        font-size: 7px;
+        font-size: 6px;
     }
 
     .room {
         padding: 4px 5px;
+
         font-size: 6px;
     }
 
 
+    /* NO CLASS */
+
     .no-class {
-        padding: 25px 10px;
+        min-height: 140px;
     }
 
     .no-class i {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     .no-class h2 {
@@ -934,137 +1220,232 @@ a:active{
     }
 
     .no-class p {
-        font-size: 8px;
+        font-size: 7px;
     }
 }
 
 
 /* =========================================================
-   DESKTOP SITE ON PHONE
-   ========================================================= */
+   VERY SMALL MOBILE
+========================================================= */
 
-@media (pointer: coarse) and (min-width: 601px) {
-
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
+@media (max-width: 320px) {
 
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 190px;
-        height: 100vh;
-        padding: 10px;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow-y: auto;
+        width: 48px;
     }
 
     .heading {
+        width: 48px;
+        height: 50px;
+    }
+
+    .heading i {
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+        min-height: 32px;
+
+        font-size: 15px;
+    }
+
+    .panel a {
+        width: 42px;
+
+        height: 37px;
+        min-height: 37px;
+    }
+
+    .panel.collapsed {
+        width: 185px;
+    }
+
+    .panel.collapsed .heading {
         width: 100%;
-        height: 70px;
+    }
+
+    .panel.collapsed .link {
+        width: 100%;
+
+        font-size: 0.7rem;
+    }
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 48px);
+
+        margin-left: 48px;
+
+        padding: 6px;
+    }
+
+
+    /* HEADER */
+
+    .time-heading {
+        min-height: 82px;
+
         padding: 10px;
-        box-sizing: border-box;
+    }
+
+    .time-heading h1 {
+        font-size: 16px;
+    }
+
+    .time-heading p {
+        font-size: 7px;
+    }
+
+    .time-heading > i {
+        width: 34px;
+        height: 34px;
+
+        font-size: 14px;
+    }
+
+
+    /* TODAY */
+
+    .today-box h2 {
+        font-size: 13px;
+    }
+
+    .today-box p {
+        font-size: 7px;
+    }
+
+
+    /* CLASS */
+
+    .class-box {
+        min-height: 70px;
+
+        padding: 7px;
+    }
+
+    .class-time {
+        width: 60px;
+
+        font-size: 7px;
+    }
+
+    .class-icon {
+        width: 31px;
+        height: 31px;
+
+        margin-right: 5px;
+
+        font-size: 12px;
+    }
+
+    .class-info h3 {
+        font-size: 9px;
+    }
+
+    .class-info p {
+        font-size: 5.5px;
+    }
+
+    .room {
+        padding: 3px 4px;
+
+        font-size: 5px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP SITE MODE ON PHONE
+   SAME AS PROFILE
+========================================================= */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    .panel {
+        width: 190px;
+
+        padding: 8px;
+    }
+
+    .heading {
+        height: 70px;
     }
 
     .heading h2 {
         display: block;
-        font-size: 1.05rem;
+
+        font-size: 1rem;
     }
 
     .heading i {
-        font-size: 0.9rem;
-        padding: 6px;
-        margin: 0;
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
+        font-size: 18px;
     }
 
     .panel a {
-        font-size: 0.78rem;
-        padding: 9px 7px;
-        margin-bottom: 3px;
+        padding: 9px 6px;
+
+        font-size: 0.75rem;
     }
 
     .panel a i {
+        margin-right: 6px;
+
         font-size: 0.85rem;
-        margin-right: 7px;
     }
-
-
-    /* MAIN */
 
     .dashboard {
-        margin-left: 190px;
         width: calc(100% - 190px);
-        padding: 10px;
-        box-sizing: border-box;
+
+        margin-left: 190px;
+
+        padding: 14px;
     }
 
+    .dashboard.reverse {
+        width: calc(100% - 58px);
 
-    /* HEADING */
+        margin-left: 58px;
+    }
 
     .time-heading {
-        height: 75px;
-        padding: 10px 14px;
-        margin-bottom: 12px;
+        min-height: 110px;
+
+        padding: 18px;
     }
 
     .time-heading h1 {
-        font-size: 23px;
+        font-size: 24px;
     }
 
     .time-heading p {
         font-size: 11px;
     }
 
-    .time-heading > i {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
-    }
-
-
-    /* TODAY */
-
-    .today-box {
-        margin-bottom: 12px;
-    }
-
-    .today-box h2 {
-        font-size: 19px;
-    }
-
-    .today-box p {
-        font-size: 10px;
-    }
-
-
-    /* CLASSES */
-
-    .time-table {
-        gap: 10px;
-    }
-
     .class-box {
-        min-height: 82px;
-        padding: 10px 12px;
+        min-height: 88px;
+
+        padding: 12px 14px;
     }
 
     .class-time {
-        width: 105px;
+        width: 115px;
+
         font-size: 10px;
     }
 
     .class-icon {
-        width: 43px;
-        height: 43px;
-        margin-right: 10px;
+        width: 45px;
+        height: 45px;
+
+        margin-right: 11px;
+
         font-size: 17px;
     }
 
@@ -1077,51 +1458,184 @@ a:active{
     }
 
     .room {
-        padding: 6px 9px;
+        padding: 6px 8px;
+
         font-size: 9px;
-    }
-
-
-    /* COLLAPSED SIDEBAR */
-
-    .panel.collapsed {
-        width: 58px;
-    }
-
-    .panel.collapsed .heading h2,
-    .panel.collapsed .link {
-        display: none;
-    }
-
-    .panel.collapsed .heading {
-        justify-content: center;
-    }
-
-    .panel.collapsed .heading i {
-        margin: 0;
-    }
-
-    .dashboard.reverse {
-        margin-left: 78px;
-        width: calc(100% - 78px);
     }
 }
 
 
-/* ---------- FINAL SAFETY ---------- */
+/* =========================================================
+   LANDSCAPE PHONE
+========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 768px) and (orientation: landscape) {
 
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
+    .time-heading {
+        min-height: 90px;
     }
 
-    .time-heading,
-    .today-box,
-    .time-table,
-    .no-class {
-        max-width: 100%;
+    .class-box {
+        min-height: 78px;
+    }
+
+    .class-time {
+        width: 75px;
+    }
+
+    .class-icon {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+    .panel a:hover {
+        transform: none;
+    }
+
+    .class-box:hover {
+        transform: none;
+
+        box-shadow:
+            0 5px 18px rgba(18,53,91,0.07);
+    }
+}
+
+
+/* =========================================================
+   DARK THEME
+   SAME PROFILE THEME
+========================================================= */
+
+body.dark-theme {
+    background: #101820;
+
+    color: #E5E7EB;
+}
+
+body.dark-theme .dashboard {
+    background: #101820;
+}
+
+body.dark-theme .time-heading,
+body.dark-theme .class-box,
+body.dark-theme .no-class {
+    background: #1B2733;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.18);
+}
+
+body.dark-theme .time-heading h1,
+body.dark-theme .today-box h2,
+body.dark-theme .class-info h3,
+body.dark-theme .no-class h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .time-heading p,
+body.dark-theme .today-box p,
+body.dark-theme .class-info p,
+body.dark-theme .no-class p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .class-time {
+    color: #ffffff;
+}
+
+body.dark-theme .class-time i {
+    color: #5CA7FF;
+}
+
+body.dark-theme .class-icon {
+    background: #243442;
+
+    color: #5CA7FF;
+}
+
+body.dark-theme .room {
+    background: #243442;
+
+    color: #5CA7FF;
+}
+
+body.dark-theme .class-box.lunch {
+    background: #3A3020;
+}
+
+body.dark-theme .class-box.lunch .class-icon {
+    background: #4A3A22;
+
+    color: #F5A623;
+}
+
+body.dark-theme .class-box.lunch .class-time i {
+    color: #F5A623;
+}
+
+body.dark-theme .no-class i {
+    color: #5CA7FF;
+}
+
+body.dark-theme .panel {
+    background: #12355B;
+}
+
+
+/* =========================================================
+   FINAL BAR ICON SAFETY
+   SAME AS PROFILE
+========================================================= */
+
+.panel .heading i {
+    box-sizing: border-box;
+
+    flex: 0 0 40px;
+
+    overflow: visible;
+
+    text-align: center;
+}
+
+.panel.collapsed .heading i {
+    flex: 0 0 38px;
+}
+
+
+/* =========================================================
+   MOBILE BAR SAFETY
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .panel .heading i {
+        flex: 0 0 38px;
+    }
+
+    .panel.collapsed .heading i {
+        flex: 0 0 38px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .panel .heading i {
+        flex: 0 0 34px;
+    }
+
+    .panel.collapsed .heading i {
+        flex: 0 0 34px;
     }
 }

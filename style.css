@@ -284,12 +284,14 @@ pre{
 
 @media (max-width: 600px) {
 
+    
+
     .login-box {
         padding: 15px;
     }
 
     .container {
-        width: 92%;
+        width: 72%;
         height: auto;
         min-height: auto;
         padding: 20px 16px;

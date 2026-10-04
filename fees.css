@@ -1,349 +1,530 @@
-*{
-    margin: 0px;
-    padding: 0px;
+/* =========================================================
+   FEES PAGE
+   PROFILE MASTER DESIGN
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
     background-color: #E8EEF6;
+    color: #334155;
 }
-.panel{
-    display:flex;
-    flex-direction: column;
-    height: 165vh;
-    width: 40vh;
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
     padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
     background-color: #12355B;
     color: white;
-    position:absolute;
+
+    z-index: 2000;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition: width 0.3s ease,
+                padding 0.3s ease;
 }
-.heading{
+
+.heading {
+    width: 100%;
+    height: 70px;
+
+    padding: 10px;
+
     display: flex;
-    height: 100px;
-    width: 90%;
-    padding: 10px;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
 }
-.heading i{
+
+.heading h2 {
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+
+.heading i {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 6px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.panel a{
-    font-size: 1.2rem;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0.5rem;
-    display: block;
-    transition: all 0.25s ease;
     border-radius: 8px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
 }
-a:hover{
+
+.heading i:hover {
+    background-color: #1E4A78;
+}
+
+.panel .link {
+    width: 100%;
+    min-height: 44px;
+
+    padding: 11px 10px;
+    margin-bottom: 3px;
+
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    transition: all 0.25s ease;
+
+    flex-shrink: 0;
+}
+
+.panel .link i {
+    width: 25px;
+
+    margin-right: 10px;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+.panel .link:hover {
     background-color: #1E4A78;
     color: #ffffff;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
 }
-a:active{
+
+.panel .link:active {
     background-color: #FFE8A3;
     color: #12355B;
 }
-.panel i{
-    margin-right: 10px;
-    font-size: 1.3rem;
-}
 
-.dashboard{
-    margin-left: 43vh;
-    background-color: #E8EEF6;
-    color: #334155;
-    padding: 10px;
-}
 
-/* HEADER */
+/* =========================================================
+   NORMAL DESKTOP COLLAPSE
+   ========================================================= */
 
-.fees-header {
-    display: flex;
-
-    justify-content: space-between;
+.panel.collapsed {
+    width: 58px;
+    padding: 0;
 
     align-items: center;
+}
 
-    margin-bottom: 25px;
-    height: 100px;
+.panel.collapsed .heading {
+    width: 58px;
+    height: 70px;
+
+    padding: 10px 0;
+
+    justify-content: center;
+}
+
+.panel.collapsed .heading h2 {
+    display: none;
+}
+
+.panel.collapsed .heading i {
+    width: 40px;
+    height: 40px;
+
+    margin: 0;
+}
+
+.panel.collapsed .link {
+    width: 44px;
+    min-height: 44px;
+
+    padding: 10px 0;
+
+    justify-content: center;
+
+    font-size: 0;
+}
+
+.panel.collapsed .link i {
+    width: auto;
+    margin: 0;
+
+    font-size: 18px;
+}
+
+.dashboard.reverse {
+    margin-left: 58px;
+    width: calc(100% - 58px);
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD
+   ========================================================= */
+
+.dashboard {
+    min-height: 100vh;
+
+    margin-left: 250px;
+
+    width: calc(100% - 250px);
+
+    padding: 25px;
+
+    background-color: #E8EEF6;
+
+    transition: margin-left 0.3s ease,
+                width 0.3s ease;
+}
+
+
+/* =========================================================
+   FEES HEADER
+   ========================================================= */
+
+.fees-header {
+    width: 100%;
+    min-height: 95px;
+
+    margin-bottom: 20px;
+    padding: 20px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     background-color: #ffffff;
-    border: 2px solid #D9E2EC;
-    border-radius: 1rem;
-    padding-left: 15px;
-    padding-right: 15px;
+
+    border: 1px solid #D9E2EC;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 15px rgba(18, 53, 91, 0.07);
+
+    gap: 20px;
 }
 
 .fees-header h1 {
-    font-size: 30px;
-
     color: #12355B;
+    font-size: 28px;
 }
 
 .fees-header p {
     margin-top: 6px;
 
-    color: #777;
+    color: #64748B;
+    font-size: 13px;
 }
 
-
-/* ACADEMIC YEAR */
-
 .academic-year {
-    background: white;
-
     padding: 11px 16px;
 
+    display: flex;
+    align-items: center;
+
+    white-space: nowrap;
+
+    background-color: #F5F7FA;
+
+    border: 1px solid #D9E2EC;
     border-radius: 10px;
 
     color: #12355B;
 
     font-size: 13px;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
 .academic-year i {
-    margin-right: 6px;
+    margin-right: 7px;
 
     color: #6C4CE8;
 }
 
 
-/* SUMMARY */
+/* =========================================================
+   SUMMARY CARDS
+   ========================================================= */
 
 .fees-summary {
-    display: grid;
+    width: 100%;
 
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
 
     gap: 18px;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .fees-card {
-    background: white;
+    min-height: 100px;
 
-    padding: 20px;
-
-    border-radius: 14px;
+    padding: 18px;
 
     display: flex;
-
     align-items: center;
 
-    gap: 15px;
+    gap: 14px;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    background-color: #ffffff;
+
+    border: 1px solid #D9E2EC;
+    border-radius: 14px;
+
+    box-shadow: 0 5px 15px rgba(18, 53, 91, 0.07);
+
+    transition: all 0.25s ease;
+}
+
+.fees-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 22px rgba(18, 53, 91, 0.12);
 }
 
 .fees-card p {
-    color: #777;
-
+    color: #64748B;
     font-size: 13px;
 }
 
 .fees-card h2 {
-    color: #12355B;
-
     margin-top: 5px;
+
+    color: #12355B;
 
     font-size: 21px;
 }
 
 
-/* ICON */
+/* =========================================================
+   FEE ICONS
+   ========================================================= */
 
 .fees-icon {
-    width: 45px;
+    width: 46px;
+    height: 46px;
 
-    height: 45px;
-
-    border-radius: 10px;
+    flex-shrink: 0;
 
     display: flex;
-
+    align-items: center;
     justify-content: center;
 
-    align-items: center;
+    border-radius: 11px;
 
     font-size: 18px;
 }
 
 .fees-icon.total {
-    background: #e4efff;
-
+    background-color: #E4EFFF;
     color: #1976E8;
 }
 
 .fees-icon.paid {
-    background: #e1f7ec;
-
+    background-color: #E1F7EC;
     color: #12A866;
 }
 
 .fees-icon.pending {
-    background: #fff0df;
-
+    background-color: #FFF0DF;
     color: #F28C00;
 }
 
 .fees-icon.progress {
-    background: #eee7ff;
-
+    background-color: #EEE7FF;
     color: #6C4CE8;
 }
 
 
-/* PAYMENT PROGRESS */
+/* =========================================================
+   PAYMENT PROGRESS
+   ========================================================= */
 
 .payment-progress {
-    background: white;
+    width: 100%;
 
+    padding: 22px;
+
+    margin-bottom: 20px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #D9E2EC;
     border-radius: 15px;
 
-    padding: 25px;
-
-    margin-bottom: 25px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    box-shadow: 0 5px 15px rgba(18, 53, 91, 0.07);
 }
 
 .progress-heading {
     display: flex;
-
+    align-items: center;
     justify-content: space-between;
 
-    align-items: center;
+    gap: 15px;
 }
 
 .progress-heading h2 {
     color: #12355B;
-
     font-size: 19px;
 }
 
 .progress-heading p {
-    color: #888;
-
     margin-top: 5px;
+
+    color: #64748B;
 
     font-size: 13px;
 }
 
 .progress-heading strong {
     color: #6C4CE8;
-
-    font-size: 22px;
+    font-size: 21px;
 }
 
 
-/* PROGRESS BAR */
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
 
 .progress-bar {
+    width: 100%;
     height: 10px;
 
-    background: #edf0f5;
+    margin-top: 18px;
+
+    background-color: #EDF0F5;
 
     border-radius: 10px;
-
-    margin-top: 20px;
 
     overflow: hidden;
 }
 
 .progress-fill {
-    width: 59%;
-
+    width: 0;
     height: 100%;
 
-    background: #6C4CE8;
+    background-color: #6C4CE8;
 
     border-radius: 10px;
+
+    transition: width 0.5s ease;
 }
-
-
-/* PROGRESS INFO */
 
 .progress-info {
     display: flex;
-
+    align-items: center;
     justify-content: space-between;
 
-    margin-top: 10px;
+    margin-top: 9px;
 
-    color: #777;
+    color: #64748B;
 
     font-size: 12px;
+
+    gap: 10px;
 }
 
 
-/* SECTION */
+/* =========================================================
+   FEE SECTIONS
+   ========================================================= */
 
 .fees-section {
-    background: white;
+    width: 100%;
 
+    padding: 22px;
+
+    margin-bottom: 20px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #D9E2EC;
     border-radius: 15px;
 
-    padding: 25px;
-
-    margin-bottom: 25px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    box-shadow: 0 5px 15px rgba(18, 53, 91, 0.07);
 }
 
 .section-heading {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .section-heading h2 {
     color: #12355B;
-
     font-size: 19px;
 }
 
 .section-heading p {
-    color: #888;
-
     margin-top: 5px;
+
+    color: #64748B;
 
     font-size: 13px;
 }
 
 
-/* TABLE */
+/* =========================================================
+   TABLES
+   ========================================================= */
 
 .fee-table-container,
 .payment-table-container {
     width: 100%;
 
     overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
 }
 
 table {
     width: 100%;
 
+    min-width: 650px;
+
     border-collapse: collapse;
 }
 
 thead {
-    background: #12355B;
-
-    color: white;
+    background-color: #12355B;
+    color: #ffffff;
 }
 
 th,
 td {
-    padding: 14px;
+    padding: 13px 14px;
 
     text-align: left;
 
@@ -352,18 +533,23 @@ td {
 
 th {
     font-size: 13px;
+    font-weight: 600;
 }
 
 td {
-    color: #444;
+    color: #475569;
 
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #E2E8F0;
 
     font-size: 13px;
 }
 
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
 tbody tr:hover {
-    background: #f8f9fc;
+    background-color: #F8FAFC;
 }
 
 td i {
@@ -373,7 +559,9 @@ td i {
 }
 
 
-/* STATUS */
+/* =========================================================
+   STATUS
+   ========================================================= */
 
 .status {
     display: inline-block;
@@ -383,73 +571,75 @@ td i {
     border-radius: 20px;
 
     font-size: 11px;
-
     font-weight: bold;
 }
 
 .paid-status {
-    background: #e1f7ec;
-
+    background-color: #E1F7EC;
     color: #12A866;
 }
 
 .pending-status {
-    background: #fff0df;
-
+    background-color: #FFF0DF;
     color: #F28C00;
 }
 
 
-/* NEXT PAYMENT */
+/* =========================================================
+   NEXT PAYMENT
+   ========================================================= */
 
 .next-payment {
-    background: #12355B;
-
-    border-radius: 15px;
+    width: 100%;
 
     padding: 22px 25px;
 
     display: flex;
-
     align-items: center;
 
     gap: 18px;
 
+    background-color: #12355B;
+
+    border-radius: 15px;
+
     color: white;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(18, 53, 91, 0.12);
 }
 
 .next-icon {
     width: 50px;
-
     height: 50px;
 
-    border-radius: 12px;
-
-    background: rgba(255,255,255,0.12);
+    flex-shrink: 0;
 
     display: flex;
-
+    align-items: center;
     justify-content: center;
 
-    align-items: center;
+    background-color: rgba(255, 255, 255, 0.12);
+
+    border-radius: 12px;
 
     font-size: 21px;
 }
 
 .next-details {
     flex: 1;
+    min-width: 0;
 }
 
 .next-details p {
-    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
 
-    opacity: 0.8;
+    font-size: 12px;
 }
 
 .next-details h2 {
     margin-top: 3px;
+
+    color: #ffffff;
 
     font-size: 23px;
 }
@@ -459,55 +649,84 @@ td i {
 
     margin-top: 4px;
 
-    font-size: 12px;
+    color: rgba(255, 255, 255, 0.75);
 
-    opacity: 0.75;
+    font-size: 12px;
 }
 
 
-/* PAY BUTTON */
+/* =========================================================
+   PAY BUTTON
+   ========================================================= */
 
 .pay-btn {
-    border: none;
-
-    background: white;
-
-    color: #12355B;
-
     padding: 11px 18px;
 
+    border: none;
     border-radius: 8px;
+
+    background-color: #ffffff;
+    color: #12355B;
+
+    font-size: 13px;
+    font-weight: bold;
 
     cursor: pointer;
 
-    font-weight: bold;
+    transition: all 0.25s ease;
 
-    font-size: 13px;
+    white-space: nowrap;
 }
 
 .pay-btn:hover {
-    background: #f0f2f5;
+    background-color: #E8EEF6;
+
+    transform: translateY(-1px);
+}
+
+.pay-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
 }
 
 
-/* MOBILE */
+/* =========================================================
+   LAPTOP
+   ========================================================= */
 
-@media (max-width: 700px) {
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .panel {
+        width: 210px;
+    }
 
     .dashboard {
-        padding: 20px;
+        margin-left: 210px;
+        width: calc(100% - 210px);
+
+        padding: 18px;
+    }
+
+    .panel .link {
+        font-size: 13px;
+    }
+
+    .panel .link i {
+        font-size: 16px;
     }
 
     .fees-header {
-        flex-direction: column;
+        min-height: 90px;
+        padding: 18px;
+    }
 
-        align-items: flex-start;
-
-        gap: 15px;
+    .fees-header h1 {
+        font-size: 25px;
     }
 
     .fees-summary {
-        grid-template-columns: 1fr 1fr;
+        gap: 12px;
     }
 
     .fees-card {
@@ -518,133 +737,60 @@ td i {
         font-size: 18px;
     }
 
+    .fees-icon {
+        width: 42px;
+        height: 42px;
+    }
+
     .payment-progress,
     .fees-section {
         padding: 18px;
     }
-
-    .next-payment {
-        flex-wrap: wrap;
-    }
-
-    .pay-btn {
-        width: 100%;
-    }
-
-}
-
-/* fot toggle */
-
-.panel{
-    width: 40vh;
-}
-.dashboard{
-    margin-left: 43vh;
-}
-.panel.collapsed{
-    width: 50px;
-    transition: all 2s ease;
-    .heading h2{
-        display: none;
-    }
-    .link{
-        display: none;
-    }
-}
-.dashboard.reverse{
-    margin-left: 75px;
-    transition: all 2s ease;
-}
-
-
-
-
-
-/* =========================================================
-   EXTRA FEES PAGE CSS
-   Add this at the very bottom of fees.css
-   ========================================================= */
-
-
-/* ---------- GENERAL IMPROVEMENT ---------- */
-
-.fees-header,
-.fees-card,
-.payment-progress,
-.fees-section,
-.next-payment {
-    box-sizing: border-box;
-    transition: all 0.25s ease;
-}
-
-.fees-header,
-.fees-card,
-.payment-progress,
-.fees-section {
-    box-shadow: 0 5px 15px rgba(18, 53, 91, 0.07);
-}
-
-.fees-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 9px 22px rgba(18, 53, 91, 0.12);
-}
-
-tbody tr {
-    transition: background 0.2s ease;
 }
 
 
 /* =========================================================
-   DESKTOP
+   TABLET / IPAD
    ========================================================= */
 
-@media (min-width: 1101px) {
+@media (min-width: 601px) and (max-width: 768px) {
+
+    .panel {
+        width: 175px;
+    }
 
     .dashboard {
-        min-height: 100vh;
-        box-sizing: border-box;
+        margin-left: 175px;
+        width: calc(100% - 175px);
+
+        padding: 14px;
     }
 
-    .fees-header,
-    .fees-summary,
-    .payment-progress,
-    .fees-section,
-    .next-payment {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
+    .panel .heading h2 {
+        font-size: 1rem;
     }
 
-    .fees-summary {
-        margin-bottom: 25px;
-    }
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (min-width: 601px) and (max-width: 1100px) {
-
-    .dashboard {
-        margin-left: 200px;
-        width: calc(100% - 210px);
-        padding: 10px;
-        box-sizing: border-box;
+    .panel .link {
+        font-size: 11px;
+        padding: 10px 7px;
     }
 
-
-    /* HEADER */
+    .panel .link i {
+        width: 20px;
+        margin-right: 6px;
+        font-size: 14px;
+    }
 
     .fees-header {
-        height: 85px;
-        padding: 0 15px;
-        margin-bottom: 15px;
+        min-height: 82px;
+
+        padding: 14px;
+
+        border-radius: 13px;
     }
 
     .fees-header h1 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .fees-header p {
@@ -652,23 +798,26 @@ tbody tr {
     }
 
     .academic-year {
-        padding: 9px 12px;
-        font-size: 11px;
+        padding: 9px 11px;
+        font-size: 10px;
     }
-
-
-    /* SUMMARY */
 
     .fees-summary {
         grid-template-columns: 1fr 1fr;
         gap: 12px;
-        margin-bottom: 18px;
     }
 
     .fees-card {
-        padding: 14px;
-        min-height: 80px;
-        gap: 11px;
+        min-height: 82px;
+        padding: 13px;
+    }
+
+    .fees-card p {
+        font-size: 10px;
+    }
+
+    .fees-card h2 {
+        font-size: 17px;
     }
 
     .fees-icon {
@@ -677,91 +826,36 @@ tbody tr {
         font-size: 16px;
     }
 
-    .fees-card p {
-        font-size: 10px;
-    }
-
-    .fees-card h2 {
-        font-size: 18px;
-    }
-
-
-    /* PAYMENT PROGRESS */
-
-    .payment-progress {
-        padding: 18px;
-        margin-bottom: 18px;
-    }
-
-    .progress-heading h2 {
-        font-size: 17px;
-    }
-
-    .progress-heading p {
-        font-size: 11px;
-    }
-
-    .progress-heading strong {
-        font-size: 19px;
-    }
-
-
-    /* SECTIONS */
-
+    .payment-progress,
     .fees-section {
-        padding: 18px;
-        margin-bottom: 18px;
+        padding: 16px;
     }
 
+    .progress-heading h2,
     .section-heading h2 {
         font-size: 17px;
     }
 
+    .progress-heading p,
     .section-heading p {
-        font-size: 11px;
-    }
-
-    th,
-    td {
-        padding: 11px;
-    }
-
-    th,
-    td {
-        font-size: 11px;
-    }
-
-
-    /* NEXT PAYMENT */
-
-    .next-payment {
-        padding: 18px;
-        gap: 13px;
-    }
-
-    .next-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
-    }
-
-    .next-details h2 {
-        font-size: 20px;
-    }
-
-    .next-details span {
         font-size: 10px;
     }
 
-    .pay-btn {
-        padding: 9px 14px;
+    th,
+    td {
+        padding: 10px;
         font-size: 11px;
+    }
+
+    .next-payment {
+        padding: 17px;
     }
 }
 
 
 /* =========================================================
    NORMAL MOBILE
+   ICON SIDEBAR + OVERLAY DRAWER
    ========================================================= */
 
 @media (max-width: 600px) {
@@ -774,24 +868,37 @@ tbody tr {
     }
 
 
-    /* SIDEBAR */
+    /* -------------------------
+       SIDEBAR ICON RAIL
+       ------------------------- */
 
     .panel {
         position: fixed;
+
         top: 0;
         left: 0;
+
         width: 58px;
         height: 100vh;
+
         padding: 4px;
-        box-sizing: border-box;
-        z-index: 1000;
+
+        display: flex;
+        align-items: center;
+
         overflow: hidden;
+
+        z-index: 2000;
+
+        box-shadow: none;
     }
 
     .heading {
-        width: 100%;
+        width: 50px;
         height: 58px;
+
         padding: 0;
+
         justify-content: center;
     }
 
@@ -800,50 +907,133 @@ tbody tr {
     }
 
     .heading i {
+        width: 40px;
+        height: 40px;
+
         margin: 0;
-        font-size: 0.95rem;
-        padding: 6px;
+
+        font-size: 15px;
     }
 
-    .panel a {
-        width: 100%;
-        height: 42px;
-        padding: 9px 3px;
+    .panel .link {
+        width: 44px;
+        height: 44px;
+        min-height: 44px;
+
+        padding: 0;
         margin-bottom: 3px;
-        box-sizing: border-box;
-        font-size: 0;
+
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+
+        font-size: 0;
     }
 
-    .panel a i {
+    .panel .link i {
+        width: auto;
+
         margin: 0;
-        font-size: 1rem;
+
+        font-size: 17px;
     }
 
 
-    /* MAIN */
+    /* -------------------------
+       MOBILE OVERLAY DRAWER
+       ------------------------- */
 
-    .dashboard {
-        margin-left: 58px;
-        width: calc(100% - 58px);
-        padding: 7px;
-        box-sizing: border-box;
+    .panel.collapsed {
+        width: 215px;
+
+        padding: 10px;
+
+        align-items: stretch;
+
+        overflow-y: auto;
+
+        box-shadow:
+            8px 0 24px rgba(0, 0, 0, 0.25);
     }
 
+    .panel.collapsed .heading {
+        width: 100%;
+        height: 70px;
 
-    /* HEADER */
+        padding: 10px;
 
-    .fees-header {
+        justify-content: space-between;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: block;
+
+        font-size: 1.05rem;
+    }
+
+    .panel.collapsed .heading i {
+        width: 40px;
+        height: 40px;
+
+        font-size: 15px;
+    }
+
+    .panel.collapsed .link {
         width: 100%;
         height: auto;
-        min-height: 80px;
+        min-height: 44px;
+
+        padding: 11px 10px;
+
+        display: flex;
+        justify-content: flex-start;
+
+        font-size: 14px;
+    }
+
+    .panel.collapsed .link i {
+        width: 25px;
+
+        margin-right: 10px;
+
+        font-size: 17px;
+    }
+
+
+    /* -------------------------
+       MAIN CONTENT
+       DOES NOT MOVE WHEN DRAWER OPENS
+       ------------------------- */
+
+    .dashboard,
+    .dashboard.reverse {
+        margin-left: 58px;
+
+        width: calc(100% - 58px);
+
+        padding: 10px;
+    }
+
+
+    /* -------------------------
+       HEADER
+       ------------------------- */
+
+    .fees-header {
+        min-height: 90px;
+
         padding: 12px;
+
         margin-bottom: 12px;
-        border-radius: 11px;
-        gap: 10px;
-        box-sizing: border-box;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 9px;
+
+        border-radius: 12px;
     }
 
     .fees-header h1 {
@@ -851,13 +1041,16 @@ tbody tr {
     }
 
     .fees-header p {
-        font-size: 9px;
         margin-top: 4px;
+
+        font-size: 9px;
     }
 
     .academic-year {
         padding: 7px 9px;
+
         font-size: 8px;
+
         border-radius: 7px;
     }
 
@@ -866,26 +1059,34 @@ tbody tr {
     }
 
 
-    /* SUMMARY */
+    /* -------------------------
+       SUMMARY
+       ------------------------- */
 
     .fees-summary {
-        width: 100%;
         grid-template-columns: 1fr 1fr;
-        gap: 7px;
+
+        gap: 8px;
+
         margin-bottom: 12px;
     }
 
     .fees-card {
         min-height: 70px;
+
         padding: 9px;
+
         gap: 7px;
+
         border-radius: 10px;
     }
 
     .fees-icon {
         width: 31px;
         height: 31px;
+
         border-radius: 7px;
+
         font-size: 12px;
     }
 
@@ -894,17 +1095,21 @@ tbody tr {
     }
 
     .fees-card h2 {
-        font-size: 14px;
         margin-top: 3px;
+
+        font-size: 14px;
     }
 
 
-    /* PAYMENT PROGRESS */
+    /* -------------------------
+       PAYMENT PROGRESS
+       ------------------------- */
 
     .payment-progress {
-        width: 100%;
         padding: 12px;
+
         margin-bottom: 12px;
+
         border-radius: 11px;
     }
 
@@ -913,8 +1118,9 @@ tbody tr {
     }
 
     .progress-heading p {
-        font-size: 8px;
         margin-top: 3px;
+
+        font-size: 8px;
     }
 
     .progress-heading strong {
@@ -923,23 +1129,27 @@ tbody tr {
 
     .progress-bar {
         height: 7px;
+
         margin-top: 13px;
     }
 
     .progress-info {
         margin-top: 7px;
+
         font-size: 8px;
     }
 
 
-    /* FEE SECTIONS */
+    /* -------------------------
+       FEE SECTIONS
+       ------------------------- */
 
     .fees-section {
-        width: 100%;
         padding: 12px;
+
         margin-bottom: 12px;
+
         border-radius: 11px;
-        box-sizing: border-box;
     }
 
     .section-heading {
@@ -951,27 +1161,33 @@ tbody tr {
     }
 
     .section-heading p {
-        font-size: 8px;
         margin-top: 3px;
+
+        font-size: 8px;
     }
 
 
-    /* TABLES */
+    /* -------------------------
+       TABLES
+       ------------------------- */
 
     .fee-table-container,
     .payment-table-container {
         width: 100%;
+
         overflow-x: auto;
+
         -webkit-overflow-scrolling: touch;
     }
 
     table {
-        min-width: 600px;
+        min-width: 620px;
     }
 
     th,
     td {
         padding: 9px;
+
         font-size: 9px;
     }
 
@@ -981,25 +1197,31 @@ tbody tr {
 
     .status {
         padding: 5px 8px;
+
         font-size: 8px;
     }
 
 
-    /* NEXT PAYMENT */
+    /* -------------------------
+       NEXT PAYMENT
+       ------------------------- */
 
     .next-payment {
-        width: 100%;
         padding: 13px;
+
         gap: 9px;
+
         border-radius: 11px;
-        box-sizing: border-box;
+
         flex-wrap: wrap;
     }
 
     .next-icon {
         width: 38px;
         height: 38px;
+
         border-radius: 8px;
+
         font-size: 15px;
     }
 
@@ -1021,15 +1243,18 @@ tbody tr {
 
     .pay-btn {
         width: 100%;
+
         padding: 9px;
-        font-size: 10px;
+
         margin-top: 3px;
+
+        font-size: 10px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 380px) {
@@ -1038,28 +1263,62 @@ tbody tr {
         width: 52px;
     }
 
-    .dashboard {
+    .heading {
+        width: 44px;
+    }
+
+    .panel .link {
+        width: 42px;
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .panel .link i {
+        font-size: 15px;
+    }
+
+    /* Overlay drawer */
+
+    .panel.collapsed {
+        width: 200px;
+
+        padding: 8px;
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+    }
+
+    .panel.collapsed .link {
+        width: 100%;
+
+        min-height: 42px;
+
+        font-size: 13px;
+    }
+
+    .panel.collapsed .link i {
+        font-size: 16px;
+    }
+
+
+    .dashboard,
+    .dashboard.reverse {
         margin-left: 52px;
+
         width: calc(100% - 52px);
-        padding: 5px;
-    }
 
-    .panel a {
-        height: 39px;
+        padding: 7px;
     }
-
-    .panel a i {
-        font-size: 0.9rem;
-    }
-
 
     .fees-header {
-        min-height: 70px;
-        padding: 9px;
+        min-height: 78px;
+
+        padding: 10px;
     }
 
     .fees-header h1 {
-        font-size: 16px;
+        font-size: 17px;
     }
 
     .fees-header p {
@@ -1067,24 +1326,27 @@ tbody tr {
     }
 
     .academic-year {
-        font-size: 7px;
         padding: 6px 7px;
+
+        font-size: 7px;
     }
 
-
     .fees-summary {
-        gap: 5px;
+        gap: 6px;
     }
 
     .fees-card {
-        min-height: 62px;
+        min-height: 64px;
+
         padding: 7px;
+
         gap: 5px;
     }
 
     .fees-icon {
-        width: 27px;
-        height: 27px;
+        width: 28px;
+        height: 28px;
+
         font-size: 10px;
     }
 
@@ -1096,10 +1358,9 @@ tbody tr {
         font-size: 12px;
     }
 
-
     .payment-progress,
     .fees-section {
-        padding: 9px;
+        padding: 10px;
     }
 
     .progress-heading h2,
@@ -1120,22 +1381,22 @@ tbody tr {
         font-size: 7px;
     }
 
-
     table {
-        min-width: 550px;
+        min-width: 560px;
     }
 
     th,
     td {
         padding: 8px;
+
         font-size: 8px;
     }
 
     .status {
         padding: 4px 7px;
+
         font-size: 7px;
     }
-
 
     .next-payment {
         padding: 10px;
@@ -1144,6 +1405,7 @@ tbody tr {
     .next-icon {
         width: 34px;
         height: 34px;
+
         font-size: 13px;
     }
 
@@ -1162,7 +1424,211 @@ tbody tr {
 
 
 /* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+    .panel {
+        width: 48px;
+        padding: 3px;
+    }
+
+    .heading {
+        width: 42px;
+        height: 54px;
+    }
+
+    .heading i {
+        width: 36px;
+        height: 36px;
+
+        font-size: 13px;
+    }
+
+    .panel .link {
+        width: 40px;
+        height: 38px;
+        min-height: 38px;
+    }
+
+    .panel .link i {
+        font-size: 14px;
+    }
+
+    .panel.collapsed {
+        width: 185px;
+
+        padding: 7px;
+    }
+
+    .panel.collapsed .link {
+        font-size: 12px;
+    }
+
+    .dashboard,
+    .dashboard.reverse {
+        margin-left: 48px;
+
+        width: calc(100% - 48px);
+
+        padding: 5px;
+    }
+
+    .fees-header {
+        padding: 8px;
+    }
+
+    .fees-header h1 {
+        font-size: 15px;
+    }
+
+    .fees-header p {
+        font-size: 7px;
+    }
+
+    .academic-year {
+        font-size: 6px;
+    }
+
+    .fees-card {
+        min-height: 58px;
+
+        padding: 6px;
+    }
+
+    .fees-card h2 {
+        font-size: 11px;
+    }
+
+    .fees-card p {
+        font-size: 5.5px;
+    }
+
+    .fees-icon {
+        width: 25px;
+        height: 25px;
+
+        font-size: 9px;
+    }
+
+    .payment-progress,
+    .fees-section {
+        padding: 8px;
+    }
+
+    .progress-heading h2,
+    .section-heading h2 {
+        font-size: 11px;
+    }
+
+    .progress-heading p,
+    .section-heading p {
+        font-size: 6px;
+    }
+
+    .progress-heading strong {
+        font-size: 12px;
+    }
+
+    .progress-info {
+        font-size: 6px;
+    }
+
+    table {
+        min-width: 530px;
+    }
+
+    th,
+    td {
+        padding: 7px;
+
+        font-size: 7px;
+    }
+
+    .status {
+        padding: 4px 6px;
+
+        font-size: 6px;
+    }
+
+    .next-payment {
+        padding: 8px;
+    }
+
+    .next-details h2 {
+        font-size: 14px;
+    }
+
+    .next-details span {
+        font-size: 6px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+    .panel {
+        width: 58px;
+    }
+
+    .dashboard,
+    .dashboard.reverse {
+        margin-left: 58px;
+
+        width: calc(100% - 58px);
+
+        padding: 9px;
+    }
+
+    .fees-header {
+        min-height: 72px;
+
+        flex-direction: row;
+
+        align-items: center;
+    }
+
+    .fees-summary {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .fees-card {
+        min-height: 68px;
+
+        padding: 8px;
+    }
+
+    .fees-card h2 {
+        font-size: 14px;
+    }
+
+    .fees-card p {
+        font-size: 7px;
+    }
+
+    .fees-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .next-payment {
+        flex-wrap: nowrap;
+    }
+
+    .pay-btn {
+        width: auto;
+    }
+}
+
+
+/* =========================================================
    DESKTOP SITE ON PHONE
+   FULL SIDEBAR
    ========================================================= */
 
 @media (pointer: coarse) and (min-width: 601px) {
@@ -1174,70 +1640,73 @@ tbody tr {
         overflow-x: hidden;
     }
 
-
-    /* SIDEBAR */
-
     .panel {
         position: fixed;
-        top: 0;
-        left: 0;
+
         width: 190px;
         height: 100vh;
+
         padding: 10px;
-        box-sizing: border-box;
-        z-index: 1000;
+
         overflow-y: auto;
     }
 
     .heading {
         width: 100%;
         height: 70px;
+
         padding: 10px;
-        box-sizing: border-box;
     }
 
     .heading h2 {
         display: block;
+
         font-size: 1.05rem;
     }
 
     .heading i {
+        width: 38px;
+        height: 38px;
+
         margin: 0;
-        font-size: 0.9rem;
+
+        font-size: 15px;
     }
 
-    .panel a {
-        font-size: 0.78rem;
+    .panel .link {
+        width: 100%;
+
+        min-height: 42px;
+
         padding: 9px 7px;
-        margin-bottom: 3px;
+
+        font-size: 12px;
     }
 
-    .panel a i {
-        font-size: 0.85rem;
+    .panel .link i {
+        width: 22px;
+
         margin-right: 7px;
+
+        font-size: 15px;
     }
-
-
-    /* MAIN */
 
     .dashboard {
         margin-left: 190px;
+
         width: calc(100% - 190px);
-        padding: 10px;
-        box-sizing: border-box;
+
+        padding: 12px;
     }
 
-
-    /* HEADER */
-
     .fees-header {
-        height: 75px;
-        padding: 10px 14px;
-        margin-bottom: 12px;
+        min-height: 78px;
+
+        padding: 12px 14px;
     }
 
     .fees-header h1 {
-        font-size: 23px;
+        font-size: 22px;
     }
 
     .fees-header p {
@@ -1246,27 +1715,20 @@ tbody tr {
 
     .academic-year {
         padding: 8px 11px;
+
         font-size: 10px;
     }
 
-
-    /* SUMMARY */
-
     .fees-summary {
         grid-template-columns: repeat(2, 1fr);
+
         gap: 10px;
-        margin-bottom: 12px;
     }
 
     .fees-card {
         min-height: 78px;
-        padding: 11px;
-    }
 
-    .fees-icon {
-        width: 39px;
-        height: 39px;
-        font-size: 15px;
+        padding: 11px;
     }
 
     .fees-card p {
@@ -1277,38 +1739,24 @@ tbody tr {
         font-size: 17px;
     }
 
+    .fees-icon {
+        width: 39px;
+        height: 39px;
 
-    /* PROGRESS */
-
-    .payment-progress {
-        padding: 16px;
-        margin-bottom: 12px;
+        font-size: 15px;
     }
 
-    .progress-heading h2 {
-        font-size: 17px;
-    }
-
-    .progress-heading p {
-        font-size: 9px;
-    }
-
-    .progress-heading strong {
-        font-size: 18px;
-    }
-
-
-    /* SECTIONS */
-
+    .payment-progress,
     .fees-section {
         padding: 16px;
-        margin-bottom: 12px;
     }
 
+    .progress-heading h2,
     .section-heading h2 {
         font-size: 17px;
     }
 
+    .progress-heading p,
     .section-heading p {
         font-size: 9px;
     }
@@ -1316,11 +1764,9 @@ tbody tr {
     th,
     td {
         padding: 10px;
+
         font-size: 10px;
     }
-
-
-    /* NEXT PAYMENT */
 
     .next-payment {
         padding: 16px;
@@ -1329,7 +1775,6 @@ tbody tr {
     .next-icon {
         width: 42px;
         height: 42px;
-        font-size: 17px;
     }
 
     .next-details h2 {
@@ -1342,14 +1787,23 @@ tbody tr {
 
     .pay-btn {
         padding: 9px 13px;
+
         font-size: 10px;
     }
 
 
-    /* COLLAPSED SIDEBAR */
+    /* Desktop-site collapse */
 
     .panel.collapsed {
         width: 58px;
+
+        padding: 0;
+    }
+
+    .panel.collapsed .heading {
+        width: 58px;
+
+        justify-content: center;
     }
 
     .panel.collapsed .heading h2,
@@ -1357,24 +1811,294 @@ tbody tr {
         display: none;
     }
 
-    .panel.collapsed .heading {
-        justify-content: center;
-    }
-
     .panel.collapsed .heading i {
         margin: 0;
     }
 
     .dashboard.reverse {
-        margin-left: 78px;
-        width: calc(100% - 78px);
+        margin-left: 58px;
+
+        width: calc(100% - 58px);
     }
 }
 
 
-/* ---------- FINAL OVERFLOW SAFETY ---------- */
+/* =========================================================
+   DARK THEME
+   ========================================================= */
 
-@media (max-width: 1100px) {
+body.dark-theme {
+    background-color: #101820;
+    color: #E5E7EB;
+}
+
+body.dark-theme .dashboard {
+    background-color: #101820;
+    color: #E5E7EB;
+}
+
+
+/* HEADER */
+
+body.dark-theme .fees-header {
+    background-color: #1B2733;
+
+    border-color: #3A4B59;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-theme .fees-header h1 {
+    color: #ffffff;
+}
+
+body.dark-theme .fees-header p {
+    color: #B8C3CC;
+}
+
+
+/* ACADEMIC YEAR */
+
+body.dark-theme .academic-year {
+    background-color: #243442;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+}
+
+body.dark-theme .academic-year i {
+    color: #A78BFA;
+}
+
+
+/* SUMMARY */
+
+body.dark-theme .fees-card {
+    background-color: #1B2733;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-theme .fees-card p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .fees-card h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .fees-card:hover {
+    box-shadow:
+        0 9px 22px rgba(0, 0, 0, 0.30);
+}
+
+
+/* ICONS */
+
+body.dark-theme .fees-icon.total {
+    background-color: #203A5A;
+    color: #5CA7FF;
+}
+
+body.dark-theme .fees-icon.paid {
+    background-color: #193C32;
+    color: #32D38A;
+}
+
+body.dark-theme .fees-icon.pending {
+    background-color: #3A3020;
+    color: #F5A623;
+}
+
+body.dark-theme .fees-icon.progress {
+    background-color: #33294F;
+    color: #A78BFA;
+}
+
+
+/* PAYMENT PROGRESS */
+
+body.dark-theme .payment-progress {
+    background-color: #1B2733;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-theme .progress-heading h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .progress-heading p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .progress-heading strong {
+    color: #A78BFA;
+}
+
+body.dark-theme .progress-bar {
+    background-color: #304555;
+}
+
+body.dark-theme .progress-fill {
+    background-color: #7C5CFF;
+}
+
+body.dark-theme .progress-info {
+    color: #B8C3CC;
+}
+
+
+/* FEE SECTIONS */
+
+body.dark-theme .fees-section {
+    background-color: #1B2733;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-theme .section-heading h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .section-heading p {
+    color: #B8C3CC;
+}
+
+
+/* TABLE */
+
+body.dark-theme table {
+    color: #ffffff;
+}
+
+body.dark-theme thead {
+    background-color: #12355B;
+    color: #ffffff;
+}
+
+body.dark-theme th {
+    color: #ffffff;
+}
+
+body.dark-theme td {
+    color: #D5DDE5;
+
+    border-bottom-color: #3A4B59;
+}
+
+body.dark-theme tbody tr:hover {
+    background-color: #243442;
+}
+
+body.dark-theme td i {
+    color: #A78BFA;
+}
+
+
+/* STATUS */
+
+body.dark-theme .paid-status {
+    background-color: #193C32;
+    color: #32D38A;
+}
+
+body.dark-theme .pending-status {
+    background-color: #3A3020;
+    color: #F5A623;
+}
+
+
+/* NEXT PAYMENT */
+
+body.dark-theme .next-payment {
+    background-color: #12355B;
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-theme .next-icon {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+body.dark-theme .next-details p {
+    color: #D5DDE5;
+}
+
+body.dark-theme .next-details h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .next-details span {
+    color: #C4CDD6;
+}
+
+
+/* PAY BUTTON */
+
+body.dark-theme .pay-btn {
+    background-color: #ffffff;
+    color: #12355B;
+}
+
+body.dark-theme .pay-btn:hover {
+    background-color: #E5E7EB;
+}
+
+
+/* SIDEBAR */
+
+body.dark-theme .panel {
+    background-color: #12355B;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TOUCH DEVICE HOVER SAFETY
+   ========================================================= */
+
+@media (pointer: coarse) {
+
+    .fees-card:hover {
+        transform: none;
+    }
+
+    .panel .link:hover {
+        transform: none;
+    }
+
+    .pay-btn:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   FINAL OVERFLOW SAFETY
+   ========================================================= */
+
+@media (max-width: 1200px) {
 
     html,
     body {

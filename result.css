@@ -1,345 +1,546 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    border: border-box;
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color: #E8EEF6;
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
 }
-.panel{
-    display:flex;
+
+body {
+    background: #E8EEF6;
+    color: #334155;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    padding: 10px;
+
+    display: flex;
     flex-direction: column;
-    height: 109vh;
-    width: 40vh;
-    padding: 10px;
-    background-color: #12355B;
-    color: white;
-    position:absolute;
+
+    background: #12355B;
+    color: #ffffff;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition:
+        width 0.3s ease,
+        box-shadow 0.3s ease;
 }
-.heading{
+
+
+/* =========================================================
+   SIDEBAR HEADING
+========================================================= */
+
+.heading {
+    width: 100%;
+    height: 80px;
+
+    padding: 10px;
+
     display: flex;
-    height: 100px;
-    width: 90%;
-    padding: 10px;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
 }
-.heading i{
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 6px;
-    border-radius: 6px;
+
+.heading h2 {
+    color: #ffffff;
+
+    font-size: 1.35rem;
+
+    white-space: nowrap;
+}
+
+.heading i {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+    min-height: 40px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 19px;
+    line-height: 1;
+
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 7px;
+
     cursor: pointer;
-}
-.panel a{
-    font-size: 1.2rem;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0.5rem;
-    display: block;
-    transition: all 0.25s ease;
-    border-radius: 8px;
-}
-a:hover{
-    background-color: #1E4A78;
-    color: #ffffff;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-a:active{
-    background-color: #FFE8A3;
-    color: #12355B;
-}
-.panel i{
-    margin-right: 10px;
-    font-size: 1.3rem;
+
+    flex-shrink: 0;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
 
-.dashboard{
+.heading i:hover {
+    background: #1E4A78;
+}
 
-    margin-left: 43vh;
+.heading i:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   SIDEBAR LINKS
+========================================================= */
+
+.panel a {
+    width: 100%;
+    min-height: 44px;
 
     padding: 10px;
-
-    transition: 0.3s;
-
-}
-
-
-
-/* HEADING */
-
-.result-heading{
-
-    background: white;
-
-    padding: 0 15px 0 15px;
-
-    border-radius: 15px;
 
     display: flex;
-
-    justify-content: space-between;
-
     align-items: center;
 
-    margin-bottom: 20px;
-    height: 100px;
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 1rem;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+
+    flex-shrink: 0;
+}
+
+.panel a:hover {
+    background: #1E4A78;
+
+    transform: translateY(-2px);
+}
+
+.panel a:active {
+    background: #FFE8A3;
+    color: #12355B;
+}
+
+.panel a i {
+    width: 22px;
+
+    margin-right: 10px;
+
+    font-size: 1.1rem;
+
+    text-align: center;
+
+    flex-shrink: 0;
 }
 
 
-.result-heading h1{
+/* =========================================================
+   COLLAPSED SIDEBAR - DESKTOP
+========================================================= */
 
+.panel.collapsed {
+    width: 58px;
+    padding: 0;
+
+    overflow-x: hidden;
+}
+
+.panel.collapsed .heading {
+    width: 58px;
+    height: 58px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel.collapsed .heading h2,
+.panel.collapsed .link {
+    display: none;
+}
+
+.panel.collapsed .heading i {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+    min-height: 38px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   MAIN RESULT AREA
+========================================================= */
+
+.dashboard {
+    width: calc(100% - 250px);
+    min-height: 100vh;
+
+    margin-left: 250px;
+
+    padding: 25px 28px;
+
+    background: #E8EEF6;
+
+    transition:
+        width 0.3s ease,
+        margin-left 0.3s ease;
+}
+
+.dashboard.reverse {
+    width: calc(100% - 58px);
+    margin-left: 58px;
+}
+
+
+/* =========================================================
+   RESULT HEADER
+========================================================= */
+
+.result-heading {
+    width: 100%;
+    min-height: 150px;
+
+    margin-bottom: 22px;
+    padding: 25px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #E1E8F0;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 18px rgba(18,53,91,0.07);
+}
+
+.result-heading > div {
+    min-width: 0;
+}
+
+.result-heading h1 {
     color: #12355B;
 
-    font-size: 30px;
-
-    margin-bottom: 5px;
-
+    font-size: 32px;
+    line-height: 1.2;
 }
 
+.result-heading p {
+    margin-top: 7px;
 
-.result-heading p{
-
-    color: #777;
+    color: #64748B;
 
     font-size: 14px;
-
 }
 
-
-.result-heading > i{
-
+.result-heading > i {
     width: 55px;
-
     height: 55px;
 
-    background: #1976E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    color: white;
+    background: #1976E8;
+    color: #ffffff;
 
     border-radius: 12px;
 
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
     font-size: 22px;
 
+    flex-shrink: 0;
 }
 
 
+/* =========================================================
+   RESULT SUMMARY
+========================================================= */
 
-/* SUMMARY */
-
-.result-summary{
+.result-summary {
+    width: 100%;
 
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
-    gap: 18px;
+    gap: 15px;
 
-    margin-bottom: 25px;
-
+    margin-bottom: 22px;
 }
 
 
-.result-card{
+/* =========================================================
+   RESULT CARD
+========================================================= */
 
-    background: white;
-
+.result-card {
+    min-width: 0;
     min-height: 105px;
 
     padding: 18px;
 
-    border-radius: 15px;
-
     display: flex;
-
     align-items: center;
 
     gap: 15px;
 
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.06);
+    background: #ffffff;
 
+    border: 1px solid #E1E8F0;
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 18px rgba(18,53,91,0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
+.result-card:hover {
+    transform: translateY(-2px);
 
-.result-card i{
+    box-shadow:
+        0 8px 20px rgba(18,53,91,0.10);
+}
 
+.result-card i {
     width: 48px;
-
     height: 48px;
 
-    background: #EAF2FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    background: #EAF2FF;
     color: #1976E8;
 
     border-radius: 10px;
 
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
     font-size: 20px;
 
+    flex-shrink: 0;
 }
 
+.result-card > div {
+    min-width: 0;
+}
 
-.result-card p{
-
-    color: #777;
-
-    font-size: 12px;
-
+.result-card p {
     margin-bottom: 5px;
 
+    color: #64748B;
+
+    font-size: 12px;
 }
 
-
-.result-card h2{
-
+.result-card h2 {
     color: #12355B;
 
     font-size: 22px;
 
+    word-break: break-word;
 }
 
 
+/* =========================================================
+   RESULT SECTION
+========================================================= */
 
-/* RESULT SECTION */
+.result-section {
+    width: 100%;
 
-.result-section{
+    padding: 28px;
 
-    background: white;
+    background: #ffffff;
 
-    padding: 25px;
+    border: 1px solid #E1E8F0;
+    border-radius: 16px;
 
-    border-radius: 15px;
-
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.06);
-
+    box-shadow:
+        0 5px 18px rgba(18,53,91,0.07);
 }
 
 
-.result-top{
+/* =========================================================
+   RESULT TOP
+========================================================= */
 
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
+.result-top {
+    width: 100%;
 
     margin-bottom: 20px;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
 }
 
+.result-top > div {
+    min-width: 0;
+}
 
-.result-top h2{
-
+.result-top h2 {
     color: #12355B;
 
-    font-size: 21px;
+    font-size: 20px;
+
+    line-height: 1.3;
 
     margin-bottom: 5px;
-
 }
 
-
-.result-top p{
-
-    color: #777;
+.result-top p {
+    color: #64748B;
 
     font-size: 13px;
-
 }
 
-
-#semester{
-
+#semester {
     padding: 9px 12px;
 
     border: 1px solid #D5DDE7;
 
     border-radius: 8px;
 
+    background: #ffffff;
     color: #12355B;
-
-    background: white;
-
-}
-
-
-
-/* TABLE */
-
-.result-table{
-
-    width: 100%;
-
-}
-
-
-.table-heading{
-
-    background: #12355B;
-
-    color: white;
-
-    min-height: 50px;
-
-    padding: 0px 20px;
-
-    display: grid;
-
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-
-    align-items: center;
-
-    border-radius: 10px 10px 0px 0px;
-
-}
-
-
-.table-heading span{
 
     font-size: 13px;
 
+    outline: none;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+#semester:focus {
+    border-color: #1976E8;
 }
 
 
+/* =========================================================
+   RESULT TABLE
+========================================================= */
 
-/* ROW */
+.result-table {
+    width: 100%;
 
-.result-row{
+    overflow: hidden;
 
-    min-height: 65px;
+    border-radius: 10px;
+}
 
-    padding: 0px 20px;
+.table-heading {
+    width: 100%;
+    min-height: 50px;
+
+    padding: 0 20px;
 
     display: grid;
 
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
 
     align-items: center;
 
-    border-bottom: 1px solid #E5E9EF;
+    background: #12355B;
+    color: #ffffff;
 
+    border-radius: 10px 10px 0 0;
 }
 
+.table-heading span {
+    font-size: 13px;
+    font-weight: 600;
+}
 
-.result-row > div{
+.result-row {
+    width: 100%;
+    min-height: 65px;
+
+    padding: 0 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    align-items: center;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #E5E9EF;
+
+    transition: background 0.2s ease;
+}
+
+.result-row:last-child {
+    border-bottom: none;
+}
+
+.result-row:hover {
+    background: #F8FAFD;
+}
+
+.result-row > div {
+    min-width: 0;
 
     display: flex;
-
     align-items: center;
 
     gap: 12px;
@@ -348,216 +549,180 @@ a:active{
 
     font-size: 14px;
 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-
-.result-row i{
-
+.result-row i {
     width: 35px;
-
     height: 35px;
 
-    background: #EAF2FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    background: #EAF2FF;
     color: #1976E8;
 
     border-radius: 8px;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-}
-
-
-.result-row span{
-
-    color: #666;
-
-    font-size: 14px;
-
-}
-
-
-.result-row strong{
-
-    color: #12A866;
-
-    font-size: 14px;
-
-}
-
-
-
-/* COLLAPSED PANEL */
-
-.panel{
-    width: 40vh;
-}
-.dashboard{
-    margin-left: 43vh;
-}
-.panel.collapsed{
-    width: 50px;
-    transition: all 2s ease;
-    .heading h2{
-        display: none;
-    }
-    .link{
-        display: none;
-    }
-}
-.dashboard.reverse{
-    margin-left: 75px;
-    transition: all 2s ease;
-}
-
-
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-    .dashboard{
-
-        margin-left: 40vh;
-
-        padding: 15px;
-
-    }
-
-
-    .result-summary{
-
-        grid-template-columns: 1fr 1fr;
-
-    }
-
-
-    .result-card{
-
-        padding: 12px;
-
-    }
-
-
-    .result-card h2{
-
-        font-size: 18px;
-
-    }
-
-
-    .result-section{
-
-        padding: 15px;
-
-        overflow-x: auto;
-
-    }
-
-
-    .result-table{
-
-        min-width: 550px;
-
-    }
-
-}
-
-
-
-
-
-/* =========================================================
-   EXTRA RESULT PAGE CSS
-   Add this at the bottom of result.css
-   ========================================================= */
-
-
-/* ---------- GENERAL IMPROVEMENT ---------- */
-
-.result-heading,
-.result-card,
-.result-section {
-    transition: all 0.25s ease;
-}
-
-.result-heading,
-.result-section {
-    box-shadow: 0 4px 12px rgba(18, 53, 91, 0.06);
-}
-
-.result-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(18, 53, 91, 0.11);
-}
-
-.result-row {
-    transition: background 0.2s ease;
-}
-
-.result-row:hover {
-    background: #F8FAFD;
-}
-
-.result-card i {
     flex-shrink: 0;
 }
 
-.result-row > div {
-    min-width: 0;
+.result-row span {
+    color: #64748B;
+
+    font-size: 14px;
+}
+
+.result-row strong {
+    color: #12A866;
+
+    font-size: 14px;
 }
 
 
 /* =========================================================
-   DESKTOP
-   ========================================================= */
+   LAPTOP
+========================================================= */
 
-@media (min-width: 1101px) {
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .panel {
+        width: 210px;
+    }
+
+    .heading {
+        height: 75px;
+    }
+
+    .heading h2 {
+        font-size: 1.1rem;
+    }
+
+    .panel a {
+        padding: 10px 8px;
+
+        font-size: 0.9rem;
+    }
+
+    .panel a i {
+        font-size: 1rem;
+    }
 
     .dashboard {
-        min-height: 100vh;
-        box-sizing: border-box;
-    }
-
-    .result-heading,
-    .result-summary,
-    .result-section {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .result-heading {
-        margin-bottom: 20px;
-    }
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (min-width: 601px) and (max-width: 1100px) {
-
-    .dashboard {
-        margin-left: 200px;
         width: calc(100% - 210px);
-        padding: 10px;
-        box-sizing: border-box;
+
+        margin-left: 210px;
+
+        padding: 20px;
+    }
+
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+
+        margin-left: 58px;
     }
 
     .result-heading {
-        height: 85px;
-        padding: 0 18px;
-        margin-bottom: 15px;
+        min-height: 125px;
+
+        padding: 22px 20px;
     }
 
     .result-heading h1 {
-        font-size: 25px;
+        font-size: 28px;
+    }
+
+    .result-heading > i {
+        width: 50px;
+        height: 50px;
+    }
+
+    .result-summary {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .result-card {
+        min-height: 95px;
+    }
+
+    .result-section {
+        padding: 24px;
+    }
+}
+
+
+/* =========================================================
+   TABLET / IPAD
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+
+    .panel {
+        width: 175px;
+
+        padding: 7px;
+    }
+
+    .heading {
+        height: 70px;
+
+        padding: 7px;
+    }
+
+    .heading h2 {
+        font-size: 0.95rem;
+    }
+
+    .heading i {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
+        font-size: 18px;
+    }
+
+    .panel a {
+        padding: 9px 6px;
+
+        font-size: 0.73rem;
+    }
+
+    .panel a i {
+        margin-right: 6px;
+
+        font-size: 0.85rem;
+    }
+
+    .dashboard {
+        width: calc(100% - 175px);
+
+        margin-left: 175px;
+
+        padding: 14px;
+    }
+
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+
+        margin-left: 58px;
+    }
+
+    .result-heading {
+        min-height: 110px;
+
+        padding: 18px;
+
+        border-radius: 12px;
+    }
+
+    .result-heading h1 {
+        font-size: 24px;
     }
 
     .result-heading p {
@@ -567,27 +732,29 @@ a:active{
     .result-heading > i {
         width: 48px;
         height: 48px;
+
         font-size: 19px;
     }
 
-
-    /* SUMMARY */
-
     .result-summary {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
         gap: 12px;
-        margin-bottom: 18px;
     }
 
     .result-card {
         min-height: 85px;
+
         padding: 13px;
+
         gap: 11px;
     }
 
     .result-card i {
         width: 42px;
         height: 42px;
+
         font-size: 17px;
     }
 
@@ -599,15 +766,14 @@ a:active{
         font-size: 19px;
     }
 
-
-    /* RESULT SECTION */
-
     .result-section {
-        padding: 18px;
+        padding: 20px;
+
+        border-radius: 12px;
     }
 
     .result-top h2 {
-        font-size: 19px;
+        font-size: 18px;
     }
 
     .result-top p {
@@ -616,11 +782,13 @@ a:active{
 
     #semester {
         padding: 8px 10px;
-        font-size: 12px;
+
+        font-size: 11px;
     }
 
     .table-heading {
         min-height: 45px;
+
         padding: 0 15px;
     }
 
@@ -630,17 +798,20 @@ a:active{
 
     .result-row {
         min-height: 58px;
+
         padding: 0 15px;
     }
 
     .result-row > div {
         gap: 8px;
+
         font-size: 12px;
     }
 
     .result-row i {
         width: 31px;
         height: 31px;
+
         font-size: 12px;
     }
 
@@ -653,36 +824,35 @@ a:active{
 
 /* =========================================================
    NORMAL MOBILE
-   ========================================================= */
+   ICON SIDEBAR + OVERLAY MENU
+========================================================= */
 
 @media (max-width: 600px) {
 
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
+    /* SIDEBAR CLOSED */
 
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 58px;
-        height: 100vh;
-        padding: 4px;
-        box-sizing: border-box;
-        z-index: 1000;
+
+        padding: 0;
+
         overflow: hidden;
+
+        box-shadow: none;
+
+        transition:
+            width 0.3s ease,
+            box-shadow 0.3s ease;
     }
 
     .heading {
-        width: 100%;
+        width: 58px;
         height: 58px;
+
         padding: 0;
+
+        display: flex;
+        align-items: center;
         justify-content: center;
     }
 
@@ -691,95 +861,195 @@ a:active{
     }
 
     .heading i {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
         margin: 0;
-        font-size: 0.95rem;
-        padding: 6px;
+        padding: 0;
+
+        font-size: 18px;
     }
 
     .panel a {
-        width: 100%;
+        width: 50px;
         height: 42px;
-        padding: 9px 3px;
-        margin-bottom: 3px;
-        box-sizing: border-box;
-        font-size: 0;
+        min-height: 42px;
+
+        margin: 0 auto 3px;
+
+        padding: 8px 3px;
+
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+
+        font-size: 0;
+
+        border-bottom: none;
     }
 
     .panel a i {
+        width: auto;
+
         margin: 0;
+
         font-size: 1rem;
     }
 
 
-    /* MAIN */
+    /* MOBILE OPEN OVERLAY */
 
-    .dashboard {
-        margin-left: 58px;
-        width: calc(100% - 58px);
-        padding: 7px;
-        box-sizing: border-box;
+    .panel.collapsed {
+        width: 215px;
+
+        padding: 6px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        box-shadow:
+            5px 0 20px rgba(0,0,0,0.25);
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+        height: 58px;
+
+        padding: 0 5px;
+
+        justify-content: space-between;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: block;
+
+        color: #ffffff;
+
+        font-size: 1rem;
+
+        white-space: nowrap;
+    }
+
+    .panel.collapsed .heading i {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+    }
+
+    .panel.collapsed .link {
+        display: flex;
+
+        width: 100%;
+        height: 42px;
+        min-height: 42px;
+
+        margin: 0 0 3px;
+
+        padding: 9px 10px;
+
+        justify-content: flex-start;
+
+        color: #ffffff;
+
+        font-size: 0.82rem;
+
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .panel.collapsed .link i {
+        width: 22px;
+
+        margin-right: 10px;
+
+        font-size: 1rem;
     }
 
 
-    /* HEADING */
+    /* DASHBOARD NEVER MOVES */
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 58px);
+
+        margin-left: 58px;
+
+        padding: 10px;
+    }
+
+
+    /* RESULT HEADER */
 
     .result-heading {
-        width: 100%;
-        height: auto;
-        min-height: 72px;
-        padding: 12px;
+        min-height: 105px;
+
         margin-bottom: 12px;
+
+        padding: 15px;
+
+        gap: 10px;
+
         border-radius: 11px;
-        box-sizing: border-box;
     }
 
     .result-heading h1 {
-        font-size: 19px;
-        margin-bottom: 4px;
+        font-size: 21px;
     }
 
     .result-heading p {
-        font-size: 9px;
+        margin-top: 4px;
+
+        font-size: 10px;
     }
 
     .result-heading > i {
-        width: 38px;
-        height: 38px;
+        width: 42px;
+        height: 42px;
+
         border-radius: 9px;
-        font-size: 16px;
+
+        font-size: 17px;
     }
 
 
-    /* SUMMARY */
+    /* RESULT SUMMARY */
 
     .result-summary {
-        width: 100%;
-        grid-template-columns: 1fr 1fr;
-        gap: 7px;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+
         margin-bottom: 12px;
     }
 
     .result-card {
-        min-height: 70px;
-        padding: 9px;
+        min-height: 75px;
+
+        padding: 10px;
+
+        gap: 8px;
+
         border-radius: 10px;
-        gap: 7px;
-        box-sizing: border-box;
     }
 
     .result-card i {
-        width: 32px;
-        height: 32px;
+        width: 34px;
+        height: 34px;
+
         border-radius: 7px;
-        font-size: 13px;
+
+        font-size: 14px;
     }
 
     .result-card p {
-        font-size: 8px;
         margin-bottom: 3px;
+
+        font-size: 8px;
     }
 
     .result-card h2 {
@@ -790,20 +1060,22 @@ a:active{
     /* RESULT SECTION */
 
     .result-section {
-        width: 100%;
-        padding: 12px;
+        padding: 13px;
+
         border-radius: 11px;
-        box-sizing: border-box;
+
         overflow-x: auto;
     }
 
     .result-top {
         margin-bottom: 12px;
+
         gap: 8px;
     }
 
     .result-top h2 {
         font-size: 15px;
+
         margin-bottom: 3px;
     }
 
@@ -813,7 +1085,9 @@ a:active{
 
     #semester {
         padding: 7px 8px;
+
         font-size: 9px;
+
         border-radius: 6px;
     }
 
@@ -826,7 +1100,9 @@ a:active{
 
     .table-heading {
         min-height: 42px;
+
         padding: 0 10px;
+
         border-radius: 8px 8px 0 0;
     }
 
@@ -836,18 +1112,22 @@ a:active{
 
     .result-row {
         min-height: 55px;
+
         padding: 0 10px;
     }
 
     .result-row > div {
         gap: 7px;
+
         font-size: 10px;
     }
 
     .result-row i {
         width: 28px;
         height: 28px;
+
         border-radius: 6px;
+
         font-size: 11px;
     }
 
@@ -859,8 +1139,8 @@ a:active{
 
 
 /* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 380px) {
 
@@ -868,28 +1148,92 @@ a:active{
         width: 52px;
     }
 
-    .dashboard {
-        margin-left: 52px;
-        width: calc(100% - 52px);
-        padding: 5px;
+    .heading {
+        width: 52px;
+        height: 52px;
+    }
+
+    .heading i {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+        min-height: 34px;
+
+        font-size: 16px;
+
+        border-radius: 6px;
     }
 
     .panel a {
+        width: 46px;
+
         height: 39px;
+        min-height: 39px;
     }
 
     .panel a i {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
 
+    /* OPEN OVERLAY */
+
+    .panel.collapsed {
+        width: 200px;
+    }
+
+    .panel.collapsed .heading {
+        width: 100%;
+        height: 52px;
+    }
+
+    .panel.collapsed .heading h2 {
+        font-size: 0.95rem;
+    }
+
+    .panel.collapsed .heading i {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+        min-height: 34px;
+
+        font-size: 16px;
+    }
+
+    .panel.collapsed .link {
+        width: 100%;
+
+        height: 39px;
+        min-height: 39px;
+
+        font-size: 0.76rem;
+    }
+
+
+    /* DASHBOARD STAYS */
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 52px);
+
+        margin-left: 52px;
+
+        padding: 7px;
+    }
+
+
+    /* RESULT */
+
     .result-heading {
-        min-height: 64px;
-        padding: 10px;
+        min-height: 90px;
+
+        padding: 12px;
     }
 
     .result-heading h1 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .result-heading p {
@@ -897,26 +1241,29 @@ a:active{
     }
 
     .result-heading > i {
-        width: 34px;
-        height: 34px;
+        width: 36px;
+        height: 36px;
+
         font-size: 14px;
     }
 
-
     .result-summary {
-        gap: 5px;
+        gap: 6px;
     }
 
     .result-card {
-        min-height: 63px;
-        padding: 7px;
-        gap: 5px;
+        min-height: 65px;
+
+        padding: 8px;
+
+        gap: 6px;
     }
 
     .result-card i {
-        width: 28px;
-        height: 28px;
-        font-size: 11px;
+        width: 29px;
+        height: 29px;
+
+        font-size: 12px;
     }
 
     .result-card p {
@@ -927,9 +1274,8 @@ a:active{
         font-size: 14px;
     }
 
-
     .result-section {
-        padding: 9px;
+        padding: 10px;
     }
 
     .result-top h2 {
@@ -942,9 +1288,9 @@ a:active{
 
     #semester {
         padding: 6px;
+
         font-size: 8px;
     }
-
 
     .result-table {
         min-width: 450px;
@@ -952,6 +1298,7 @@ a:active{
 
     .table-heading {
         min-height: 38px;
+
         padding: 0 8px;
     }
 
@@ -961,6 +1308,7 @@ a:active{
 
     .result-row {
         min-height: 50px;
+
         padding: 0 8px;
     }
 
@@ -971,6 +1319,7 @@ a:active{
     .result-row i {
         width: 25px;
         height: 25px;
+
         font-size: 10px;
     }
 
@@ -982,182 +1331,250 @@ a:active{
 
 
 /* =========================================================
-   DESKTOP SITE ON PHONE
-   ========================================================= */
+   VERY SMALL MOBILE
+========================================================= */
 
-@media (pointer: coarse) and (min-width: 601px) {
-
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
+@media (max-width: 320px) {
 
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 190px;
-        height: 100vh;
-        padding: 10px;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow-y: auto;
+        width: 48px;
     }
 
     .heading {
+        width: 48px;
+        height: 50px;
+    }
+
+    .heading i {
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+        min-height: 32px;
+
+        font-size: 15px;
+    }
+
+    .panel a {
+        width: 42px;
+
+        height: 37px;
+        min-height: 37px;
+    }
+
+    .panel.collapsed {
+        width: 185px;
+    }
+
+    .panel.collapsed .heading {
         width: 100%;
-        height: 70px;
+    }
+
+    .panel.collapsed .link {
+        width: 100%;
+
+        font-size: 0.7rem;
+    }
+
+    .dashboard,
+    .dashboard.reverse {
+        width: calc(100% - 48px);
+
+        margin-left: 48px;
+
+        padding: 6px;
+    }
+
+    .result-heading {
+        min-height: 80px;
+
         padding: 10px;
-        box-sizing: border-box;
+
+        align-items: flex-start;
+    }
+
+    .result-heading h1 {
+        font-size: 16px;
+    }
+
+    .result-heading p {
+        font-size: 7px;
+    }
+
+    .result-heading > i {
+        width: 33px;
+        height: 33px;
+
+        font-size: 13px;
+    }
+
+    .result-card {
+        min-height: 60px;
+
+        padding: 6px;
+
+        gap: 5px;
+    }
+
+    .result-card i {
+        width: 26px;
+        height: 26px;
+
+        font-size: 10px;
+    }
+
+    .result-card p {
+        font-size: 6.5px;
+    }
+
+    .result-card h2 {
+        font-size: 13px;
+    }
+
+    .result-section {
+        padding: 8px;
+    }
+
+    .result-top h2 {
+        font-size: 12px;
+    }
+
+    .result-top p {
+        font-size: 6.5px;
+    }
+
+    #semester {
+        padding: 5px;
+
+        font-size: 7px;
+    }
+
+    .result-table {
+        min-width: 430px;
+    }
+
+    .table-heading {
+        min-height: 36px;
+
+        padding: 0 7px;
+    }
+
+    .table-heading span {
+        font-size: 7px;
+    }
+
+    .result-row {
+        min-height: 47px;
+
+        padding: 0 7px;
+    }
+
+    .result-row > div {
+        gap: 5px;
+
+        font-size: 8px;
+    }
+
+    .result-row i {
+        width: 23px;
+        height: 23px;
+
+        font-size: 9px;
+    }
+
+    .result-row span,
+    .result-row strong {
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP SITE MODE ON PHONE
+========================================================= */
+
+@media (pointer: coarse) and (min-width: 601px) {
+
+    .panel {
+        width: 190px;
+
+        padding: 8px;
+    }
+
+    .heading {
+        height: 70px;
     }
 
     .heading h2 {
         display: block;
-        font-size: 1.05rem;
+
+        font-size: 1rem;
     }
 
     .heading i {
-        margin: 0;
-        font-size: 0.9rem;
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
+        font-size: 18px;
     }
 
     .panel a {
-        font-size: 0.78rem;
-        padding: 9px 7px;
-        margin-bottom: 3px;
+        padding: 9px 6px;
+
+        font-size: 0.75rem;
     }
 
     .panel a i {
+        margin-right: 6px;
+
         font-size: 0.85rem;
-        margin-right: 7px;
     }
-
-
-    /* MAIN */
 
     .dashboard {
-        margin-left: 190px;
         width: calc(100% - 190px);
-        padding: 10px;
-        box-sizing: border-box;
+
+        margin-left: 190px;
+
+        padding: 14px;
     }
 
+    .dashboard.reverse {
+        width: calc(100% - 58px);
 
-    /* HEADING */
+        margin-left: 58px;
+    }
 
     .result-heading {
-        height: 75px;
-        padding: 10px 14px;
-        margin-bottom: 12px;
+        min-height: 110px;
+
+        padding: 18px;
     }
 
     .result-heading h1 {
-        font-size: 23px;
+        font-size: 24px;
     }
 
     .result-heading p {
         font-size: 11px;
     }
 
-    .result-heading > i {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
+    .result-card {
+        min-height: 90px;
+
+        padding: 13px;
     }
-
-
-    /* SUMMARY */
 
     .result-summary {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        margin-bottom: 12px;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
-
-    .result-card {
-        min-height: 80px;
-        padding: 11px;
-        gap: 9px;
-    }
-
-    .result-card i {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-
-    .result-card p {
-        font-size: 9px;
-    }
-
-    .result-card h2 {
-        font-size: 18px;
-    }
-
-
-    /* RESULT */
 
     .result-section {
-        padding: 16px;
+        padding: 22px;
     }
-
-    .result-top h2 {
-        font-size: 18px;
-    }
-
-    .result-top p {
-        font-size: 10px;
-    }
-
-    #semester {
-        padding: 8px 10px;
-        font-size: 11px;
-    }
-
-
-    /* TABLE */
-
-    .result-table {
-        min-width: 520px;
-    }
-
-    .table-heading {
-        min-height: 45px;
-        padding: 0 14px;
-    }
-
-    .table-heading span {
-        font-size: 10px;
-    }
-
-    .result-row {
-        min-height: 58px;
-        padding: 0 14px;
-    }
-
-    .result-row > div {
-        gap: 8px;
-        font-size: 11px;
-    }
-
-    .result-row i {
-        width: 30px;
-        height: 30px;
-        font-size: 11px;
-    }
-
-    .result-row span,
-    .result-row strong {
-        font-size: 11px;
-    }
-
-
-    /* COLLAPSED SIDEBAR */
 
     .panel.collapsed {
         width: 58px;
@@ -1175,27 +1592,195 @@ a:active{
     .panel.collapsed .heading i {
         margin: 0;
     }
+}
 
-    .dashboard.reverse {
-        margin-left: 78px;
-        width: calc(100% - 78px);
+
+/* =========================================================
+   LANDSCAPE PHONE
+========================================================= */
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+    .result-summary {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+    .result-heading {
+        min-height: 90px;
     }
 }
 
 
-/* ---------- FINAL OVERFLOW SAFETY ---------- */
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
 
-@media (max-width: 1100px) {
+@media (hover: none) {
 
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
+    .panel a:hover {
+        transform: none;
     }
 
-    .result-heading,
-    .result-summary,
-    .result-section {
-        max-width: 100%;
+    .result-card:hover {
+        transform: none;
+
+        box-shadow:
+            0 5px 18px rgba(18,53,91,0.07);
+    }
+
+    .heading i:hover {
+        background: transparent;
+    }
+}
+
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+body.dark-theme {
+    background: #101820;
+
+    color: #E5E7EB;
+}
+
+body.dark-theme .dashboard {
+    background: #101820;
+}
+
+body.dark-theme .result-heading,
+body.dark-theme .result-card,
+body.dark-theme .result-section {
+    background: #1B2733;
+
+    border-color: #3A4B59;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.18);
+}
+
+body.dark-theme .result-heading h1,
+body.dark-theme .result-card h2,
+body.dark-theme .result-top h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .result-heading p,
+body.dark-theme .result-card p,
+body.dark-theme .result-top p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .result-heading > i {
+    background: #1976E8;
+    color: #ffffff;
+}
+
+body.dark-theme .result-card i {
+    background: #243442;
+    color: #5CA7FF;
+}
+
+body.dark-theme .result-card:hover {
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.30);
+}
+
+body.dark-theme #semester {
+    background: #243442;
+
+    color: #ffffff;
+
+    border-color: #3A4B59;
+}
+
+body.dark-theme #semester:focus {
+    border-color: #1976E8;
+
+    outline: none;
+}
+
+body.dark-theme .table-heading {
+    background: #12355B;
+    color: #ffffff;
+}
+
+body.dark-theme .result-row {
+    background: #1B2733;
+
+    border-color: #3A4B59;
+}
+
+body.dark-theme .result-row:hover {
+    background: #243442;
+}
+
+body.dark-theme .result-row > div {
+    color: #ffffff;
+}
+
+body.dark-theme .result-row i {
+    background: #243442;
+    color: #5CA7FF;
+}
+
+body.dark-theme .result-row span {
+    color: #B8C3CC;
+}
+
+body.dark-theme .result-row strong {
+    color: #32D38A;
+}
+
+body.dark-theme .panel {
+    background: #12355B;
+}
+
+
+/* =========================================================
+   FINAL BAR ICON SAFETY
+========================================================= */
+
+.panel .heading i {
+    box-sizing: border-box;
+
+    flex: 0 0 40px;
+
+    overflow: visible;
+
+    text-align: center;
+}
+
+.panel.collapsed .heading i {
+    flex: 0 0 38px;
+}
+
+
+/* =========================================================
+   MOBILE BAR SAFETY
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .panel .heading i {
+        flex: 0 0 38px;
+    }
+
+    .panel.collapsed .heading i {
+        flex: 0 0 38px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .panel .heading i {
+        flex: 0 0 34px;
+    }
+
+    .panel.collapsed .heading i {
+        flex: 0 0 34px;
     }
 }

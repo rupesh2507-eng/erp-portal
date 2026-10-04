@@ -1,388 +1,1230 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    border: border-box;
+/* =========================================
+   STUDENT ERP - FORGOT PASSWORD
+   PROFESSIONAL DESIGN
+========================================= */
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    background-image: url("back-img.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+
+html {
+    scroll-behavior: smooth;
 }
-.forgot-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+body {
     min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(25, 118, 232, 0.10), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(108, 76, 232, 0.10), transparent 35%),
+        #E8EEF6;
+    color: #334155;
 }
-.container{
-    height: 51vh;
-    width: 45vh;
-    background-color: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 8px 30px rgba(18, 53, 91, 0.25);
-    padding: 1rem;
+
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.forgot-page {
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    border: 1px solid #CED4DA;
-    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;
 }
-.container h2{
-    color: #12355B;
-    font-size: 1.8rem;
-    padding: 5px;
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.forgot-card {
+    width: 100%;
+    max-width: 520px;
+    background: #FFFFFF;
+    border: 1px solid #D9E2EC;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 20px 50px rgba(18, 53, 91, 0.12),
+        0 5px 15px rgba(18, 53, 91, 0.05);
 }
-.container p{
-    font-size: 1rem;
-    padding: 5px;
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.forgot-header {
+    min-height: 82px;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #12355B;
+    color: #FFFFFF;
 }
-p{
-    color: #343A40;
+
+.brand-icon {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
-.form input,button{
-    min-width: 100%;
-    height: 2.2rem;
-    padding: 0 0 5px 5px;
-    border: 1px solid #CED4DA;
-    border-radius: 1rem;
+
+.brand-icon i {
+    font-size: 21px;
 }
-input{
-    color: #F8F9FA;
+
+.brand-text h1 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
 }
-.form p{
-    font-size: 1.1rem;
-    margin-top: 1.3rem;
+
+.brand-text span {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.72rem;
+    color: #C9D8E8;
 }
-.form button{
-    margin-top: 1rem;
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.forgot-content {
+    padding: 32px 38px 28px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title-area {
     text-align: center;
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    cursor: pointer;
-    background-color: #12355B;
-    color: white;
-    transition: all 0.25s ease;
+    margin-bottom: 30px;
 }
-button:hover{
-    background-color: #F4B942;
-    transform: translateY(-5px);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+
+.title-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: #E8F1FF;
+    color: #1976E8;
 }
-.back-login{
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: black;
-    margin: 0 4.5rem 5.5rem 6.5rem;
+
+.title-icon i {
+    font-size: 24px;
+}
+
+.title-area h2 {
     color: #12355B;
-}
-.back-login:hover{
-    color: #F4B942;
-}
-
-#change{
-    font-size: 0.9rem;
-    color: darkmagenta;
-    padding-left: 20px;
+    font-size: 1.65rem;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
-/* ============================= */
-/* FINAL MOBILE FORGOT PASSWORD */
-/* ============================= */
+.title-area p {
+    max-width: 380px;
+    margin: auto;
+    color: #6B7785;
+    font-size: 0.84rem;
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.reset-section {
+    animation: sectionAppear 0.3s ease;
+}
+
+@keyframes sectionAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 23px;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #12355B;
+    color: #FFFFFF;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.section-heading h3 {
+    color: #12355B;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.section-heading p {
+    color: #7A8795;
+    font-size: 0.76rem;
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label,
+.otp-area label {
+    display: block;
+    margin-bottom: 8px;
+    color: #334155;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   INPUT WRAPPER
+========================================= */
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7C8B9A;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.input-wrapper input {
+    width: 100%;
+    height: 45px;
+    padding: 0 14px 0 40px;
+    border: 1px solid #CBD5E1;
+    border-radius: 9px;
+    outline: none;
+    background: #F8FAFC;
+    color: #263849;
+    font-size: 0.82rem;
+    transition: all 0.2s ease;
+}
+
+.input-wrapper input::placeholder {
+    color: #9AA6B2;
+}
+
+.input-wrapper input:hover {
+    border-color: #AEBCCC;
+}
+
+.input-wrapper input:focus {
+    background: #FFFFFF;
+    border-color: #1976E8;
+    box-shadow: 0 0 0 3px rgba(25, 118, 232, 0.10);
+}
+
+
+/* =========================================
+   MESSAGES
+========================================= */
+
+.message {
+    min-height: 18px;
+    margin: 4px 0 10px;
+    text-align: center;
+    color: #C62828;
+    font-size: 0.76rem;
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
+
+.primary-btn {
+    width: 100%;
+    height: 44px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    background: #12355B;
+    color: #FFFFFF;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.primary-btn i {
+    font-size: 12px;
+}
+
+.primary-btn:hover {
+    background: #1976E8;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(18, 53, 91, 0.18);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   OTP
+========================================= */
+
+.otp-area {
+    margin-bottom: 8px;
+}
+
+.otp-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 9px;
+    margin-top: 10px;
+}
+
+.otp-input {
+    width: 100%;
+    height: 50px;
+    min-width: 0;
+    padding: 0 !important;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    outline: none;
+    background: #F8FAFC;
+    color: #12355B !important;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.otp-input:hover {
+    border-color: #AEBCCC;
+}
+
+.otp-input:focus {
+    background: #FFFFFF;
+    border-color: #1976E8;
+    box-shadow: 0 0 0 3px rgba(25, 118, 232, 0.10);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RESEND OTP
+========================================= */
+
+.resend-section {
+    margin-top: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #7A8795;
+    font-size: 0.75rem;
+}
+
+#resendOtpBtn {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #1976E8;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#resendOtpBtn:hover {
+    color: #12355B;
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   BACK TO LOGIN
+========================================= */
+
+.back-login-wrapper {
+    margin-top: 25px;
+    padding-top: 19px;
+    border-top: 1px solid #E6EBF0;
+    text-align: center;
+}
+
+.back-login {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #5F6F80;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-login i {
+    font-size: 11px;
+}
+
+.back-login:hover {
+    color: #1976E8;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.forgot-footer {
+    min-height: 48px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: #F7F9FC;
+    border-top: 1px solid #E5EAF0;
+    color: #84909D;
+    font-size: 0.67rem;
+    text-align: center;
+}
+
+.forgot-footer i {
+    color: #12A866;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   PASSWORD SECTION
+========================================= */
+
+#passwordSection .section-heading {
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   FORGOT PASSWORD - RESPONSIVE DESIGN
+   Desktop + Laptop + Tablet + iPad + Mobile
+   + Small Mobile + Mobile Desktop-Site Mode
+   ========================================================= */
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1201px) {
+
+    .forgot-page {
+        min-height: 100vh;
+        padding: 35px 20px;
+    }
+
+    .forgot-card {
+        width: 100%;
+        max-width: 520px;
+    }
+
+    .forgot-content {
+        padding: 32px 38px 28px;
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP / NORMAL DESKTOP
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .forgot-page {
+        min-height: 100vh;
+        padding: 30px 20px;
+    }
+
+    .forgot-card {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .forgot-header {
+        padding: 17px 25px;
+    }
+
+    .forgot-content {
+        padding: 30px 32px 26px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / iPAD
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+
+    .forgot-page {
+        min-height: 100vh;
+        padding: 25px 18px;
+    }
+
+    .forgot-card {
+        width: 100%;
+        max-width: 480px;
+        border-radius: 18px;
+    }
+
+    .forgot-header {
+        min-height: 75px;
+        padding: 16px 22px;
+    }
+
+    .brand-icon {
+        width: 43px;
+        height: 43px;
+    }
+
+    .brand-icon i {
+        font-size: 19px;
+    }
+
+    .brand-text h1 {
+        font-size: 1.05rem;
+    }
+
+    .brand-text span {
+        font-size: 0.68rem;
+    }
+
+    .forgot-content {
+        padding: 28px 28px 25px;
+    }
+
+    .title-area {
+        margin-bottom: 27px;
+    }
+
+    .title-icon {
+        width: 54px;
+        height: 54px;
+        margin-bottom: 13px;
+    }
+
+    .title-icon i {
+        font-size: 22px;
+    }
+
+    .title-area h2 {
+        font-size: 1.5rem;
+    }
+
+    .title-area p {
+        font-size: 0.8rem;
+    }
+
+    .section-heading {
+        gap: 11px;
+    }
+
+    .section-heading h3 {
+        font-size: 0.96rem;
+    }
+
+    .section-heading p {
+        font-size: 0.73rem;
+    }
+
+    .input-wrapper input {
+        height: 44px;
+    }
+
+    .primary-btn {
+        height: 43px;
+    }
+
+    .otp-boxes {
+        gap: 8px;
+    }
+
+    .otp-input {
+        height: 48px;
+    }
+
+}
+
+
+/* =========================================================
+   NORMAL MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
+
+    .forgot-page {
+        min-height: 100vh;
+        padding: 18px 12px;
+    }
+
+    .forgot-card {
+        width: 100%;
+        max-width: 430px;
+        border-radius: 16px;
+    }
+
+    /* ---------- HEADER ---------- */
+
+    .forgot-header {
+        min-height: 70px;
+        padding: 14px 18px;
+        gap: 11px;
+    }
+
+    .brand-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    .brand-icon i {
+        font-size: 18px;
+    }
+
+    .brand-text h1 {
+        font-size: 0.98rem;
+    }
+
+    .brand-text span {
+        font-size: 0.64rem;
+    }
+
+
+    /* ---------- CONTENT ---------- */
+
+    .forgot-content {
+        padding: 25px 20px 23px;
+    }
+
+
+    /* ---------- TITLE ---------- */
+
+    .title-area {
+        margin-bottom: 24px;
+    }
+
+    .title-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 12px;
+        border-radius: 14px;
+    }
+
+    .title-icon i {
+        font-size: 20px;
+    }
+
+    .title-area h2 {
+        font-size: 1.3rem;
+        margin-bottom: 7px;
+    }
+
+    .title-area p {
+        max-width: 330px;
+        font-size: 0.73rem;
+        line-height: 1.5;
+    }
+
+
+    /* ---------- SECTION ---------- */
+
+    .section-heading {
+        gap: 9px;
+        margin-bottom: 19px;
+    }
+
+    .step-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.72rem;
+    }
+
+    .section-heading h3 {
+        font-size: 0.92rem;
+    }
+
+    .section-heading p {
+        font-size: 0.69rem;
+        line-height: 1.4;
+    }
+
+
+    /* ---------- INPUT ---------- */
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    .input-group label,
+    .otp-area label {
+        font-size: 0.73rem;
+        margin-bottom: 7px;
+    }
+
+    .input-wrapper input {
+        width: 100%;
+        height: 43px;
+        font-size: 0.76rem;
+        padding-left: 38px;
+    }
+
+    .input-wrapper i {
+        left: 13px;
+        font-size: 13px;
+    }
+
+
+    /* ---------- MESSAGE ---------- */
+
+    .message {
+        font-size: 0.7rem;
+        min-height: 17px;
+    }
+
+
+    /* ---------- BUTTON ---------- */
+
+    .primary-btn {
+        width: 100%;
+        height: 42px;
+        font-size: 0.77rem;
+    }
+
+
+    /* ---------- OTP ---------- */
+
+    .otp-boxes {
+        width: 100%;
+        gap: 6px;
+    }
+
+    .otp-input {
+        width: 100%;
+        height: 44px;
+        min-width: 0;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+
+    /* ---------- RESEND ---------- */
+
+    .resend-section {
+        margin-top: 14px;
+        gap: 4px;
+        font-size: 0.69rem;
+        flex-wrap: wrap;
+    }
+
+    #resendOtpBtn {
+        font-size: 0.69rem;
+    }
+
+
+    /* ---------- BACK LOGIN ---------- */
+
+    .back-login-wrapper {
+        margin-top: 21px;
+        padding-top: 16px;
+    }
+
+    .back-login {
+        font-size: 0.71rem;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .forgot-footer {
+        min-height: 44px;
+        padding: 10px 13px;
+        gap: 6px;
+        font-size: 0.61rem;
+    }
+
+    .forgot-footer i {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   380px AND BELOW
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .forgot-page {
+        padding: 10px 8px;
+    }
+
+    .forgot-card {
+        border-radius: 14px;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    .forgot-header {
+        min-height: 65px;
+        padding: 12px 14px;
+        gap: 9px;
+    }
+
+    .brand-icon {
+        width: 37px;
+        height: 37px;
+        border-radius: 9px;
+    }
+
+    .brand-icon i {
+        font-size: 16px;
+    }
+
+    .brand-text h1 {
+        font-size: 0.9rem;
+    }
+
+    .brand-text span {
+        font-size: 0.59rem;
+    }
+
+
+    /* ---------- CONTENT ---------- */
+
+    .forgot-content {
+        padding: 21px 15px 19px;
+    }
+
+
+    /* ---------- TITLE ---------- */
+
+    .title-area {
+        margin-bottom: 21px;
+    }
+
+    .title-icon {
+        width: 46px;
+        height: 46px;
+        margin-bottom: 10px;
+        border-radius: 12px;
+    }
+
+    .title-icon i {
+        font-size: 18px;
+    }
+
+    .title-area h2 {
+        font-size: 1.18rem;
+    }
+
+    .title-area p {
+        font-size: 0.67rem;
+        line-height: 1.45;
+    }
+
+
+    /* ---------- SECTION ---------- */
+
+    .section-heading {
+        gap: 8px;
+        margin-bottom: 17px;
+    }
+
+    .step-number {
+        width: 26px;
+        height: 26px;
+        font-size: 0.67rem;
+    }
+
+    .section-heading h3 {
+        font-size: 0.85rem;
+    }
+
+    .section-heading p {
+        font-size: 0.64rem;
+    }
+
+
+    /* ---------- INPUT ---------- */
+
+    .input-group label,
+    .otp-area label {
+        font-size: 0.69rem;
+    }
+
+    .input-wrapper input {
+        height: 40px;
+        font-size: 0.7rem;
+        padding-left: 36px;
+    }
+
+    .input-wrapper i {
+        left: 12px;
+        font-size: 12px;
+    }
+
+
+    /* ---------- BUTTON ---------- */
+
+    .primary-btn {
+        height: 39px;
+        font-size: 0.71rem;
+    }
+
+    .primary-btn i {
+        font-size: 10px;
+    }
+
+
+    /* ---------- OTP ---------- */
+
+    .otp-boxes {
+        gap: 4px;
+    }
+
+    .otp-input {
+        height: 40px;
+        font-size: 0.9rem;
+        border-radius: 7px;
+    }
+
+
+    /* ---------- RESEND ---------- */
+
+    .resend-section {
+        font-size: 0.64rem;
+    }
+
+    #resendOtpBtn {
+        font-size: 0.64rem;
+    }
+
+
+    /* ---------- BACK ---------- */
+
+    .back-login {
+        font-size: 0.66rem;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .forgot-footer {
+        font-size: 0.57rem;
+        padding: 9px 10px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   320px AND BELOW
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+    .forgot-page {
+        padding: 6px;
+    }
+
+    .forgot-card {
+        border-radius: 12px;
+    }
+
+    .forgot-header {
+        padding: 11px 12px;
+    }
+
+    .forgot-content {
+        padding: 18px 12px 17px;
+    }
+
+
+    /* ---------- TITLE ---------- */
+
+    .title-icon {
+        width: 43px;
+        height: 43px;
+    }
+
+    .title-area h2 {
+        font-size: 1.08rem;
+    }
+
+    .title-area p {
+        font-size: 0.62rem;
+    }
+
+
+    /* ---------- SECTION ---------- */
+
+    .step-number {
+        width: 24px;
+        height: 24px;
+        font-size: 0.62rem;
+    }
+
+    .section-heading h3 {
+        font-size: 0.8rem;
+    }
+
+    .section-heading p {
+        font-size: 0.6rem;
+    }
+
+
+    /* ---------- INPUT ---------- */
+
+    .input-wrapper input {
+        height: 38px;
+        font-size: 0.66rem;
+    }
+
+
+    /* ---------- BUTTON ---------- */
+
+    .primary-btn {
+        height: 38px;
+        font-size: 0.67rem;
+    }
+
+
+    /* ---------- OTP ---------- */
+
+    .otp-boxes {
+        gap: 3px;
+    }
+
+    .otp-input {
+        height: 37px;
+        font-size: 0.82rem;
+        border-radius: 6px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .forgot-footer {
+        padding: 8px;
+        font-size: 0.53rem;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE DESKTOP-SITE MODE
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1100px) {
 
     html,
     body {
         width: 100%;
-        min-height: 100%;
+        max-width: 100%;
         overflow-x: hidden;
     }
 
-    body {
-        background-size: cover;
-        background-position: center;
-    }
-
-    .forgot-container {
+    .forgot-page {
         width: 100%;
         min-height: 100vh;
-        padding: 15px;
-        box-sizing: border-box;
+        padding: 20px;
     }
 
-    .container {
-        width: 82%;
-        height: auto;
-        min-height: 270px;
-        padding: 15px;
-        box-sizing: border-box;
-        border-radius: 12px;
+    .forgot-card {
+        width: 430px;
+        max-width: 90%;
+        margin: auto;
     }
 
-    .container h2 {
-        font-size: 1.3rem;
-        padding: 4px;
+    .forgot-header {
+        padding: 14px 20px;
     }
 
-    .container > p {
-        font-size: 0.72rem;
-        line-height: 1.4;
-        padding: 4px;
+    .forgot-content {
+        padding: 25px 28px 23px;
     }
 
-    .form p {
-        font-size: 0.8rem;
-        margin-top: 12px;
-        padding: 4px;
-    }
-
-    .form input,
-    .form button {
+    .input-wrapper input {
         width: 100%;
-        min-width: 0;
-        height: 34px;
         box-sizing: border-box;
-        font-size: 0.75rem;
-        border-radius: 8px;
     }
 
-    .form input {
-        padding: 5px 8px;
+    .primary-btn {
+        width: 100%;
     }
 
-    .form button {
-        margin-top: 20px;
-        margin-bottom: 15px;
-        font-size: 0.7rem;
-    }
-
-    .back-login {
-        display: block;
-        width: fit-content;
-        margin: 0 auto;
-        font-size: 0.8rem;
-    }
 }
 
 
-/* ============================= */
-/* VERY SMALL PHONES */
-/* ============================= */
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 768px) and (orientation: landscape) {
 
-    .forgot-container {
-        padding: 10px;
-    }
-
-    .container {
-        width: 88%;
+    .forgot-page {
+        min-height: 100vh;
         padding: 12px;
-        min-height: 250px;
+        align-items: flex-start;
     }
 
-    .container h2 {
-        font-size: 1.15rem;
+    .forgot-card {
+        max-width: 440px;
+        margin: 10px auto;
     }
 
-    .container > p {
-        font-size: 0.65rem;
+    .forgot-header {
+        min-height: 60px;
+        padding: 10px 15px;
     }
 
-    .form p {
-        font-size: 0.75rem;
-        margin-top: 10px;
+    .forgot-content {
+        padding: 18px 20px;
     }
 
-    .form input,
-    .form button {
-        height: 32px;
-        font-size: 0.68rem;
-    }
-
-    .form button {
-        margin-top: 16px;
-    }
-
-    .back-login {
-        font-size: 0.72rem;
-    }
-}
-
-
-
-
-/* ================================= */
-/* ADDITIONAL RESPONSIVE CSS */
-/* FORGOT PASSWORD */
-/* ================================= */
-
-/* ---------- TABLET MODE ---------- */
-@media (min-width: 601px) and (max-width: 1100px) {
-
-    .forgot-container {
-        width: 100%;
-        min-height: 100vh;
-        padding: 25px;
-        box-sizing: border-box;
-    }
-
-    .container {
-        width: 380px;
-        min-height: 340px;
-        height: auto;
-        padding: 22px;
-        box-sizing: border-box;
-    }
-
-    .container h2 {
-        font-size: 1.6rem;
-        padding: 5px;
-    }
-
-    .container > p {
-        font-size: 0.9rem;
-        line-height: 1.4;
-        padding: 5px;
-    }
-
-    .form p {
-        font-size: 1rem;
-        margin-top: 18px;
-        padding: 5px;
-    }
-
-    .form input,
-    .form button {
-        width: 100%;
-        min-width: 0;
-        height: 40px;
-        box-sizing: border-box;
-    }
-
-    .form input {
-        padding: 6px 10px;
-        font-size: 0.85rem;
-    }
-
-    .form button {
-        margin-top: 25px;
-        margin-bottom: 20px;
-        font-size: 0.8rem;
-    }
-
-    .back-login {
-        display: block;
-        width: fit-content;
-        margin: 0 auto;
-        font-size: 1rem;
-    }
-}
-
-
-/* ---------- SMALL TABLETS / LANDSCAPE PHONES ---------- */
-@media (min-width: 601px) and (max-width: 800px) {
-
-    .container {
-        width: 350px;
-        padding: 20px;
-    }
-
-    .container h2 {
-        font-size: 1.5rem;
-    }
-
-    .container > p {
-        font-size: 0.85rem;
-    }
-
-    .form p {
-        font-size: 0.95rem;
-    }
-
-    .form input,
-    .form button {
-        height: 38px;
-    }
-
-    .back-login {
-        font-size: 0.9rem;
-    }
-}
-
-
-/* ---------- DESKTOP POLISH ---------- */
-@media (min-width: 1101px) {
-
-    .container {
-        box-sizing: border-box;
-        max-width: 420px;
-    }
-
-    .container h2 {
-        margin-bottom: 3px;
-    }
-
-    .form input:focus {
-        outline: none;
-        border-color: #12355B;
-        box-shadow: 0 0 0 3px rgba(18, 53, 91, 0.12);
-    }
-
-    .form button:focus {
-        outline: none;
-    }
-
-    .back-login {
-        transition: all 0.25s ease;
-    }
-}
-
-
-/* ---------- DESKTOP SITE ON PHONE ---------- */
-@media (pointer: coarse) and (min-width: 601px) {
-
-    .forgot-container {
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .container {
-        width: 360px;
-        height: auto;
-        min-height: 330px;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .container h2 {
-        font-size: 1.45rem;
-    }
-
-    .container > p {
-        font-size: 0.82rem;
-        line-height: 1.4;
-    }
-
-    .form p {
-        font-size: 0.9rem;
-        margin-top: 16px;
-    }
-
-    .form input,
-    .form button {
-        width: 100%;
-        min-width: 0;
-        height: 38px;
-        box-sizing: border-box;
-    }
-
-    .form button {
-        margin-top: 22px;
+    .title-area {
         margin-bottom: 18px;
     }
 
-    .back-login {
-        margin: 0 auto;
-        font-size: 0.9rem;
+    .title-icon {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 8px;
     }
+
+    .title-area h2 {
+        font-size: 1.1rem;
+    }
+
+    .title-area p {
+        font-size: 0.65rem;
+    }
+
+    .section-heading {
+        margin-bottom: 14px;
+    }
+
+    .input-wrapper input {
+        height: 38px;
+    }
+
+    .primary-btn {
+        height: 38px;
+    }
+
+    .otp-input {
+        height: 38px;
+    }
+
+}
+
+
+/* =========================================================
+   GENERAL PROTECTION
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .forgot-card,
+    .forgot-content,
+    form {
+        max-width: 100%;
+    }
+
+    input,
+    button {
+        max-width: 100%;
+    }
+
 }

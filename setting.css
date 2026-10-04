@@ -1,85 +1,219 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    border: border-box;
+/* =========================================================
+   STUDENT ERP - SETTING
+   PROFILE MASTER DESIGN
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color: #E8EEF6;
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
 }
-.panel{
-    display:flex;
-    flex-direction: column;
-    height: 182vh;
-    width: 40vh;
-    padding: 10px;
-    background-color: #12355B;
-    color: white;
-    position:absolute;
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #E8EEF6;
+    color: #334155;
+    overflow-x: hidden;
 }
-.heading{
+
+
+/* =========================================================
+   SIDEBAR - PROFILE MASTER
+   ========================================================= */
+
+.panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
     display: flex;
-    height: 100px;
-    width: 90%;
+    flex-direction: column;
+
     padding: 10px;
-    justify-content: space-between;
+
+    background: #12355B;
+    color: white;
+
+    z-index: 1000;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    transition: width 0.3s ease;
+}
+
+.heading {
+    width: 100%;
+    height: 70px;
+
+    display: flex;
     align-items: center;
-}
-.heading i{
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 6px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.panel a{
-    font-size: 1.2rem;
+    justify-content: space-between;
+
     padding: 10px;
-    text-decoration: none;
-    color: black;
+
+    flex-shrink: 0;
+}
+
+.heading h2 {
     color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0.5rem;
-    display: block;
-    transition: all 0.25s ease;
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+
+
+/* BAR ICON */
+
+.heading i {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 8px;
-}
-a:hover{
-    background-color: #1E4A78;
+
     color: #ffffff;
-    transform: translateY(-3px);
-    padding-left: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-a:active{
-    background-color: #FFE8A3;
-    color: #12355B;
-}
-.panel i{
-    margin-right: 10px;
-    font-size: 1.3rem;
+
+    cursor: pointer;
+    flex-shrink: 0;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
 }
 
-.dashboard{
+.heading i:hover {
+    background: #1E4A78;
+    border-color: rgba(255, 255, 255, 0.65);
+}
 
-    margin-left: 43vh;
+
+/* SIDEBAR LINKS */
+
+.panel a {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
 
     padding: 10px;
+    margin-bottom: 3px;
 
-    transition: 0.3s;
+    color: #ffffff;
+    text-decoration: none;
 
+    font-size: 1rem;
+
+    border-radius: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+
+    transition: all 0.25s ease;
 }
 
-/* HEADER */
+.panel a:hover {
+    background: #1E4A78;
+    transform: translateY(-2px);
+}
+
+.panel a i {
+    min-width: 20px;
+    margin-right: 10px;
+
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.dashboard {
+    min-height: 100vh;
+
+    margin-left: 250px;
+    width: calc(100% - 250px);
+
+    padding: 20px;
+
+    background: #E8EEF6;
+
+    transition:
+        margin-left 0.3s ease,
+        width 0.3s ease;
+}
+
+
+/* =========================================================
+   DESKTOP COLLAPSED SIDEBAR
+   ========================================================= */
+
+@media (min-width: 601px) {
+
+    .panel.collapsed {
+        width: 58px;
+        padding: 4px;
+    }
+
+    .panel.collapsed .heading {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .panel.collapsed .heading h2,
+    .panel.collapsed .link {
+        display: none;
+    }
+
+    .panel.collapsed .heading i {
+        margin: 0;
+    }
+
+    .dashboard.reverse {
+        margin-left: 58px;
+        width: calc(100% - 58px);
+    }
+}
+
+
+/* =========================================================
+   SETTING HEADER
+   ========================================================= */
 
 .setting-header {
+    width: 100%;
+
+    min-height: 100px;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
-    height: 100px;
-    background-color: #ffffff;
-    border: 2px solid #D9E2EC;
-    border-radius: 1rem;
-    padding: 0 15px 0 15px;
+    justify-content: space-between;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #D9E2EC;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 15px rgba(18,53,91,0.07);
 }
 
 .setting-header h1 {
@@ -88,88 +222,107 @@ a:active{
 }
 
 .setting-header p {
-    color: #6b7280;
     margin-top: 5px;
+
+    color: #64748B;
+    font-size: 14px;
 }
 
 .setting-icon {
     width: 50px;
     height: 50px;
 
-    border-radius: 12px;
-
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    background: #e5edff;
+    background: #E8F1FF;
     color: #1976E8;
+
+    border-radius: 12px;
 
     font-size: 21px;
 }
 
 
-/* CONTAINER */
+/* =========================================================
+   SETTINGS
+   ========================================================= */
 
 .settings-container {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
+
     gap: 20px;
 }
 
-
-/* SECTION */
-
 .settings-section {
-    background: white;
-    border-radius: 15px;
+    width: 100%;
+
     padding: 25px;
 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    background: #ffffff;
+
+    border: 1px solid #D9E2EC;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(18,53,91,0.07);
+
+    transition: all 0.25s ease;
+}
+
+.settings-section:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 9px 22px rgba(18,53,91,0.12);
 }
 
 
-/* SECTION TITLE */
+/* TITLES */
 
 .settings-title {
     display: flex;
     align-items: center;
+
     gap: 15px;
 
     padding-bottom: 18px;
-    border-bottom: 1px solid #edf0f5;
+
+    border-bottom: 1px solid #E8EDF3;
 }
 
 .title-icon {
     width: 45px;
     height: 45px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 10px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 18px;
+    flex-shrink: 0;
 }
 
 .account-icon {
-    background: #e5edff;
+    background: #E8F1FF;
     color: #1976E8;
 }
 
 .notification-icon {
-    background: #eee8ff;
+    background: #F0EBFF;
     color: #6C4CE8;
 }
 
 .appearance-icon {
-    background: #fff1df;
+    background: #FFF1DF;
     color: #F28C00;
 }
 
 .privacy-icon {
-    background: #e4f8ef;
+    background: #E7F8EF;
     color: #12A866;
 }
 
@@ -179,29 +332,34 @@ a:active{
 }
 
 .settings-title p {
-    color: #6b7280;
-    font-size: 13px;
     margin-top: 4px;
+    color: #64748B;
+    font-size: 13px;
 }
 
 
-/* SETTING ROW */
+/* ROW */
 
 .setting-row {
+    min-height: 75px;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
     gap: 20px;
 
-    padding: 20px 0;
+    padding: 18px 0;
 
-    border-bottom: 1px solid #f0f2f5;
+    border-bottom: 1px solid #EEF2F6;
 }
 
 .setting-row:last-child {
     border-bottom: none;
-    padding-bottom: 0;
+}
+
+.setting-info {
+    min-width: 0;
 }
 
 .setting-info h3 {
@@ -210,9 +368,11 @@ a:active{
 }
 
 .setting-info p {
-    color: #7a8089;
-    font-size: 13px;
     margin-top: 5px;
+
+    color: #64748B;
+
+    font-size: 13px;
     line-height: 1.5;
 }
 
@@ -220,19 +380,20 @@ a:active{
 /* BUTTON */
 
 .setting-btn {
+    padding: 9px 16px;
+
     border: none;
+    border-radius: 8px;
+
     background: #12355B;
     color: white;
 
-    padding: 9px 16px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
     font-weight: 600;
 
+    cursor: pointer;
     white-space: nowrap;
+
+    transition: 0.25s ease;
 }
 
 .setting-btn:hover {
@@ -259,14 +420,13 @@ a:active{
 
 .slider {
     position: absolute;
-
-    cursor: pointer;
-
     inset: 0;
 
-    background: #d1d5db;
+    background: #CBD5E1;
 
     border-radius: 30px;
+
+    cursor: pointer;
 
     transition: 0.3s;
 }
@@ -283,7 +443,6 @@ a:active{
     top: 3px;
 
     background: white;
-
     border-radius: 50%;
 
     transition: 0.3s;
@@ -298,47 +457,52 @@ a:active{
 }
 
 
-/* THEME SELECT */
+/* SELECT */
 
 #themeSelect {
-    padding: 9px 35px 9px 12px;
+    min-width: 120px;
 
-    border: 1px solid #dfe3e8;
+    padding: 9px 12px;
 
+    background: #ffffff;
+    color: #12355B;
+
+    border: 1px solid #CBD5E1;
     border-radius: 8px;
 
     outline: none;
+}
 
-    color: #12355B;
-
-    background: white;
-
-    cursor: pointer;
+#themeSelect:focus {
+    border-color: #1976E8;
 }
 
 
 /* ACTIONS */
 
 .settings-actions {
+    width: 100%;
+
     display: flex;
     justify-content: flex-end;
-    gap: 12px;
 
-    background: white;
+    gap: 12px;
 
     padding: 20px;
 
+    background: #ffffff;
+
+    border: 1px solid #D9E2EC;
     border-radius: 15px;
 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    box-shadow: 0 5px 15px rgba(18,53,91,0.07);
 }
 
 .reset-btn,
 .save-btn {
-    border: none;
-
     padding: 11px 20px;
 
+    border: none;
     border-radius: 8px;
 
     cursor: pointer;
@@ -347,7 +511,7 @@ a:active{
 }
 
 .reset-btn {
-    background: #edf0f5;
+    background: #EEF2F6;
     color: #12355B;
 }
 
@@ -356,159 +520,38 @@ a:active{
     color: white;
 }
 
-.save-btn:hover {
-    background: #0d8c54;
-}
 
+/* =========================================================
+   LAPTOP
+   ========================================================= */
 
-/* MOBILE */
+@media (min-width: 769px) and (max-width: 1200px) {
 
-@media (max-width: 700px) {
-
-    .dashboard {
-        padding: 20px;
+    .panel {
+        width: 210px;
     }
 
-    .setting-header {
-        align-items: flex-start;
+    .dashboard {
+        margin-left: 210px;
+        width: calc(100% - 210px);
+        padding: 15px;
+    }
+
+    .panel.collapsed {
+        width: 58px;
+    }
+
+    .dashboard.reverse {
+        margin-left: 58px;
+        width: calc(100% - 58px);
     }
 
     .setting-header h1 {
-        font-size: 25px;
+        font-size: 27px;
     }
 
-    .setting-row {
-        align-items: flex-start;
-    }
-
-    .setting-btn {
-        padding: 8px 12px;
-    }
-
-}
-
-
-@media (max-width: 500px) {
-
-    .setting-header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .setting-icon {
-        display: none;
-    }
-
-    .setting-row {
-        flex-direction: column;
-    }
-
-    .setting-btn,
-    #themeSelect {
-        width: 100%;
-    }
-
-    .settings-actions {
-        flex-direction: column;
-    }
-
-    .reset-btn,
-    .save-btn {
-        width: 100%;
-    }
-
-}
-
-.panel{
-    width: 40vh;
-}
-.dashboard{
-    margin-left: 43vh;
-}
-.panel.collapsed{
-    width: 50px;
-    transition: all 2s ease;
-    .heading h2{
-        display: none;
-    }
-    .link{
-        display: none;
-    }
-}
-.dashboard.reverse{
-    margin-left: 75px;
-    transition: all 2s ease;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   EXTRA SETTINGS PAGE CSS
-   Add this at the very bottom of setting.css
-   ========================================================= */
-
-
-/* ---------- GENERAL IMPROVEMENT ---------- */
-
-.setting-header,
-.settings-section,
-.settings-actions {
-    box-sizing: border-box;
-    transition: all 0.25s ease;
-}
-
-.setting-header,
-.settings-section,
-.settings-actions {
-    box-shadow: 0 5px 15px rgba(18, 53, 91, 0.07);
-}
-
-.settings-section:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 9px 22px rgba(18, 53, 91, 0.12);
-}
-
-.setting-btn,
-.reset-btn,
-.save-btn {
-    transition: all 0.25s ease;
-}
-
-
-/* =========================================================
-   DESKTOP
-   ========================================================= */
-
-@media (min-width: 1101px) {
-
-    .dashboard {
-        min-height: 100vh;
-        box-sizing: border-box;
-    }
-
-    .setting-header,
-    .settings-container,
-    .settings-actions {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .setting-header {
-        margin-bottom: 25px;
-    }
-
-    .settings-actions {
-        margin-top: 20px;
+    .settings-section {
+        padding: 22px;
     }
 }
 
@@ -517,22 +560,39 @@ a:active{
    TABLET
    ========================================================= */
 
-@media (min-width: 601px) and (max-width: 1100px) {
+@media (min-width: 601px) and (max-width: 768px) {
 
-    .dashboard {
-        margin-left: 200px;
-        width: calc(100% - 210px);
-        padding: 10px;
-        box-sizing: border-box;
+    .panel {
+        width: 175px;
     }
 
+    .dashboard {
+        margin-left: 175px;
+        width: calc(100% - 175px);
+        padding: 12px;
+    }
 
-    /* HEADER */
+    .heading {
+        height: 65px;
+    }
 
-    .setting-header {
-        height: 85px;
-        padding: 0 15px;
-        margin-bottom: 15px;
+    .heading h2 {
+        font-size: 0.95rem;
+    }
+
+    .heading i {
+        width: 32px;
+        height: 32px;
+    }
+
+    .panel a {
+        padding: 9px 7px;
+        font-size: 0.78rem;
+    }
+
+    .panel a i {
+        margin-right: 7px;
+        font-size: 0.9rem;
     }
 
     .setting-header h1 {
@@ -543,48 +603,12 @@ a:active{
         font-size: 11px;
     }
 
-    .setting-icon {
-        width: 42px;
-        height: 42px;
-        font-size: 17px;
-    }
-
-
-    /* SECTIONS */
-
-    .settings-container {
-        gap: 15px;
-    }
-
     .settings-section {
         padding: 18px;
     }
 
-    .settings-title {
-        gap: 12px;
-        padding-bottom: 14px;
-    }
-
-    .title-icon {
-        width: 38px;
-        height: 38px;
-        font-size: 15px;
-    }
-
     .settings-title h2 {
         font-size: 16px;
-    }
-
-    .settings-title p {
-        font-size: 11px;
-    }
-
-
-    /* ROWS */
-
-    .setting-row {
-        padding: 15px 0;
-        gap: 13px;
     }
 
     .setting-info h3 {
@@ -593,34 +617,6 @@ a:active{
 
     .setting-info p {
         font-size: 11px;
-    }
-
-    .setting-btn {
-        padding: 8px 13px;
-        font-size: 11px;
-    }
-
-    #themeSelect {
-        padding: 8px 30px 8px 10px;
-        font-size: 11px;
-    }
-
-    .switch {
-        width: 44px;
-        height: 23px;
-    }
-
-
-    /* ACTIONS */
-
-    .settings-actions {
-        padding: 16px;
-    }
-
-    .reset-btn,
-    .save-btn {
-        padding: 9px 16px;
-        font-size: 12px;
     }
 }
 
@@ -631,32 +627,21 @@ a:active{
 
 @media (max-width: 600px) {
 
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
-
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 58px;
         height: 100vh;
+
         padding: 4px;
-        box-sizing: border-box;
-        z-index: 1000;
+
         overflow: hidden;
     }
 
     .heading {
         width: 100%;
         height: 58px;
+
         padding: 0;
+
         justify-content: center;
     }
 
@@ -665,49 +650,107 @@ a:active{
     }
 
     .heading i {
+        width: 32px;
+        height: 32px;
+
         margin: 0;
-        font-size: 0.95rem;
-        padding: 6px;
+        padding: 0;
+
+        border: 1px solid rgba(255,255,255,0.35);
+        border-radius: 7px;
     }
 
     .panel a {
         width: 100%;
         height: 42px;
+
         padding: 9px 3px;
         margin-bottom: 3px;
-        box-sizing: border-box;
-        font-size: 0;
-        display: flex;
+
         justify-content: center;
-        align-items: center;
+
+        font-size: 0;
     }
 
     .panel a i {
         margin: 0;
+        min-width: 0;
         font-size: 1rem;
     }
 
 
-    /* MAIN */
+    /* IMPORTANT:
+       MOBILE .collapsed = OVERLAY
+       CONTENT DOES NOT MOVE
+    */
 
-    .dashboard {
-        margin-left: 58px;
-        width: calc(100% - 58px);
-        padding: 7px;
-        box-sizing: border-box;
+    .panel.collapsed {
+        width: 215px;
+
+        padding: 8px;
+
+        overflow-y: auto;
+
+        box-shadow: 5px 0 20px rgba(0,0,0,0.25);
+    }
+
+    .panel.collapsed .heading {
+        height: 65px;
+
+        padding: 8px;
+
+        justify-content: space-between;
+    }
+
+    .panel.collapsed .heading h2 {
+        display: block;
+        font-size: 1rem;
+    }
+
+    .panel.collapsed .heading i {
+        width: 32px;
+        height: 32px;
+        margin: 0;
+    }
+
+    .panel.collapsed .link {
+        display: flex;
+
+        width: 100%;
+        height: 42px;
+
+        padding: 9px;
+
+        justify-content: flex-start;
+
+        font-size: 0.82rem;
+    }
+
+    .panel.collapsed .link i {
+        margin-right: 9px;
+        font-size: 0.95rem;
     }
 
 
-    /* HEADER */
+    .dashboard,
+    .dashboard.reverse {
+        margin-left: 58px;
+        width: calc(100% - 58px);
+
+        padding: 7px;
+    }
+
+
+    /* SETTING HEADER */
 
     .setting-header {
-        width: 100%;
-        height: auto;
-        min-height: 80px;
-        padding: 12px;
-        margin-bottom: 12px;
+        min-height: 75px;
+
+        padding: 11px;
+
+        margin-bottom: 10px;
+
         border-radius: 11px;
-        box-sizing: border-box;
     }
 
     .setting-header h1 {
@@ -716,27 +759,29 @@ a:active{
 
     .setting-header p {
         font-size: 9px;
-        margin-top: 4px;
     }
 
     .setting-icon {
         width: 36px;
         height: 36px;
+
         font-size: 14px;
     }
 
 
-    /* SECTIONS */
+    /* SETTINGS */
 
     .settings-container {
         gap: 9px;
     }
 
     .settings-section {
-        width: 100%;
         padding: 12px;
         border-radius: 11px;
-        box-sizing: border-box;
+    }
+
+    .settings-section:hover {
+        transform: none;
     }
 
     .settings-title {
@@ -747,7 +792,6 @@ a:active{
     .title-icon {
         width: 32px;
         height: 32px;
-        border-radius: 8px;
         font-size: 12px;
     }
 
@@ -757,21 +801,17 @@ a:active{
 
     .settings-title p {
         font-size: 8px;
-        margin-top: 3px;
     }
-
-
-    /* ROWS */
 
     .setting-row {
-        padding: 12px 0;
-        gap: 9px;
+        min-height: auto;
+
         flex-direction: column;
         align-items: flex-start;
-    }
 
-    .setting-info {
-        width: 100%;
+        gap: 8px;
+
+        padding: 12px 0;
     }
 
     .setting-info h3 {
@@ -780,14 +820,11 @@ a:active{
 
     .setting-info p {
         font-size: 9px;
-        margin-top: 3px;
-        line-height: 1.4;
     }
 
     .setting-btn,
     #themeSelect {
         width: 100%;
-        box-sizing: border-box;
     }
 
     .setting-btn {
@@ -796,35 +833,22 @@ a:active{
     }
 
     #themeSelect {
-        padding: 8px 10px;
+        padding: 8px;
         font-size: 9px;
     }
 
     .switch {
         align-self: flex-end;
-        width: 42px;
-        height: 22px;
     }
-
-    .slider::before {
-        width: 16px;
-        height: 16px;
-    }
-
-    .switch input:checked + .slider::before {
-        transform: translateX(20px);
-    }
-
-
-    /* ACTIONS */
 
     .settings-actions {
-        width: 100%;
-        padding: 12px;
-        border-radius: 11px;
-        box-sizing: border-box;
         flex-direction: column;
+
+        padding: 12px;
+
         gap: 7px;
+
+        border-radius: 11px;
     }
 
     .reset-btn,
@@ -837,7 +861,7 @@ a:active{
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 380px) {
@@ -846,24 +870,25 @@ a:active{
         width: 52px;
     }
 
-    .dashboard {
+    .panel.collapsed {
+        width: 200px;
+    }
+
+    .dashboard,
+    .dashboard.reverse {
         margin-left: 52px;
         width: calc(100% - 52px);
         padding: 5px;
     }
 
-    .panel a {
-        height: 39px;
+    .heading i {
+        width: 30px;
+        height: 30px;
     }
 
-    .panel a i {
-        font-size: 0.9rem;
-    }
-
-
-    .setting-header {
-        min-height: 70px;
-        padding: 9px;
+    .panel.collapsed .heading i {
+        width: 30px;
+        height: 30px;
     }
 
     .setting-header h1 {
@@ -874,31 +899,13 @@ a:active{
         font-size: 8px;
     }
 
-    .setting-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 12px;
-    }
-
-
     .settings-section {
         padding: 9px;
-    }
-
-    .title-icon {
-        width: 28px;
-        height: 28px;
-        font-size: 10px;
     }
 
     .settings-title h2 {
         font-size: 12px;
     }
-
-    .settings-title p {
-        font-size: 7px;
-    }
-
 
     .setting-info h3 {
         font-size: 10px;
@@ -907,74 +914,73 @@ a:active{
     .setting-info p {
         font-size: 8px;
     }
+}
 
-    .setting-btn,
-    #themeSelect {
-        padding: 7px;
-        font-size: 8px;
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+    .panel {
+        width: 48px;
     }
 
-    .switch {
-        width: 38px;
-        height: 20px;
+    .panel.collapsed {
+        width: 185px;
     }
 
-    .slider::before {
-        width: 14px;
-        height: 14px;
+    .dashboard,
+    .dashboard.reverse {
+        margin-left: 48px;
+        width: calc(100% - 48px);
+        padding: 4px;
     }
 
-    .switch input:checked + .slider::before {
-        transform: translateX(18px);
+    .heading i {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
     }
 
-
-    .settings-actions {
-        padding: 9px;
-        gap: 6px;
+    .panel.collapsed .heading i {
+        width: 28px;
+        height: 28px;
     }
 
-    .reset-btn,
-    .save-btn {
-        padding: 8px;
+    .setting-header h1 {
+        font-size: 15px;
+    }
+
+    .setting-header p {
+        font-size: 7px;
+    }
+
+    .setting-info h3 {
         font-size: 9px;
+    }
+
+    .setting-info p {
+        font-size: 7px;
     }
 }
 
 
 /* =========================================================
-   DESKTOP SITE ON PHONE
+   DESKTOP SITE MODE ON PHONE
    ========================================================= */
 
 @media (pointer: coarse) and (min-width: 601px) {
 
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-
-    /* SIDEBAR */
-
     .panel {
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 190px;
-        height: 100vh;
         padding: 10px;
-        box-sizing: border-box;
-        z-index: 1000;
-        overflow-y: auto;
     }
 
     .heading {
-        width: 100%;
         height: 70px;
         padding: 10px;
-        box-sizing: border-box;
     }
 
     .heading h2 {
@@ -983,161 +989,110 @@ a:active{
     }
 
     .heading i {
-        margin: 0;
-        font-size: 0.9rem;
+        width: 32px;
+        height: 32px;
+        padding: 0;
     }
 
     .panel a {
-        font-size: 0.78rem;
         padding: 9px 7px;
-        margin-bottom: 3px;
+        font-size: 0.78rem;
     }
 
     .panel a i {
-        font-size: 0.85rem;
         margin-right: 7px;
+        font-size: 0.85rem;
     }
-
-
-    /* MAIN */
 
     .dashboard {
         margin-left: 190px;
         width: calc(100% - 190px);
-        padding: 10px;
-        box-sizing: border-box;
+        padding: 12px;
     }
 
-
-    /* HEADER */
-
-    .setting-header {
-        height: 75px;
-        padding: 10px 14px;
-        margin-bottom: 12px;
+    .dashboard.reverse {
+        margin-left: 58px;
+        width: calc(100% - 58px);
     }
-
-    .setting-header h1 {
-        font-size: 23px;
-    }
-
-    .setting-header p {
-        font-size: 10px;
-    }
-
-    .setting-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-
-
-    /* SECTIONS */
-
-    .settings-container {
-        gap: 12px;
-    }
-
-    .settings-section {
-        padding: 16px;
-    }
-
-    .settings-title {
-        gap: 12px;
-    }
-
-    .title-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-
-    .settings-title h2 {
-        font-size: 17px;
-    }
-
-    .settings-title p {
-        font-size: 9px;
-    }
-
-
-    /* ROWS */
-
-    .setting-row {
-        padding: 15px 0;
-    }
-
-    .setting-info h3 {
-        font-size: 13px;
-    }
-
-    .setting-info p {
-        font-size: 10px;
-    }
-
-    .setting-btn {
-        padding: 8px 13px;
-        font-size: 10px;
-    }
-
-    #themeSelect {
-        padding: 8px 30px 8px 10px;
-        font-size: 10px;
-    }
-
-
-    /* ACTIONS */
-
-    .settings-actions {
-        padding: 16px;
-    }
-
-    .reset-btn,
-    .save-btn {
-        padding: 9px 15px;
-        font-size: 11px;
-    }
-
-
-    /* COLLAPSED SIDEBAR */
 
     .panel.collapsed {
         width: 58px;
+        padding: 4px;
+    }
+
+    .panel.collapsed .heading {
+        justify-content: center;
+        padding: 0;
     }
 
     .panel.collapsed .heading h2,
     .panel.collapsed .link {
         display: none;
     }
-
-    .panel.collapsed .heading {
-        justify-content: center;
-    }
-
-    .panel.collapsed .heading i {
-        margin: 0;
-    }
-
-    .dashboard.reverse {
-        margin-left: 78px;
-        width: calc(100% - 78px);
-    }
 }
 
 
-/* ---------- FINAL OVERFLOW SAFETY ---------- */
+/* =========================================================
+   DARK THEME
+   ========================================================= */
 
-@media (max-width: 1100px) {
+body.dark-theme {
+    background: #101820;
+    color: #E5E7EB;
+}
 
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
+body.dark-theme .dashboard {
+    background: #101820;
+}
 
-    .setting-header,
-    .settings-container,
-    .settings-actions {
-        max-width: 100%;
+body.dark-theme .setting-header,
+body.dark-theme .settings-section,
+body.dark-theme .settings-actions {
+    background: #1B2733;
+    border-color: #3A4B59;
+}
+
+body.dark-theme .setting-header h1,
+body.dark-theme .settings-title h2,
+body.dark-theme .setting-info h3 {
+    color: #ffffff;
+}
+
+body.dark-theme .setting-header p,
+body.dark-theme .settings-title p,
+body.dark-theme .setting-info p {
+    color: #B8C3CC;
+}
+
+body.dark-theme .settings-title,
+body.dark-theme .setting-row {
+    border-color: #3A4B59;
+}
+
+body.dark-theme #themeSelect {
+    background: #243442;
+    color: #ffffff;
+    border-color: #3A4B59;
+}
+
+body.dark-theme .reset-btn {
+    background: #30404E;
+    color: #ffffff;
+}
+
+body.dark-theme .panel {
+    background: #12355B;
+}
+
+
+/* =========================================================
+   TOUCH SAFETY
+   ========================================================= */
+
+@media (pointer: coarse) {
+
+    .panel a:hover,
+    .settings-section:hover {
+        transform: none;
     }
 }
