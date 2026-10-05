@@ -12,6 +12,9 @@ loginForm.addEventListener("submit", async (event) => {
     const password =
         document.getElementById("password").value;
 
+    const role =
+        document.getElementById("role").value;
+
     try {
 
         const response = await fetch(
@@ -25,7 +28,8 @@ loginForm.addEventListener("submit", async (event) => {
 
                 body: JSON.stringify({
                     email: email,
-                    password: password
+                    password: password,
+                    role: role
                 })
             }
         );

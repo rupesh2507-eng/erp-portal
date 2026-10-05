@@ -172,12 +172,19 @@ app.get("/test-db", (req, res) => {
 
 
 // ==============================
-// STUDENT LOGIN
+// LOGIN
 // ==============================
 
 app.post("/login", (req, res) => {
 
-    const { email, password } = req.body;
+    const { email, password, role } = req.body;
+
+    if (!email || !password || !role) {
+        return res.status(400).json({
+            success: false,
+            message: "Role, email and password are required"
+        });
+    }
 
     const sql = `
         SELECT
@@ -185,6 +192,7 @@ app.post("/login", (req, res) => {
             name,
             email,
             password,
+            role,
             roll_no,
             course,
             semester,
@@ -218,6 +226,7 @@ app.post("/login", (req, res) => {
 
         const student = results[0];
 
+        // Check password
         const passwordMatch = await bcrypt.compare(
             password,
             student.password
@@ -230,7 +239,15 @@ app.post("/login", (req, res) => {
             });
         }
 
-        // Never send the password/hash to the frontend
+        // Check selected role against database role
+        if (student.role !== role) {
+            return res.status(403).json({
+                success: false,
+                message: `This account is registered as ${student.role}`
+            });
+        }
+
+        // Never send password/hash to frontend
         delete student.password;
 
         const activitySql = `
@@ -253,7 +270,8 @@ app.post("/login", (req, res) => {
                 const token = jwt.sign(
                     {
                         id: student.id,
-                        email: student.email
+                        email: student.email,
+                        role: student.role
                     },
                     process.env.JWT_SECRET,
                     {
@@ -274,6 +292,7 @@ app.post("/login", (req, res) => {
     });
 
 });
+
 
 // ==============================
 // LOGIN ACTIVITY
