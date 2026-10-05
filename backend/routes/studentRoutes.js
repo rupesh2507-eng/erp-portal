@@ -5,12 +5,14 @@ const authenticateToken = require("../authMiddleware");
 const router = express.Router();
 
 // ==============================
-// GET STUDENT PROFILE
+// UPDATE STUDENT PROFILE
 // ==============================
 
 router.put("/:id", authenticateToken, (req, res) => {
+
     const studentId = req.params.id;
 
+    // Student can update only their own profile
     if (Number(studentId) !== Number(req.user.id)) {
         return res.status(403).json({
             success: false,
@@ -18,7 +20,12 @@ router.put("/:id", authenticateToken, (req, res) => {
         });
     }
 
-    const { name, email, phone } = req.body;
+    const {
+        name,
+        email,
+        phone,
+        address
+    } = req.body;
 
     if (!name || !email || !phone) {
         return res.status(400).json({
@@ -29,17 +36,30 @@ router.put("/:id", authenticateToken, (req, res) => {
 
     const sql = `
         UPDATE students
-        SET name = ?, email = ?, phone = ?
+        SET
+            name = ?,
+            email = ?,
+            phone = ?,
+            address = ?
         WHERE id = ?
     `;
 
     db.query(
         sql,
-        [name, email, phone, studentId],
+        [
+            name,
+            email,
+            phone,
+            address || "",
+            studentId
+        ],
         (err, result) => {
 
             if (err) {
-                console.error("Profile update error:", err.message);
+                console.error(
+                    "Profile update error:",
+                    err.message
+                );
 
                 return res.status(500).json({
                     success: false,
@@ -63,6 +83,7 @@ router.put("/:id", authenticateToken, (req, res) => {
                     course,
                     semester,
                     phone,
+                    address,
                     dob,
                     gender,
                     section,
@@ -78,11 +99,15 @@ router.put("/:id", authenticateToken, (req, res) => {
                 (err, results) => {
 
                     if (err) {
-                        console.error("Fetch updated profile error:", err.message);
+                        console.error(
+                            "Fetch updated profile error:",
+                            err.message
+                        );
 
                         return res.status(500).json({
                             success: false,
-                            message: "Profile updated but failed to fetch updated data"
+                            message:
+                                "Profile updated but failed to fetch updated data"
                         });
                     }
 
@@ -91,98 +116,11 @@ router.put("/:id", authenticateToken, (req, res) => {
                         message: "Profile updated successfully",
                         student: results[0]
                     });
+
                 }
             );
         }
     );
 });
-
-
-// ==============================
-// UPDATE STUDENT PROFILE
-// ==============================
-
-router.put("/:id", authenticateToken, (req,res)=>{
-
-    const studentId = req.params.id;
-
-    if (Number(studentId) !== Number(req.user.id)) {
-        return res.status(403).json({
-            success: false,
-            message: "Access denied"
-        });
-    }   
-
-    const {
-        name,
-        email,
-        phone
-    } = req.body;
-
-
-    const sql = `
-        UPDATE students
-        SET
-            name = ?,
-            email = ?,
-            phone = ?
-        WHERE id = ?
-    `;
-
-
-    db.query(
-        sql,
-        [
-            name,
-            email,
-            phone,
-            studentId
-        ],
-        (err, result) => {
-
-            if (err) {
-
-                console.error(
-                    "Profile update error:",
-                    err.message
-                );
-
-                return res.status(500).json({
-
-                    success: false,
-
-                    message: "Failed to update profile"
-
-                });
-
-            }
-
-
-            if (result.affectedRows === 0) {
-
-                return res.status(404).json({
-
-                    success: false,
-
-                    message: "Student not found"
-
-                });
-
-            }
-
-
-            res.json({
-
-                success: true,
-
-                message: "Profile updated successfully"
-
-            });
-
-        }
-    );
-
-});
-
 
 module.exports = router;
