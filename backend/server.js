@@ -41,14 +41,23 @@ const bcrypt = require("bcrypt");
 const Razorpay = require("razorpay");
 const crypto = require("crypto");
 
-const { Resend } = require("resend");
+const nodemailer = require("nodemailer");
 
 const razorpay = new Razorpay({
     key_id: process.env.RAZORPAY_KEY_ID,
     key_secret: process.env.RAZORPAY_KEY_SECRET
 });
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT),
+    secure: false,
+    auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
+    }
+});
+
 const otpStore = new Map();
 
 const db = require("./db");
@@ -2137,13 +2146,12 @@ app.post("/forgot-password/send-otp", async (req, res) => {
 
         try {
 
-            const { data, error } =
-                await resend.emails.send({
+            await transporter.sendMail({    
 
                     from:
-                        "Student ERP <onboarding@resend.dev>",
+                        "Student ERP Portal <rupeshkumar1234.star@gmail.com>",
 
-                    to: [email],
+                    to: email,
 
                     subject:
                         "Student ERP Password Reset OTP",
@@ -2170,20 +2178,7 @@ app.post("/forgot-password/send-otp", async (req, res) => {
                     `
                 });
 
-            if (error) {
-
-                console.error(
-                    "Resend error:",
-                    error
-                );
-
-                otpStore.delete(email);
-
-                return res.status(500).json({
-                    success: false,
-                    message: "Unable to send OTP"
-                });
-            }
+        
 
             console.log(
                 "OTP sent to:",
