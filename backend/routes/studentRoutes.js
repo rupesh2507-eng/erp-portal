@@ -168,4 +168,125 @@ router.get("/all", (req, res) => {
     });
 });
 
+router.post("/add", async (req, res) => {
+
+    const {
+        name,
+        email,
+        password,
+        roll_no,
+        course,
+        semester,
+        phone,
+        gender,
+        section,
+        department,
+        session,
+        address
+    } = req.body;
+
+    if (
+        !name ||
+        !email ||
+        !password ||
+        !roll_no ||
+        !course ||
+        !semester
+    ) {
+        return res.status(400).json({
+            success: false,
+            message: "Required fields are missing"
+        });
+    }
+
+    try {
+
+        const hashedPassword =
+            await bcrypt.hash(password, 10);
+
+        const sql = `
+            INSERT INTO students (
+                name,
+                email,
+                password,
+                role,
+                roll_no,
+                course,
+                semester,
+                phone,
+                gender,
+                section,
+                department,
+                session,
+                address
+            )
+            VALUES (?, ?, ?, 'Student', ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `;
+
+        db.query(
+            sql,
+            [
+                name,
+                email,
+                hashedPassword,
+                roll_no,
+                course,
+                semester,
+                phone || null,
+                gender || null,
+                section || null,
+                department || null,
+                session || null,
+                address || null
+            ],
+            (err, result) => {
+
+                if (err) {
+
+                    console.error(
+                        "Add student error:",
+                        err.message
+                    );
+
+                    if (
+                        err.code === "ER_DUP_ENTRY"
+                    ) {
+                        return res.status(409).json({
+                            success: false,
+                            message:
+                                "Email already exists"
+                        });
+                    }
+
+                    return res.status(500).json({
+                        success: false,
+                        message:
+                            "Unable to add student"
+                    });
+                }
+
+                res.status(201).json({
+                    success: true,
+                    message:
+                        "Student added successfully",
+                    studentId: result.insertId
+                });
+            }
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Password hashing error:",
+            error.message
+        );
+
+        res.status(500).json({
+            success: false,
+            message:
+                "Unable to add student"
+        });
+    }
+});
+
 module.exports = router;
