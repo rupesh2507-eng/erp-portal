@@ -2425,6 +2425,8 @@ app.post(
     "/forgot-password/send-otp",
     async (req, res) => {
 
+        console.log("SEND OTP ROUTE HIT");
+
         const { email } = req.body;
 
         if (!email) {
@@ -2503,8 +2505,7 @@ app.post(
 
                 try {
 
-                    const sendSmtpEmail =
-                        new brevo.SendSmtpEmail();
+                    const sendSmtpEmail = {};
 
                     sendSmtpEmail.subject =
                         "Student ERP Password Reset OTP";
@@ -2567,7 +2568,7 @@ app.post(
                         }
                     ];
 
-                    await brevoClient.sendTransacEmail(
+                    await brevoClient.transactionalEmails.sendTransacEmail(
                         sendSmtpEmail
                     );
 
@@ -2632,6 +2633,10 @@ app.post(
 
         const storedData =
             otpStore.get(email);
+
+        console.log("VERIFY EMAIL:", email);
+        console.log("ENTERED OTP:", otp);
+        console.log("STORED OTP:", storedData?.otp);
 
         if (!storedData) {
 
