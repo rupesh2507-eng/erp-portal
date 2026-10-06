@@ -42,38 +42,39 @@ body {
 .heading {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 12px;
-
-    height: 44px;
-    margin-bottom: 22px;
-}
-
-.heading h2 {
-    font-size: 21px;
-    white-space: nowrap;
+    min-height: 45px;
+    margin-bottom: 20px;
 }
 
 .heading i {
+    order: 2;
     width: 34px;
     height: 34px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 8px;
-
     padding: 0;
-
+    color: white;
     cursor: pointer;
-
     transition: all 0.25s ease;
+    flex-shrink: 0;
 }
 
 .heading i:hover {
     background-color: #1E4A78;
     border-color: rgba(255, 255, 255, 0.65);
+}
+
+.heading h2 {
+    order: 1;
+    margin: 0;
+    color: white;
+    font-size: 21px;
+    white-space: nowrap;
 }
 
 
