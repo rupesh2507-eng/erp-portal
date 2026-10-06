@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard - Student ERP Portal</title>
+
+    <link
+        rel="stylesheet"
+        href="admin-dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- ==============================
+         SIDEBAR
+    =============================== -->
+
+    <div class="panel">
+
+        <div class="heading">
+
+            <i class="fa-solid fa-bars"></i>
+
+            <h2>Student ERP</h2>
+
+        </div>
+
+        <div class="link">
+
+            <a href="admin-dashboard.html" class="active">
+                <i class="fa-solid fa-gauge"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="admin-students.html">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>Students</span>
+            </a>
+
+            <a href="admin-teachers.html">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <span>Teachers</span>
+            </a>
+
+            <a href="admin-courses.html">
+                <i class="fa-solid fa-book"></i>
+                <span>Courses</span>
+            </a>
+
+            <a href="admin-attendance.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="admin-results.html">
+                <i class="fa-solid fa-square-poll-vertical"></i>
+                <span>Results</span>
+            </a>
+
+            <a href="admin-fees.html">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+                <span>Fees</span>
+            </a>
+
+            <a href="admin-hostel.html">
+                <i class="fa-solid fa-building"></i>
+                <span>Hostel</span>
+            </a>
+
+            <a href="admin-notices.html">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span>Notices</span>
+            </a>
+
+            <a href="admin-timetable.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Timetable</span>
+            </a>
+
+            <a href="admin-login-activity.html">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Login Activity</span>
+            </a>
+
+            <a href="admin-settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Log Out</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         DASHBOARD
+    =============================== -->
+
+    <div class="dashboard">
+
+        <div class="top">
+
+            <div>
+                <h1>Admin Dashboard</h1>
+
+                <p>
+                    Welcome back, <span id="adminName">Admin</span>
+                </p>
+            </div>
+
+            <div class="admin-profile">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <div>
+                    <strong id="adminDisplayName">
+                        ERP Admin
+                    </strong>
+
+                    <small>Administrator</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             SUMMARY CARDS
+        =============================== -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+
+                <div>
+                    <h3>Total Students</h3>
+                    <h2 id="totalStudents">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+
+                <div>
+                    <h3>Total Teachers</h3>
+                    <h2 id="totalTeachers">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <div>
+                    <h3>Total Courses</h3>
+                    <h2 id="totalCourses">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>
+
+                <div>
+                    <h3>Active Notices</h3>
+                    <h2 id="totalNotices">0</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             ADMIN QUICK ACTIONS
+        =============================== -->
+
+        <div class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Quick Actions</h2>
+
+                    <p>
+                        Manage important ERP functions
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <a href="admin-students.html">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>Add Student</span>
+                </a>
+
+                <a href="admin-teachers.html">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Add Teacher</span>
+                </a>
+
+                <a href="admin-notices.html">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>Create Notice</span>
+                </a>
+
+                <a href="admin-fees.html">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                    <span>Manage Fees</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             RECENT ACTIVITY
+        =============================== -->
+
+        <div class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Recent Activity</h2>
+
+                    <p>
+                        Latest activity in the ERP system
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="activity-list">
+
+                <div class="activity">
+
+                    <div class="activity-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+
+                    <div>
+                        <strong>Student Management</strong>
+
+                        <p>
+                            Manage student accounts and information.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <div class="activity-icon">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+
+                    <div>
+                        <strong>Teacher Management</strong>
+
+                        <p>
+                            Manage teacher accounts and assignments.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <div class="activity-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <div>
+                        <strong>Academic Management</strong>
+
+                        <p>
+                            Manage attendance, results and courses.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             ADMIN INFORMATION
+        =============================== -->
+
+        <div class="section admin-info">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Administrator Information</h2>
+
+                    <p>
+                        Current administrator account
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="info-grid">
+
+                <div>
+                    <span>Name</span>
+                    <strong id="infoName">ERP Admin</strong>
+                </div>
+
+                <div>
+                    <span>Email</span>
+                    <strong id="infoEmail">
+                        admin@studenterp.com
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Role</span>
+                    <strong>Administrator</strong>
+                </div>
+
+                <div>
+                    <span>Access</span>
+                    <strong>Full ERP Access</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="admin-dashboard.js"></script>
+
+</body>
+
+</html>

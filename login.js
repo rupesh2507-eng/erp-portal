@@ -56,8 +56,22 @@ loginForm.addEventListener("submit", async (event) => {
                 "JWT token saved successfully"
             );
 
-            window.location.href =
-                "dashboard.html";
+            if (data.student.role === "Admin") {
+
+                window.location.href =
+                    "admin-dashboard.html";
+
+            } else if (data.student.role === "Teacher") {
+
+                window.location.href =
+                    "teacher-dashboard.html";
+
+            } else {
+
+                window.location.href =
+                    "dashboard.html";
+
+            }
 
         } else {
 
