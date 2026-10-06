@@ -976,3 +976,233 @@ body.dark-theme .action-buttons .delete-btn:hover {
     }
 
 }
+
+
+/* =========================
+   ADD STUDENT FORM
+========================= */
+
+.add-student-form {
+    display: none;
+    background: white;
+    border: 1px solid #D9E2EC;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(18, 53, 91, 0.06);
+}
+
+.add-student-form.active {
+    display: block;
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-header h3 {
+    margin: 0;
+    color: #12355B;
+    font-size: 20px;
+}
+
+.close-form-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #D9E2EC;
+    border-radius: 8px;
+    background: white;
+    color: #64748B;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.close-form-btn:hover {
+    color: #E53935;
+    border-color: #E53935;
+    background: #FFF0F0;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: #12355B;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #D9E2EC;
+    border-radius: 8px;
+    padding: 11px 12px;
+    background: white;
+    color: #12355B;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #1976E8;
+    box-shadow: 0 0 0 3px rgba(25, 118, 232, 0.10);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.cancel-btn,
+.save-student-btn {
+    min-height: 40px;
+    border-radius: 8px;
+    padding: 0 16px;
+    border: 1px solid #D9E2EC;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.cancel-btn {
+    background: white;
+    color: #64748B;
+}
+
+.cancel-btn:hover {
+    background: #F5F7FA;
+    border-color: #64748B;
+}
+
+.save-student-btn {
+    background: #1976E8;
+    color: white;
+    border-color: #1976E8;
+}
+
+.save-student-btn:hover {
+    background: #1565C0;
+    border-color: #1565C0;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   DARK THEME
+========================= */
+
+body.dark-theme .add-student-form {
+    background: #1B2733;
+    border-color: #3A4B59;
+}
+
+body.dark-theme .form-header h3,
+body.dark-theme .form-group label {
+    color: white;
+}
+
+body.dark-theme .close-form-btn,
+body.dark-theme .cancel-btn {
+    background: #1B2733;
+    border-color: #3A4B59;
+    color: #CBD5E1;
+}
+
+body.dark-theme .form-group input,
+body.dark-theme .form-group select,
+body.dark-theme .form-group textarea {
+    background: #101820;
+    border-color: #3A4B59;
+    color: white;
+}
+
+body.dark-theme .close-form-btn:hover {
+    background: #3A2427;
+    border-color: #E53935;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .add-student-form {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .cancel-btn,
+    .save-student-btn {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .add-student-form {
+        padding: 13px;
+    }
+
+    .form-header h3 {
+        font-size: 18px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+}
