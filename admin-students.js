@@ -268,3 +268,86 @@ deleteButtons.forEach(
 
     }
 );
+
+
+
+
+async function loadStudents() {
+
+    if (!tableBody) {
+        return;
+    }
+
+    try {
+
+        const response = await fetch(
+            "https://erp-portal-xgjf.onrender.com/student/all",
+            {
+                method: "GET",
+                headers: {
+                    "Authorization":
+                        `Bearer ${token}`
+                }
+            }
+        );
+
+        const data =
+            await response.json();
+
+        console.log(
+            "STUDENTS RESPONSE:",
+            data
+        );
+
+        if (!data.success) {
+            alert(
+                data.message ||
+                "Unable to load students"
+            );
+            return;
+        }
+
+        tableBody.innerHTML = "";
+
+        data.students.forEach(
+            (student) => {
+
+                const row =
+                    document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${student.id}</td>
+                    <td>${student.name || "-"}</td>
+                    <td>${student.roll_no || "-"}</td>
+                    <td>${student.course || "-"}</td>
+                    <td>${student.semester || "-"}</td>
+                    <td>${student.email || "-"}</td>
+                    <td>
+                        <button class="edit-btn">
+                            Edit
+                        </button>
+
+                        <button class="delete-btn">
+                            Delete
+                        </button>
+                    </td>
+                `;
+
+                tableBody.appendChild(row);
+            }
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Load students error:",
+            error
+        );
+
+        alert(
+            "Unable to connect to the server."
+        );
+    }
+}
+
+loadStudents();

@@ -123,4 +123,48 @@ router.put("/:id", authenticateToken, (req, res) => {
     );
 });
 
+
+
+router.get("/all", (req, res) => {
+
+    const sql = `
+        SELECT
+            id,
+            name,
+            email,
+            role,
+            roll_no,
+            course,
+            semester,
+            phone,
+            gender,
+            section,
+            department,
+            session,
+            address
+        FROM students
+        ORDER BY id ASC
+    `;
+
+    db.query(sql, (err, results) => {
+
+        if (err) {
+            console.error(
+                "Fetch students error:",
+                err.message
+            );
+
+            return res.status(500).json({
+                success: false,
+                message: "Unable to fetch students"
+            });
+        }
+
+        res.json({
+            success: true,
+            students: results
+        });
+    });
+});
+
 module.exports = router;
