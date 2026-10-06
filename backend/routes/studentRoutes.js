@@ -143,6 +143,7 @@ router.get("/all", (req, res) => {
             session,
             address
         FROM students
+        WHERE role = 'Student'
         ORDER BY id ASC
     `;
 
