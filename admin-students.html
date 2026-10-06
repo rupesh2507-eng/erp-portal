@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Students - Admin | Student ERP Portal</title>
+
+    <link rel="stylesheet" href="admin-students.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- ==============================
+         SIDEBAR
+    =============================== -->
+
+    <div class="panel">
+
+        <div class="heading">
+
+            <i class="fa-solid fa-bars"></i>
+
+            <h2>Student ERP</h2>
+
+        </div>
+
+        <div class="link">
+
+            <a href="admin-dashboard.html">
+                <i class="fa-solid fa-gauge"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="admin-students.html" class="active">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>Students</span>
+            </a>
+
+            <a href="admin-teachers.html">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <span>Teachers</span>
+            </a>
+
+            <a href="admin-courses.html">
+                <i class="fa-solid fa-book"></i>
+                <span>Courses</span>
+            </a>
+
+            <a href="admin-attendance.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="admin-results.html">
+                <i class="fa-solid fa-square-poll-vertical"></i>
+                <span>Results</span>
+            </a>
+
+            <a href="admin-fees.html">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+                <span>Fees</span>
+            </a>
+
+            <a href="admin-hostel.html">
+                <i class="fa-solid fa-building"></i>
+                <span>Hostel</span>
+            </a>
+
+            <a href="admin-notices.html">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span>Notices</span>
+            </a>
+
+            <a href="admin-timetable.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Timetable</span>
+            </a>
+
+            <a href="admin-login-activity.html">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Login Activity</span>
+            </a>
+
+            <a href="admin-settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Log Out</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+
+    <div class="dashboard">
+
+        <!-- TOP -->
+
+        <div class="top">
+
+            <div>
+
+                <h1>Students</h1>
+
+                <p>
+                    Manage student accounts and information
+                </p>
+
+            </div>
+
+            <div class="admin-profile">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <div>
+
+                    <strong id="adminDisplayName">
+                        ERP Admin
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             STUDENT MANAGEMENT
+        =============================== -->
+
+        <div class="section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Student Management</h2>
+
+                    <p>
+                        View and manage all registered students
+                    </p>
+
+                </div>
+
+                <button
+                    class="add-btn"
+                    id="addStudentBtn"
+                >
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Add Student
+
+                </button>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="student-tools">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="studentSearch"
+                        placeholder="Search student by name, email or roll number..."
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 STUDENT TABLE
+            =============================== -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Student</th>
+
+                            <th>Email</th>
+
+                            <th>Roll No</th>
+
+                            <th>Course</th>
+
+                            <th>Semester</th>
+
+                            <th>Role</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="studentTableBody">
+
+                        <!-- Student data will be
+                             loaded from database later -->
+
+                        <tr>
+
+                            <td>1</td>
+
+                            <td>
+
+                                <div class="student-name">
+
+                                    <div class="student-icon">
+
+                                        <i class="fa-solid fa-user"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Rupesh Kumar Sharma
+                                        </strong>
+
+                                        <small>
+                                            Student
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                rupeshkumar1234.star@gmail.com
+                            </td>
+
+                            <td>
+                                13250781
+                            </td>
+
+                            <td>
+                                BCA
+                            </td>
+
+                            <td>
+                                3rd
+                            </td>
+
+                            <td>
+
+                                <span class="role-badge">
+                                    Student
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <button
+                                        class="edit-btn"
+                                        title="Edit Student"
+                                    >
+
+                                        <i class="fa-solid fa-pen"></i>
+
+                                    </button>
+
+                                    <button
+                                        class="delete-btn"
+                                        title="Delete Student"
+                                    >
+
+                                        <i class="fa-solid fa-trash"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>2</td>
+
+                            <td>
+
+                                <div class="student-name">
+
+                                    <div class="student-icon">
+
+                                        <i class="fa-solid fa-user"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Priyanshu Pandey
+                                        </strong>
+
+                                        <small>
+                                            Student
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                priyanshu1234@gmail.com
+                            </td>
+
+                            <td>
+                                13250816
+                            </td>
+
+                            <td>
+                                BCA
+                            </td>
+
+                            <td>
+                                3rd
+                            </td>
+
+                            <td>
+
+                                <span class="role-badge">
+                                    Student
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <button
+                                        class="edit-btn"
+                                        title="Edit Student"
+                                    >
+
+                                        <i class="fa-solid fa-pen"></i>
+
+                                    </button>
+
+                                    <button
+                                        class="delete-btn"
+                                        title="Delete Student"
+                                    >
+
+                                        <i class="fa-solid fa-trash"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>3</td>
+
+                            <td>
+
+                                <div class="student-name">
+
+                                    <div class="student-icon">
+
+                                        <i class="fa-solid fa-user"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Nishant Kumar
+                                        </strong>
+
+                                        <small>
+                                            Student
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                nishant85389@gmail.com
+                            </td>
+
+                            <td>
+                                13250774
+                            </td>
+
+                            <td>
+                                BCA
+                            </td>
+
+                            <td>
+                                3rd
+                            </td>
+
+                            <td>
+
+                                <span class="role-badge">
+                                    Student
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <button
+                                        class="edit-btn"
+                                        title="Edit Student"
+                                    >
+
+                                        <i class="fa-solid fa-pen"></i>
+
+                                    </button>
+
+                                    <button
+                                        class="delete-btn"
+                                        title="Delete Student"
+                                    >
+
+                                        <i class="fa-solid fa-trash"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>4</td>
+
+                            <td>
+
+                                <div class="student-name">
+
+                                    <div class="student-icon">
+
+                                        <i class="fa-solid fa-user"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Durgesh Kumar Sharma
+                                        </strong>
+
+                                        <small>
+                                            Student
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                durgeshkumar12345.star@gmail.com
+                            </td>
+
+                            <td>
+                                —
+                            </td>
+
+                            <td>
+                                BCA
+                            </td>
+
+                            <td>
+                                3rd
+                            </td>
+
+                            <td>
+
+                                <span class="role-badge">
+                                    Student
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <button
+                                        class="edit-btn"
+                                        title="Edit Student"
+                                    >
+
+                                        <i class="fa-solid fa-pen"></i>
+
+                                    </button>
+
+                                    <button
+                                        class="delete-btn"
+                                        title="Delete Student"
+                                    >
+
+                                        <i class="fa-solid fa-trash"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>5</td>
+
+                            <td>
+
+                                <div class="student-name">
+
+                                    <div class="student-icon">
+
+                                        <i class="fa-solid fa-user"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Rohit Kumar Sharma
+                                        </strong>
+
+                                        <small>
+                                            Student
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                rohit9572@gmail.com
+                            </td>
+
+                            <td>
+                                —
+                            </td>
+
+                            <td>
+                                BCA
+                            </td>
+
+                            <td>
+                                3rd
+                            </td>
+
+                            <td>
+
+                                <span class="role-badge">
+                                    Student
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <button
+                                        class="edit-btn"
+                                        title="Edit Student"
+                                    >
+
+                                        <i class="fa-solid fa-pen"></i>
+
+                                    </button>
+
+                                    <button
+                                        class="delete-btn"
+                                        title="Delete Student"
+                                    >
+
+                                        <i class="fa-solid fa-trash"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             INFORMATION
+        =============================== -->
+
+        <div class="section info-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Student Information</h2>
+
+                    <p>
+                        Student records are connected to the ERP system
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="info-grid">
+
+                <div>
+
+                    <span>Total Students</span>
+
+                    <strong>
+                        5
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>Course</span>
+
+                    <strong>
+                        BCA
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>Current Semester</span>
+
+                    <strong>
+                        3rd Semester
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>System Access</span>
+
+                    <strong>
+                        Student Accounts
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="admin-students.js"></script>
+
+</body>
+
+</html>
