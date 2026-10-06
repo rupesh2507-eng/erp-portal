@@ -317,19 +317,37 @@ async function loadStudents() {
 
                 row.innerHTML = `
                     <td>${student.id}</td>
+
                     <td>${student.name || "-"}</td>
-                    <td>${student.roll_no || "-"}</td>
-                    <td>${student.course || "-"}</td>
-                    <td>${student.semester || "-"}</td>
+
                     <td>${student.email || "-"}</td>
-                    <td>
-                        <button class="edit-btn">
-                            Edit
+
+                    <td>${student.roll_no || "-"}</td>
+
+                    <td>${student.course || "-"}</td>
+
+                    <td>${student.semester || "-"}</td>
+
+                    <td>${student.role || "-"}</td>
+
+                    <td class="action-buttons">
+
+                        <button
+                            class="edit-btn"
+                            title="Edit Student"
+                            aria-label="Edit Student"
+                        >
+                            <i class="fa-solid fa-pen-to-square"></i>
                         </button>
 
-                        <button class="delete-btn">
-                            Delete
+                        <button
+                            class="delete-btn"
+                            title="Delete Student"
+                            aria-label="Delete Student"
+                        >
+                            <i class="fa-solid fa-trash"></i>
                         </button>
+
                     </td>
                 `;
 

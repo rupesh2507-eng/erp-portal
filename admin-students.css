@@ -902,3 +902,77 @@ body.dark-theme .delete-btn {
     background: #2A1C1C;
     border-color: #5A3838;
 }
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.action-buttons {
+    white-space: nowrap;
+    text-align: center;
+}
+
+.action-buttons button {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #D9E2EC;
+    border-radius: 8px;
+    background: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 0 3px;
+    transition: all 0.2s ease;
+}
+
+.action-buttons .edit-btn {
+    color: #1976E8;
+}
+
+.action-buttons .edit-btn:hover {
+    background: #EAF3FF;
+    border-color: #1976E8;
+    transform: translateY(-1px);
+}
+
+.action-buttons .delete-btn {
+    color: #E53935;
+}
+
+.action-buttons .delete-btn:hover {
+    background: #FFF0F0;
+    border-color: #E53935;
+    transform: translateY(-1px);
+}
+
+
+/* Dark Theme */
+
+body.dark-theme .action-buttons button {
+    background: #1B2733;
+    border-color: #3A4B59;
+}
+
+body.dark-theme .action-buttons .edit-btn:hover {
+    background: #243B52;
+}
+
+body.dark-theme .action-buttons .delete-btn:hover {
+    background: #3A2427;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .action-buttons button {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+        margin: 0 2px;
+    }
+
+}
